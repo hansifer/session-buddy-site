@@ -1,0 +1,33 @@
+{
+  "name": "session-buddy-site",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Product website for Session Buddy Tab & Bookmark Manager.",
+  "author": {
+    "name": "Hans Meyer",
+    "email": "support@sessionbuddy.com",
+    "url": "https://sessionbuddy.com/"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/starlight": "^0.37.1",
+    "@astrojs/starlight-tailwind": "^4.0.2",
+    "@fontsource/inter": "^5.0.18",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.6.1",
+    "framer-motion": "^12.23.26",
+    "sharp": "^0.34.2",
+    "tailwindcss": "^4.1.18",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  }
+}

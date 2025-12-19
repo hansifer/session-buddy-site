@@ -5,10 +5,10 @@ Product website for Session Buddy Tab & Bookmark Manager.
 ## Tech stack:
 
 - [Astro](https://astro.build/)
-- [Starlight](https://starlight.dev/)
+- [Starlight](https://starlight.astro.build/)
 - [React](https://reactjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
+- [Motion](https://motion.dev/)
 - [Vite](https://vitejs.dev/)
 
 Starting point: https://github.com/matt765/Tailcast

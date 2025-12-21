@@ -1,7 +1,7 @@
 ---
-title: Opening tabs from text
+title: Import and export
 sidebar:
-  order: 4
+  order: 2
 ---
 
 TODO: add content

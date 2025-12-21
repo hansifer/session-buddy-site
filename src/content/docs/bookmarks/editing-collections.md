@@ -4,4 +4,4 @@ sidebar:
   order: 7
 ---
 
-TODO: add content
+TODO: editing, moving, and deleting folders/links

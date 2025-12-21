@@ -4,4 +4,4 @@ sidebar:
   order: 4
 ---
 
-TODO: add content
+TODO: add content, incl formats, web permissions, placement

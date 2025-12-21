@@ -17,9 +17,9 @@ export const sidebar: Sidebar = [
     },
   },
   {
-    label: 'Collections',
+    label: 'Bookmarks',
     autogenerate: {
-      directory: 'collections',
+      directory: 'bookmarks',
     },
   },
   {

@@ -1,5 +1,6 @@
 ---
 title: Overview
+slug: 'docs'
 sidebar:
   order: 1
 ---

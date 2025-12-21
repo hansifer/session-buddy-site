@@ -7,6 +7,7 @@ Product website for Session Buddy Tab & Bookmark Manager.
 - [Astro](https://astro.build/)
 - [Starlight](https://starlight.astro.build/)
 - [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Motion](https://motion.dev/)
 - [Vite](https://vitejs.dev/)

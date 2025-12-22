@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
+import vtbot from 'astro-vtbot';
 
 import path from 'path';
 import formatClassname from './util/formatClassname';
@@ -15,6 +16,7 @@ export default defineConfig({
     starlight({
       title: 'Session Buddy',
       components: {
+        Head: './src/components/CustomStarlightHead.astro',
         PageFrame: './src/components/CustomStarlightPageFrame.astro',
       },
       customCss: [
@@ -33,6 +35,7 @@ export default defineConfig({
         plugins: [formatClassname],
       },
     }),
+    vtbot(),
   ],
   vite: {
     // @tailwindcss/vite plugin: issue with Vite and plugin typing · Issue #18802 · tailwindlabs/tailwindcss: https://github.com/tailwindlabs/tailwindcss/issues/18802

@@ -1,5 +1,5 @@
 ---
-title: Terms and conditions
+title: Terms & conditions
 ---
 
 TODO: add content

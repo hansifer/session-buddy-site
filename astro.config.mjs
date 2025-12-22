@@ -44,5 +44,9 @@ export default defineConfig({
         '@': path.resolve('./src'),
       },
     },
+    // uncomment during Starlight debugging and experimentation that requires node_modules code edits
+    // optimizeDeps: {
+    //   exclude: ['@astrojs/starlight'],
+    // },
   },
 });

@@ -1,6 +1,7 @@
 import type { NodePath } from '@babel/core';
 import * as t from '@babel/types';
 
+// use for static className values. className={`...`} with interpolation expressions needs runtime formatting (see @/util/tailwind:tw()).
 export default function formatClassname() {
   return {
     visitor: {

@@ -3,15 +3,15 @@ import { tw } from '@/util/tailwind';
 export const CheckIcon = ({ className = '' }: { className: string }) => (
   <div
     className={tw`
-    rounded-full
-    bg-transparent
-    w-5
-    h-5
-    flex
-    justify-center
-    items-center
-    mr-4
-    ${className}
+      rounded-full
+      bg-transparent
+      w-5
+      h-5
+      flex
+      justify-center
+      items-center
+      mr-4
+      ${className}
     `}
   >
     <svg

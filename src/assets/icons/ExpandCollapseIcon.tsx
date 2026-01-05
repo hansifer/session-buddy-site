@@ -1,12 +1,16 @@
 import { tw } from '@/util/tailwind';
 
+type ExpandCollapseIconProps = {
+  expanded: boolean;
+  transitionDuration?: number;
+  className: string;
+};
+
 export const ExpandCollapseIcon = ({
   expanded,
+  transitionDuration = 300,
   className,
-}: {
-  expanded: boolean;
-  className: string;
-}) => (
+}: ExpandCollapseIconProps) => (
   <div className={className}>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,9 +20,9 @@ export const ExpandCollapseIcon = ({
       fill="none"
       className={tw`
         transition-transform
-        duration-250
         ${expanded ? 'rotate-180' : 'rotate-90'}
       `}
+      style={{ transitionDuration: `${transitionDuration}ms` }}
     >
       <path
         d="M4.16732 12.5L10.0007 6.66667L15.834 12.5"
@@ -33,13 +37,12 @@ export const ExpandCollapseIcon = ({
 
 export const HighlightedExpandCollapseIcon = ({
   expanded,
+  transitionDuration,
   className = '',
-}: {
-  expanded: boolean;
-  className: string;
-}) => (
+}: ExpandCollapseIconProps) => (
   <ExpandCollapseIcon
     expanded={expanded}
+    transitionDuration={transitionDuration}
     className={`text-secondaryColor ${className}`}
   />
 );

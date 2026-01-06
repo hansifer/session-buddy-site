@@ -9,3 +9,12 @@ export type Article = {
   content: JSX.Element | string;
   author: string;
 };
+
+export type Tier = {
+  name: string;
+  description: string;
+  popular?: boolean;
+  monthlyPrice: number;
+  yearlyPrice: number;
+  features: string[];
+};

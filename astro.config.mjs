@@ -8,7 +8,7 @@ import vtbot from 'astro-vtbot';
 
 import path from 'path';
 import formatClassname from './util/formatClassname';
-import { sidebar } from './sidebar';
+import { sidebar } from './src/content/sidebar';
 
 export default defineConfig({
   redirects: {},

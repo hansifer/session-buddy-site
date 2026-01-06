@@ -4,6 +4,8 @@ import article1 from '@/assets/images/screenshot.png';
 import article2 from '@/assets/images/screenshot.png';
 import article3 from '@/assets/images/screenshot.png';
 
+import type { Article } from '@/types';
+
 const blog = [
   {
     title: 'AI and Machine Learning',
@@ -24,7 +26,7 @@ const blog = [
     image: article3.src,
     slug: 'real-time-data-processing',
   },
-] as const;
+] as const satisfies Pick<Article, 'title' | 'subtitle' | 'image' | 'slug'>[];
 
 export const Blog = () => (
   <section

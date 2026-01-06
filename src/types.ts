@@ -14,7 +14,7 @@ export type Tier = {
   name: string;
   description: string;
   popular?: boolean;
-  monthlyPrice: number;
-  yearlyPrice: number;
+  priceMonthly: number;
+  priceYearly: number;
   features: string[];
 };

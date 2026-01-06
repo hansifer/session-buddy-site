@@ -13,6 +13,7 @@ export type Article = {
 export type Tier = {
   name: string;
   description: string;
+  emphasize?: boolean;
   priceMonthly: number;
   priceYearly: number;
   features: string[];

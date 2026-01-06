@@ -1,9 +1,11 @@
+import type { JSX } from 'react';
+
 export type Article = {
   title: string;
   subtitle: string;
   image: string;
   slug: string;
   date: Date;
-  content: string;
-  footer?: string;
+  content: JSX.Element | string;
+  author: string;
 };

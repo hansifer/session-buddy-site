@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { tw } from '@/util/tailwind';
 import { HighlightedExpandCollapseIcon } from '@/assets/icons/ExpandCollapseIcon';
 
+// todo: move to content/
 const faqs = [
   {
     question: 'Can I upgrade or downgrade my plan at any time?',

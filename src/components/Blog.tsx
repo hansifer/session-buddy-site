@@ -1,32 +1,6 @@
 import { motion } from 'framer-motion';
 
-import article1 from '@/assets/images/screenshot.png';
-import article2 from '@/assets/images/screenshot.png';
-import article3 from '@/assets/images/screenshot.png';
-
-import type { Article } from '@/types';
-
-const blog = [
-  {
-    title: 'AI and Machine Learning',
-    subtitle:
-      'Discover insights and trends in the world of data analytics. Delve into how AI and machine learning are revolutionizing industries',
-    image: article1.src,
-    slug: 'ai-and-machine-learning',
-  },
-  {
-    title: 'Data-Driven Analytics',
-    subtitle: 'Explore the impact of AI and ML on data analytics.',
-    image: article2.src,
-    slug: 'data-driven-analytics',
-  },
-  {
-    title: 'Real-Time Data Processing',
-    subtitle: 'Learn about the importance of processing real-time.',
-    image: article3.src,
-    slug: 'real-time-data-processing',
-  },
-] as const satisfies Pick<Article, 'title' | 'subtitle' | 'image' | 'slug'>[];
+import { blog } from '@/content/blog';
 
 export const Blog = () => (
   <section

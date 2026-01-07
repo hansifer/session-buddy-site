@@ -9,11 +9,11 @@ Product website for Session Buddy Tab & Bookmark Manager.
 - [astro-vtbot](https://events-3bg.pages.dev/)
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
+- [Tailwind](https://tailwindcss.com/)
 - [Motion](https://motion.dev/)
 - [Vite](https://vitejs.dev/)
 
-Starting point: https://github.com/matt765/Tailcast
+Adapted from this [Astro template](https://github.com/matt765/Tailcast).
 
 ##  Dev
 

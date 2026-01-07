@@ -4,6 +4,7 @@ export const tiers = [
   {
     name: 'Starter',
     description: 'Ideal for individuals with basic needs.',
+    emphasize: false,
     priceMonthly: 0,
     priceYearly: 0,
     features: ['All features', 'Community support'],
@@ -24,6 +25,7 @@ export const tiers = [
     name: 'Pro',
     description:
       'The best choice for professionals seeking enhanced capabilities.',
+    emphasize: false,
     priceMonthly: 5.99,
     priceYearly: 59.99,
     features: [

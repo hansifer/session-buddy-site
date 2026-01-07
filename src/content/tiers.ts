@@ -7,7 +7,11 @@ export const tiers = [
     emphasize: false,
     priceMonthly: 0,
     priceYearly: 0,
-    features: ['All features', 'Community support'],
+    features: [
+      // wrap
+      'All core features',
+      'Community support',
+    ],
   },
   {
     name: 'Standard',

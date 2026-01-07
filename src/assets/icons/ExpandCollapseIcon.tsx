@@ -1,4 +1,5 @@
 import { ArrowIcon } from '@/assets/icons/ArrowIcon';
+import { tw } from '@/util/tailwind';
 
 type ExpandCollapseIconProps = {
   expanded?: boolean;
@@ -26,6 +27,6 @@ export const HighlightedExpandCollapseIcon = ({
   <ExpandCollapseIcon
     expanded={expanded}
     transitionDuration={transitionDuration}
-    className={`text-secondaryColor ${className}`}
+    className={tw`text-secondaryColor ${className}`}
   />
 );

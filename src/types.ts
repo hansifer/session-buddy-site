@@ -18,3 +18,11 @@ export type Tier = {
   priceYearly: number;
   features: string[];
 };
+
+export type Testimonial = {
+  name: string;
+  quote: string;
+  role?: string;
+  company?: string;
+  image?: string;
+};

@@ -3,8 +3,6 @@ import Layout from '@/layouts/Layout.astro';
 import { ArticlePage } from '@/components/ArticlePage';
 import { ScrollUpButton } from '@/components/ScrollUpButton';
 
-import '@/styles/Theme.css';
-
 import { blog } from '@/content/blog';
 
 const article = blog.find(({ slug }) => slug === 'data-driven-analytics')!;

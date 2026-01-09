@@ -112,9 +112,9 @@ const FaqBox = ({
         sm:py-6
         mb-4
         rounded-3xl
-        bg-bgDark3
-        hover:bg-bgDark3Hover
-        main-border-gray-darker
+        bg-blockBackgroundColor
+        hover:bg-blockStrongBackgroundColor
+        block-border
         cursor-pointer
       "
       onClick={() => {
@@ -133,7 +133,7 @@ const FaqBox = ({
         </h3>
         <p
           className={tw`
-            text-secondaryText
+            text-secondaryTextColor
             transition-all
             overflow-hidden
             ${

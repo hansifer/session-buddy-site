@@ -12,5 +12,5 @@ export const QuoteIcon = ({ className }: { className: string }) => (
 );
 
 export const StandardQuoteIcon = () => (
-  <QuoteIcon className="text-quoteIconColor" />
+  <QuoteIcon className="text-ternaryColor" />
 );

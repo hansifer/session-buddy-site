@@ -82,8 +82,8 @@ const TestimonialBlock = ({ testimonial }: { testimonial: Testimonial }) => {
         px-6
         py-4
         rounded-3xl
-        main-border-gray-darker
-        bg-bgDark3
+        block-border
+        bg-blockBackgroundColor
       "
     >
       <div className="mb-2">
@@ -122,7 +122,7 @@ const TestimonialBlock = ({ testimonial }: { testimonial: Testimonial }) => {
           >
             {name}
           </div>
-          {role ? <div className="text-secondaryText">{role}</div> : null}
+          {role ? <div className="text-secondaryTextColor">{role}</div> : null}
         </div>
       </div>
     </div>

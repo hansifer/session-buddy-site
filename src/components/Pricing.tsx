@@ -45,7 +45,7 @@ export const Pricing = () => {
                 lg:text-5xl
                 font-bold
                 font-heading
-                text-primaryText
+                text-primaryTextColor
               "
             >
               Choose your best plan
@@ -53,7 +53,7 @@ export const Pricing = () => {
             <p
               className="
                 mb-6
-                text-secondaryText
+                text-secondaryTextColor
               "
             >
               Select the plan that suits your needs.
@@ -121,8 +121,8 @@ const Tier = ({
         h-full
         p-8
         rounded-3xl
-        bg-bgDark3
-        ${emphasize ? 'lg:bg-bgDark3Hover' : ''}
+        bg-blockBackgroundColor
+        ${emphasize ? 'lg:bg-blockStrongBackgroundColor' : ''}
       `}
     >
       <h3
@@ -133,7 +133,7 @@ const Tier = ({
           ${emphasize ? 'lg:text-2xl' : ''}
           font-bold
           font-heading
-          text-primaryText
+          text-primaryTextColor
         `}
       >
         {name}
@@ -150,7 +150,7 @@ const Tier = ({
             text-4xl
             sm:text-5xl
             font-bold
-            text-primaryText
+            text-primaryTextColor
           "
         >
           {`$${isYearly ? priceYearly : priceMonthly}`}
@@ -171,7 +171,7 @@ const Tier = ({
         className={tw`
           mb-6
           ${emphasize ? 'lg:mb-14' : ''}
-          text-primaryText
+          text-primaryTextColor
         `}
       >
         {features.map((feature) => (
@@ -227,7 +227,7 @@ const Toggle = ({
       w-44
       h-12
       rounded-lg
-      bg-bgDark3
+      bg-blockBackgroundColor
       cursor-pointer
       select-none
     "
@@ -249,7 +249,7 @@ const Toggle = ({
         w-21
         h-10
         rounded-lg
-      bg-primaryColor
+        bg-primaryColor
         shadow-md
         translate-x-1
         peer-checked:translate-x-22
@@ -264,7 +264,7 @@ const Toggle = ({
         flex
         text-sm
         font-bold
-        text-primaryText
+        text-primaryTextColor
       "
     >
       <div

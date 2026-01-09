@@ -37,16 +37,16 @@ export const ScrollUpButton = () => {
         bottom-6
         right-6
         rounded-xl
-        main-border-gray
-        bg-bgDark2
-        hover:bg-bgDark3
+        block-strong-border
+        bg-primaryBackgroundColor
+        hover:bg-blockBackgroundColor
         z-50
         cursor-pointer
       "
       aria-label="Scroll to top"
       onClick={() => scrollToTop()}
     >
-      <ArrowIcon className="text-secondaryText" />
+      <ArrowIcon className="text-secondaryTextColor" />
     </button>
   ) : null;
 };

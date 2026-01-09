@@ -34,7 +34,7 @@ export const ArticlePage = ({
               className="
                 my-4
                 text-sm
-                text-secondaryText
+                text-secondaryTextColor
               "
             >
               {formatDate(date)}
@@ -46,7 +46,7 @@ export const ArticlePage = ({
                 xs:text-[2.8rem]
                 lg:text-[3.5rem]
                 font-bold
-                text-primaryText
+                text-primaryTextColor
               "
             >
               {title}
@@ -55,7 +55,7 @@ export const ArticlePage = ({
               className="
                 mb-4
                 text-lg
-                text-secondaryText
+                text-secondaryTextColor
               "
             >
               {subtitle}
@@ -87,7 +87,7 @@ export const ArticlePage = ({
               sm:leading-8!
               text-left
               sm:text-justify
-              text-secondaryText
+              text-secondaryTextColor
             "
             aria-labelledby="content-title"
           >
@@ -101,7 +101,7 @@ export const ArticlePage = ({
               mx-auto
               text-xl
               text-right
-              text-primaryText
+              text-primaryTextColor
             "
           >
             {`~ ${author}`}

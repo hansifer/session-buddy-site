@@ -56,7 +56,7 @@ export const Blog = () => (
             <p
               className="
                 mb-6
-                text-secondaryText
+                text-secondaryTextColor
               "
             >
               Stay updated with the latest trends and insights in our industry.
@@ -121,8 +121,8 @@ const TallBlock = ({
           sm:p-10
           h-full
           rounded-3xl
-          bg-bgDark3
-          hover:bg-bgDark3Hover
+          bg-blockBackgroundColor
+          hover:bg-blockStrongBackgroundColor
           transition
           cursor-pointer
         "
@@ -142,12 +142,12 @@ const TallBlock = ({
             text-2xl
             font-bold
             font-heading
-            text-primaryText
+            text-primaryTextColor
           "
         >
           {title}
         </h3>
-        <p className="text-secondaryText">{subtitle}</p>
+        <p className="text-secondaryTextColor">{subtitle}</p>
       </div>
     </a>
   </div>
@@ -169,8 +169,8 @@ const ShortBlock = ({
       lg:px-10
       py-8
       rounded-3xl
-      bg-bgDark3
-      hover:bg-bgDark3Hover
+      bg-blockBackgroundColor
+      hover:bg-blockStrongBackgroundColor
       transition
       cursor-pointer
     "
@@ -182,12 +182,12 @@ const ShortBlock = ({
           text-xl
           font-bold
           font-heading
-          text-primaryText
+          text-primaryTextColor
         "
       >
         {title}
       </h3>
-      <p className="text-secondaryText">{subtitle}</p>
+      <p className="text-secondaryTextColor">{subtitle}</p>
     </div>
     <img
       src={image}

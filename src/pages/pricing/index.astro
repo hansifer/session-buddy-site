@@ -1,0 +1,10 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Pricing } from '@/components/Pricing';
+import { ScrollUpButton } from '@/components/ScrollUpButton';
+---
+
+<Layout title="Pricing | Session Buddy">
+  <Pricing client:load />
+  <ScrollUpButton client:load />
+</Layout>

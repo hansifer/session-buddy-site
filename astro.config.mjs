@@ -18,6 +18,8 @@ export default defineConfig({
       components: {
         Head: './src/components/CustomStarlightHead.astro',
         PageFrame: './src/components/CustomStarlightPageFrame.astro',
+        MobileTableOfContents:
+          './src/components/CustomStarlightMobileTOC.astro',
       },
       customCss: [
         './src/styles/starlight.css',

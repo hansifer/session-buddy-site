@@ -57,6 +57,15 @@ const { hasSidebar } = Astro.locals.starlightRoute;
       --sl-sidebar-visibility: visible;
     }
 
+    @media (min-width: 50rem) {
+      .sidebar-pane {
+        --sl-sidebar-visibility: visible;
+        width: var(--sl-sidebar-width);
+        background-color: var(--sl-color-bg-sidebar);
+        border-inline-end: 1px solid var(--sl-color-hairline-shade);
+      }
+    }
+
     .sidebar-content {
       height: 100%;
       min-height: max-content;
@@ -75,15 +84,6 @@ const { hasSidebar } = Astro.locals.starlightRoute;
     .main-frame {
       padding-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height));
       padding-inline-start: var(--sl-content-inline-start);
-    }
-
-    @media (min-width: 50rem) {
-      .sidebar-pane {
-        --sl-sidebar-visibility: visible;
-        width: var(--sl-sidebar-width);
-        background-color: var(--sl-color-bg-sidebar);
-        border-inline-end: 1px solid var(--sl-color-hairline-shade);
-      }
     }
   }
 </style>

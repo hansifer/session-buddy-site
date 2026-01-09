@@ -18,8 +18,13 @@ export default defineConfig({
       components: {
         Head: './src/components/CustomStarlightHead.astro',
         PageFrame: './src/components/CustomStarlightPageFrame.astro',
+        Search: './src/components/CustomStarlightSearch.astro',
         MobileTableOfContents:
           './src/components/CustomStarlightMobileTOC.astro',
+        MobileMenuToggle:
+          './src/components/CustomStarlightMobileMenuToggle.astro',
+        MobileMenuFooter:
+          './src/components/CustomStarlightMobileMenuFooter.astro',
       },
       customCss: [
         './src/styles/starlight.css',

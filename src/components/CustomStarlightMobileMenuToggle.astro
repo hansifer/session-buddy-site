@@ -3,7 +3,9 @@ import { ArrowIcon } from '@/assets/icons/ArrowIcon';
 ---
 
 <starlight-menu-button class="print:hidden">
+  <!-- button.id is used by Navbar to toggle visibility imperatively when site nav menu is toggled -->
   <button
+    id="mobile-menu-toggle"
     title="Table of Contents"
     aria-expanded="false"
     aria-label={Astro.locals.t('menuButton.accessibleLabel')}

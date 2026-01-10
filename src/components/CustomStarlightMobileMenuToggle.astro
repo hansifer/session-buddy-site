@@ -1,5 +1,5 @@
 ---
-import Icon from '../user-components/Icon.astro';
+import { ArrowIcon } from '@/assets/icons/ArrowIcon';
 ---
 
 <starlight-menu-button class="print:hidden">
@@ -9,14 +9,7 @@ import Icon from '../user-components/Icon.astro';
     aria-controls="starlight__sidebar"
     class="sl-flex md:sl-hidden"
   >
-    <Icon
-      name="bars"
-      class="open-menu"
-    />
-    <Icon
-      name="close"
-      class="close-menu"
-    />
+    <ArrowIcon direction="down" />
   </button>
 </starlight-menu-button>
 

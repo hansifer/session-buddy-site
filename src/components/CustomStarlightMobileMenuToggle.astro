@@ -38,6 +38,14 @@ import { ArrowIcon } from '@/assets/icons/ArrowIcon';
     setExpanded(expanded: boolean) {
       this.setAttribute('aria-expanded', String(expanded));
       document.body.toggleAttribute('data-mobile-menu-expanded', expanded);
+
+      // customization: mobile nav menu scroll is at the page level
+      if (expanded) {
+        window.scrollTo({
+          top: 0,
+          behavior: 'instant',
+        });
+      }
     }
 
     toggleExpanded() {

@@ -23,7 +23,9 @@ if (project.trailingSlash === 'never')
   {...dataAttributes}
 >
   <!-- position on top of Navbar. right positioning includes Starlight mobile breakpoint (50rem). -->
+  <!-- div.id is used by Navbar to toggle visibility imperatively when site nav menu is toggled -->
   <div
+    id="starlight-search-btn-container"
     class="print:hidden
       fixed
       top-5

@@ -99,6 +99,7 @@ const { hasSidebar } = Astro.locals.starlightRoute;
     }
 
     /* customization: hide content when mobile nav menu is open. this is part of a solution to prevent double scrollbars. */
+    /* may also be able to use `:global([data-mobile-menu-expanded]) .main-frame` */
     :global(nav:has([aria-expanded='true'])) ~ .main-frame {
       display: none;
     }

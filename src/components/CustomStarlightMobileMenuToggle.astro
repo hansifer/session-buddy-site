@@ -7,7 +7,10 @@ import { ArrowIcon } from '@/assets/icons/ArrowIcon';
     aria-expanded="false"
     aria-label={Astro.locals.t('menuButton.accessibleLabel')}
     aria-controls="starlight__sidebar"
-    class="sl-flex md:sl-hidden"
+    class="sl-flex
+      items-center
+      justify-center
+      md:sl-hidden"
   >
     <ArrowIcon direction="down" />
   </button>
@@ -65,6 +68,11 @@ import { ArrowIcon } from '@/assets/icons/ArrowIcon';
       color: var(--sl-color-black);
       box-shadow: var(--sl-shadow-md);
       cursor: pointer;
+
+      svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
     }
 
     [aria-expanded='true'] button {

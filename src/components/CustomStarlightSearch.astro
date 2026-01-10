@@ -22,36 +22,47 @@ if (project.trailingSlash === 'never')
   class={Astro.props.class}
   {...dataAttributes}
 >
-  <button
-    data-open-modal
-    disabled
-    aria-label={Astro.locals.t('search.label')}
-    aria-keyshortcuts="Control+K"
+  <!-- position on top of Navbar. right positioning includes Starlight mobile breakpoint (50rem). -->
+  <div
+    class="print:hidden
+      fixed
+      top-5
+      right-38
+      [@media(min-width:50rem)]:right-20
+      lg:right-6!
+      z-50"
   >
-    <!-- <Icon name="magnifier" /> -->
-    <svg
-      aria-hidden="true"
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="currentColor"
+    <button
+      data-open-modal
+      disabled
+      aria-label={Astro.locals.t('search.label')}
+      aria-keyshortcuts="Control+K"
     >
-      <path
-        d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"
-      ></path>
-    </svg>
-    <span
-      class="sl-hidden md:sl-block"
-      aria-hidden="true"
-      >{Astro.locals.t('search.label')}</span
-    >
-    <kbd
-      class="sl-hidden md:sl-flex"
-      style="display: none;"
-    >
-      <kbd>{Astro.locals.t('search.ctrlKey')}</kbd><kbd>K</kbd>
-    </kbd>
-  </button>
+      <!-- <Icon name="magnifier" /> -->
+      <svg
+        aria-hidden="true"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"
+        ></path>
+      </svg>
+      <span
+        class="sl-hidden md:sl-block"
+        aria-hidden="true"
+        >{Astro.locals.t('search.label')}</span
+      >
+      <kbd
+        class="sl-hidden md:sl-flex"
+        style="display: none;"
+      >
+        <kbd>{Astro.locals.t('search.ctrlKey')}</kbd><kbd>K</kbd>
+      </kbd>
+    </button>
+  </div>
 
   <dialog
     style="padding:0"

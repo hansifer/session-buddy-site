@@ -161,7 +161,7 @@ if (project.trailingSlash === 'never')
         ? stripTrailingSlash
         : (path: string) => path;
 
-      window.addEventListener('DOMContentLoaded', () => {
+      const initPagefind = () => {
         if (import.meta.env.DEV) return;
         const onIdle =
           window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
@@ -189,7 +189,16 @@ if (project.trailingSlash === 'never')
             },
           });
         });
-      });
+      };
+
+      // customization: fix intermittent failure to init pagefind
+      if (document.readyState === 'loading') {
+        window.addEventListener('DOMContentLoaded', initPagefind, {
+          once: true,
+        });
+      } else {
+        initPagefind();
+      }
     }
   }
   customElements.define('site-search', SiteSearch);

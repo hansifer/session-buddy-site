@@ -74,8 +74,8 @@
   /* match site Navbar height */
   --sl-nav-height: calc(var(--spacing) * 20);
 
-  /* decrease since we're not rendering mobile TOC */
-  --sl-mobile-toc-height: 2rem;
+  /* we are not rendering mobile TOC. px unit required on 0 value for calc() addition. */
+  --sl-mobile-toc-height: 0px;
 
   /* ensure mobile nav menu button visibility */
   --sl-z-index-navbar: 1000;

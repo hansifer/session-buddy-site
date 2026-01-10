@@ -55,6 +55,12 @@ const { hasSidebar } = Astro.locals.starlightRoute;
 
     :global([aria-expanded='true']) ~ .sidebar-pane {
       --sl-sidebar-visibility: visible;
+
+      /* customization: make mobile nav menu use page-level scrolling. this is part of a solution to prevent double scrollbars and navbar layout shift on menu show/hide. */
+      position: static;
+      overflow-y: visible;
+      /* accommodate navbar */
+      padding-top: 6.25rem;
     }
 
     @media (min-width: 50rem) {
@@ -63,6 +69,12 @@ const { hasSidebar } = Astro.locals.starlightRoute;
         width: var(--sl-sidebar-width);
         background-color: var(--sl-color-bg-sidebar);
         border-inline-end: 1px solid var(--sl-color-hairline-shade);
+        padding-bottom: 2rem;
+
+        /* enforce fixed/scrolled nav pane at large size (in case mobile nav menu is expanded) */
+        position: fixed !important;
+        overflow-y: auto !important;
+        padding-top: 0 !important;
       }
     }
 
@@ -84,6 +96,29 @@ const { hasSidebar } = Astro.locals.starlightRoute;
     .main-frame {
       padding-top: calc(var(--sl-nav-height) + var(--sl-mobile-toc-height));
       padding-inline-start: var(--sl-content-inline-start);
+    }
+
+    /* customization: hide content when mobile nav menu is open. this is part of a solution to prevent double scrollbars. */
+    :global(nav:has([aria-expanded='true'])) ~ .main-frame {
+      display: none;
+    }
+
+    @media (min-width: 50rem) {
+      .main-frame {
+        /* enforce content visible at large size (in case mobile nav menu is expanded) */
+        display: block !important;
+      }
+    }
+
+    /* customization: prevent navbar layout shift when toggling mobile nav menu */
+    :global(html) {
+      scrollbar-gutter: stable;
+    }
+
+    @media (min-width: 50rem) {
+      :global(html) {
+        scrollbar-gutter: initial;
+      }
     }
   }
 </style>

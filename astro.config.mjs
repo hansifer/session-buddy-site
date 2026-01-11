@@ -15,6 +15,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Session Buddy',
+      tableOfContents: false,
       components: {
         Head: './src/components/CustomStarlightHead.astro',
         PageFrame: './src/components/CustomStarlightPageFrame.astro',

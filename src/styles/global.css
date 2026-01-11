@@ -43,9 +43,11 @@
 /* only used by Starlight so more appropriately in starlight.css, but including it here type checks the theme value */
 
 :root {
-  --sl-color-accent-high: theme('colors.secondaryColor');
+  /* search result hover and focus outline */
+  --sl-color-accent-high: theme('colors.ternaryBackgroundColor');
   --sl-color-accent: theme('colors.primaryColor');
-  --sl-color-accent-low: theme('colors.ternaryColor');
+  /* search result focus background */
+  --sl-color-accent-low: theme('colors.blockStrongBackgroundColor');
 
   --sl-color-text: theme('colors.secondaryTextColor');
   /* nav selected item text */

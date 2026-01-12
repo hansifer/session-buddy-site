@@ -101,8 +101,9 @@ export const Brands = () => (
                 PlaceholderCompanyLogo,
                 PlaceholderCompanyLogo,
                 PlaceholderCompanyLogo,
-              ].map((Logo) => (
+              ].map((Logo, i) => (
                 <div
+                  key={i}
                   className="
                     flex
                     items-center

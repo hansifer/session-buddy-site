@@ -53,7 +53,7 @@ const rightLinks: Link[] = [
   },
   {
     label: 'Install',
-    href: '/install',
+    href: '/installing',
     ariaLabel: 'Install',
     variant: 'contained',
   },

@@ -4,14 +4,17 @@ export type FeatureTextProps = {
   heading: string;
   description: string;
   bullets?: string[];
-  buttonLabel?: string;
+  button?: {
+    label: string;
+    onClick: () => void;
+  };
 };
 
 export const FeatureText = ({
   heading,
   description,
   bullets,
-  buttonLabel,
+  button,
 }: FeatureTextProps) => {
   return (
     <div
@@ -41,7 +44,20 @@ export const FeatureText = ({
       >
         {description}
       </p>
-      {bullets?.length ? (
+      {button ? (
+        <button
+          className="
+            w-52
+            h-12
+            contained-button
+          "
+          aria-label={button.label}
+          onClick={() => button.onClick()}
+        >
+          {button.label}
+        </button>
+      ) : null}
+      {!button && bullets?.length ? (
         <ul className="text-primaryTextColor">
           {bullets.map((bullet) => (
             <li

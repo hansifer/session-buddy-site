@@ -1,4 +1,4 @@
-import { HighlightedCheckIcon } from '@/assets/icons/CheckIcon';
+import { BulletList } from '@/components/BulletList';
 
 export type FeatureTextProps = {
   heading: string;
@@ -57,22 +57,7 @@ export const FeatureText = ({
           {button.label}
         </button>
       ) : null}
-      {!button && bullets?.length ? (
-        <ul className="text-primaryTextColor">
-          {bullets.map((bullet) => (
-            <li
-              key={bullet}
-              className="
-                flex
-                mb-4
-              "
-            >
-              <HighlightedCheckIcon />
-              <span>{bullet}</span>
-            </li>
-          ))}
-        </ul>
-      ) : null}
+      {!button && bullets ? <BulletList items={bullets} /> : null}
     </div>
   );
 };

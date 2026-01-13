@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { InvitationModal } from '@/components/InvitationModal';
-import { HighlightedCheckIcon } from '@/assets/icons/CheckIcon';
+import { BulletList } from '@/components/BulletList';
 import { tw } from '@/util/tailwind';
 
 import { tiers } from '@/content/tiers';
@@ -167,26 +167,13 @@ const Tier = ({
       >
         {description}
       </p>
-      <ul
+      <BulletList
+        items={features}
         className={tw`
           mb-6
           ${emphasize ? 'lg:mb-14' : ''}
-          text-primaryTextColor
         `}
-      >
-        {features.map((feature) => (
-          <li
-            key={feature}
-            className="
-              flex
-              mb-4
-            "
-          >
-            <HighlightedCheckIcon />
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
+      />
       <button
         className={tw`
           contained-button

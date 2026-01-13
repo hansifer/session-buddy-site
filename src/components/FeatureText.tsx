@@ -1,18 +1,18 @@
 import { HighlightedCheckIcon } from '@/assets/icons/CheckIcon';
 
-export type FeaturesTextProps = {
+export type FeatureTextProps = {
   heading: string;
   description: string;
   bullets?: string[];
   buttonLabel?: string;
 };
 
-export const FeaturesText = ({
+export const FeatureText = ({
   heading,
   description,
   bullets,
   buttonLabel,
-}: FeaturesTextProps) => {
+}: FeatureTextProps) => {
   return (
     <div
       className="

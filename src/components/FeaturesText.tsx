@@ -1,16 +1,18 @@
 import { HighlightedCheckIcon } from '@/assets/icons/CheckIcon';
 
+export type FeaturesTextProps = {
+  heading: string;
+  description: string;
+  bullets?: string[];
+  buttonLabel?: string;
+};
+
 export const FeaturesText = ({
   heading,
   description,
   bullets,
   buttonLabel,
-}: {
-  heading: string;
-  description: string;
-  bullets?: string[];
-  buttonLabel?: string;
-}) => {
+}: FeaturesTextProps) => {
   return (
     <div
       className="
@@ -43,6 +45,7 @@ export const FeaturesText = ({
         <ul className="text-primaryTextColor">
           {bullets.map((bullet) => (
             <li
+              key={bullet}
               className="
                 flex
                 mb-4

@@ -1,5 +1,5 @@
-import { FeatureText } from '@/components/FeatureText';
-import type { FeatureTextProps } from '@/components/FeatureText';
+import { FeatureText } from '@/components/Feature/FeatureText';
+import type { FeatureTextProps } from '@/components/Feature/FeatureText';
 import { FeatureImage } from '@/components/Feature/FeatureImage';
 import { Diagonal } from '@/components/Feature/Diagonal';
 import { tw } from '@/util/tailwind';

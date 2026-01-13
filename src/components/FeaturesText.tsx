@@ -18,7 +18,6 @@ export const FeaturesText = ({
         w-11/12
         sm:w-4/5
         md:w-3/4
-        lg:w-unset
       "
     >
       <h2

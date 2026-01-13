@@ -22,7 +22,6 @@ export const FeaturesText = ({
     >
       <h2
         className="
-          mt-6
           mb-8
           text-4xl
           lg:text-5xl

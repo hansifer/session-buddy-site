@@ -1,6 +1,6 @@
 import { tw } from '@/util/tailwind';
 
-export const CheckIcon = ({ className = '' }: { className: string }) => (
+export const CheckIcon = ({ className = '' }: { className?: string }) => (
   <div
     className={tw`
       rounded-full

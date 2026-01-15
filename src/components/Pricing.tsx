@@ -14,7 +14,9 @@ export const Pricing = () => {
   return (
     <section
       className="
-        pb-10
+        pb-0
+        sm:pb-2
+        lg:pb-10
         mx-auto
         md:w-4/5 
         lg:w-250

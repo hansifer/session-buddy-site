@@ -10,6 +10,7 @@ export const tiers = [
     features: [
       // wrap
       'All core features',
+      'Local storage for collections',
       'Community support',
     ],
   },
@@ -20,7 +21,7 @@ export const tiers = [
     priceMonthly: 3.99,
     priceYearly: 39.99,
     features: [
-      'Everything in Starter',
+      'All core features',
       'Cloud storage for up to 2,000 collections',
       'Email support',
     ],
@@ -33,7 +34,7 @@ export const tiers = [
     priceMonthly: 5.99,
     priceYearly: 59.99,
     features: [
-      'Everything in Standard',
+      'All core features',
       'Unlimited cloud storage for collections',
       'Priority email support',
       'Multi-user license (up to 5 users)',

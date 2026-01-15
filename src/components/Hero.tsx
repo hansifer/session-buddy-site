@@ -104,9 +104,11 @@ export const Hero = () => {
         sm:pb-32
         md:pb-44
         lg:pb-0
-        mb-[34vw]
-        lg:mb-[14vw]
-        xl:mb-60
+        mb-[47vw]
+        md:mb-[37vw]
+        lg:mb-[22vw]
+        xl:mb-70
+        2xl:mb-80
         from-primaryBackgroundColor
         to-ternaryBackgroundColor
         bg-linear-to-b
@@ -136,8 +138,9 @@ export const Hero = () => {
               px-8
               md:px-20
               lg:px-4
-              mt-16
-              sm:mt-32
+              mt-2
+              sm:mt-12
+              lg:mt-32
               text-5xl
               sm:text-6xl
               lg:text-7xl

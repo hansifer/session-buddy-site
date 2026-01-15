@@ -13,6 +13,8 @@ export const Testimonials = () => (
       flex
       justify-center
       w-full
+      my-6
+      lg:my-12
     "
   >
     <div
@@ -48,6 +50,7 @@ export const Testimonials = () => (
             flex-col
             lg:flex-row
             items-center
+            lg:items-stretch
             gap-8
             lg:gap-5
             xl:gap-10

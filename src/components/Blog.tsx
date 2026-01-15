@@ -169,8 +169,10 @@ const ShortBlock = ({
       gap-10
       grow
       px-8
-      lg:px-10
+      md:px-10
       py-8
+      md:py-12
+      lg:py-8
       rounded-3xl
       bg-blockBackgroundColor
       hover:bg-blockStrongBackgroundColor

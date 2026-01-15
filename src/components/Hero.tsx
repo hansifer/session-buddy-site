@@ -12,7 +12,7 @@ type ImageTransform = {
 };
 
 const IMG_SCROLL_FLOAT_SPEED = 0.1;
-const IMG_SCROLL_FLOAT_MAX = 40; // px
+const IMG_SCROLL_FLOAT_MAX = 20; // px
 const IMG_MOUSEOVER_POPOUT = 30;
 const IMG_MOUSEOVER_TILT = 10;
 

@@ -7,6 +7,8 @@ export const Blog = () => (
     className="
       flex
       justify-center
+      my-4
+      lg:my-8
     "
   >
     <div

@@ -25,6 +25,7 @@ export const Feature = ({
   <div
     className={tw`
       w-full
+      ${band === 'diagonal' ? '-my-6' : ''}
       ${band ? 'bg-secondaryBackgroundColor' : ''}
     `}
   >

@@ -81,9 +81,10 @@ export const Blog = () => (
                 gap-6
                 hidden
                 sm:flex
-                sm:w-full
+                sm:w-4/5
                 lg:w-1/2
                 xl:w-2/5
+                mx-auto
               "
             >
               {blog.slice(1).map((article) => (

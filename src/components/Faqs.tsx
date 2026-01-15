@@ -45,12 +45,13 @@ export const Faqs = () => (
         className="
           container
           z-10
+          w-11/12
+          sm:w-full
           px-2
           sm:px-8
           lg:px-4
           mx-auto
-          w-11/12
-          sm:w-full
+          my-8
         "
       >
         <div

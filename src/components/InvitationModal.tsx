@@ -29,9 +29,13 @@ export const InvitationModal = ({ onClose }: { onClose: () => void }) => {
     if (!appEl) return;
 
     appEl.setAttribute('inert', 'true');
+    document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.scrollbarGutter = 'stable';
 
     return () => {
       appEl.removeAttribute('inert');
+      document.documentElement.style.removeProperty('overflow');
+      document.documentElement.style.removeProperty('scrollbar-gutter');
     };
   }, []);
 
@@ -54,8 +58,8 @@ export const InvitationModal = ({ onClose }: { onClose: () => void }) => {
   return createPortal(
     <AnimatePresence>
       <motion.div
-        initial={{ opacity: 0, zIndex: 50 }}
-        animate={{ opacity: 1, zIndex: 50 }}
+        initial={{ opacity: 0, zIndex: 70 }}
+        animate={{ opacity: 1, zIndex: 70 }}
         transition={{ duration: 0.1 }}
         exit={{ opacity: 0 }}
       >
@@ -66,7 +70,7 @@ export const InvitationModal = ({ onClose }: { onClose: () => void }) => {
             flex
             justify-center
             items-center
-            z-50
+            z-70
             bg-popupBackdropColor
           "
           onClick={() => onClose()}
@@ -79,7 +83,7 @@ export const InvitationModal = ({ onClose }: { onClose: () => void }) => {
               md:w-3/5
               lg:w-250
               xl:w-275
-              h-screen
+              h-dvh
               sm:h-auto
               px-8
               sm:px-16

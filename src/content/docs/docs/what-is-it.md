@@ -8,7 +8,7 @@ sidebar:
 
 Session Buddy is a browser tab and bookmark manager that gives you a consistent way to manage both your tabs and bookmarks, making it easy to flow from one to the other.
 
-## Open tabs at a glance
+## Your tabs at a glance
 
 Session Buddy provides a live browser-level view of all of your open tabs, grouped by window.
 
@@ -18,9 +18,9 @@ This view also includes a history timeline that shows the state of open windows 
 
 ## From tabs to bookmarks and back
 
-Session Buddy lets you save your open tabs as a collection of bookmarks with a single click.
+Session Buddy lets you save your tabs as a collection of bookmarks with a single click.
 
-A collection can later be restored, again with just one click, to resume browsing with all windows and tabs exactly as they were.
+A collection can later be restored, again with just one click, to resume browsing with windows and tabs exactly as they were.
 
 ## Collections
 

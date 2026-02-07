@@ -11,6 +11,10 @@ sidebar:
 
 Session Buddy is currently available for Chrome. It can be installed from the [Chrome Web Store](https://chromewebstore.google.com/detail/session-buddy-tab-bookmar/edacconmaakjimmfgnblocblbcdcpbko).
 
+## Compatibility
+
+Chrome 109
+
 ## Updates
 
 Like all extensions installed from the Chrome Web Store, Session Buddy will automatically update when a new version becomes available. For major and minor version updates, SB displays a NEW badge in the app header whenever it has been updated. Click on the badge to see what's new.

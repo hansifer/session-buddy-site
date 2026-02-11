@@ -1,0 +1,3 @@
+/remote-config/config.json
+  Cache-Control: public, max-age=0, s-maxage=31536000, immutable
+  Access-Control-Allow-Origin: *

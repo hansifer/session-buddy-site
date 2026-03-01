@@ -17,13 +17,13 @@ export const Feature4 = () => (
       }}
     >
       <Feature
-        heading="Keep your tabs and bookmarks safe"
-        description="Protect your tabs and bookmarks from browser crashes, accidental closures, and other risks. Session Buddy automatically saves your open tabs and bookmarks, so you can easily restore them when needed."
+        heading="Travel back in time"
+        description="Never lose another tab to a crash or accidental window closure. Use Session Buddy's history timeline to view and restore your tabs exactly as they were at a particular point in the past."
         bullets={[
-          'Quick-filter tabs by title or URL as you type.',
-          'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
-          'Open a list of URLs directly from the clipboard or a file.',
-          'Close selected windows and tabs with one click to quickly declutter your browser.',
+          'Session Buddy captures windows and tabs as they change and during certain events like a browser or OS crash.',
+          'Edit your timeline, save events as collections, or restore an event directly to your current session.',
+          "You're in control. Decide how often you want Session Buddy to snapshot tabs or turn off automatic snapshots altogether.",
+          'Define retention rules to automatically clean up old snapshots and keep your timeline tidy.',
         ]}
         images={[
           {

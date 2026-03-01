@@ -27,13 +27,13 @@ export const Feature3 = () => (
       }}
     >
       <Feature
-        heading="Curate your bookmarks with collections"
-        description="Organize your bookmarks into collections and folders by topic, date, or whatever suits your workflow."
+        heading="Manage bookmarks with collections"
+        description="Organize your bookmarks into collections and folders by topic, date, or whatever suits your own workflow."
         bullets={[
-          'Name and color-code your collections for easy identification.',
+          'Name and color-code collections for easy identification.',
           'Pin your most important collections for quick access.',
           // 'Enjoy powerful organizational features like cloning, merging, or splitting collections and folders.',
-          'Easily reorder or sort folders and bookmarks. Edit bookmark titles, URLs, incognito and pinned states.',
+          'Easily reorder and edit folders and bookmarks.',
           'Quickly find and remove duplicate bookmarks.',
         ]}
         images={[

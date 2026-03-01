@@ -18,12 +18,12 @@ export const Feature2 = () => (
     >
       <Feature
         heading="All your tabs in one view"
-        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents them all on a single page, organized by window."
+        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents them all in a single view, grouped by window."
         bullets={[
-          'Quick-filter tabs by title or URL as you type.',
-          'Copy select tabs for easy sharing as plain text, Markdown, CSV, or JSON.',
-          'Open a list of URLs directly from the clipboard or a file.',
-          'Optionally hide pinned tabs, new tabs, or browser feature tabs.',
+          'Quickly find a tab with filter-as-you-type.',
+          'Copy tabs for easy sharing as plain text, Markdown, CSV, or JSON.',
+          'Open a list of URLs directly from any text in the clipboard or a file.',
+          "Hide tabs you don't care about like pinned, new, or browser feature tabs.",
           // 'Close selected windows and tabs with one click to quickly declutter your browser.',
         ]}
         images={[

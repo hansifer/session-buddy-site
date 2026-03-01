@@ -10,7 +10,7 @@ export const tiers = [
     features: [
       // wrap
       'All core features',
-      'Local storage for collections',
+      'Collections stored locally on your device',
       'Community support',
     ],
   },

@@ -17,12 +17,14 @@ export const Feature2 = () => (
       }}
     >
       <Feature
-        heading="Issue tracking you’ll enjoy using"
-        description="Monitor and track data issues with ease using our intuitive and efficient issue tracking system. Stay ahead of potential problems and improve your workflow."
+        heading="All your tabs in one view"
+        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents them all on a single page, organized by window."
         bullets={[
-          'Collaborative environment',
-          'Smart issue categorization',
-          'Customizable notifications',
+          'Quick-filter tabs by title or URL as you type.',
+          'Copy select tabs for easy sharing as plain text, Markdown, CSV, or JSON.',
+          'Open a list of URLs directly from the clipboard or a file.',
+          'Optionally hide pinned tabs, new tabs, or browser feature tabs.',
+          // 'Close selected windows and tabs with one click to quickly declutter your browser.',
         ]}
         images={[
           {

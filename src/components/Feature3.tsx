@@ -1,44 +1,60 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
-import { InvitationModal } from '@/components/InvitationModal';
 
-import feature7 from '@/assets/images/feature-placeholder-7.jpg';
+import feature1 from '@/assets/images/feature-placeholder-1.jpg';
+import feature2 from '@/assets/images/feature-placeholder-2.jpg';
+import feature3 from '@/assets/images/feature-placeholder-3.jpg';
+import feature4 from '@/assets/images/feature-placeholder-4.jpg';
 
-export const Feature3 = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  return (
-    <section className="w-full">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 0.5,
-          delay: 0.2,
-        }}
-      >
-        <Feature
-          heading="Build & Launch without problems"
-          description="Our platform enables you to launch your data-driven projects with ease. Boost productivity and achieve better results. Empower your decision-making with advanced analytics."
-          button={{
-            label: 'Get Started',
-            onClick: () => setIsModalOpen(true),
-          }}
-          images={[
-            {
-              src: feature7.src,
-              alt: 'Feature image 7',
-            },
-          ]}
-          band="diagonal"
-        />
-      </motion.div>
-      {isModalOpen ? (
-        <InvitationModal onClose={() => setIsModalOpen(false)} />
-      ) : null}
-    </section>
-  );
-};
+export const Feature3 = () => (
+  <section className="w-full">
+    <div
+      id="features"
+      className="
+        absolute
+        -mt-20
+        lg:-mt-32
+      "
+    />
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.5,
+        delay: 0.2,
+      }}
+    >
+      <Feature
+        heading="Curate your bookmarks with collections"
+        description="Organize your bookmarks into collections and folders by topic, date, or whatever suits your workflow."
+        bullets={[
+          'Name and color-code your collections for easy identification.',
+          'Pin your most important collections for quick access.',
+          // 'Enjoy powerful organizational features like cloning, merging, or splitting collections and folders.',
+          'Easily reorder or sort folders and bookmarks. Edit bookmark titles, URLs, incognito and pinned states.',
+          'Quickly find and remove duplicate bookmarks.',
+        ]}
+        images={[
+          {
+            src: feature1.src,
+            alt: 'Feature image 1',
+          },
+          {
+            src: feature2.src,
+            alt: 'Feature image 2',
+          },
+          {
+            src: feature3.src,
+            alt: 'Feature image 3',
+          },
+          {
+            src: feature4.src,
+            alt: 'Feature image 4',
+          },
+        ]}
+      />
+    </motion.div>
+  </section>
+);

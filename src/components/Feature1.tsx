@@ -27,12 +27,12 @@ export const Feature1 = () => (
       }}
     >
       <Feature
-        heading="Unlike any tool you used before"
-        description="Discover a new level of data analysis with our innovative and user-friendly platform. Transform your business needs with actionable insights."
+        heading="From tabs to bookmarks in one click"
+        description="Need to wipe out tab clutter or free up memory? Save your open tabs as a collection of bookmarks that you can easily restore later."
         bullets={[
-          'Real-time data visualization',
-          'Advanced predictive analytics',
-          'Seamless integration with APIs',
+          'Optionally save or restore only the tabs or windows you care about.',
+          'Windows are restored to their original size, location, and incognito state.',
+          'Manage both your tabs and collections with a common intuitive interface.',
         ]}
         images={[
           {

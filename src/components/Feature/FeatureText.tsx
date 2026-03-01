@@ -38,7 +38,7 @@ export const FeatureText = ({
       <p
         className="
           mb-10
-          leading-loose
+          leading-normal
         text-secondaryTextColor
         "
       >

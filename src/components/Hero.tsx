@@ -189,8 +189,8 @@ export const Hero = () => {
               text-secondaryTextColor
             "
           >
-            Experience seamless business integrations and powerful insights with
-            our cutting-edge analytic tools.
+            Session Buddy is the complete solution for managing your browser
+            tabs and bookmarks like a pro.
           </h2>
         </motion.div>
         <motion.div
@@ -201,20 +201,37 @@ export const Hero = () => {
             delay: 0.15,
           }}
         >
-          <button
-            aria-label="Get started for free"
+          <div
             className="
-              w-52
-              h-12
-              mt-14
-              mb-26
-              sm:mb-40
-              contained-button
+              flex
+              flex-col
+              items-center
             "
-            onClick={() => setIsModalOpen(true)}
           >
-            Get started for free
-          </button>
+            <button
+              aria-label="Get started"
+              className="
+                w-46
+                h-12
+                mt-14
+                mb-4
+                contained-button
+              "
+              onClick={() => setIsModalOpen(true)}
+            >
+              Get started
+            </button>
+            <div
+              className="
+                mb-26
+                sm:mb-40
+                text-sm
+                text-secondaryTextColor
+              "
+            >
+              No signup required.
+            </div>
+          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 10, zIndex: 20 }}

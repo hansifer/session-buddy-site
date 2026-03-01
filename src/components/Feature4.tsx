@@ -1,0 +1,42 @@
+import { motion } from 'framer-motion';
+
+import { Feature } from '@/components/Feature/Feature';
+
+import feature5 from '@/assets/images/feature-placeholder-5.jpg';
+import feature6 from '@/assets/images/feature-placeholder-6.jpg';
+
+export const Feature4 = () => (
+  <section className="w-full">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{
+        duration: 0.5,
+        delay: 0.2,
+      }}
+    >
+      <Feature
+        heading="Keep your tabs and bookmarks safe"
+        description="Protect your tabs and bookmarks from browser crashes, accidental closures, and other risks. Session Buddy automatically saves your open tabs and bookmarks, so you can easily restore them when needed."
+        bullets={[
+          'Quick-filter tabs by title or URL as you type.',
+          'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
+          'Open a list of URLs directly from the clipboard or a file.',
+          'Close selected windows and tabs with one click to quickly declutter your browser.',
+        ]}
+        images={[
+          {
+            src: feature5.src,
+            alt: 'Feature image 5',
+          },
+          {
+            src: feature6.src,
+            alt: 'Feature image 6',
+          },
+        ]}
+        reverse
+      />
+    </motion.div>
+  </section>
+);

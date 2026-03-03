@@ -7,7 +7,7 @@ import feature2 from '@/assets/images/feature-placeholder-2.jpg';
 import feature3 from '@/assets/images/feature-placeholder-3.jpg';
 import feature4 from '@/assets/images/feature-placeholder-4.jpg';
 
-export const FeatureFlow = () => (
+export const Organization = ({ reverse }: { reverse?: boolean }) => (
   <section className="w-full">
     <div
       id="features"
@@ -27,15 +27,14 @@ export const FeatureFlow = () => (
       }}
     >
       <Feature
-        heading="Flow effortlessly between tabs and bookmarks"
-        // heading="From tabs to bookmarks in one click"
-        description="Need to eliminate tab clutter or free up memory? Save your open tabs as a collection of bookmarks that can easily be restored later."
+        heading="Stay organized"
+        description="Organize your bookmarks into collections and folders by topic, date, or whatever suits your own workflow."
         bullets={[
-          'Optionally save or restore only the tabs you care about.',
-          'Restore tabs into their original windows, a single window, or the current window.',
-          'Windows are restored to their original location and state.',
-          'Full support for incognito windows and pinned tabs.',
-          'Manage both tabs and bookmarks with a common intuitive interface.',
+          'Name and color-code collections for easy identification.',
+          'Pin your most important collections for quick access.',
+          // 'Enjoy powerful organizational features like cloning, merging, or splitting collections and folders.',
+          'Easily reorder and edit folders and bookmarks.',
+          'Quickly find and remove duplicate bookmarks.',
         ]}
         images={[
           {
@@ -55,6 +54,7 @@ export const FeatureFlow = () => (
             alt: 'Feature image 4',
           },
         ]}
+        reverse={reverse}
       />
     </motion.div>
   </section>

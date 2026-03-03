@@ -6,7 +6,7 @@ import { InvitationModal } from '@/components/InvitationModal';
 
 import feature7 from '@/assets/images/feature-placeholder-7.jpg';
 
-export const Feature11 = () => {
+export const Feature11 = ({ reverse }: { reverse?: boolean }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -34,6 +34,7 @@ export const Feature11 = () => {
             },
           ]}
           band="diagonal"
+          reverse={reverse}
         />
       </motion.div>
       {isModalOpen ? (

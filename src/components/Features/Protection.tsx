@@ -5,7 +5,7 @@ import { Feature } from '@/components/Feature/Feature';
 import feature5 from '@/assets/images/feature-placeholder-5.jpg';
 import feature6 from '@/assets/images/feature-placeholder-6.jpg';
 
-export const FeatureCustomization = () => (
+export const Protection = ({ reverse }: { reverse?: boolean }) => (
   <section className="w-full">
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,13 +17,13 @@ export const FeatureCustomization = () => (
       }}
     >
       <Feature
-        heading="Customize your experience with powerful options and settings"
-        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents all of them, organized by window, on a single page."
+        heading="Breathe easy"
+        description="Session Buddy protects your tabs and bookmarks from browser crashes, accidental closures, and other risks. Session Buddy automatically saves your open tabs and bookmarks, so you can easily restore them when needed. automatic crash recovery and data safeguards ensure your data is safe and easily recoverable in case of unexpected events."
         bullets={[
           'Quick-filter tabs by title or URL as you type.',
           'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
           'Open a list of URLs directly from the clipboard or a file.',
-          'Close selected windows and tabs with one click to quickly declutter your browser.',
+          'We never share anything with anyone.',
         ]}
         images={[
           {
@@ -35,6 +35,7 @@ export const FeatureCustomization = () => (
             alt: 'Feature image 6',
           },
         ]}
+        reverse={reverse}
       />
     </motion.div>
   </section>

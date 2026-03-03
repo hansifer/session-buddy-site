@@ -5,7 +5,7 @@ import { Feature } from '@/components/Feature/Feature';
 import feature5 from '@/assets/images/feature-placeholder-5.jpg';
 import feature6 from '@/assets/images/feature-placeholder-6.jpg';
 
-export const FeatureTabOverview = () => (
+export const Customization = ({ reverse }: { reverse?: boolean }) => (
   <section className="w-full">
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,14 +17,13 @@ export const FeatureTabOverview = () => (
       }}
     >
       <Feature
-        heading="All your tabs in one view"
-        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents them all in a single view, grouped by window."
+        heading="Customize your experience with powerful options and settings"
+        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents all of them, organized by window, on a single page."
         bullets={[
-          'Quickly find a tab with filter-as-you-type.',
-          'Copy tabs for easy sharing as plain text, Markdown, CSV, or JSON.',
-          'Open a list of URLs directly from any text in the clipboard or a file.',
-          "Hide tabs you don't care about like pinned, new, or browser feature tabs.",
-          // 'Close selected windows and tabs with one click to quickly declutter your browser.',
+          'Quick-filter tabs by title or URL as you type.',
+          'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
+          'Open a list of URLs directly from the clipboard or a file.',
+          'Close selected windows and tabs with one click to quickly declutter your browser.',
         ]}
         images={[
           {
@@ -36,7 +35,7 @@ export const FeatureTabOverview = () => (
             alt: 'Feature image 6',
           },
         ]}
-        reverse
+        reverse={reverse}
       />
     </motion.div>
   </section>

@@ -1,18 +1,8 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Spacer from '@/components/SectionSpacer.astro';
+import { Spacer } from '@/components/Spacer';
 import { Hero } from '@/components/Hero';
-import { FeatureFlow } from '@/components/FeatureFlow';
-import { FeatureTabOverview } from '@/components/FeatureTabOverview';
-import { FeatureOrganization } from '@/components/FeatureOrganization';
-import { FeatureHistory } from '@/components/FeatureHistory';
-import { FeatureProtection } from '@/components/FeatureProtection';
-import { FeatureSearch } from '@/components/FeatureSearch';
-import { FeatureSharing } from '@/components/FeatureSharing';
-import { FeatureScaling } from '@/components/FeatureScaling';
-import { FeatureCustomization } from '@/components/FeatureCustomization';
-import { FeaturePrivacy } from '@/components/FeaturePrivacy';
-import { FeatureMore } from '@/components/FeatureMore';
+import { Features } from '@/components/Features/Features';
 import { Pricing } from '@/components/Pricing';
 import { Brands } from '@/components/Brands';
 import { Testimonials } from '@/components/Testimonials';
@@ -23,28 +13,7 @@ import { ScrollUpButton } from '@/components/ScrollUpButton';
 
 <Layout title="Session Buddy">
   <Hero client:load />
-  <FeatureFlow client:load />
-  <Spacer />
-  <FeatureTabOverview client:load />
-  <Spacer />
-  <FeatureOrganization client:load />
-  <Spacer />
-  <FeatureHistory client:load />
-  <Spacer />
-  <FeatureProtection client:load />
-  <Spacer />
-  <FeatureSearch client:load />
-  <Spacer />
-  <FeatureSharing client:load />
-  <Spacer />
-  <FeatureScaling client:load />
-  <Spacer />
-  <FeatureCustomization client:load />
-  <Spacer />
-  <FeaturePrivacy client:load />
-  <Spacer />
-  <FeatureMore client:load />
-  <Spacer />
+  <Features client:load />
   <Pricing client:load />
   <Spacer />
   <Brands client:load />

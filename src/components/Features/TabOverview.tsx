@@ -23,7 +23,7 @@ export const TabOverview = ({ reverse }: { reverse?: boolean }) => (
           'Quickly locate any tab with instant filtering.',
           'Copy tabs as text, Markdown, CSV, or JSON for easy sharing.',
           'Open multiple links at once from your clipboard or a text file.',
-          "Hide tabs you don't care about like pinned, new, or browser feature tabs.",
+          'Reduce noise by hiding pinned, new, or browser feature tabs.',
           // 'Declutter your workspace by closing tabs or windows with one click.',
         ]}
         images={[

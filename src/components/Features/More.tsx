@@ -5,7 +5,13 @@ import { Feature } from '@/components/Feature/Feature';
 import feature5 from '@/assets/images/feature-placeholder-5.jpg';
 import feature6 from '@/assets/images/feature-placeholder-6.jpg';
 
-export const More = ({ reverse }: { reverse?: boolean }) => (
+export const More = ({
+  reverse,
+  band,
+}: {
+  reverse?: boolean;
+  band?: 'diagonal' | true | false;
+}) => (
   <section className="w-full">
     <motion.div
       initial={{ opacity: 0 }}
@@ -27,6 +33,11 @@ export const More = ({ reverse }: { reverse?: boolean }) => (
           'Optionally display a tab count badge on the extension icon.',
           "Use the browser's back button to navigate previously-selected collections.",
           "Never see a broken web site icon thanks to Session Buddy's progressive favicon fallback strategy.",
+          'list the current window first',
+          'auto-name collections',
+          'light/dark theme',
+          'customize displayed copy formats',
+          'define keyboard shortcuts for common actions',
         ]}
         images={[
           {
@@ -38,8 +49,8 @@ export const More = ({ reverse }: { reverse?: boolean }) => (
             alt: 'Feature image 6',
           },
         ]}
-        band="diagonal"
         reverse={reverse}
+        band={band}
       />
     </motion.div>
   </section>

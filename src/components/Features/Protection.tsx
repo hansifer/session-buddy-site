@@ -5,7 +5,13 @@ import { Feature } from '@/components/Feature/Feature';
 import feature5 from '@/assets/images/feature-placeholder-5.jpg';
 import feature6 from '@/assets/images/feature-placeholder-6.jpg';
 
-export const Protection = ({ reverse }: { reverse?: boolean }) => (
+export const Protection = ({
+  reverse,
+  band,
+}: {
+  reverse?: boolean;
+  band?: 'diagonal' | true | false;
+}) => (
   <section className="w-full">
     <motion.div
       initial={{ opacity: 0 }}
@@ -36,6 +42,7 @@ export const Protection = ({ reverse }: { reverse?: boolean }) => (
           },
         ]}
         reverse={reverse}
+        band={band}
       />
     </motion.div>
   </section>

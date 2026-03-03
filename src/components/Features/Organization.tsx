@@ -7,7 +7,13 @@ import feature2 from '@/assets/images/feature-placeholder-2.jpg';
 import feature3 from '@/assets/images/feature-placeholder-3.jpg';
 import feature4 from '@/assets/images/feature-placeholder-4.jpg';
 
-export const Organization = ({ reverse }: { reverse?: boolean }) => (
+export const Organization = ({
+  reverse,
+  band,
+}: {
+  reverse?: boolean;
+  band?: 'diagonal' | true | false;
+}) => (
   <section className="w-full">
     <div
       id="features"
@@ -56,6 +62,7 @@ export const Organization = ({ reverse }: { reverse?: boolean }) => (
           },
         ]}
         reverse={reverse}
+        band={band}
       />
     </motion.div>
   </section>

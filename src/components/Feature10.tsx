@@ -17,15 +17,16 @@ export const Feature10 = () => (
       }}
     >
       <Feature
-        heading="Wait, there's more!"
-        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents all of them, organized by window, on a single page."
+        heading="And more..."
+        description="Here are just a few more highlights:"
         bullets={[
-          'Powerful organizational features like cloning, merging, or splitting collections and folders.',
-          'Add bookmarks from clipboard text or files.',
-          'Replace collection contents with open windows and tabs',
-          'Deep links',
-          'Tab count badge',
-          'Favicon fallbacks',
+          'Add bookmarks to collections from any text. Session Buddy automatically detects the format and extracts links.',
+          'Use powerful organizational features like cloning, merging, and splitting to manage collections and folders.',
+          "Quickly replace a collection's content with all open windows and tabs.",
+          'Bookmark any collection.',
+          'Optionally display a tab count badge on the extension icon.',
+          "Use the browser's back button to navigate previously-selected collections.",
+          "Never see a broken web site icon thanks to Session Buddy's progressive favicon fallback strategy.",
         ]}
         images={[
           {
@@ -37,7 +38,6 @@ export const Feature10 = () => (
             alt: 'Feature image 6',
           },
         ]}
-        reverse
       />
     </motion.div>
   </section>

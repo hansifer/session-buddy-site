@@ -27,7 +27,7 @@ export const Feature3 = () => (
       }}
     >
       <Feature
-        heading="Manage bookmarks with collections"
+        heading="Stay organized"
         description="Organize your bookmarks into collections and folders by topic, date, or whatever suits your own workflow."
         bullets={[
           'Name and color-code collections for easy identification.',

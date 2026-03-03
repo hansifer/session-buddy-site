@@ -29,10 +29,11 @@ export const Feature1 = () => (
       <Feature
         heading="Flow effortlessly between tabs and bookmarks"
         // heading="From tabs to bookmarks in one click"
-        description="Need to wipe out tab clutter or free up memory? Save your open tabs as a collection of bookmarks that can be easily restored later."
+        description="Need to eliminate tab clutter or free up memory? Save your open tabs as a collection of bookmarks that can easily be restored later."
         bullets={[
           'Optionally save or restore only the tabs you care about.',
-          'Windows and tabs are restored to their original location and state.',
+          'Restore tabs into their original windows, a single window, or the current window.',
+          'Windows are restored to their original location and state.',
           'Full support for incognito windows and pinned tabs.',
           'Manage both tabs and bookmarks with a common intuitive interface.',
         ]}

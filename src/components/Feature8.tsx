@@ -17,10 +17,10 @@ export const Feature8 = () => (
       }}
     >
       <Feature
-        heading="Customize your experience with powerful options and settings"
-        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents all of them, organized by window, on a single page."
+        heading="Scale to thousands"
+        description="Session Buddy is built to handle even the most extreme tab and bookmark management needs. Whether you have dozens, hundreds, or even thousands of tabs and bookmarks, Session Buddy's powerful organizational features and intuitive interface make it easy to keep everything under control. Manage thousands of tabs and bookmarks without breaking a sweat"
         bullets={[
-          'Quick-filter tabs by title or URL as you type.',
+          'Optimize your resources',
           'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
           'Open a list of URLs directly from the clipboard or a file.',
           'Close selected windows and tabs with one click to quickly declutter your browser.',

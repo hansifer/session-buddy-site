@@ -17,7 +17,7 @@ export const Feature4 = () => (
       }}
     >
       <Feature
-        heading="Travel back in time"
+        heading="Go back in time"
         description="Never lose another tab to a crash or accidental window closure. Use Session Buddy's history timeline to view and restore your tabs exactly as they were at a particular point in the past."
         bullets={[
           'Session Buddy captures windows and tabs as they change and during certain events like a browser or OS crash.',

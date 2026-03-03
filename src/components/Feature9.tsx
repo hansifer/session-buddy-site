@@ -17,7 +17,7 @@ export const Feature9 = () => (
       }}
     >
       <Feature
-        heading="Import and export your tabs and bookmarks with ease"
+        heading="Customize your experience with powerful options and settings"
         description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents all of them, organized by window, on a single page."
         bullets={[
           'Quick-filter tabs by title or URL as you type.',

@@ -164,7 +164,7 @@ const Tier = ({
           mt-4 mb-6
           ${emphasize ? 'lg:my-8 2xl:mb-12' : '2xl:mb-10'}
           text-gray-500
-          leading-loose
+          leading-normal
         `}
       >
         {description}
@@ -177,13 +177,13 @@ const Tier = ({
         `}
       />
       <button
-        className={tw`
+        className="
           contained-button
           px-4
           py-2
           leading-loose
           mt-auto
-        `}
+        "
         aria-label="Get started"
         onClick={() => onClick?.()}
       >

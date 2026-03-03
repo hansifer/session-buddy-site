@@ -236,8 +236,8 @@ export const Navbar = ({ mode = 'default' }: { mode?: Mode }) => {
                         variant === 'contained'
                           ? 'contained-button'
                           : variant === 'outlined'
-                          ? 'outlined-button'
-                          : ''
+                            ? 'outlined-button'
+                            : ''
                       }
                     `}
                   >

@@ -17,14 +17,14 @@ export const TabOverview = ({ reverse }: { reverse?: boolean }) => (
       }}
     >
       <Feature
-        heading="All your tabs in one view"
-        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents them all in a single view, grouped by window."
+        heading="Command Center for Your Browser"
+        description="Eliminate the chaos of scattered windows. Visualize and control every open tab from a single, unified dashboard."
         bullets={[
-          'Quickly find a tab with filter-as-you-type.',
-          'Copy tabs for easy sharing as plain text, Markdown, CSV, or JSON.',
-          'Open a list of URLs directly from any text in the clipboard or a file.',
+          'Quickly locate any tab with instant filtering.',
+          'Copy tabs as text, Markdown, CSV, or JSON for easy sharing.',
+          'Open multiple links at once from your clipboard or a text file.',
           "Hide tabs you don't care about like pinned, new, or browser feature tabs.",
-          // 'Close selected windows and tabs with one click to quickly declutter your browser.',
+          // 'Declutter your workspace by closing tabs or windows with one click.',
         ]}
         images={[
           {

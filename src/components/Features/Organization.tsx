@@ -27,14 +27,15 @@ export const Organization = ({ reverse }: { reverse?: boolean }) => (
       }}
     >
       <Feature
-        heading="Stay organized"
-        description="Organize your bookmarks into collections and folders by topic, date, or whatever suits your own workflow."
+        heading="Bring Order to Your Bookmarks"
+        description="Use collections and folders to categorize bookmarks by project, topic, timeline, or whatever suits your workflow."
         bullets={[
-          'Name and color-code collections for easy identification.',
-          'Pin your most important collections for quick access.',
-          // 'Enjoy powerful organizational features like cloning, merging, or splitting collections and folders.',
-          'Easily reorder and edit folders and bookmarks.',
-          'Quickly find and remove duplicate bookmarks.',
+          'Assign names and colors to collections for instant recognition.',
+          'Pin essential collections for quick access.',
+          'Add bookmarks by copying and pasting tabs directly from the current session.',
+          'Sort, reorder, and move bookmarks across folders and collections.',
+          'Keep things tidy with duplicate bookmark detection and folder merging.',
+          // 'Edit bookmark properties like title, URL, and pinned state.',
         ]}
         images={[
           {

@@ -5,7 +5,7 @@ import { Feature } from '@/components/Feature/Feature';
 import feature5 from '@/assets/images/feature-placeholder-5.jpg';
 import feature6 from '@/assets/images/feature-placeholder-6.jpg';
 
-export const Feature5 = () => (
+export const FeatureScaling = () => (
   <section className="w-full">
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,13 +17,13 @@ export const Feature5 = () => (
       }}
     >
       <Feature
-        heading="Breathe easy"
-        description="Session Buddy protects your tabs and bookmarks from browser crashes, accidental closures, and other risks. Session Buddy automatically saves your open tabs and bookmarks, so you can easily restore them when needed. automatic crash recovery and data safeguards ensure your data is safe and easily recoverable in case of unexpected events."
+        heading="Scale to thousands"
+        description="Session Buddy is built to handle even the most extreme tab and bookmark management needs. Whether you have dozens, hundreds, or even thousands of tabs and bookmarks, Session Buddy's powerful organizational features and intuitive interface make it easy to keep everything under control. Manage thousands of tabs and bookmarks without breaking a sweat"
         bullets={[
-          'Quick-filter tabs by title or URL as you type.',
+          'Optimize your resources',
           'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
           'Open a list of URLs directly from the clipboard or a file.',
-          'We never share anything with anyone.',
+          'Close selected windows and tabs with one click to quickly declutter your browser.',
         ]}
         images={[
           {
@@ -35,6 +35,7 @@ export const Feature5 = () => (
             alt: 'Feature image 6',
           },
         ]}
+        reverse
       />
     </motion.div>
   </section>

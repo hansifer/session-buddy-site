@@ -5,7 +5,7 @@ import { Feature } from '@/components/Feature/Feature';
 import feature5 from '@/assets/images/feature-placeholder-5.jpg';
 import feature6 from '@/assets/images/feature-placeholder-6.jpg';
 
-export const Feature9 = () => (
+export const FeatureCustomization = () => (
   <section className="w-full">
     <motion.div
       initial={{ opacity: 0 }}

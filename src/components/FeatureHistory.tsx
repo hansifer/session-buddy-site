@@ -5,7 +5,7 @@ import { Feature } from '@/components/Feature/Feature';
 import feature5 from '@/assets/images/feature-placeholder-5.jpg';
 import feature6 from '@/assets/images/feature-placeholder-6.jpg';
 
-export const Feature6 = () => (
+export const FeatureHistory = () => (
   <section className="w-full">
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,13 +17,13 @@ export const Feature6 = () => (
       }}
     >
       <Feature
-        heading="Quickly find tabs and bookmarks with powerful search and filtering"
-        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents all of them, organized by window, on a single page."
+        heading="Go back in time"
+        description="Never lose another tab to a crash or accidental window closure. Use Session Buddy's history timeline to view and restore your tabs exactly as they were at a particular point in the past."
         bullets={[
-          'Quick-filter tabs by title or URL as you type.',
-          'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
-          'Open a list of URLs directly from the clipboard or a file.',
-          'Close selected windows and tabs with one click to quickly declutter your browser.',
+          'Session Buddy captures windows and tabs as they change and during certain events like a browser or OS crash.',
+          'Edit your timeline, save events as collections, or restore an event directly to your current session.',
+          "You're in control. Decide how often you want Session Buddy to snapshot tabs or turn off automatic snapshots altogether.",
+          'Define retention rules to automatically clean up old snapshots and keep your timeline tidy.',
         ]}
         images={[
           {

@@ -7,7 +7,7 @@ import feature2 from '@/assets/images/feature-placeholder-2.jpg';
 import feature3 from '@/assets/images/feature-placeholder-3.jpg';
 import feature4 from '@/assets/images/feature-placeholder-4.jpg';
 
-export const Feature1 = () => (
+export const FeatureFlow = () => (
   <section className="w-full">
     <div
       id="features"

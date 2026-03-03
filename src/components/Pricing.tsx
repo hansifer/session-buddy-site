@@ -227,13 +227,7 @@ const Toggle = ({
       className="
         peer
         appearance-none
-        [-webkit-appearance:none]
-        bg-none
-        border-none
-        margin-0
-        padding-0
         w-0
-        max-w-0
       "
       checked={on}
       onChange={(e: React.ChangeEvent<HTMLInputElement>) => {

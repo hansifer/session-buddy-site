@@ -27,15 +27,13 @@ export const Flow = ({ reverse }: { reverse?: boolean }) => (
       }}
     >
       <Feature
-        heading="Flow effortlessly between tabs and bookmarks"
-        // heading="From tabs to bookmarks in one click"
-        description="Need to eliminate tab clutter or free up memory? Save your open tabs as a collection of bookmarks that can easily be restored later."
+        heading="Flow Seamlessly Between Tabs and Bookmarks"
+        description="Instantly clear tab clutter and free up memory. Save open tabs as collections with a single click and restore them exactly as you left them."
         bullets={[
-          'Optionally save or restore only the tabs you care about.',
-          'Restore tabs into their original windows, a single window, or the current window.',
-          'Windows are restored to their original location and state.',
-          'Full support for incognito windows and pinned tabs.',
-          'Manage both tabs and bookmarks with a common intuitive interface.',
+          'Save or restore full sessions or cherry-pick just the tabs you need.',
+          'Restore tabs flexibly to original windows, a single window, or the current window.',
+          'Preserve workspace context with window positions, pinned tabs, and incognito states fully restored.',
+          'Manage both tabs and bookmarks together in one unified interface.',
         ]}
         images={[
           {

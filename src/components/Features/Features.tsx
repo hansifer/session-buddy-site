@@ -32,7 +32,10 @@ export const Features = () => {
     <>
       {features.map((Feature, i) => (
         <Fragment key={i}>
-          <Feature reverse={!!(i % 2)} />
+          <Feature
+            reverse={!!(i % 2)}
+            band={!((i + 1) % 4) ? 'diagonal' : !!(i % 2)}
+          />
           <Spacer />
         </Fragment>
       ))}

@@ -179,7 +179,8 @@ export const Hero = () => {
         >
           <h2
             className="
-              px-24
+              px-12
+              xs:px-24
               sm:px-34
               md:px-40
               lg:px-32

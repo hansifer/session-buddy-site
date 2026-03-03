@@ -161,7 +161,6 @@ export const Hero = () => {
               text-4xl
               sm:text-6xl
               lg:text-7xl
-              xl:text-7xl
               font-bold
               tracking-wide
               text-primaryColor
@@ -180,12 +179,14 @@ export const Hero = () => {
         >
           <h2
             className="
-              px-12
-              sm:px-48
+              px-24
+              sm:px-34
+              md:px-40
+              lg:px-32
+              xl:px-46
               mt-10
-              text-sm
-              sm:text-base
-              xl:text-lg
+              text-base
+              lg:text-lg
               text-secondaryTextColor
             "
           >
@@ -200,10 +201,15 @@ export const Hero = () => {
             duration: 0.5,
             delay: 0.15,
           }}
+          className="
+            mb-26
+            sm:mb-40
+          "
         >
           <div
             className="
-              flex
+              hidden
+              sm:flex
               flex-col
               items-center
             "
@@ -223,8 +229,6 @@ export const Hero = () => {
             </button>
             <div
               className="
-                mb-26
-                sm:mb-40
                 text-sm
                 text-secondaryTextColor
               "

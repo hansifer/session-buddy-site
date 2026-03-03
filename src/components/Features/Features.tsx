@@ -1,4 +1,6 @@
 import { Fragment } from 'react';
+import { Spacer } from '@/components/Spacer';
+
 import { Flow } from '@/components/Features/Flow';
 import { TabOverview } from '@/components/Features/TabOverview';
 import { Organization } from '@/components/Features/Organization';
@@ -10,8 +12,6 @@ import { Scaling } from '@/components/Features/Scaling';
 import { Customization } from '@/components/Features/Customization';
 import { Privacy } from '@/components/Features/Privacy';
 import { More } from '@/components/Features/More';
-
-import { Spacer } from '@/components/Spacer';
 
 const features = [
   Flow,

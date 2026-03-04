@@ -33,7 +33,7 @@ export const Flow = ({
       }}
     >
       <Feature
-        heading="Flow Seamlessly Between Tabs and Bookmarks"
+        heading="Flow seamlessly between tabs and bookmarks"
         description="Instantly clear tab clutter and free up memory. Save open tabs as collections with a single click and restore them exactly as you left them."
         bullets={[
           'Save or restore full sessions or cherry-pick just the tabs you need.',

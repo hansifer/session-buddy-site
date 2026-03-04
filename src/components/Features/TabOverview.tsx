@@ -23,7 +23,7 @@ export const TabOverview = ({
       }}
     >
       <Feature
-        heading="Command Center for Your Browser"
+        heading="A command center for your browser"
         description="Eliminate the chaos of scattered windows. Visualize and control every open tab from a single, unified dashboard."
         bullets={[
           'Quickly locate any tab with instant filtering.',

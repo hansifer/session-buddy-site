@@ -23,13 +23,15 @@ export const History = ({
       }}
     >
       <Feature
-        heading="Go back in time"
-        description="Never lose another tab to a crash or accidental window closure. Use Session Buddy's history timeline to view and restore your tabs exactly as they were at a particular point in the past."
+        heading="Lost tabs are history"
+        description="Travel back in time to view, save, or restore your tabs exactly as they were at a particular moment in the past."
         bullets={[
-          'Session Buddy captures windows and tabs as they change and during certain events like a browser or OS crash.',
-          'Edit your timeline, save events as collections, or restore an event directly to your current session.',
-          "You're in control. Decide how often you want Session Buddy to snapshot tabs or turn off automatic snapshots altogether.",
-          'Define retention rules to automatically clean up old snapshots and keep your timeline tidy.',
+          'Recover your tabs in seconds after a browser crash or system restart.',
+          'Resurrect closed tabs long after they\'ve dropped off your browser\'s "Recent tabs" list.',
+          'Quickly find "that one tab you had open last Friday".',
+          'Tailor your history with custom snapshot intervals and cleanup rules.',
+          // 'Control snapshot frequency or disable history altogether.',
+          // 'Edit your timeline',
         ]}
         images={[
           {

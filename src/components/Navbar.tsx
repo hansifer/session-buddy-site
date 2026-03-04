@@ -173,7 +173,7 @@ export const Navbar = ({ mode = 'default' }: { mode?: Mode }) => {
               absolute
               inset-0
               hidden
-              lg:flex
+              md:flex
               items-center
               justify-center
               gap-10
@@ -189,10 +189,8 @@ export const Navbar = ({ mode = 'default' }: { mode?: Mode }) => {
                   href={href}
                   aria-label={ariaLabel}
                   className="
-                    text-2xl
-                    font-normal
-                    lg:font-medium
-                    lg:text-base
+                    text-base
+                    font-medium
                   text-white
                     hover:scale-110
                     transition
@@ -214,7 +212,7 @@ export const Navbar = ({ mode = 'default' }: { mode?: Mode }) => {
             <div
               className="
                 hidden
-                lg:flex
+                md:flex
                 gap-4
               "
             >
@@ -252,7 +250,7 @@ export const Navbar = ({ mode = 'default' }: { mode?: Mode }) => {
             fixed
             top-5
             right-5
-            lg:hidden
+            md:hidden
             px-2
             py-3
             border
@@ -322,7 +320,7 @@ const MobileNav = ({
             fixed
             top-0
             left-0
-            lg:hidden
+            md:hidden
             flex
             flex-col
             gap-8

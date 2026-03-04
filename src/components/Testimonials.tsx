@@ -42,7 +42,7 @@ export const Testimonials = () => (
             mb-20
           "
         >
-          People love Session Buddy
+          Why people love Session Buddy
         </div>
         <div
           className="

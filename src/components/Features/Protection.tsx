@@ -24,12 +24,15 @@ export const Protection = ({
     >
       <Feature
         heading="Breathe easy"
-        description="Session Buddy protects your tabs and bookmarks from browser crashes, accidental closures, and other risks. Session Buddy automatically saves your open tabs and bookmarks, so you can easily restore them when needed. automatic crash recovery and data safeguards ensure your data is safe and easily recoverable in case of unexpected events."
+        description="Don't let a crash or glitch wipe out your hard work. Session Buddy uses multi-layered protection to ensure your data survives the unexpected."
         bullets={[
-          'Quick-filter tabs by title or URL as you type.',
-          'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
-          'Open a list of URLs directly from the clipboard or a file.',
-          'We never share anything with anyone.',
+          'Protect yourself from browser crashes, OS updates, power outages, profile corruption, and other data loss risks.',
+          'Instantly recover the tabs you had open immediately before a crash or unexpected shutdown.',
+          // 'Use session history to restore windows and tabs exactly as they were at a particular point in time.',
+          'Restore deleted items from automatic backups.',
+          'Rely on self-healing storage that automatically detects and repairs data corruption caused by platform bugs and external factors.',
+          'Secure your entire library with one-click manual backups.',
+          // undo
         ]}
         images={[
           {

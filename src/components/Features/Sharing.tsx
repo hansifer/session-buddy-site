@@ -29,6 +29,7 @@ export const Sharing = ({
           'Instantly open any list of URLs as tabs or save them to a collection.',
           'Copy and paste formatted links directly into emails, documents, or chat.',
           'Import smartly from raw text with automatic format detection and URL extraction.',
+          'Export to the clipboard or a file.',
           'Support for 15+ formats including plain text, JSON, CSV, Markdown, and HTML.',
         ]}
         images={[

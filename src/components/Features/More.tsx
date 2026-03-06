@@ -24,20 +24,15 @@ export const More = ({
     >
       <Feature
         heading="And more..."
-        description="Here are just a few more highlights:"
+        description="Here are just a few more details designed to make your browsing smoother:"
         bullets={[
-          'Add bookmarks to collections from any text. Session Buddy automatically detects the format and extracts links.',
-          'Use powerful organizational features like cloning, merging, and splitting to manage collections and folders.',
-          "Quickly replace a collection's content with all open windows and tabs.",
-          'Bookmark any collection.',
-          'Optionally display a tab count badge on the extension icon.',
-          "Use the browser's back button to navigate previously-selected collections.",
-          "Never see a broken web site icon thanks to Session Buddy's progressive favicon fallback strategy.",
-          'list the current window first',
-          'auto-name collections',
-          'light/dark theme',
-          'customize displayed copy formats',
-          'define keyboard shortcuts for common actions',
+          'Bookmark any collection for quick access.',
+          'Quickly replace old collection contents with your current tabs.',
+          'Keep track of open tabs with a live counter on the toolbar icon.',
+          "Navigate previously-selected collections naturally using the browser's back button.",
+          'Enjoy a polished look with robust site icon fallbacks for missing or broken favicons.',
+          // 'Use powerful organizational features like cloning, merging, and splitting to manage collections and folders.',
+          // 'list the current window first',
         ]}
         images={[
           {

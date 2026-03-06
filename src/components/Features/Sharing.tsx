@@ -23,13 +23,13 @@ export const Sharing = ({
       }}
     >
       <Feature
-        heading="Easily share your tabs and bookmarks"
-        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents all of them, organized by window, on a single page."
+        heading="Flexible sharing"
+        description="Your data belongs to you. Move collections, tabs, and bookmarks freely in and out of Session Buddy with robust import, export, copy, and paste."
         bullets={[
-          'Import and export your tabs and bookmarks with ease.',
-          'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
-          'Open a list of URLs directly from the clipboard or a file.',
-          'Close selected windows and tabs with one click to quickly declutter your browser.',
+          'Instantly open any list of URLs as tabs or save them to a collection.',
+          'Copy and paste formatted links directly into emails, documents, or chat.',
+          'Import smartly from raw text with automatic format detection and URL extraction.',
+          'Support for 15+ formats including plain text, JSON, CSV, Markdown, and HTML.',
         ]}
         images={[
           {

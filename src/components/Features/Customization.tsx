@@ -23,14 +23,16 @@ export const Customization = ({
       }}
     >
       <Feature
-        heading="Customize your experience with powerful options and settings"
-        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents all of them, organized by window, on a single page."
+        heading="Make it your own"
+        // heading="Customize your experience"
+        description="Session Buddy adapts to you, not the other way around. Personalize look, feel, and function to match your workflow."
         bullets={[
-          'Quick-filter tabs by title or URL as you type.',
-          'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
-          'Open a list of URLs directly from the clipboard or a file.',
-          'Close selected windows and tabs with one click to quickly declutter your browser.',
-          'experiments',
+          'Choose your preferred theme with light or dark mode.',
+          'Automate organization with smart collection naming and color defaults.',
+          'Speed up your workflow with customizable keyboard shortcuts.',
+          'Fine-tune detailed behaviors with advanced experimental settings.',
+          // 'Select which copy formats to display.',
+          // 'Enable and disable warnings and confirmations for various actions.',
         ]}
         images={[
           {

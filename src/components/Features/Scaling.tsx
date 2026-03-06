@@ -24,12 +24,18 @@ export const Scaling = ({
     >
       <Feature
         heading="Scale to thousands"
-        description="Session Buddy is built to handle even the most extreme tab and bookmark management needs. Whether you have dozens, hundreds, or even thousands of tabs and bookmarks, Session Buddy's powerful organizational features and intuitive interface make it easy to keep everything under control. Manage thousands of tabs and bookmarks without breaking a sweat"
+        // heading="Tab your full potential"
+        // heading="Built for heavy hitters"
+        // heading="Built for scale"
+        // heading="Built for power users"
+        // heading="Manage thousands of tabs and bookmarks without breaking a sweat"
+        description="Engineered for heavy workloads. Manage thousands of tabs and bookmarks with zero lag, instant search, and rock-solid stability."
+        // description="Session Buddy is purpose-built to handle the most extreme tab hoarder's needs with unmatched ease."
         bullets={[
-          'Optimize your resources',
-          'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
-          'Open a list of URLs directly from the clipboard or a file.',
-          'Close selected windows and tabs with one click to quickly declutter your browser.',
+          'Save unlimited collections without performance penalties or storage quotas.',
+          'Open hundreds of tabs at once without freezing your browser.',
+          'Search, import, export, and backup huge libraries of collections and history in seconds.',
+          'Enjoy a consistently snappy user experience no matter how much data you add.',
         ]}
         images={[
           {

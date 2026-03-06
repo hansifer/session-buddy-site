@@ -23,13 +23,15 @@ export const Search = ({
       }}
     >
       <Feature
-        heading="Quickly find tabs and bookmarks with powerful search and filtering"
-        description="Have a ton of tabs open across lots of windows? No problem. Session Buddy presents all of them, organized by window, on a single page."
+        heading="Find anything instantly"
+        // heading="Find it fast"
+        // heading="Search smart"
+        description="Locate any tab or bookmark in seconds with unified search across open tabs, collections, and history."
         bullets={[
-          'Quick-filter tabs by title or URL as you type.',
-          'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
-          'Open a list of URLs directly from the clipboard or a file.',
-          'Close selected windows and tabs with one click to quickly declutter your browser.',
+          'View matches in filtered form or by relevance.',
+          'Zero in with filtering and match highlighting.',
+          'Target your search with advanced query syntax.',
+          'Narrow search scope by item type.',
         ]}
         images={[
           {

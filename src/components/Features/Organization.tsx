@@ -33,8 +33,9 @@ export const Organization = ({
       }}
     >
       <Feature
-        heading="Bring order to your bookmarks"
-        description="Use collections and folders to categorize bookmarks by project, topic, timeline, or whatever suits your workflow."
+        heading="Collect your thoughts"
+        // heading="Bring order to your bookmarks"
+        description="Use collections and folders to organize bookmarks by project, topic, timeline, or whatever suits your workflow."
         bullets={[
           'Assign names and colors to collections for instant recognition.',
           'Pin essential collections for quick access.',

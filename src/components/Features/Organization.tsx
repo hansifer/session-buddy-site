@@ -39,7 +39,7 @@ export const Organization = ({
         bullets={[
           'Assign names and colors to collections for instant recognition.',
           'Pin essential collections for quick access.',
-          'Add bookmarks by copying and pasting tabs directly from the current session.',
+          'Add bookmarks from any text or by copying and pasting tabs directly from the current session.',
           'Sort, reorder, and move bookmarks across folders and collections.',
           'Keep things tidy with duplicate bookmark detection and folder merging.',
           // 'Edit bookmark properties like title, URL, and pinned state.',

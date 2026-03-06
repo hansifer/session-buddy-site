@@ -23,7 +23,7 @@ export const Sharing = ({
       }}
     >
       <Feature
-        heading="Flexible sharing"
+        heading="Share flexibly"
         description="Your data belongs to you. Move collections, tabs, and bookmarks freely in and out of Session Buddy with robust import, export, copy, and paste."
         bullets={[
           'Instantly open any list of URLs as tabs or save them to a collection.',

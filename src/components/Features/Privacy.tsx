@@ -23,13 +23,18 @@ export const Privacy = ({
       }}
     >
       <Feature
-        heading="Your privacy is our priority"
-        description="Session Buddy takes your privacy seriously. We never share your data with third parties, and all your tabs and bookmarks are stored securely on your device."
+        heading="Private by design"
+        // heading="Your privacy is our first priority"
+        // heading="What happens in your browser, stays in your browser"
+        description="Security and data protection is our absolute first priority. No tracking. No data sharing. Ever."
         bullets={[
-          'Quick-filter tabs by title or URL as you type.',
-          'Copy select tabs to the clipboard for easy sharing. Supported formats include plain text, Markdown, CSV, JSON, and BBCode.',
-          'Open a list of URLs directly from the clipboard or a file.',
-          'Close selected windows and tabs with one click to quickly declutter your browser.',
+          'Your bookmarks and tab history are stored securely on your device, never on any server.',
+          'Only the narrowest permissions required to manage your tabs are requested.',
+          'Use Session Buddy for as long as you want without ever being required to create a login.',
+          'Verified and featured by Google for adhering to Chrome extension standards of trust and best practices.',
+          'Trusted by millions for over 16 years with zero data breaches or third-party sharing.',
+          // 'No user data has ever or will ever be shared with 3rd parties.',
+          // 'We will never track your browsing or sell your data.',
         ]}
         images={[
           {

@@ -30,7 +30,7 @@ export const Customization = ({
           'Choose your preferred theme with light or dark mode.',
           'Automate organization with smart collection naming and color defaults.',
           'Speed up your workflow with customizable keyboard shortcuts.',
-          'Fine-tune detailed behaviors with advanced experimental settings.',
+          'Fine-tune behaviors with advanced experimental settings.',
           // 'Select which copy formats to display.',
           // 'Enable and disable warnings and confirmations for various actions.',
         ]}

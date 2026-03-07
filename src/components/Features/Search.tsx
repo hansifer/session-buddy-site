@@ -26,7 +26,7 @@ export const Search = ({
         heading="Find anything instantly"
         // heading="Find it fast"
         // heading="Search smart"
-        description="Locate any tab or bookmark in seconds with unified search across open tabs, collections, and history."
+        description="Locate any tab or bookmark in seconds with unified search across open tabs, collections, and tab history."
         bullets={[
           'View matches in filtered form or by relevance.',
           'Zero in with filtering and match highlighting.',

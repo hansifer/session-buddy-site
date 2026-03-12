@@ -10,78 +10,105 @@
 
 /* Customize markdown content styles */
 :where(.sl-markdown-content) {
-    h1 {
-        @apply text-4xl font-bold mb-6;
-    }
 
-    h2 {
-        @apply text-2xl font-semibold mb-4;
-    }
+  /* h2 */
 
-    h3 {
-        @apply text-xl font-semibold mb-3;
-    }
+  h2 {
+    @apply text-2xl;
+  }
 
-    p {
-        @apply text-base leading-relaxed mb-4;
-    }
+  .sl-heading-wrapper.level-h2 {
+    @apply mb-10;
+  }
 
-    blockquote {
-        @apply pl-4 border-l-4 border-solid mb-4;
-        border-left-color: var(--color-primaryColor);
-    }
 
-    code {
-        @apply bg-slate-700 px-2 py-1 rounded text-sm;
-        color: var(--color-primaryTextColor);
-    }
+  /* h3 */
 
-    a {
-        text-decoration-color: var(--color-primaryColor);
-        @apply underline;
-    }
+  h3 {
+    @apply text-lg font-light;
+  }
 
-    ul {
-        @apply ml-4 mb-4;
-        list-style-type: disc;
-    }
+  /* p */
 
-    ul ul {
-        list-style-type: circle;
-        @apply ml-6;
-    }
+  p {
+    @apply leading-relaxed;
+  }
 
-    ul ul ul {
-        list-style-type: square;
-        @apply ml-8;
-    }
+  /* bold */
 
-    ol {
-        @apply ml-4 mb-4 list-decimal;
-        list-style-position: inside;
-    }
+  strong {
+    color: var(--color-primaryColor);
+  }
 
-    ol ol {
-        list-style-type: lower-alpha;
-        @apply ml-6;
-    }
+  /* blockquote */
 
-    ol ol ol {
-        list-style-type: lower-roman;
-        @apply ml-8;
-    }
+  blockquote {
+    @apply border-l-4;
+    border-left-color: var(--color-primaryColor);
+  }
 
-    li {
-        @apply mb-2;
-        color: var(--sl-color-text)
-    }
+  /* code */
 
-    strong {
-        color: var(--color-primaryTextColor);
-        opacity: 0.8;
-    }
+  code {
+    @apply px-2 py-1 rounded;
+    color: var(--color-ternaryColor);
+    background-color: var(--color-blockStrongBackgroundColor);
+  }
 
-    .sl-heading-wrapper {
-        @apply mb-8 mt-10;
-    }
+  /* a */
+
+  a {
+    @apply underline;
+  }
+
+  /* lists */
+
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  ul ul {
+    @apply ml-6;
+    list-style-type: circle;
+  }
+
+  ul ul ul {
+    list-style-type: square;
+  }
+
+  ol {
+    @apply list-decimal;
+    list-style-position: inside;
+  }
+
+  ol ol {
+    @apply ml-5;
+    list-style-type: lower-alpha;
+  }
+
+  ol ol ol {
+    list-style-type: lower-roman;
+  }
+
+  li {
+    @apply mt-2;
+  }
+
+  /* note badge */
+
+  .sl-badge.note {
+    opacity: 0.8;
+  }
+
+  /* anchor icon size and position */
+
+  .sl-heading-wrapper {
+    --sl-anchor-icon-size: 1.2rem;
+    --sl-anchor-icon-gap: 0.8rem;
+  }
+
+  .sl-anchor-link {
+    top: 3px;
+  }
 }

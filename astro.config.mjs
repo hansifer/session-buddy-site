@@ -11,7 +11,17 @@ import formatClassname from './util/formatClassname';
 import { sidebar } from './src/content/sidebar';
 
 export default defineConfig({
-  redirects: {},
+  redirects: {
+    '/v4': '/releases/4.0.0',
+    '/release-4-0-0': '/releases/4.0.0',
+    '/release-4-0-1': '/releases/4.0.1',
+    '/release-4-0-2': '/releases/4.0.2',
+    '/release-4-0-3': '/releases/4.0.3',
+    '/release-4-0-4': '/releases/4.0.4',
+    '/release-4-0-5': '/releases/4.0.5',
+    '/release-4-1-0': '/releases/4.1.0',
+    '/release-4-1-1': '/releases/4.1.1',
+  },
   integrations: [
     starlight({
       title: 'Session Buddy',

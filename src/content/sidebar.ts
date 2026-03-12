@@ -64,7 +64,10 @@ export const sidebar: Sidebar = [
     slug: 'faq',
   },
   {
-    slug: 'releases',
+    label: 'Releases',
+    autogenerate: {
+      directory: 'releases',
+    },
   },
   {
     slug: 'roadmap',

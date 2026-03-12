@@ -51,14 +51,14 @@ export const sidebar: Sidebar = [
     autogenerate: {
       directory: 'troubleshooting',
     },
-    collapsed: true,
+    collapsed: false,
   },
   {
     label: 'Reference',
     autogenerate: {
       directory: 'reference',
     },
-    collapsed: true,
+    collapsed: false,
   },
   {
     slug: 'faq',

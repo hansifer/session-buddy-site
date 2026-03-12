@@ -88,7 +88,7 @@
   /* adjust mobile nav menu button placement */
   --sl-nav-pad-x: 5.5rem;
 
-  --sl-badge-note-bg: transparent;
+  --sl-badge-note-bg: #0083dd29;
   --sl-badge-note-border: var(--color-primaryColor);
   --sl-badge-note-text: var(--color-primaryColor);
 }

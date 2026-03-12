@@ -20,10 +20,10 @@ const features = [
   History,
   Search,
   Sharing,
+  Privacy,
   Protection,
   Scaling,
   Customization,
-  Privacy,
   More,
 ] as const;
 

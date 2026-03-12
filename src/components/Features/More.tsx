@@ -27,10 +27,10 @@ export const More = ({
         description="Here are just a few more details designed to make your browsing smoother:"
         bullets={[
           'Bookmark any collection for quick access.',
-          'Quickly replace old collection contents with your current tabs.',
+          'Quickly replace old collection contents with the current session.',
           'Keep track of open tabs with a live counter on the toolbar icon.',
           "Navigate previously-selected collections naturally using the browser's back button.",
-          'Enjoy a polished look with smart site icon fallbacks for missing or broken favicons.',
+          'Enjoy a polished look with smart fallbacks for broken or outdated site icons.',
           // 'Use powerful organizational features like cloning, merging, and splitting to manage collections and folders.',
           // 'list the current window first',
         ]}

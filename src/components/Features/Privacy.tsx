@@ -26,13 +26,13 @@ export const Privacy = ({
         heading="Private by design"
         // heading="Your privacy is our first priority"
         // heading="What happens in your browser, stays in your browser"
-        description="Security and data protection is our absolute first priority. No tracking. No data sharing. Ever."
+        description="No ads. No tracking. No data sharing."
         bullets={[
           'Your bookmarks and tab history are stored securely on your device, never on any server.',
           'Only the narrowest permissions required to manage your tabs are requested.',
-          'Use Session Buddy for as long as you want without ever being required to create a login.',
-          'Verified and featured by Google for adhering to Chrome extension standards of trust and best practices.',
-          'Trusted by millions for over 16 years with zero data breaches or third-party sharing.',
+          'Use Session Buddy for as long as you want without being required to create a login.',
+          "Verified and featured on the Chrome Web Store for adhering to Google's standards of trust and best practices.",
+          'Trusted by millions for over 15 years with zero data breaches or third-party sharing.',
           // 'No user data has ever or will ever be shared with 3rd parties.',
           // 'We will never track your browsing or sell your data.',
         ]}

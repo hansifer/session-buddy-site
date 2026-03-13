@@ -1,9 +1,15 @@
 import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
+import { FeatureTiles } from '@/components/Feature/FeatureTiles';
+import type { FeatureTile } from '@/components/Feature/FeatureTiles';
 
-import feature5 from '@/assets/images/feature-placeholder-5.jpg';
-import feature6 from '@/assets/images/feature-placeholder-6.jpg';
+import { NoAdsIcon } from '@/assets/icons/NoAdsIcon';
+import { NoTrackingIcon } from '@/assets/icons/NoTrackingIcon';
+import { NoDataSharingIcon } from '@/assets/icons/NoDataSharingIcon';
+import { LocalFirstIcon } from '@/assets/icons/LocalFirstIcon';
+import { NoLoginIcon } from '@/assets/icons/NoLoginIcon';
+import { VerifiedIcon } from '@/assets/icons/VerifiedIcon';
 
 export const Privacy = ({
   reverse,
@@ -36,19 +42,43 @@ export const Privacy = ({
           // 'No user data has ever or will ever be shared with 3rd parties.',
           // 'We will never track your browsing or sell your data.',
         ]}
-        images={[
-          {
-            src: feature5.src,
-            alt: 'Feature image 5',
-          },
-          {
-            src: feature6.src,
-            alt: 'Feature image 6',
-          },
-        ]}
+        images={<FeatureTiles tiles={tiles} />}
         reverse={reverse}
         band={band}
       />
     </motion.div>
   </section>
 );
+
+const tiles: FeatureTile[] = [
+  {
+    icon: NoAdsIcon,
+    label: 'No ads',
+    color: 'text-violet-500',
+  },
+  {
+    icon: NoTrackingIcon,
+    label: 'No tracking',
+    color: 'text-amber-500',
+  },
+  {
+    icon: NoDataSharingIcon,
+    label: 'No data sharing',
+    color: 'text-rose-500',
+  },
+  {
+    icon: LocalFirstIcon,
+    label: 'Local first',
+    color: 'text-cyan-500',
+  },
+  {
+    icon: NoLoginIcon,
+    label: 'No login',
+    color: 'text-emerald-500',
+  },
+  {
+    icon: VerifiedIcon,
+    label: 'Verified & Trusted',
+    color: 'text-blue-500',
+  },
+];

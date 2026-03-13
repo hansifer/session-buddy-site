@@ -39,13 +39,21 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
             ${color}
           `}
         >
-          <Icon
+          <div
             className="
-              w-14
-              h-14
+              flex
+              items-center
+              justify-center
               flex-1
+              min-h-14
             "
-          />
+          >
+            <Icon
+              className="
+                size-12
+              "
+            />
+          </div>
           <span
             className="
               flex

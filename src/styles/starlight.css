@@ -50,7 +50,7 @@
   /* code */
 
   code {
-    @apply px-2 py-1 rounded;
+    @apply p-1 rounded;
     color: var(--color-ternaryColor);
     background-color: var(--color-blockStrongBackgroundColor);
   }
@@ -64,12 +64,12 @@
   /* lists */
 
   ul {
+    @apply ml-4;
     list-style-type: disc;
-    list-style-position: inside;
+    list-style-position: outside;
   }
 
   ul ul {
-    @apply ml-6;
     list-style-type: circle;
   }
 
@@ -78,12 +78,11 @@
   }
 
   ol {
-    @apply list-decimal;
-    list-style-position: inside;
+    @apply list-decimal ml-5;
+    list-style-position: outside;
   }
 
   ol ol {
-    @apply ml-5;
     list-style-type: lower-alpha;
   }
 
@@ -92,6 +91,10 @@
   }
 
   li {
+    @apply mt-8;
+  }
+
+  li li {
     @apply mt-2;
   }
 
@@ -99,6 +102,10 @@
 
   .sl-badge.note {
     opacity: 0.8;
+  }
+
+  li .sl-badge.note {
+    margin-left: 0.5rem;
   }
 
   /* anchor icon size and position */

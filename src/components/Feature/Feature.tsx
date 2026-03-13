@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { FeatureText } from '@/components/Feature/FeatureText';
 import type { FeatureTextProps } from '@/components/Feature/FeatureText';
 import { FeatureImage } from '@/components/Feature/FeatureImage';
@@ -18,7 +19,7 @@ export const Feature = ({
   reverse,
   band,
 }: FeatureTextProps & {
-  images: [Image] | [Image, Image] | [Image, Image, Image, Image];
+  images: [Image] | [Image, Image] | [Image, Image, Image, Image] | JSX.Element;
   reverse?: boolean;
   band?: 'diagonal' | true | false;
 }) => (
@@ -58,12 +59,28 @@ export const Feature = ({
             button={button}
           />
         </div>
-        {images.length === 1 ? (
-          <OneImage image={images[0]} />
-        ) : images.length === 2 ? (
-          <TwoImages images={images} />
+        {Array.isArray(images) ? (
+          images.length === 1 ? (
+            <OneImage image={images[0]} />
+          ) : images.length === 2 ? (
+            <TwoImages images={images} />
+          ) : (
+            <FourImages images={images} />
+          )
         ) : (
-          <FourImages images={images} />
+          <div
+            className="
+              flex-1
+              w-11/12
+              sm:w-3/4
+              lg:w-1/2
+              mx-auto
+              pt-8
+              lg:pt-0
+            "
+          >
+            {images}
+          </div>
         )}
       </div>
     </div>

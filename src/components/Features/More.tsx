@@ -23,7 +23,7 @@ export const More = ({
       }}
     >
       <Feature
-        heading="And more..."
+        heading="More good stuff"
         description="Here are just a few more details designed to make your browsing smoother:"
         bullets={[
           'Bookmark any collection for quick access.',

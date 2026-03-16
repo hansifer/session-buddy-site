@@ -25,6 +25,7 @@ export const topics = [
   'Arrowhead collecting',
   'ASCII art',
   'Astronomy',
+  'Piping presentation',
   'Astrophotography',
   'Aura farming',
   'Avalanche safety',

@@ -1,29 +1,33 @@
+import { tw } from '@/util/tailwind';
+
 export const COLLECTION_TILE_HEIGHT = 74;
 
 export const CollectionTile = ({
   color,
   title,
   description,
+  backgroundColor = 'bg-[#424242]',
 }: {
   color: string;
   title: string;
   description: string;
+  backgroundColor?: string;
 }) => {
   return (
     <div
       style={{
         height: COLLECTION_TILE_HEIGHT,
       }}
-      className="
+      className={tw`
         p-4
         rounded-[10px]
         text-[12px]
         text-[#f1f1f1]
-        bg-[#424242]
+        ${backgroundColor}
         hover:bg-[#005c9b]
         cursor-pointer
         group
-      "
+      `}
     >
       <div
         className="

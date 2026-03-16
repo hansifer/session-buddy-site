@@ -49,9 +49,11 @@ type Item = {
 export const InfiniteCollectionTiles = ({
   n = 6,
   speed = 100,
+  tileBackgroundColor,
 }: {
   n?: number; // number of tiles visible in viewport
   speed?: number; // auto-scroll speed in pixels per second
+  tileBackgroundColor?: string;
 }) => {
   const viewportHeight = n * COLLECTION_TILE_HEIGHT + (n - 1) * GAP;
 
@@ -179,6 +181,7 @@ export const InfiniteCollectionTiles = ({
                 color={item.color}
                 title={item.title}
                 description={item.description}
+                backgroundColor={tileBackgroundColor}
               />
             </div>
           ))}

@@ -1,4 +1,36 @@
-// slugs used to construct urls for fetching icons from https://www.thesvg.org/
+// icons courtesy of https://www.thesvg.org/
+/*
+MIT License
+
+Copyright (c) 2025 thesvg.org
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+import { randomize, selectRandom } from '@/util/array';
+
+export const getRandomBrandIcons = (generalCount = 50) => {
+  return randomize([
+    ...BRAND_ICON_SLUGS_POPULAR, // always include these core icons
+    ...selectRandom(BRAND_ICON_SLUGS_GENERAL, generalCount),
+  ]).map((slug) => getBrandIcon({ slug, mono: true }));
+};
 
 // todo: option to fetch from alternate source
 // todo: fallback to fetch from alternate source if fetch fails
@@ -33,8 +65,6 @@ export const getBrandIcon = ({
 };
 
 export const BRAND_ICON_SLUGS_POPULAR = [
-  'youtube', // keep as first item (used as fallback)
-
   'adobe',
   'airbnb',
   'amazon-web-services',
@@ -134,13 +164,12 @@ export const BRAND_ICON_SLUGS_POPULAR = [
   'wikipedia',
   'wordpress',
   'yandex',
+  'youtube',
   'zillow',
   'zoom',
 ] as const;
 
 export const BRAND_ICON_SLUGS_GENERAL = [
-  'youtube', // keep as first item (used as fallback)
-
   '1001tracklists',
   '11x',
   '1and1',
@@ -3872,6 +3901,7 @@ export const BRAND_ICON_SLUGS_GENERAL = [
   'youtube-music',
   'youtube-shorts',
   'youtube-studio',
+  'youtube',
   'yr',
   'yuanbao',
   'yubico',

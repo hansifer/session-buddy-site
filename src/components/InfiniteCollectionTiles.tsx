@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import { topics } from '@/content/topics';
+import { topics } from '@/topics';
+import { COLLECTION_COLORS_DARK } from '@/collectionColors';
 import { Fade } from '@/components/Fade';
 import {
   CollectionTile,
@@ -8,19 +9,6 @@ import {
 } from '@/components/CollectionTile';
 
 // todo: experiment with reducing render frequency. tweak scroll height increment, distance from bottom threshold, overscan, startIdx update (eg, every multiple of 3). ensure scrollHeight is always enough to accommodate rendered tiles.
-
-// standard dark-mode collection colors
-const colors = [
-  '#ff4343',
-  '#dd6700',
-  '#e9b80d',
-  '#21aa16',
-  '#00b8aa',
-  '#0078ca',
-  '#ba59de',
-  '#ff4c9a',
-  '#91614a',
-];
 
 const createdUpdated = [
   // wrap
@@ -219,8 +207,8 @@ function randomColor(idx: number, prevColor?: string): string {
   seed = idx * 2654435761 + 1;
 
   const available = prevColor // wrap
-    ? colors.filter((color) => color !== prevColor)
-    : colors;
+    ? COLLECTION_COLORS_DARK.filter((color) => color !== prevColor)
+    : COLLECTION_COLORS_DARK;
 
   return available[seededRand(available.length)];
 }

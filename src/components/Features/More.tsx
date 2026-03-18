@@ -32,15 +32,14 @@ export const More = ({
     >
       <Feature
         heading="More good stuff"
-        description="Here are just a few more details designed to make your browsing smoother:"
+        description="Here are just a few more things designed to make your browsing smoother:"
         bullets={[
           'Bookmark any collection for quick access.',
-          'Quickly replace old collection contents with the current session.',
+          'Quickly replace collection contents with the current session.',
           'Keep track of open tabs with a live counter on the toolbar icon.',
-          "Navigate previously-selected collections naturally using the browser's back button.",
+          "Navigate collections naturally with the browser's back/forth buttons.",
           'Enjoy a polished look with smart fallbacks for broken or outdated site icons.',
           // 'Use powerful organizational features like cloning, merging, and splitting to manage collections and folders.',
-          // 'list the current window first',
         ]}
         images={[
           {

@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
+import { LoopingVideo } from '@/components/LoopingVideo';
 
-import feature5 from '@/assets/images/feature-placeholder-5.jpg';
-import feature6 from '@/assets/images/feature-placeholder-6.jpg';
+import sessionFilterVideo from '@/assets/images/session-filter.mp4';
 
 export const TabOverview = ({
   reverse,
@@ -13,6 +13,14 @@ export const TabOverview = ({
   band?: 'diagonal' | true | false;
 }) => (
   <section className="w-full">
+    <div
+      id="tab-control"
+      className="
+        absolute
+        -mt-20
+        lg:-mt-32
+      "
+    />
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -23,25 +31,28 @@ export const TabOverview = ({
       }}
     >
       <Feature
-        heading="A command center for your browser"
-        description="Eliminate the chaos of scattered windows. Visualize and control every open tab from a single, unified dashboard."
+        heading="Total tab control"
+        description="Cut through the chaos of scattered windows. Visualize and control every open tab from a single, unified dashboard."
         bullets={[
           'Quickly locate any tab with instant filtering.',
+          'Open multiple tabs at once from your clipboard or a text file.',
+          'Close related tabs with one click.',
           'Copy tabs as text, Markdown, CSV, or JSON for easy sharing.',
-          'Open multiple links at once from your clipboard or a text file.',
           'Reduce noise by hiding pinned, new, or browser feature tabs.',
-          // 'Declutter your workspace by closing tabs or windows with one click.',
         ]}
-        images={[
-          {
-            src: feature5.src,
-            alt: 'Feature image 5',
-          },
-          {
-            src: feature6.src,
-            alt: 'Feature image 6',
-          },
-        ]}
+        images={
+          <div
+            className="
+              lg:max-w-md
+              mx-auto
+            "
+          >
+            <LoopingVideo
+              src={sessionFilterVideo}
+              alt="Session filter demo"
+            />
+          </div>
+        }
         reverse={reverse}
         band={band}
       />

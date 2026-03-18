@@ -13,6 +13,14 @@ export const History = ({
   band?: 'diagonal' | true | false;
 }) => (
   <section className="w-full">
+    <div
+      id="history"
+      className="
+        absolute
+        -mt-20
+        lg:-mt-32
+      "
+    />
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

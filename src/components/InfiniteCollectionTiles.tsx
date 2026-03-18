@@ -10,6 +10,8 @@ import {
 
 // todo: experiment with reducing render frequency. tweak scroll height increment, distance from bottom threshold, overscan, startIdx update (eg, every multiple of 3). ensure scrollHeight is always enough to accommodate rendered tiles.
 
+// todo: generalize into a comp that accepts a data generator and item component
+
 const createdUpdated = [
   // wrap
   'Created',

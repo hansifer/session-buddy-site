@@ -4,6 +4,7 @@ import { COLLECTION_COLORS_DARK } from '@/collectionColors';
 
 // todo: avoid consecutive repeats of the same icon
 // todo: use brand-specific tile colors? (from thesvg metadata)
+// todo: generalize into a comp that accepts icons and colors
 
 const DEFAULT_COUNT = 13; // number of tabs simultaneously on the strip
 const DEFAULT_SPEED = 0.0026;

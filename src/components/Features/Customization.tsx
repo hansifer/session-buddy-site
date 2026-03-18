@@ -35,12 +35,11 @@ export const Customization = ({
         // heading="Customize your experience"
         description="Session Buddy adapts to you, not the other way around. Personalize look, feel, and function to match your workflow."
         bullets={[
-          'Choose your preferred theme with light or dark mode.',
-          'Automate organization with smart collection naming and color defaults.',
-          'Speed up your workflow with customizable keyboard shortcuts.',
+          'Choose light or dark mode.',
+          "Filter tabs you don't care about.",
+          'Power up with customizable keyboard shortcuts.',
           'Fine-tune behaviors with advanced experimental settings.',
           // 'Select which copy formats to display.',
-          // 'Enable and disable warnings and confirmations for various actions.',
         ]}
         images={[
           {

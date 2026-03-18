@@ -19,6 +19,14 @@ export const Privacy = ({
   band?: 'diagonal' | true | false;
 }) => (
   <section className="w-full">
+    <div
+      id="privacy"
+      className="
+        absolute
+        -mt-20
+        lg:-mt-32
+      "
+    />
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

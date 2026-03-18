@@ -7,7 +7,7 @@ import { COLLECTION_COLORS_DARK } from '@/collectionColors';
 // todo: generalize into a comp that accepts icons and colors
 
 const DEFAULT_COUNT = 13; // number of tabs simultaneously on the strip
-const DEFAULT_SPEED = 0.0026;
+const DEFAULT_SPEED = 0.0036;
 const DEFAULT_FADE_IN_SPEED = 0.013;
 
 type TAB = {

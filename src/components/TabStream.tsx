@@ -21,14 +21,12 @@ export const TabStream = ({
   count = DEFAULT_COUNT,
   speed = DEFAULT_SPEED,
   fadeInSpeed = DEFAULT_FADE_IN_SPEED,
-  debug = false,
 }: {
   width?: number;
   height?: number;
   count?: number;
   speed?: number;
   fadeInSpeed?: number;
-  debug?: boolean;
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -222,7 +220,10 @@ export const TabStream = ({
           alpha *= entryProgress;
           scale = 0.72 + entryProgress * 0.28;
 
-          if (debug && frontmostTabIdx !== prevFrontmostTabIdx) {
+          if (
+            localStorage.getItem('debug-tab-stream') === 'true' &&
+            frontmostTabIdx !== prevFrontmostTabIdx
+          ) {
             console.log(icons[tabs[i].iconIdx].slug);
             prevFrontmostTabIdx = frontmostTabIdx;
           }

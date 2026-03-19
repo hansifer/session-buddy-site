@@ -8,6 +8,7 @@ import { tw } from '@/util/tailwind';
 type Image = {
   src: string;
   alt: string;
+  className?: string;
 };
 
 export const Feature = ({
@@ -88,7 +89,7 @@ export const Feature = ({
   </div>
 );
 
-const OneImage = ({ image: { src, alt } }: { image: Image }) => (
+const OneImage = ({ image: { src, alt, className } }: { image: Image }) => (
   <div
     className="
       flex-1
@@ -103,6 +104,7 @@ const OneImage = ({ image: { src, alt } }: { image: Image }) => (
     <FeatureImage
       src={src}
       alt={alt}
+      className={className}
     />
   </div>
 );
@@ -132,6 +134,7 @@ const TwoImages = ({
       <FeatureImage
         src={firstImage.src}
         alt={firstImage.alt}
+        className={firstImage.className}
       />
     </div>
     <div
@@ -143,6 +146,7 @@ const TwoImages = ({
       <FeatureImage
         src={secondImage.src}
         alt={secondImage.alt}
+        className={secondImage.className}
       />
     </div>
   </div>
@@ -169,11 +173,13 @@ const FourImages = ({ images }: { images: [Image, Image, Image, Image] }) => (
         <FeatureImage
           src={images[0].src}
           alt={images[0].alt}
+          className={images[0].className}
         />
       </div>
       <FeatureImage
         src={images[1].src}
         alt={images[1].alt}
+        className={images[1].className}
       />
     </div>
     <div
@@ -190,11 +196,13 @@ const FourImages = ({ images }: { images: [Image, Image, Image, Image] }) => (
         <FeatureImage
           src={images[2].src}
           alt={images[2].alt}
+          className={images[2].className}
         />
       </div>
       <FeatureImage
         src={images[3].src}
         alt={images[3].alt}
+        className={images[3].className}
       />
     </div>
   </div>

@@ -32,11 +32,10 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
             justify-center
             gap-4
             p-6
-            border-3
+            border
             rounded-xl
-            transition-transform
-            hover:scale-105
             ${color}
+            supports-[background:color-mix(in_oklab,black,white)]:bg-current/[0.0902]
           `}
         >
           <div

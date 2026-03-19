@@ -64,6 +64,7 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
               font-bold
               text-lg
               text-center
+              whitespace-pre-line
             "
           >
             {label}

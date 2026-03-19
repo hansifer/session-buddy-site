@@ -61,32 +61,32 @@ export const Privacy = ({
 const tiles: FeatureTile[] = [
   {
     icon: NoAdsIcon,
-    label: 'No ads',
+    label: 'No\nads',
     color: 'text-violet-500',
   },
   {
     icon: NoTrackingIcon,
-    label: 'No tracking',
+    label: 'No\ntracking',
     color: 'text-amber-500',
   },
   {
     icon: NoDataSharingIcon,
-    label: 'No data sharing',
+    label: 'No\ndata sharing',
     color: 'text-rose-500',
   },
   {
     icon: LocalFirstIcon,
-    label: 'Local first',
+    label: 'Local\nfirst',
     color: 'text-cyan-500',
   },
   {
     icon: NoLoginIcon,
-    label: 'No login',
+    label: 'No\nlogin',
     color: 'text-emerald-500',
   },
   {
     icon: VerifiedIcon,
-    label: 'Verified & Trusted',
+    label: 'Verified\u00A0&\ntrusted',
     color: 'text-blue-500',
   },
 ];

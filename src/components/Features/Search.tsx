@@ -36,8 +36,8 @@ export const Search = ({
         // heading="Search smart"
         description="Locate any tab or bookmark in seconds with unified search across open tabs, collections, and tab history."
         bullets={[
-          'View matches in filtered form or by relevance.',
-          'Zero in with filtering and match highlighting.',
+          'View search results as filtered items or by relevance.',
+          'Zero in with view filtering and match highlighting.',
           'Target your search with advanced query syntax.',
           'Narrow search scope by item type.',
         ]}

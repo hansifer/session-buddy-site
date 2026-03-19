@@ -13,6 +13,14 @@ export const Scaling = ({
   band?: 'diagonal' | true | false;
 }) => (
   <section className="w-full">
+    <div
+      id="scaling"
+      className="
+        absolute
+        -mt-20
+        lg:-mt-32
+      "
+    />
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}

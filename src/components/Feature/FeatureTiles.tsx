@@ -50,7 +50,7 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
           >
             <Icon
               className="
-                size-12
+                size-10
               "
             />
           </div>
@@ -62,7 +62,7 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
               flex-1
               min-h-14
               font-bold
-              text-lg
+              text-sm
               text-center
               whitespace-pre-line
             "

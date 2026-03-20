@@ -43,12 +43,12 @@ export const Sharing = ({
         images={[
           {
             src: addLinksImg.src,
-            alt: 'Feature image 5',
+            alt: 'Add links from text',
             className: 'shadow-2xl shadow-black/80 max-w-116 lg:max-w-100',
           },
           {
             src: exportImg.src,
-            alt: 'Feature image 6',
+            alt: 'Export collections',
             className: 'shadow-2xl shadow-black/80 max-w-116 lg:max-w-100',
           },
         ]}

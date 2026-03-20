@@ -32,13 +32,13 @@ export const Protection = ({
     >
       <Feature
         heading="Breathe easy"
-        description="Don't let a crash or glitch wipe out your hard work. Session Buddy uses multi-layered protection to ensure your data survives the unexpected."
+        description="Don't let a crash or glitch wipe out your hard work. Session Buddy uses multiple layers of protection to ensure your data survives the unexpected."
         bullets={[
-          'Protect yourself from browser crashes, OS updates, power outages, profile corruption, and other data loss risks.',
-          'Instantly recover the tabs you had open immediately before a crash or unexpected shutdown.',
+          'Protect from crashes, OS updates, outages, profile corruption, and other data loss risks.',
+          'Instantly recover your open tabs after a crash or unexpected shutdown.',
           // 'Use session history to restore windows and tabs exactly as they were at a particular point in time.',
-          'Restore deleted items from automatic backups.',
-          'Rely on self-healing storage that automatically detects and repairs data corruption caused by platform bugs and external factors.',
+          "Restore deleted items from Session Buddy's automatic backup.",
+          'Rely on automatic detection and repair of data corruption caused by platform bugs, OS utilities, and other factors.',
           'Secure your entire library with one-click manual backups.',
           // undo
         ]}

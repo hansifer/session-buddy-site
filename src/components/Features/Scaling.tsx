@@ -29,19 +29,12 @@ export const Scaling = ({
       }}
     >
       <Feature
-        heading="Scale to thousands"
-        // heading="Tab your full potential"
-        // heading="Built for heavy hitters"
-        // heading="Built for scale"
-        // heading="Built for power users"
-        // heading="Manage thousands of tabs and bookmarks without breaking a sweat"
-        description="Session Buddy is engineered for heavy workloads. Manage thousands of tabs and bookmarks with zero lag, instant search, and rock-solid stability."
-        // description="Session Buddy is purpose-built to handle the most extreme tab hoarder's needs with unmatched ease."
+        heading="Go nuts"
+        description="Don't hold back. Session Buddy is engineered for heavy workloads."
         bullets={[
-          'Save unlimited collections without performance penalties or storage quotas.',
+          'Manage thousands of tabs and bookmarks with zero lag, instant search, and rock-solid stability.',
           'Open hundreds of tabs at once without freezing your browser.',
-          'Search, import, export, and backup huge libraries of collections and history in seconds.',
-          'Enjoy a consistently snappy user experience no matter how much data you add.',
+          'Search, import, export, and backup huge libraries of collections and tab history in seconds.',
         ]}
         images={
           <div

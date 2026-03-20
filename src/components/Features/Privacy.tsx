@@ -54,7 +54,7 @@ export const Privacy = ({
           <div
             className="
               flex
-              align-center
+              justify-center
             "
           >
             <FeatureTiles tiles={tiles} />

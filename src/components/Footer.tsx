@@ -151,18 +151,18 @@ export const Footer = () => {
             <p
               className="
                 mt-4
-                leading-loose
+                leading-relaxed
                 text-secondaryTextColor
               "
             >
-              Session Buddy is built by a team of passionate developers. Read
-              more about our software philosophy{' '}
+              Session Buddy is built by passionate developers who care about
+              software sustainability and ethical data practices.{' '}
               <a
                 href="#"
                 aria-label="Session Buddy development philosophy"
                 className="text-primaryTextColor"
               >
-                here
+                Read about our software philosophy
               </a>
               .
             </p>

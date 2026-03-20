@@ -38,7 +38,7 @@ export const Protection = ({
           'Instantly recover your open tabs after a crash or unexpected shutdown.',
           // 'Use session history to restore windows and tabs exactly as they were at a particular point in time.',
           "Restore deleted items from Session Buddy's automatic backup.",
-          'Rely on automatic detection and repair of data corruption caused by platform bugs, OS utilities, and other factors.',
+          'Rely on active detection and repair of data corruption caused by platform bugs, OS utilities, and other factors.',
           'Secure your entire library with one-click manual backups.',
           // undo
         ]}

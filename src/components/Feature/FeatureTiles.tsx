@@ -17,8 +17,6 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
         md:grid-cols-3
         gap-4
         md:gap-8
-        w-full
-        max-w-4xl
         mx-auto
       "
     >
@@ -31,6 +29,8 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
             items-center
             justify-center
             gap-4
+            size-34
+            xl:size-37
             p-6
             border
             rounded-xl

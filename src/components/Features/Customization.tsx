@@ -32,7 +32,6 @@ export const Customization = ({
     >
       <Feature
         heading="Make it your own"
-        // heading="Customize your experience"
         description="Session Buddy adapts to you, not the other way around. Personalize look, feel, and function to match your workflow."
         bullets={[
           'Choose light or dark mode.',

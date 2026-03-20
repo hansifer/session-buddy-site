@@ -2,8 +2,7 @@ import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
 
-import feature5 from '@/assets/images/feature-placeholder-5.jpg';
-import feature6 from '@/assets/images/feature-placeholder-6.jpg';
+import historyImg from '@/assets/images/history.png';
 
 export const History = ({
   reverse,
@@ -43,12 +42,8 @@ export const History = ({
         ]}
         images={[
           {
-            src: feature5.src,
-            alt: 'Feature image 5',
-          },
-          {
-            src: feature6.src,
-            alt: 'Feature image 6',
+            src: historyImg.src,
+            alt: 'History timeline',
           },
         ]}
         reverse={reverse}

@@ -16,7 +16,7 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
         grid-cols-2
         md:grid-cols-3
         gap-4
-        md:gap-8
+        xl:gap-8
         mx-auto
       "
     >

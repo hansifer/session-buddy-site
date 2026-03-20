@@ -1,9 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
-
-import feature5 from '@/assets/images/feature-placeholder-5.jpg';
-import feature6 from '@/assets/images/feature-placeholder-6.jpg';
+import { TabStream } from '@/components/TabStream';
 
 export const Scaling = ({
   reverse,
@@ -45,16 +43,17 @@ export const Scaling = ({
           'Search, import, export, and backup huge libraries of collections and history in seconds.',
           'Enjoy a consistently snappy user experience no matter how much data you add.',
         ]}
-        images={[
-          {
-            src: feature5.src,
-            alt: 'Feature image 5',
-          },
-          {
-            src: feature6.src,
-            alt: 'Feature image 6',
-          },
-        ]}
+        images={
+          <div
+            className="
+              flex
+              justify-center
+              lg:justify-start
+            "
+          >
+            <TabStream />
+          </div>
+        }
         reverse={reverse}
         band={band}
       />

@@ -28,10 +28,9 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
             flex-col
             items-center
             justify-center
-            gap-4
             size-34
             xl:size-37
-            p-6
+            py-4
             border
             rounded-xl
             ${color}
@@ -44,7 +43,6 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
               items-center
               justify-center
               flex-1
-              min-h-14
             "
           >
             <Icon
@@ -59,7 +57,6 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
               items-center
               justify-center
               flex-1
-              min-h-14
               font-bold
               text-sm
               text-center

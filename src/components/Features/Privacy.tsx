@@ -50,7 +50,16 @@ export const Privacy = ({
           // 'No user data has ever or will ever be shared with 3rd parties.',
           // 'We will never track your browsing or sell your data.',
         ]}
-        images={<FeatureTiles tiles={tiles} />}
+        images={
+          <div
+            className="
+              flex
+              align-center
+            "
+          >
+            <FeatureTiles tiles={tiles} />
+          </div>
+        }
         reverse={reverse}
         band={band}
       />

@@ -62,27 +62,27 @@ const tiles: FeatureTile[] = [
   {
     icon: NoAdsIcon,
     label: 'No\nads',
-    color: 'text-violet-500',
+    color: 'text-rose-500',
   },
   {
     icon: NoTrackingIcon,
     label: 'No\ntracking',
-    color: 'text-amber-500',
+    color: 'text-violet-500',
   },
   {
     icon: NoDataSharingIcon,
     label: 'No\ndata sharing',
-    color: 'text-rose-500',
+    color: 'text-amber-500',
   },
   {
     icon: NoLoginIcon,
     label: 'No\nlogin',
-    color: 'text-emerald-500',
+    color: 'text-cyan-500',
   },
   {
     icon: LocalFirstIcon,
     label: 'Local\nfirst',
-    color: 'text-cyan-500',
+    color: 'text-emerald-500',
   },
   {
     icon: VerifiedIcon,

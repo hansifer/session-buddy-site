@@ -12,7 +12,7 @@ export const FeatureTiles = ({ tiles }: { tiles: FeatureTile[] }) => {
   return (
     <div
       className="
-        grid
+        inline-grid
         grid-cols-2
         md:grid-cols-3
         gap-4

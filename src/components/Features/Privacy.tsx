@@ -75,14 +75,14 @@ const tiles: FeatureTile[] = [
     color: 'text-rose-500',
   },
   {
-    icon: LocalFirstIcon,
-    label: 'Local\nfirst',
-    color: 'text-cyan-500',
-  },
-  {
     icon: NoLoginIcon,
     label: 'No\nlogin',
     color: 'text-emerald-500',
+  },
+  {
+    icon: LocalFirstIcon,
+    label: 'Local\nfirst',
+    color: 'text-cyan-500',
   },
   {
     icon: VerifiedIcon,

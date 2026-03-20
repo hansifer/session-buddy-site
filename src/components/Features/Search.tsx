@@ -31,9 +31,7 @@ export const Search = ({
       }}
     >
       <Feature
-        heading="Find anything instantly"
-        // heading="Find it fast"
-        // heading="Search smart"
+        heading="Find it fast"
         description="Locate any tab or bookmark in seconds with unified search across open tabs, collections, and tab history."
         bullets={[
           'View search results as filtered items or by relevance.',

@@ -1,11 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
-
-import feature1 from '@/assets/images/feature-placeholder-1.jpg';
-import feature2 from '@/assets/images/feature-placeholder-2.jpg';
-import feature3 from '@/assets/images/feature-placeholder-3.jpg';
-import feature4 from '@/assets/images/feature-placeholder-4.jpg';
+import { InfiniteCollectionTiles } from '@/components/InfiniteCollectionTiles';
 
 export const Organization = ({
   reverse,
@@ -16,7 +12,7 @@ export const Organization = ({
 }) => (
   <section className="w-full">
     <div
-      id="features"
+      id="organization"
       className="
         absolute
         -mt-20
@@ -44,24 +40,7 @@ export const Organization = ({
           'Keep things tidy with duplicate bookmark detection and folder merging.',
           // 'Edit bookmark properties like title, URL, and pinned state.',
         ]}
-        images={[
-          {
-            src: feature1.src,
-            alt: 'Feature image 1',
-          },
-          {
-            src: feature2.src,
-            alt: 'Feature image 2',
-          },
-          {
-            src: feature3.src,
-            alt: 'Feature image 3',
-          },
-          {
-            src: feature4.src,
-            alt: 'Feature image 4',
-          },
-        ]}
+        images={<InfiniteCollectionTiles tileBackgroundColor="bg-[#303136]" />}
         reverse={reverse}
         band={band}
       />

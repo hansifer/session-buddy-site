@@ -3,6 +3,7 @@ import { FeatureText } from '@/components/Feature/FeatureText';
 import type { FeatureTextProps } from '@/components/Feature/FeatureText';
 import { FeatureImage } from '@/components/Feature/FeatureImage';
 import { Diagonal } from '@/components/Feature/Diagonal';
+import { Fade } from '@/components/Fade';
 import { tw } from '@/util/tailwind';
 
 type Image = {
@@ -89,9 +90,19 @@ export const Feature = ({
   </div>
 );
 
-const OneImage = ({ image: { src, alt, className } }: { image: Image }) => (
+const OneImage = ({
+  image: { src, alt, className },
+  fade,
+}: {
+  image: Image;
+  fade?: {
+    height: string;
+    color: string;
+  };
+}) => (
   <div
     className="
+      relative
       flex-1
       w-11/12
       sm:w-3/4
@@ -101,6 +112,7 @@ const OneImage = ({ image: { src, alt, className } }: { image: Image }) => (
       lg:pt-0
     "
   >
+    <Fade {...fade} />
     <FeatureImage
       src={src}
       alt={alt}

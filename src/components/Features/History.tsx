@@ -44,10 +44,15 @@ export const History = ({
           {
             src: historyImg.src,
             alt: 'History timeline',
+            className: 'w-66 -mt-55.5 lg:mt-0',
           },
         ]}
         reverse={reverse}
         band={band}
+        fade={{
+          height: 'h-34',
+          color: 'text-secondaryBackgroundColor',
+        }}
       />
     </motion.div>
   </section>

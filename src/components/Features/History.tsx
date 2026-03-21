@@ -31,12 +31,12 @@ export const History = ({
     >
       <Feature
         heading="Lost tabs are history"
-        description="Travel back in time to view, save, or restore your tabs exactly as they were at a particular moment in the past."
+        description="Travel back in time to view and restore your tabs exactly as they were at a particular point in the past."
         bullets={[
-          'Recover your tabs in seconds after a browser crash or system restart.',
+          'Recover open tabs in seconds after a browser crash or system restart.',
           'Resurrect closed tabs long after they\'ve dropped off your browser\'s "Recent tabs" list.',
-          'Quickly find "that one tab you had open last Friday".',
-          'Tailor your history with custom snapshot intervals and cleanup rules.',
+          'Quickly find "that one site you visited last Friday afternoon".',
+          'Tailor your history timeline with custom snapshot intervals and cleanup rules.',
           // 'Control snapshot frequency or disable history altogether.',
           // 'Edit your timeline',
         ]}

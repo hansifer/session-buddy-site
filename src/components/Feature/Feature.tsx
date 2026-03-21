@@ -92,7 +92,10 @@ export const Feature = ({
 
 const OneImage = ({
   image: { src, alt, className },
-  fade,
+  fade = {
+    height: '',
+    color: '',
+  },
 }: {
   image: Image;
   fade?: {

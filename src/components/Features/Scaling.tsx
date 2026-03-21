@@ -30,7 +30,7 @@ export const Scaling = ({
     >
       <Feature
         heading="Go nuts"
-        description="Don't hold back. Session Buddy is engineered for heavy workloads."
+        description="Hoarding tabs at an industrial scale? No problem. Session Buddy is engineered for heavy workloads."
         bullets={[
           'Manage thousands of tabs and bookmarks with zero lag, instant search, and rock-solid stability.',
           'Open hundreds of tabs at once without freezing your browser.',

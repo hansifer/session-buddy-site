@@ -12,6 +12,11 @@ type Image = {
   className?: string;
 };
 
+type FadeProps = {
+  height: string;
+  color: string;
+};
+
 export const Feature = ({
   heading,
   description,
@@ -20,10 +25,15 @@ export const Feature = ({
   images,
   reverse,
   band,
+  fade = {
+    height: '',
+    color: '',
+  },
 }: FeatureTextProps & {
   images: [Image] | [Image, Image] | [Image, Image, Image, Image] | JSX.Element;
   reverse?: boolean;
   band?: 'diagonal' | true | false;
+  fade?: FadeProps;
 }) => (
   <div
     className={tw`
@@ -63,7 +73,10 @@ export const Feature = ({
         </div>
         {Array.isArray(images) ? (
           images.length === 1 ? (
-            <OneImage image={images[0]} />
+            <OneImage
+              image={images[0]}
+              fade={fade}
+            />
           ) : images.length === 2 ? (
             <TwoImages images={images} />
           ) : (
@@ -92,16 +105,10 @@ export const Feature = ({
 
 const OneImage = ({
   image: { src, alt, className },
-  fade = {
-    height: '',
-    color: '',
-  },
+  fade,
 }: {
   image: Image;
-  fade?: {
-    height: string;
-    color: string;
-  };
+  fade: FadeProps;
 }) => (
   <div
     className="

@@ -9,7 +9,7 @@ export const FeatureImage = ({
   alt: string;
   className?: string;
 }) => (
-  <div className="p-3">
+  <div className="p-3 overflow-hidden">
     <img
       src={src}
       alt={alt}

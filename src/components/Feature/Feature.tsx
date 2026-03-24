@@ -104,13 +104,7 @@ export const Feature = ({
   </div>
 );
 
-const OneImage = ({
-  image: { src, alt, className, shadow },
-  fade,
-}: {
-  image: Image;
-  fade: FadeProps;
-}) => (
+const OneImage = ({ image, fade }: { image: Image; fade: FadeProps }) => (
   <div
     className="
       relative
@@ -125,12 +119,7 @@ const OneImage = ({
     "
   >
     <Fade {...fade} />
-    <FeatureImage
-      src={src}
-      alt={alt}
-      shadow={shadow}
-      className={className}
-    />
+    <FeatureImage {...image} />
   </div>
 );
 
@@ -160,12 +149,7 @@ const TwoImages = ({
           lg:pr-17
         "
       >
-        <FeatureImage
-          src={firstImage.src}
-          alt={firstImage.alt}
-          shadow={firstImage.shadow}
-          className={firstImage.className}
-        />
+        <FeatureImage {...firstImage} />
       </div>
       <div
         className="
@@ -173,12 +157,7 @@ const TwoImages = ({
           lg:pl-17
         "
       >
-        <FeatureImage
-          src={secondImage.src}
-          alt={secondImage.alt}
-          shadow={secondImage.shadow}
-          className={secondImage.className}
-        />
+        <FeatureImage {...secondImage} />
       </div>
     </div>
   </div>
@@ -203,19 +182,9 @@ const FourImages = ({ images }: { images: [Image, Image, Image, Image] }) => (
       "
     >
       <div className="mb-4">
-        <FeatureImage
-          src={images[0].src}
-          alt={images[0].alt}
-          shadow={images[0].shadow}
-          className={images[0].className}
-        />
+        <FeatureImage {...images[0]} />
       </div>
-      <FeatureImage
-        src={images[1].src}
-        alt={images[1].alt}
-        shadow={images[1].shadow}
-        className={images[1].className}
-      />
+      <FeatureImage {...images[1]} />
     </div>
     <div
       className="
@@ -228,19 +197,9 @@ const FourImages = ({ images }: { images: [Image, Image, Image, Image] }) => (
       "
     >
       <div className="mb-4">
-        <FeatureImage
-          src={images[2].src}
-          alt={images[2].alt}
-          shadow={images[2].shadow}
-          className={images[2].className}
-        />
+        <FeatureImage {...images[2]} />
       </div>
-      <FeatureImage
-        src={images[3].src}
-        alt={images[3].alt}
-        shadow={images[3].shadow}
-        className={images[3].className}
-      />
+      <FeatureImage {...images[3]} />
     </div>
   </div>
 );

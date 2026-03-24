@@ -40,6 +40,11 @@ export const TabStream = ({
     canvasRef.current.width = width;
     canvasRef.current.height = height;
 
+    // Safari does not support CanvasRenderingContext2D.filter
+    const filterFallback = !ctx.filter // wrap
+      ? getFilterFallback(height)
+      : null;
+
     // cleanup
     let animationFrameId = 0;
     let isDisposed = false;
@@ -158,18 +163,41 @@ export const TabStream = ({
         const drawW = aspect >= 1 ? iconSize : iconSize * aspect;
         const drawH = aspect >= 1 ? iconSize / aspect : iconSize;
 
-        ctx.save();
-        ctx.filter = 'brightness(0) invert(1)'; // make white
+        if (filterFallback) {
+          const { bufferCanvas, bufferCtx } = filterFallback;
 
-        ctx.drawImage(
-          icon.image,
-          sx - drawW * 0.5,
-          sy - drawH * 0.5,
-          drawW,
-          drawH,
-        );
+          bufferCtx.clearRect(0, 0, drawW + 1, drawH + 1);
+          bufferCtx.globalCompositeOperation = 'source-over';
+          bufferCtx.drawImage(icon.image, 0, 0, drawW, drawH);
+          bufferCtx.globalCompositeOperation = 'source-in';
+          bufferCtx.fillStyle = 'white';
+          bufferCtx.fillRect(0, 0, drawW, drawH);
 
-        ctx.restore();
+          ctx.drawImage(
+            bufferCanvas,
+            0,
+            0,
+            drawW,
+            drawH,
+            sx - drawW * 0.5,
+            sy - drawH * 0.5,
+            drawW,
+            drawH,
+          );
+        } else {
+          ctx.save();
+          ctx.filter = 'brightness(0) invert(1)'; // make white
+
+          ctx.drawImage(
+            icon.image,
+            sx - drawW * 0.5,
+            sy - drawH * 0.5,
+            drawW,
+            drawH,
+          );
+
+          ctx.restore();
+        }
       }
 
       ctx.restore();
@@ -282,3 +310,22 @@ export const TabStream = ({
 
   return <canvas ref={canvasRef} />;
 };
+
+function getFilterFallback(height: number) {
+  const bufferSize = Math.ceil(height * 0.6);
+
+  const bufferCanvas = document.createElement('canvas');
+  bufferCanvas.width = bufferSize;
+  bufferCanvas.height = bufferSize;
+
+  const bufferCtx = bufferCanvas.getContext('2d', {
+    willReadFrequently: true,
+  });
+
+  if (!bufferCtx) return null;
+
+  return {
+    bufferCanvas,
+    bufferCtx,
+  };
+}

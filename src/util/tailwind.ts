@@ -1,4 +1,5 @@
 // template literal tag function that removes newlines
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function tw(strings: TemplateStringsArray, ...exprs: any[]) {
   const concatenated: string[] = [];
 

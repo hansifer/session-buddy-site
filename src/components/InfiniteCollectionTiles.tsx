@@ -38,7 +38,7 @@ type Item = {
 
 export const InfiniteCollectionTiles = ({
   n = 6,
-  speed = 100,
+  speed = 180,
   tileBackgroundColor,
 }: {
   n?: number; // number of tiles visible in viewport
@@ -77,7 +77,13 @@ export const InfiniteCollectionTiles = ({
 
       lastTimeRef.current = time;
 
-      containerRef.current.scrollTop += (speed * delta) / 1_000;
+      // normalize to 60fps
+      const timeScale = delta / 16.67;
+
+      // prevent huge jumps if tab was inactive
+      const safeTimeScale = Math.min(timeScale, 10);
+
+      containerRef.current.scrollTop += (speed * safeTimeScale) / 1_00;
     };
 
     rafRef.current = requestAnimationFrame(step);

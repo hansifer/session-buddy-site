@@ -46,7 +46,7 @@ export const Protection = ({
             src: localBackupImg.src,
             alt: 'Local backup',
             shadow: true,
-            className: 'w-106',
+            className: 'lg:w-106',
           },
         ]}
         reverse={reverse}

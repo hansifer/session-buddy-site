@@ -2,8 +2,7 @@ import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
 
-import feature5 from '@/assets/images/feature-placeholder-5.jpg';
-import feature6 from '@/assets/images/feature-placeholder-6.jpg';
+import localBackupImg from '@/assets/images/local-backup.png';
 
 export const Protection = ({
   reverse,
@@ -44,12 +43,10 @@ export const Protection = ({
         ]}
         images={[
           {
-            src: feature5.src,
-            alt: 'Feature image 5',
-          },
-          {
-            src: feature6.src,
-            alt: 'Feature image 6',
+            src: localBackupImg.src,
+            alt: 'Local backup',
+            shadow: true,
+            className: 'w-106',
           },
         ]}
         reverse={reverse}

@@ -9,6 +9,7 @@ import { tw } from '@/util/tailwind';
 type Image = {
   src: string;
   alt: string;
+  shadow?: boolean;
   className?: string;
 };
 
@@ -104,7 +105,7 @@ export const Feature = ({
 );
 
 const OneImage = ({
-  image: { src, alt, className },
+  image: { src, alt, className, shadow },
   fade,
 }: {
   image: Image;
@@ -120,12 +121,14 @@ const OneImage = ({
       mx-auto
       pt-8
       lg:pt-0
+      text-[0px]
     "
   >
     <Fade {...fade} />
     <FeatureImage
       src={src}
       alt={alt}
+      shadow={shadow}
       className={className}
     />
   </div>
@@ -138,38 +141,45 @@ const TwoImages = ({
 }) => (
   <div
     className="
+      flex
+      justify-center
       flex-1
       w-11/12
       sm:w-3/4
       lg:w-1/2
       sm:px-4
       xl:px-8
+      text-[0px]
     "
   >
-    <div
-      className="
-        mb-4
-        md:pr-17
-        lg:pr-10
-      "
-    >
-      <FeatureImage
-        src={firstImage.src}
-        alt={firstImage.alt}
-        className={firstImage.className}
-      />
-    </div>
-    <div
-      className="
-        md:pl-17
-        lg:pl-10
-      "
-    >
-      <FeatureImage
-        src={secondImage.src}
-        alt={secondImage.alt}
-        className={secondImage.className}
-      />
+    <div>
+      <div
+        className="
+          mb-4
+          md:pr-10
+          lg:pr-17
+        "
+      >
+        <FeatureImage
+          src={firstImage.src}
+          alt={firstImage.alt}
+          shadow={firstImage.shadow}
+          className={firstImage.className}
+        />
+      </div>
+      <div
+        className="
+          md:pl-10
+          lg:pl-17
+        "
+      >
+        <FeatureImage
+          src={secondImage.src}
+          alt={secondImage.alt}
+          shadow={secondImage.shadow}
+          className={secondImage.className}
+        />
+      </div>
     </div>
   </div>
 );
@@ -183,6 +193,7 @@ const FourImages = ({ images }: { images: [Image, Image, Image, Image] }) => (
       lg:w-1/2
       sm:px-4
       xl:px-8
+      text-[0px]
     "
   >
     <div
@@ -195,12 +206,14 @@ const FourImages = ({ images }: { images: [Image, Image, Image, Image] }) => (
         <FeatureImage
           src={images[0].src}
           alt={images[0].alt}
+          shadow={images[0].shadow}
           className={images[0].className}
         />
       </div>
       <FeatureImage
         src={images[1].src}
         alt={images[1].alt}
+        shadow={images[1].shadow}
         className={images[1].className}
       />
     </div>
@@ -218,12 +231,14 @@ const FourImages = ({ images }: { images: [Image, Image, Image, Image] }) => (
         <FeatureImage
           src={images[2].src}
           alt={images[2].alt}
+          shadow={images[2].shadow}
           className={images[2].className}
         />
       </div>
       <FeatureImage
         src={images[3].src}
         alt={images[3].alt}
+        shadow={images[3].shadow}
         className={images[3].className}
       />
     </div>

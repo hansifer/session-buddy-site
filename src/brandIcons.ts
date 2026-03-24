@@ -3013,7 +3013,7 @@ export const BRAND_ICON_SLUGS_GENERAL = [
   'rotary-international',
   'rotten-tomatoes',
   'roundcube',
-  'rowy',
+  // 'rowy',
   'rsbuild',
   'rsocket',
   'rspack',

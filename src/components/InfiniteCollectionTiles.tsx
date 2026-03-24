@@ -40,11 +40,11 @@ type Item = {
 
 export const InfiniteCollectionTiles = ({
   n = 6,
-  speed = 180,
+  speed = 1.8,
   tileBackgroundColor,
 }: {
   n?: number; // number of tiles visible in viewport
-  speed?: number; // auto-scroll speed in pixels per second
+  speed?: number; // auto-scroll speed
   tileBackgroundColor?: string;
 }) => {
   const viewportHeight = n * COLLECTION_TILE_HEIGHT + (n - 1) * GAP;
@@ -85,7 +85,7 @@ export const InfiniteCollectionTiles = ({
       // prevent huge jumps if tab was inactive
       const safeTimeScale = Math.min(timeScale, 10);
 
-      containerRef.current.scrollTop += (speed * safeTimeScale) / 1_00;
+      containerRef.current.scrollTop += speed * safeTimeScale;
     };
 
     rafRef.current = requestAnimationFrame(step);

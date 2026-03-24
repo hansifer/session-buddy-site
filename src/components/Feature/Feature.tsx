@@ -107,12 +107,13 @@ export const Feature = ({
 const OneImage = ({ image, fade }: { image: Image; fade: FadeProps }) => (
   <div
     className="
+      flex
+      justify-center
       relative
       flex-1
       w-11/12
       sm:w-3/4
       lg:w-1/2
-      mx-auto
       pt-8
       lg:pt-0
       text-[0px]

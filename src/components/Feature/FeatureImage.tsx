@@ -24,9 +24,7 @@ export const FeatureImage = ({
       src={src}
       alt={alt}
       aria-label={alt}
-      className={tw`
-        ${className}
-      `}
+      className={className}
     />
   </div>
 );

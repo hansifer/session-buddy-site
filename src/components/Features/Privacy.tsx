@@ -43,7 +43,7 @@ export const Privacy = ({
           'Your bookmarks and tab history are stored securely on your device, never on any server.',
           // 'Only the narrowest permissions required to manage your tabs are requested.',
           'Use Session Buddy for as long as you want without a login.',
-          "Verified and featured on the Chrome Web Store for meeting Google's standards of trust and best practices.",
+          "Verified and featured on the Chrome Web Store for meeting Google's standards of trust and value.",
           'Trusted by millions for over 15 years.',
         ]}
         images={

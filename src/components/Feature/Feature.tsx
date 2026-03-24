@@ -31,7 +31,11 @@ export const Feature = ({
     color: '',
   },
 }: FeatureTextProps & {
-  images: [Image] | [Image, Image] | [Image, Image, Image, Image] | JSX.Element;
+  images?:
+    | [Image]
+    | [Image, Image]
+    | [Image, Image, Image, Image]
+    | JSX.Element;
   reverse?: boolean;
   band?: 'diagonal' | true | false;
   fade?: FadeProps;
@@ -72,7 +76,7 @@ export const Feature = ({
             button={button}
           />
         </div>
-        {Array.isArray(images) ? (
+        {!images ? null : Array.isArray(images) ? (
           images.length === 1 ? (
             <OneImage
               image={images[0]}

@@ -35,7 +35,7 @@ export const More = ({
           'Quickly replace collection contents with the current session.',
           'Keep track of open tabs with a live counter on the toolbar icon.',
           "Navigate collections naturally with the browser's back/forth buttons.",
-          'Enjoy a polished look with smart fallbacks for broken and outdated site icons.',
+          'Smart fallbacks for broken and outdated site icons.',
           // 'Use powerful organizational features like cloning, merging, and splitting to manage collections and folders.',
         ]}
         reverse={reverse}

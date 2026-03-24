@@ -37,7 +37,7 @@ export const Customization = ({
           'Choose light or dark mode.',
           "Filter tabs you don't care about.",
           'Power up with customizable keyboard shortcuts.',
-          'Fine-tune behaviors with advanced experimental settings.',
+          'Fine-tune behaviors with experiments.',
           // 'Select which copy formats to display.',
         ]}
         images={[

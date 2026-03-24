@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
 
-import addLinksImg from '@/assets/images/add-links.jpg';
-import exportImg from '@/assets/images/export.jpg';
+import addLinksImg from '@/assets/images/add-links.png';
+import exportImg from '@/assets/images/export.png';
 
 export const Sharing = ({
   reverse,
@@ -44,12 +44,14 @@ export const Sharing = ({
           {
             src: addLinksImg.src,
             alt: 'Add links from text',
-            className: 'shadow-2xl shadow-black/80 max-w-116 lg:max-w-100',
+            className: 'lg:w-100',
+            shadow: true,
           },
           {
             src: exportImg.src,
             alt: 'Export collections',
-            className: 'shadow-2xl shadow-black/80 max-w-116 lg:max-w-100',
+            className: 'lg:w-100',
+            shadow: true,
           },
         ]}
         reverse={reverse}

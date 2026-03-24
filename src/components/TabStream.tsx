@@ -7,7 +7,7 @@ import { COLLECTION_COLORS_DARK } from '@/collectionColors';
 // todo: generalize into a comp that accepts icons and colors
 
 const DEFAULT_COUNT = 13; // number of tabs simultaneously on the strip
-const DEFAULT_SPEED = 0.0036;
+const DEFAULT_SPEED = 0.0015;
 const DEFAULT_FADE_IN_SPEED = 0.013;
 
 type TAB = {
@@ -203,8 +203,26 @@ export const TabStream = ({
       ctx.restore();
     }
 
+    let lastTime = 0;
+
     function draw(ctx: CanvasRenderingContext2D) {
       if (isDisposed) return;
+
+      const now = performance.now();
+
+      const elapsed = lastTime // wrap
+        ? now - lastTime
+        : 0;
+
+      lastTime = now;
+
+      // console.log(elapsed);
+
+      // normalize to 60fps
+      const timeScale = elapsed / 16.67;
+
+      // prevent huge jumps if tab was inactive
+      const safeTimeScale = Math.min(timeScale, 10);
 
       // const start = performance.now();
 
@@ -213,7 +231,7 @@ export const TabStream = ({
       // advance each tab away from the viewer. recycle when it exits the far end.
 
       for (let i = 0; i < count; i++) {
-        tabs[i].pos -= speed;
+        tabs[i].pos -= speed * safeTimeScale;
 
         if (tabs[i].pos < 0.0) {
           // wrap back to the near end and assign a new icon

@@ -148,6 +148,7 @@ export const InfiniteCollectionTiles = ({
           overflow-y-auto
           [scrollbar-width:none]
           [&::-webkit-scrollbar]:hidden
+          [-webkit-overflow-scrolling:touch]
         "
       >
         <div

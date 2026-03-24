@@ -167,6 +167,7 @@ const FourImages = ({ images }: { images: [Image, Image, Image, Image] }) => (
   <div
     className="
       flex
+      justify-center
       flex-1
       w-3/4
       lg:w-1/2
@@ -175,31 +176,33 @@ const FourImages = ({ images }: { images: [Image, Image, Image, Image] }) => (
       text-[0px]
     "
   >
-    <div
-      className="
-        flex-1
-        px-2
-      "
-    >
-      <div className="mb-4">
-        <FeatureImage {...images[0]} />
+    <div className="flex">
+      <div
+        className="
+          flex-1
+          px-2
+        "
+      >
+        <div className="mb-4">
+          <FeatureImage {...images[0]} />
+        </div>
+        <FeatureImage {...images[1]} />
       </div>
-      <FeatureImage {...images[1]} />
-    </div>
-    <div
-      className="
-        hidden
-        sm:inline-block
-        flex-1
-        px-2
-        pt-12
-        lg:pt-20
-      "
-    >
-      <div className="mb-4">
-        <FeatureImage {...images[2]} />
+      <div
+        className="
+          hidden
+          sm:inline-block
+          flex-1
+          px-2
+          pt-12
+          lg:pt-20
+        "
+      >
+        <div className="mb-4">
+          <FeatureImage {...images[2]} />
+        </div>
+        <FeatureImage {...images[3]} />
       </div>
-      <FeatureImage {...images[3]} />
     </div>
   </div>
 );

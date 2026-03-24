@@ -60,6 +60,7 @@ export const Feature = ({
           lg:flex-row
           ${reverse ? 'lg:flex-row-reverse' : ''}
           items-center
+          justify-center
           gap-12
           w-11/12
           xl:w-325
@@ -68,7 +69,12 @@ export const Feature = ({
           mx-auto
         `}
       >
-        <div className="flex-1">
+        <div
+          className={tw`
+            flex-1
+            ${!images ? 'max-w-160' : ''}
+          `}
+        >
           <FeatureText
             heading={heading}
             description={description}

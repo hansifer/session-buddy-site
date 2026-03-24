@@ -44,14 +44,14 @@ export const Sharing = ({
           {
             src: addLinksImg.src,
             alt: 'Add links from text',
-            className: 'lg:w-100',
             shadow: true,
+            className: 'lg:w-100',
           },
           {
             src: exportImg.src,
             alt: 'Export collections',
-            className: 'lg:w-100',
             shadow: true,
+            className: 'lg:w-100',
           },
         ]}
         reverse={reverse}

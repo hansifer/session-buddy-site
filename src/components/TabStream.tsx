@@ -271,7 +271,14 @@ export const TabStream = ({
         image.onerror = null;
       });
     };
-  }, []);
+  }, [
+    // wrap
+    width,
+    height,
+    count,
+    speed,
+    fadeInSpeed,
+  ]);
 
   return <canvas ref={canvasRef} />;
 };

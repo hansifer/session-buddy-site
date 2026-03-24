@@ -8,6 +8,8 @@ import {
   COLLECTION_TILE_HEIGHT,
 } from '@/components/CollectionTile';
 
+// todo: make touch interaction more natural. currently, an initial tap to stop auto-scroll is required before free-scrolling works. subsequent tap-outside resumes auto-scroll. it might be nice for an initial flick to stop auto-scroll/start free-scroll.
+
 // todo: experiment with reducing render frequency. tweak scroll height increment, distance from bottom threshold, overscan, startIdx update (eg, every multiple of 3). ensure scrollHeight is always enough to accommodate rendered tiles.
 
 // todo: generalize into a comp that accepts a data generator and item component

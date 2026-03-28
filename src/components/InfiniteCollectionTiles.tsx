@@ -68,6 +68,8 @@ export const InfiniteCollectionTiles = ({
   // auto-scroll
   useEffect(() => {
     const step = (time: number) => {
+      rafRef.current = requestAnimationFrame(step);
+
       if (hoveredRef.current || !containerRef.current) {
         lastTimeRef.current = time;
         return;
@@ -86,8 +88,6 @@ export const InfiniteCollectionTiles = ({
       const safeTimeScale = Math.min(timeScale, 10);
 
       containerRef.current.scrollTop += speed * safeTimeScale;
-
-      rafRef.current = requestAnimationFrame(step);
     };
 
     rafRef.current = requestAnimationFrame(step);

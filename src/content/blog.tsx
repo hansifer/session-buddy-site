@@ -1,6 +1,6 @@
-import aiAndMachineLearningImage from '@/assets/images/screenshot.png';
-import dataDrivenAnalyticsImage from '@/assets/images/screenshot.png';
-import realTimeDataProcessingImage from '@/assets/images/screenshot.png';
+import aiAndMachineLearningImage from '@/assets/images/collection.png';
+import dataDrivenAnalyticsImage from '@/assets/images/collection.png';
+import realTimeDataProcessingImage from '@/assets/images/collection.png';
 
 import type { Article } from '@/types';
 

@@ -1,6 +1,6 @@
 import type { Testimonial } from '@/types';
 
-import davidWilsonImage from '@/assets/images/screenshot.png';
+import davidWilsonImage from '@/assets/images/collection.png';
 
 export const testimonials = [
   {

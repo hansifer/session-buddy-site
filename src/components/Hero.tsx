@@ -2,7 +2,9 @@ import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import { InvitationModal } from '@/components/InvitationModal';
-import heroImage from '@/assets/images/screenshot.png';
+import browserImage from '@/assets/images/browser.png';
+import collectionImage from '@/assets/images/collection.png';
+import { tw } from '@/util/tailwind';
 
 type ImageTransform = {
   translateY: number; // scroll-based effect
@@ -18,8 +20,9 @@ const IMG_MOUSEOVER_TILT = 10;
 
 export const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCollectionImageShown, setIsCollectionImageShown] = useState(false);
 
-  const imgRef = useRef<HTMLImageElement>(null);
+  const imgRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number>(null);
 
   const transformRef = useRef<ImageTransform>({
@@ -30,7 +33,7 @@ export const Hero = () => {
   });
 
   const transformImage = (
-    callback: (img: HTMLImageElement) => Partial<ImageTransform>,
+    callback: (img: HTMLDivElement) => Partial<ImageTransform>,
   ) => {
     const img = imgRef.current;
 
@@ -69,6 +72,23 @@ export const Hero = () => {
     };
   }, []);
 
+  useEffect(() => {
+    let timeout: number | undefined;
+
+    const cycle = () => {
+      setIsCollectionImageShown((visible) => {
+        timeout = window.setTimeout(cycle, visible ? 2_000 : 4_000);
+        return !visible;
+      });
+    };
+
+    timeout = window.setTimeout(cycle, 2_000);
+
+    return () => {
+      window.clearTimeout(timeout);
+    };
+  }, []);
+
   const handleMove = (e: React.MouseEvent<HTMLElement>) => {
     transformImage((img) => {
       // measure relative to the image element itself so positioning is accurate
@@ -94,7 +114,7 @@ export const Hero = () => {
   };
 
   return (
-    // to clip screenshot: step 1 of 2: add class `overflow-hidden`
+    // to clip hero image: step 1 of 2: add class `overflow-hidden`
     <section
       className="
         flex
@@ -150,7 +170,7 @@ export const Hero = () => {
               text-primaryTextColor
             "
           >
-            Tame Your Tabs.
+            Tame Your Tabs
           </h1>
           <h1
             className="
@@ -166,7 +186,7 @@ export const Hero = () => {
               text-primaryColor
             "
           >
-            Master Your Workflow.
+            Master Your Workflow
           </h1>
         </motion.div>
         <motion.div
@@ -258,10 +278,8 @@ export const Hero = () => {
             onMouseMove={handleMove}
             onMouseLeave={handleLeave}
           >
-            <img
+            <div
               ref={imgRef}
-              src={heroImage.src}
-              alt="Hero image"
               className="
                 absolute
                 lg:top-6
@@ -269,6 +287,7 @@ export const Hero = () => {
                 w-4/5
                 2xl:w-300
                 max-w-245
+                overflow-hidden
                 rounded-xl
                 shadow-[0_50px_90px_rgba(0,0,0,0.6)]
                 transform-gpu
@@ -277,10 +296,27 @@ export const Hero = () => {
                 ease-[cubic-bezier(.2,.8,.2,1)]
                 will-change-transform
               "
-            />
+            >
+              <img
+                src={browserImage.src}
+                alt="This browser"
+              />
+              <img
+                src={collectionImage.src}
+                alt="Collection"
+                className={tw`
+                  absolute
+                  top-0
+                  left-0
+                  transition-opacity
+                  duration-500
+                  ${isCollectionImageShown ? 'opacity-100' : 'opacity-0'}
+                `}
+              />
+            </div>
           </div>
         </motion.div>
-        {/* to clip screenshot: step 2 of 2: add class `z-20` */}
+        {/* to clip hero image: step 2 of 2: add class `z-20` */}
         <div
           className="
             w-screen

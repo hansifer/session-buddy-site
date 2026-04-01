@@ -195,3 +195,24 @@ html::selection {
 .outlined-button {
   @apply flex justify-center items-center text-primaryTextColor bg-primaryBackgroundColor hover:bg-blockStrongBackgroundColor rounded-xl text-sm border border-solid border-gray-600 cursor-pointer transition;
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-line {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.07) 20%,
+    rgba(255, 255, 255, 0.16) 50%,
+    rgba(255, 255, 255, 0.07) 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}

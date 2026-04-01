@@ -32,7 +32,7 @@ export const TabOverview = ({
     >
       <Feature
         heading="Total tab control"
-        description="Cut through the chaos of scattered windows. Visualize and control every open tab from a single, unified dashboard."
+        description="Cut through the chaos of scattered windows. Visualize and control all of your open tabs from a single, unified dashboard."
         bullets={[
           'Quickly locate any tab with instant filtering.',
           'Open multiple tabs at once from text.',

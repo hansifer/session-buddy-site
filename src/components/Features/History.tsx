@@ -51,7 +51,7 @@ export const History = ({
         band={band}
         fade={{
           height: 'h-34',
-          color: 'text-secondaryBackgroundColor',
+          color: 'text-primaryBackgroundColor',
         }}
       />
     </motion.div>

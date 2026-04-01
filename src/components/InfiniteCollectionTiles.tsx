@@ -141,7 +141,7 @@ export const InfiniteCollectionTiles = ({
       "
       style={{ height: viewportHeight }}
     >
-      <Fade />
+      <Fade color="text-secondaryBackgroundColor" />
       <div
         ref={containerRef}
         style={{ height: viewportHeight }}

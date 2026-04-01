@@ -16,8 +16,8 @@ import { More } from '@/components/Features/More';
 const features = [
   Flow,
   TabOverview,
-  Organization,
   History,
+  Organization,
   Search,
   Sharing,
   Privacy,

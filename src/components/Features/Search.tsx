@@ -2,8 +2,7 @@ import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
 
-import feature5 from '@/assets/images/feature-placeholder-5.jpg';
-import feature6 from '@/assets/images/feature-placeholder-6.jpg';
+import searchImg from '@/assets/images/search.png';
 
 export const Search = ({
   reverse,
@@ -41,12 +40,9 @@ export const Search = ({
         ]}
         images={[
           {
-            src: feature5.src,
-            alt: 'Feature image 5',
-          },
-          {
-            src: feature6.src,
-            alt: 'Feature image 6',
+            src: searchImg.src,
+            alt: 'Search',
+            className: 'lg:w-110 xl:w-140',
           },
         ]}
         reverse={reverse}

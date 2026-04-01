@@ -9,15 +9,27 @@ import { testimonials as testimonialsData } from '@/content/testimonials';
 
 const GROUP_SIZE = 3; // number of testimonials to show at once
 const groupCount = Math.ceil(testimonialsData.length / GROUP_SIZE);
+const MIN_SHIMMER_MS = 600;
 
 // todo: support for displaying indefinite number of testimonials
 
 export const Testimonials = () => {
   const [shownGroupCount, setShownGroupCount] = useState(2);
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [testimonials, setTestimonials] = useState<Testimonial[] | null>(null);
 
   useEffect(() => {
-    setTestimonials(randomize(testimonialsData));
+    const start = Date.now();
+    const randomizedTestimonials = randomize(testimonialsData);
+    const elapsed = Date.now() - start;
+    const remainingDelay = Math.max(MIN_SHIMMER_MS - elapsed, 0);
+
+    const timeout = window.setTimeout(() => {
+      setTestimonials(randomizedTestimonials);
+    }, remainingDelay);
+
+    return () => {
+      window.clearTimeout(timeout);
+    };
   }, []);
 
   return (
@@ -80,13 +92,17 @@ export const Testimonials = () => {
                 "
               >
                 {testimonials
-                  .slice(i * GROUP_SIZE, (i + 1) * GROUP_SIZE)
-                  .map((testimonial) => (
-                    <TestimonialBlock
-                      key={testimonial.name}
-                      testimonial={testimonial}
-                    />
-                  ))}
+                  ? testimonials
+                      .slice(i * GROUP_SIZE, (i + 1) * GROUP_SIZE)
+                      .map((testimonial) => (
+                        <TestimonialBlock
+                          key={testimonial.name}
+                          testimonial={testimonial}
+                        />
+                      ))
+                  : Array.from({ length: GROUP_SIZE }, (_, j) => (
+                      <TestimonialBlock key={`placeholder-${i}-${j}`} />
+                    ))}
               </div>
             ),
           )}
@@ -118,10 +134,14 @@ export const Testimonials = () => {
   );
 };
 
-const TestimonialBlock = ({ testimonial }: { testimonial: Testimonial }) => {
-  const { name, quote } = testimonial;
-  const role = getRole(testimonial);
-  const image = 'image' in testimonial ? testimonial.image : null;
+const TestimonialBlock = ({ testimonial }: { testimonial?: Testimonial }) => {
+  const { name, quote, role, image } = testimonial
+    ? {
+        ...testimonial,
+        role: getRole(testimonial),
+        image: 'image' in testimonial ? testimonial.image : null,
+      }
+    : {};
 
   return (
     <div
@@ -136,11 +156,20 @@ const TestimonialBlock = ({ testimonial }: { testimonial: Testimonial }) => {
         block-border
         bg-blockBackgroundColor
       "
+      aria-hidden={testimonial ? undefined : true}
     >
       <div className="mb-2">
         <StandardQuoteIcon />
       </div>
-      <div className="content-text-white">"{quote}"</div>
+      {testimonial ? (
+        <div className="content-text-white">"{quote}"</div>
+      ) : (
+        <>
+          <div className="shimmer-line h-4 w-full rounded-md" />
+          <div className="mt-3 shimmer-line h-4 w-11/12 rounded-md" />
+          <div className="mt-3 shimmer-line h-4 w-4/5 rounded-md" />
+        </>
+      )}
       <div
         className="
           flex
@@ -152,29 +181,39 @@ const TestimonialBlock = ({ testimonial }: { testimonial: Testimonial }) => {
           xl:mb-4
         "
       >
-        {image ? (
-          <img
-            src={image}
-            alt={`${name} avatar`}
-            aria-label={name}
-            className="
-              size-11
-              rounded-full
-              object-cover
-            "
-          />
-        ) : null}
-        <div>
-          <div
-            className="
-              content-text-white
-              font-bold
-            "
-          >
-            {name}
+        {testimonial ? (
+          image ? (
+            <img
+              src={image}
+              alt={`${name} avatar`}
+              aria-label={name}
+              className="
+                size-11
+                rounded-full
+                object-cover
+              "
+            />
+          ) : null
+        ) : (
+          <div className="size-11 rounded-full shimmer-line" />
+        )}
+        {testimonial ? (
+          <div>
+            <div
+              className="
+                content-text-white
+                font-bold
+              "
+            >
+              {name}
+            </div>
+            {role ? (
+              <div className="text-secondaryTextColor">{role}</div>
+            ) : null}
           </div>
-          {role ? <div className="text-secondaryTextColor">{role}</div> : null}
-        </div>
+        ) : (
+          <div className="shimmer-line h-4 w-2/5 rounded-md" />
+        )}
       </div>
     </div>
   );

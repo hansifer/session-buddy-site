@@ -29,13 +29,13 @@ export const More = ({
     >
       <Feature
         heading="More good stuff"
-        description="Here are just a few more things designed to make your browsing smoother:"
+        description="Here are just a few more features designed to make your browsing smoother:"
         bullets={[
-          'Bookmark any collection for quick access.',
-          'Quickly replace collection contents with the current session.',
-          'Keep track of open tabs with a live counter on the toolbar icon.',
-          "Navigate collections naturally with the browser's back/forth buttons.",
-          'Smart fallbacks for broken and outdated site icons.',
+          'Bookmark collections for quick access.',
+          'Swap a collection with the current session.',
+          'Track tab strain with a badge on the toolbar icon.',
+          "Navigate naturally with the browser's back/forth buttons.",
+          'See smart fallbacks for broken and outdated site icons.',
           // 'Use powerful organizational features like cloning, merging, and splitting to manage collections and folders.',
         ]}
         reverse={reverse}

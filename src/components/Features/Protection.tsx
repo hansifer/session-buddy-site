@@ -31,7 +31,7 @@ export const Protection = ({
     >
       <Feature
         heading="Breathe easy"
-        description="Don't let a crash or glitch wipe out your hard work. Session Buddy uses multiple layers of protection to ensure your data survives the unexpected."
+        description="Session Buddy uses multiple layers of protection to ensure your data survives the unexpected."
         bullets={[
           'Protect from crashes, OS updates, outages, profile corruption, and other data loss risks.',
           'Instantly recover your open tabs after a crash or unexpected shutdown.',
@@ -46,7 +46,7 @@ export const Protection = ({
             src: localBackupImg.src,
             alt: 'Local backup',
             shadow: true,
-            className: 'lg:w-106',
+            className: 'lg:w-100',
           },
         ]}
         reverse={reverse}

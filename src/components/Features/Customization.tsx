@@ -2,8 +2,7 @@ import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
 
-import feature5 from '@/assets/images/feature-placeholder-5.jpg';
-import feature6 from '@/assets/images/feature-placeholder-6.jpg';
+import lightDarkImg from '@/assets/images/light-dark.png';
 
 export const Customization = ({
   reverse,
@@ -42,12 +41,10 @@ export const Customization = ({
         ]}
         images={[
           {
-            src: feature5.src,
-            alt: 'Feature image 5',
-          },
-          {
-            src: feature6.src,
-            alt: 'Feature image 6',
+            src: lightDarkImg.src,
+            alt: 'Light/dark mode',
+            shadow: true,
+            className: 'lg:w-110 xl:w-130',
           },
         ]}
         reverse={reverse}

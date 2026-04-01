@@ -189,7 +189,7 @@ html::selection {
 /* --- Buttons --- */
 
 .contained-button {
-  @apply flex justify-center items-center text-primaryTextColor bg-secondaryColor hover:opacity-80 rounded-lg font-bold cursor-pointer transition;
+  @apply flex justify-center items-center text-primaryTextColor bg-secondaryColor hover:opacity-80 rounded-lg focus:outline-3 outline-offset-3 outline-secondaryColor font-bold cursor-pointer transition;
 }
 
 .outlined-button {

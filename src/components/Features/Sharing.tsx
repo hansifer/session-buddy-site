@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Feature } from '@/components/Feature/Feature';
 
 import addLinksImg from '@/assets/images/add-links.png';
-import exportImg from '@/assets/images/export.png';
+// import exportImg from '@/assets/images/export.png';
 
 export const Sharing = ({
   reverse,
@@ -34,7 +34,7 @@ export const Sharing = ({
         heading="Share flexibly"
         description="Move bookmarks and tabs freely in and out of Session Buddy with robust import, export, copy and paste."
         bullets={[
-          'Instantly open a list of URLs as tabs or save them to a collection.',
+          'Open a list of URLs as tabs or save them to a collection.',
           'Import any text with automatic format detection and smart URL extraction.',
           'Copy tabs or bookmarks and paste them directly into emails, documents, or chat.',
           // 'Export to the clipboard or a file.',
@@ -47,12 +47,12 @@ export const Sharing = ({
             shadow: true,
             className: 'lg:w-100',
           },
-          {
-            src: exportImg.src,
-            alt: 'Export collections',
-            shadow: true,
-            className: 'lg:w-100',
-          },
+          // {
+          //   src: exportImg.src,
+          //   alt: 'Export collections',
+          //   shadow: true,
+          //   className: 'lg:w-100',
+          // },
         ]}
         reverse={reverse}
         band={band}

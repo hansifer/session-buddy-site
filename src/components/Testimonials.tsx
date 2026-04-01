@@ -1,18 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import { StandardQuoteIcon } from '@/assets/icons/QuoteIcon';
 import type { Testimonial } from '@/types';
+import { randomize } from '@/util/array';
 
-import { testimonials } from '@/content/testimonials';
+import { testimonials as testimonialsData } from '@/content/testimonials';
 
 const GROUP_SIZE = 3; // number of testimonials to show at once
-const groupCount = Math.ceil(testimonials.length / GROUP_SIZE);
+const groupCount = Math.ceil(testimonialsData.length / GROUP_SIZE);
 
 // todo: support for displaying indefinite number of testimonials
 
 export const Testimonials = () => {
-  const [shownGroupCount, setShownGroupCount] = useState(1);
+  const [shownGroupCount, setShownGroupCount] = useState(2);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+
+  useEffect(() => {
+    setTestimonials(randomize(testimonialsData));
+  }, []);
 
   return (
     <section
@@ -96,14 +102,7 @@ export const Testimonials = () => {
                 className="
                   px-8
                   py-3
-                  block-border
-                  rounded-full
-                  text-white
-                  bg-blockBackgroundColor
-                  hover:bg-blockStrongBackgroundColor
-                  focus:bg-blockStrongBackgroundColor
-                  focus:outline-none
-                  cursor-pointer
+                  contained-button
                 "
                 onClick={() => {
                   setShownGroupCount((count) => count + 1);
@@ -169,7 +168,7 @@ const TestimonialBlock = ({ testimonial }: { testimonial: Testimonial }) => {
           <div
             className="
               content-text-white
-              font-medium
+              font-bold
             "
           >
             {name}

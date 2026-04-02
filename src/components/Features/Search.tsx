@@ -42,7 +42,7 @@ export const Search = ({
           {
             src: searchImg.src,
             alt: 'Search',
-            className: 'lg:w-110 xl:w-140',
+            className: 'lg:w-110 xl:w-120 2xl:w-130',
           },
         ]}
         reverse={reverse}

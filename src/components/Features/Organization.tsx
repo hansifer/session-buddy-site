@@ -32,7 +32,7 @@ export const Organization = ({
         heading="Collect your thoughts"
         description="Use collections and folders to organize bookmarks by topic, project, timeline, or whatever suits your workflow."
         bullets={[
-          'Assign names and colors to collections for instant recognition.',
+          'Assign names and colors for instant recognition.',
           'Pin essential collections for quick access.',
           'Add bookmarks from any text or copy and paste tabs directly from the current session.',
           // 'Sort, reorder, and move bookmarks across folders and collections.',

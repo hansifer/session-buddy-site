@@ -2683,7 +2683,7 @@ export const BRAND_ICON_SLUGS_GENERAL = [
   'pizza-hut',
   'pkgsrc',
   'plaid',
-  'plainsignal',
+  // 'plainsignal',
   'plane',
   'planet',
   'planetscale',

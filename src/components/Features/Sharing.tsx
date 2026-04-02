@@ -38,14 +38,14 @@ export const Sharing = ({
           'Import any text with automatic format detection and smart URL extraction.',
           'Copy tabs or bookmarks and paste them directly into emails, documents, or chat.',
           // 'Export to the clipboard or a file.',
-          'Support for 15+ formats including plain text, JSON, CSV, Markdown, and HTML.',
+          'Support for 15+ formats including plain text, links, JSON, CSV, Markdown, and HTML.',
         ]}
         images={[
           {
             src: addLinksImg.src,
             alt: 'Add links from text',
             shadow: true,
-            className: 'lg:w-100 xl:w-120',
+            className: 'lg:w-100 xl:w-110 2xl:w-120',
           },
           // {
           //   src: exportImg.src,

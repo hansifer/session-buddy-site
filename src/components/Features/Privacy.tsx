@@ -38,7 +38,7 @@ export const Privacy = ({
     >
       <Feature
         heading="Private by design"
-        description="No ads. No tracking. No data sharing."
+        description="Data protection that's built-in. No ads. No tracking. No data sharing."
         bullets={[
           'Your bookmarks and tab history are stored securely on your device, never on any server.',
           // 'Only the narrowest permissions required to manage your tabs are requested.',

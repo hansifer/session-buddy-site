@@ -44,7 +44,7 @@ export const Customization = ({
             src: lightDarkImg.src,
             alt: 'Light/dark mode',
             shadow: true,
-            className: 'lg:w-110 xl:w-130',
+            className: 'lg:w-110 2xl:w-130',
           },
         ]}
         reverse={reverse}

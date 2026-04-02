@@ -35,9 +35,9 @@ export const TabOverview = ({
         description="Cut through the chaos of scattered windows. Visualize and control all of your open tabs from a single, unified dashboard."
         bullets={[
           'Quickly locate any tab with instant filtering.',
-          'Open multiple tabs at once from text.',
+          'Open tabs from text.',
           'Close related tabs with one click.',
-          'Copy tabs as text, Markdown, CSV, or JSON for easy sharing.',
+          'Copy tabs as links, Markdown, CSV, or JSON for easy sharing.',
           'Reduce noise by hiding pinned, new, or browser feature tabs.',
         ]}
         images={

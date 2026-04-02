@@ -1,9 +1,10 @@
+import type { JSX } from 'react';
 import { BulletList } from '@/components/BulletList';
 
 export type FeatureTextProps = {
   heading: string;
   description: string;
-  bullets?: string[];
+  bullets?: (string | JSX.Element)[];
   button?: {
     label: string;
     onClick: () => void;

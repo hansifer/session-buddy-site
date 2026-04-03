@@ -690,14 +690,14 @@ export const CollectionSaveRestore = ({
     let checkT = 0;
 
     let lastTime = 0;
-    let lastPhase: string | null = null;
+    let lastPhase: string | null = null; // logging
 
     function draw(ctx: CanvasRenderingContext2D) {
       if (isDisposed) return;
 
       const now = performance.now();
 
-      const dt = Math.min((now - lastTime) / 1000, 0.05) * 1.32;
+      const dt = Math.min((now - lastTime) / 1_000, 0.05) * 1.32;
 
       lastTime = now;
 

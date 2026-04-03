@@ -699,19 +699,7 @@ export const CollectionSaveRestore = ({
 
       const dt = Math.min((now - lastTime) / 1000, 0.05) * 1.32;
 
-      // const elapsed = lastTime // wrap
-      //   ? now - lastTime
-      //   : 0;
-
       lastTime = now;
-
-      // console.log(elapsed);
-
-      // normalize to 60fps
-      // const timeScale = elapsed / 16.67;
-
-      // prevent huge jumps if tab was inactive
-      // const safeTimeScale = Math.min(timeScale, 10);
 
       ctx.clearRect(0, 0, width, height);
 

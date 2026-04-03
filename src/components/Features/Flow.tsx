@@ -68,7 +68,15 @@ export const Flow = ({
                 windowCount={height}
                 minTabs={width < 600 ? 4 : 5}
                 maxTabs={
-                  width < 452 ? 5 : width < 528 ? 6 : width < 610 ? 7 : 8
+                  width < 422
+                    ? 4
+                    : width < 452
+                      ? 5
+                      : width < 528
+                        ? 6
+                        : width < 610
+                          ? 7
+                          : 8
                 }
                 // windowVerticalOffset={14}
               />

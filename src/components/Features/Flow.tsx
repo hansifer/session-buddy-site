@@ -30,20 +30,20 @@ export const Flow = ({
         }}
       >
         <Feature
-          heading="Flow seamlessly between tabs and bookmarks"
-          description="Instantly clear tab clutter and free up memory. Save open tabs as a collection with a single click and restore them exactly as you left them."
+          heading="From clutter to clarity"
+          description="Instantly clear tab clutter and free up memory. Save open tabs with a single click and restore them later exactly as you left them."
           bullets={[
-            'Save or restore full sessions or cherry-pick just the tabs you need.',
+            'Save and restore full sessions or cherry-pick just the tabs you need.',
             'Restore tabs flexibly to original windows, a single window, or the current window.',
-            'Preserve workspace context with window positions, pinned tabs, and incognito states fully restored.',
-            'Manage both tabs and bookmarks together in one unified interface.',
+            'Preserve context with window positions, pinned tabs, and incognito states fully restored.',
+            'Manage tabs and bookmarks together in a singular intuitive interface.',
           ]}
           images={
             <div
               className="
-              flex
-              justify-center
-            "
+                flex
+                justify-center
+              "
             >
               <CollectionSaveRestore
                 width={600}

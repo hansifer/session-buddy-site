@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
 import { CollectionSaveRestore } from '@/components/CollectionSaveRestore';
+import { useResponsiveSize } from '@/util/useResponsiveSize';
 
 export const Flow = ({
   reverse,
@@ -10,6 +11,23 @@ export const Flow = ({
   reverse?: boolean;
   band?: 'diagonal' | true | false;
 }) => {
+  const { width, height } = useResponsiveSize({
+    translate: (windowSize) => {
+      const width = !windowSize
+        ? 470
+        : windowSize.width < 1024 // lg
+          ? windowSize.width * 0.9
+          : Math.min(windowSize.width * 0.4, 660);
+
+      const windowCount = !windowSize || windowSize.width < 700 ? 3 : 4;
+
+      return {
+        width,
+        height: windowCount,
+      };
+    },
+  });
+
   return (
     <section className="w-full">
       <div
@@ -46,10 +64,12 @@ export const Flow = ({
               "
             >
               <CollectionSaveRestore
-                width={600}
-                windowCount={4}
-                minTabs={5}
-                maxTabs={7}
+                width={width}
+                windowCount={height}
+                minTabs={width < 600 ? 4 : 5}
+                maxTabs={
+                  width < 452 ? 5 : width < 528 ? 6 : width < 610 ? 7 : 8
+                }
                 // windowVerticalOffset={14}
               />
             </div>

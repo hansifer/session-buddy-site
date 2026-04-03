@@ -9,8 +9,8 @@ import { selectRandom } from '@/util/array';
 
 const WAIT_SECONDS = 5.0;
 const FINAL_HOLD_SECONDS = 1.4;
-const FINALE_SECONDS = 5.0;
-const DISMISS_TO_FINALE_OVERLAP_SECONDS = 0.42;
+const SAVED_SECONDS = 5.0;
+const DISMISS_TO_SAVED_OVERLAP_SECONDS = 0.42;
 const CURSOR_ENTRY_SECONDS = 0.9;
 const CURSOR_CLICK_START_SECONDS = 1.08;
 const CURSOR_CLICK_SECONDS = 0.32;
@@ -682,7 +682,14 @@ export const CollectionSaveRestore = ({
       ctx.restore();
     }
 
-    let phase = 'wait';
+    let phase:
+      | 'wait'
+      | 'dismissing'
+      | 'saved'
+      | 'restore'
+      | 'reverseSaved'
+      | 'restoring' = 'wait';
+
     let phaseTime = 0;
     let dismissIdx = windowCount - 1;
     let restoreIdx = 0;
@@ -712,10 +719,10 @@ export const CollectionSaveRestore = ({
         phaseTime += dt;
         windows.forEach((w) => w.draw(ctx));
         if (phaseTime > WAIT_SECONDS) {
-          phase = 'dismiss';
+          phase = 'dismissing';
           phaseTime = 0;
         }
-      } else if (phase === 'dismiss') {
+      } else if (phase === 'dismissing') {
         phaseTime += dt * windowSpeed;
         const progress = Math.min(phaseTime, 1);
         const ep = easeOut(progress);
@@ -735,7 +742,7 @@ export const CollectionSaveRestore = ({
         }
 
         if (dismissIdx === 0) {
-          const overlapT = progress * DISMISS_TO_FINALE_OVERLAP_SECONDS;
+          const overlapT = progress * DISMISS_TO_SAVED_OVERLAP_SECONDS;
           const overlapAlpha = Math.min(
             easeInOut(Math.max(0, overlapT - 0.05) / 0.5),
             1,
@@ -751,11 +758,11 @@ export const CollectionSaveRestore = ({
           dismissIdx--;
           phaseTime = 0;
           if (dismissIdx < 0) {
-            phase = 'finale';
-            phaseTime = DISMISS_TO_FINALE_OVERLAP_SECONDS;
+            phase = 'saved';
+            phaseTime = DISMISS_TO_SAVED_OVERLAP_SECONDS;
           }
         }
-      } else if (phase === 'finale') {
+      } else if (phase === 'saved') {
         phaseTime += dt;
         readLaterAlpha = Math.min(
           easeInOut(Math.max(0, phaseTime - 0.05) / 0.5),
@@ -768,11 +775,11 @@ export const CollectionSaveRestore = ({
           alpha: readLaterAlpha,
           checkmarkProgress: checkT,
         });
-        if (phaseTime > FINALE_SECONDS) {
-          phase = 'hold';
+        if (phaseTime > SAVED_SECONDS) {
+          phase = 'restore';
           phaseTime = 0;
         }
-      } else if (phase === 'hold') {
+      } else if (phase === 'restore') {
         phaseTime += dt;
 
         const clickProgress = Math.min(
@@ -827,10 +834,10 @@ export const CollectionSaveRestore = ({
         );
 
         if (phaseTime > FINAL_HOLD_SECONDS) {
-          phase = 'reverseFinale';
+          phase = 'reverseSaved';
           phaseTime = 0;
         }
-      } else if (phase === 'reverseFinale') {
+      } else if (phase === 'reverseSaved') {
         phaseTime += dt;
         const progress = Math.min(phaseTime / 0.55, 1);
         const ep = easeInOut(progress);
@@ -840,11 +847,11 @@ export const CollectionSaveRestore = ({
           checkmarkProgress: 1,
         });
         if (progress >= 1) {
-          phase = 'restore';
+          phase = 'restoring';
           phaseTime = 0;
           restoreIdx = 0;
         }
-      } else if (phase === 'restore') {
+      } else if (phase === 'restoring') {
         phaseTime += dt * windowSpeed;
         const progress = Math.min(phaseTime, 1);
         const ep = easeOut(progress);

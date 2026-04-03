@@ -136,13 +136,6 @@ export const CollectionSaveRestore = ({
       (_, i) => getBrowserWindow(ctx, i),
     );
 
-    let phase = 'wait';
-    let phaseTime = 0;
-    let dismissIdx = windowCount - 1;
-    let restoreIdx = 0;
-    let readLaterAlpha = 0;
-    let checkT = 0;
-
     function getBrowserWindow(
       ctx: CanvasRenderingContext2D,
       idx: number,
@@ -688,6 +681,13 @@ export const CollectionSaveRestore = ({
 
       ctx.restore();
     }
+
+    let phase = 'wait';
+    let phaseTime = 0;
+    let dismissIdx = windowCount - 1;
+    let restoreIdx = 0;
+    let readLaterAlpha = 0;
+    let checkT = 0;
 
     let lastTime = 0;
     let lastPhase: string | null = null;

@@ -7,7 +7,7 @@ import { selectRandom } from '@/util/array';
 // todo: "Save" button similar to "Restore" with cursor and press before windows are dismissed. button sits near bottom, floating over windows.
 // todo: allow height prop. requires height adjustment on each window, impacting page content draw. current canvas height is determined by number of windows.
 
-const WAIT_SECONDS = 5.0;
+const WAIT_DURATION_SECONDS = 5.0;
 const FINAL_HOLD_SECONDS = 1.4;
 const SAVED_SECONDS = 5.0;
 const DISMISS_TO_SAVED_OVERLAP_SECONDS = 0.42;
@@ -717,46 +717,37 @@ export const CollectionSaveRestore = ({
 
       if (phase === 'wait') {
         phaseTime += dt;
-        windows.forEach((w) => w.draw(ctx));
-        if (phaseTime > WAIT_SECONDS) {
+
+        // todo: wasteful to clearRect and redraw windows during wait?
+        windows.forEach((win) => win.draw(ctx));
+
+        if (phaseTime > WAIT_DURATION_SECONDS) {
           phase = 'dismissing';
           phaseTime = 0;
         }
       } else if (phase === 'dismissing') {
         phaseTime += dt * windowSpeed;
-        const progress = Math.min(phaseTime, 1);
-        const ep = easeOut(progress);
 
         for (let i = 0; i < dismissIdx; i++) {
           windows[i].draw(ctx);
         }
 
-        if (dismissIdx < windows.length) {
-          const win = windows[dismissIdx];
-          const side = dismissIdx % 2 === 0 ? -1 : 1;
-          win.offsetX = ep * side * -70;
-          win.offsetY = ep * 30;
-          win.scale = 1 - ep * 0.62;
-          win.opacity = 1 - ep;
-          win.draw(ctx);
-        }
+        const easeProgress = easeOut(Math.min(phaseTime, 1));
 
-        if (dismissIdx === 0) {
-          const overlapT = progress * DISMISS_TO_SAVED_OVERLAP_SECONDS;
-          const overlapAlpha = Math.min(
-            easeInOut(Math.max(0, overlapT - 0.05) / 0.5),
-            1,
-          );
-          drawSaved({
-            ctx,
-            alpha: overlapAlpha,
-            checkmarkProgress: 0,
-          });
-        }
+        const win = windows[dismissIdx];
+        const side = dismissIdx % 2 === 0 ? -1 : 1;
 
-        if (progress >= 1) {
+        win.offsetX = easeProgress * side * -70;
+        win.offsetY = easeProgress * 30;
+        win.scale = 1 - easeProgress * 0.62;
+        win.opacity = 1 - easeProgress;
+        win.draw(ctx);
+
+        if (phaseTime >= 1) {
+          // window dismissed. dismiss next one.
           dismissIdx--;
           phaseTime = 0;
+
           if (dismissIdx < 0) {
             phase = 'saved';
             phaseTime = DISMISS_TO_SAVED_OVERLAP_SECONDS;
@@ -764,6 +755,7 @@ export const CollectionSaveRestore = ({
         }
       } else if (phase === 'saved') {
         phaseTime += dt;
+
         readLaterAlpha = Math.min(
           easeInOut(Math.max(0, phaseTime - 0.05) / 0.5),
           1,
@@ -839,6 +831,7 @@ export const CollectionSaveRestore = ({
         }
       } else if (phase === 'reverseSaved') {
         phaseTime += dt;
+
         const progress = Math.min(phaseTime / 0.55, 1);
         const ep = easeInOut(progress);
         drawSaved({

@@ -1,11 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { Feature } from '@/components/Feature/Feature';
-
-import feature1 from '@/assets/images/feature-placeholder-1.jpg';
-import feature2 from '@/assets/images/feature-placeholder-2.jpg';
-import feature3 from '@/assets/images/feature-placeholder-3.jpg';
-import feature4 from '@/assets/images/feature-placeholder-4.jpg';
+import { CollectionSaveRestore } from '@/components/CollectionSaveRestore';
 
 export const Flow = ({
   reverse,
@@ -41,24 +37,22 @@ export const Flow = ({
           'Preserve workspace context with window positions, pinned tabs, and incognito states fully restored.',
           'Manage both tabs and bookmarks together in one unified interface.',
         ]}
-        images={[
-          {
-            src: feature1.src,
-            alt: 'Feature image 1',
-          },
-          {
-            src: feature2.src,
-            alt: 'Feature image 2',
-          },
-          {
-            src: feature3.src,
-            alt: 'Feature image 3',
-          },
-          {
-            src: feature4.src,
-            alt: 'Feature image 4',
-          },
-        ]}
+        images={
+          <div
+            className="
+              flex
+              justify-center
+            "
+          >
+            <CollectionSaveRestore
+              width={600}
+              windowCount={4}
+              minTabs={5}
+              maxTabs={7}
+              // windowVerticalOffset={14}
+            />
+          </div>
+        }
         reverse={reverse}
         band={band}
       />

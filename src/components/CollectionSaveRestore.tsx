@@ -519,14 +519,14 @@ export const CollectionSaveRestore = ({
 
     function drawSaved({
       ctx,
-      alpha,
-      checkmarkProgress,
+      alpha = 1,
+      checkmarkProgress = 1,
       buttonPress = 0,
       buttonHovered = false,
     }: {
       ctx: CanvasRenderingContext2D;
-      alpha: number;
-      checkmarkProgress: number;
+      alpha?: number;
+      checkmarkProgress?: number;
       buttonPress?: number;
       buttonHovered?: boolean;
     }) {
@@ -801,8 +801,6 @@ export const CollectionSaveRestore = ({
 
         drawSaved({
           ctx,
-          alpha: 1,
-          checkmarkProgress: 1,
           buttonPress: clickDown,
           buttonHovered: hoverProgress > 0.005,
         });
@@ -840,7 +838,6 @@ export const CollectionSaveRestore = ({
         drawSaved({
           ctx,
           alpha: 1 - ep,
-          checkmarkProgress: 1,
         });
         if (progress >= 1) {
           phase = 'restoring';

@@ -10,10 +10,9 @@ import { selectRandom } from '@/util/array';
 const WAIT_DURATION_SECONDS = 5.0;
 const DISMISSING_TO_SAVED_OVERLAP_SECONDS = 0.4;
 const SAVED_DURATION_SECONDS = 5.0;
-const FINAL_HOLD_SECONDS = 1.4;
-const CURSOR_ENTRY_SECONDS = 0.9;
-const CURSOR_CLICK_START_SECONDS = 1.08;
-const CURSOR_CLICK_SECONDS = 0.32;
+const RESTORE_HOVER_DURATION_SECONDS = 0.3;
+const CURSOR_SPEED = 1;
+const CLICK_SPEED = 5;
 
 const FONT_FAMILY = '"Segoe UI", "Helvetica Neue", Arial, sans-serif';
 
@@ -686,12 +685,16 @@ export const CollectionSaveRestore = ({
       | 'wait'
       | 'dismissing'
       | 'saved'
-      | 'restore'
+      | 'restoreCursor'
+      | 'restoreClick'
       | 'reverseSaved'
       | 'restoring' = 'wait';
 
     let phaseTime = 0;
     let dismissIdx = windowCount - 1;
+    let cursorBaseX = 0;
+    let cursorBaseY = 0;
+    let hoverTime = 0;
     let restoreIdx = 0;
 
     let lastTime = 0;
@@ -771,53 +774,72 @@ export const CollectionSaveRestore = ({
         });
 
         if (phaseTime > SAVED_DURATION_SECONDS) {
-          phase = 'restore';
+          phase = 'restoreCursor';
           phaseTime = 0;
+          cursorBaseX = 0;
+          cursorBaseY = 0;
+          hoverTime = 0;
         }
-      } else if (phase === 'restore') {
+      } else if (phase === 'restoreCursor') {
         phaseTime += dt;
 
-        const clickProgress = Math.min(
-          Math.max(
-            (phaseTime - CURSOR_CLICK_START_SECONDS) / CURSOR_CLICK_SECONDS,
-            0,
-          ),
-          1,
+        const cursorProgress = Math.min(phaseTime * CURSOR_SPEED, 1);
+
+        cursorBaseX = lerp(
+          width + 54,
+          centerX + 38,
+          easeOut(Math.max(0, cursorProgress)),
         );
+
+        cursorBaseY = lerp(
+          height + 52,
+          restoreButtonY + BUTTON_HEIGHT / 2,
+          easeOut(Math.max(0, cursorProgress)),
+        );
+
+        const buttonX = centerX - BUTTON_WIDTH / 2;
+
+        const buttonHovered =
+          cursorBaseX > buttonX &&
+          cursorBaseX < buttonX + BUTTON_WIDTH &&
+          cursorBaseY > restoreButtonY &&
+          cursorBaseY < restoreButtonY + BUTTON_HEIGHT;
+
+        if (cursorProgress >= 1) {
+          hoverTime += dt;
+        }
+
+        drawSaved({
+          ctx,
+          buttonHovered,
+        });
+
+        drawPointerCursor(
+          // wrap
+          ctx,
+          cursorBaseX,
+          cursorBaseY,
+        );
+
+        if (hoverTime > RESTORE_HOVER_DURATION_SECONDS) {
+          phase = 'restoreClick';
+          phaseTime = 0;
+        }
+      } else if (phase === 'restoreClick') {
+        phaseTime += dt;
+
+        const clickProgress = Math.min(Math.max(phaseTime * CLICK_SPEED, 0), 1);
 
         const clickDown =
           clickProgress < 0.5
             ? easeInOut(clickProgress / 0.5)
             : easeInOut((1 - clickProgress) / 0.5);
 
-        const hoverProgress = Math.min(
-          Math.max(
-            (phaseTime - CURSOR_ENTRY_SECONDS * 0.85) /
-              (CURSOR_CLICK_START_SECONDS - CURSOR_ENTRY_SECONDS * 0.85),
-            0,
-          ),
-          1,
-        );
-
         drawSaved({
           ctx,
           buttonPress: clickDown,
-          buttonHovered: hoverProgress > 0.005,
+          buttonHovered: true,
         });
-
-        const entryT = Math.min(phaseTime / CURSOR_ENTRY_SECONDS, 1);
-
-        const cursorBaseX = lerp(
-          width + 54,
-          centerX + 38,
-          easeOut(Math.max(0, entryT)),
-        );
-
-        const cursorBaseY = lerp(
-          height + 52,
-          restoreButtonY + BUTTON_HEIGHT / 2,
-          easeOut(Math.max(0, entryT)),
-        );
 
         drawPointerCursor(
           // wrap
@@ -826,7 +848,7 @@ export const CollectionSaveRestore = ({
           cursorBaseY + clickDown * 4,
         );
 
-        if (phaseTime > FINAL_HOLD_SECONDS) {
+        if (clickProgress >= 1) {
           phase = 'reverseSaved';
           phaseTime = 0;
         }
@@ -846,6 +868,7 @@ export const CollectionSaveRestore = ({
         }
       } else if (phase === 'restoring') {
         phaseTime += dt * windowSpeed;
+
         const progress = Math.min(phaseTime, 1);
         const ep = easeOut(progress);
 

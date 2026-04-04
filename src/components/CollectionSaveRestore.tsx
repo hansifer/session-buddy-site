@@ -687,7 +687,7 @@ export const CollectionSaveRestore = ({
       | 'saved'
       | 'restoreCursor'
       | 'restoreClick'
-      | 'reverseSaved'
+      | 'savedExit'
       | 'restoring' = 'wait';
 
     let phaseTime = 0;
@@ -849,10 +849,10 @@ export const CollectionSaveRestore = ({
         );
 
         if (clickProgress >= 1) {
-          phase = 'reverseSaved';
+          phase = 'savedExit';
           phaseTime = 0;
         }
-      } else if (phase === 'reverseSaved') {
+      } else if (phase === 'savedExit') {
         phaseTime += dt;
 
         const progress = Math.min(phaseTime * 2, 1);

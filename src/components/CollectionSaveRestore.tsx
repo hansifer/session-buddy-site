@@ -755,11 +755,12 @@ export const CollectionSaveRestore = ({
         phaseTime += dt;
 
         const alpha = Math.min(
-          easeInOut(Math.max(0, phaseTime - 0.05) / 0.5, 1),
+          easeInOut(Math.max(0, phaseTime - 0.35) / 0.5),
+          1,
         );
 
         const checkmarkProgress = Math.min(
-          Math.max((phaseTime - 0.2) / 0.9, 0),
+          Math.max(0, (phaseTime - 0.2) / 0.9),
           1,
         );
 

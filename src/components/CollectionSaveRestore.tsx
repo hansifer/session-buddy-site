@@ -855,12 +855,15 @@ export const CollectionSaveRestore = ({
       } else if (phase === 'reverseSaved') {
         phaseTime += dt;
 
-        const progress = Math.min(phaseTime / 0.55, 1);
-        const ep = easeInOut(progress);
+        const progress = Math.min(phaseTime * 2, 1);
+        const easeProgress = easeInOut(progress);
+
         drawSaved({
           ctx,
-          alpha: 1 - ep,
+          alpha: 1 - easeProgress,
+          buttonHovered: true,
         });
+
         if (progress >= 1) {
           phase = 'restoring';
           phaseTime = 0;

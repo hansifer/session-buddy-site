@@ -8,9 +8,9 @@ import { selectRandom } from '@/util/array';
 // todo: allow height prop. requires height adjustment on each window, impacting page content draw. current canvas height is determined by number of windows.
 
 const WAIT_DURATION_SECONDS = 5.0;
+const DISMISSING_TO_SAVED_OVERLAP_SECONDS = 0.4;
+const SAVED_DURATION_SECONDS = 5.0;
 const FINAL_HOLD_SECONDS = 1.4;
-const SAVED_SECONDS = 5.0;
-const DISMISS_TO_SAVED_OVERLAP_SECONDS = 0.42;
 const CURSOR_ENTRY_SECONDS = 0.9;
 const CURSOR_CLICK_START_SECONDS = 1.08;
 const CURSOR_CLICK_SECONDS = 0.32;
@@ -557,7 +557,7 @@ export const CollectionSaveRestore = ({
 
       // ring scale pop
 
-      const ringScale = easeOutBack(Math.min(progress * 1.4, 1));
+      const ringScale = easeOutSpring(Math.min(progress * 1.26, 1));
       ctx.translate(centerX, savedCheckmarkCenterY);
       ctx.scale(ringScale, ringScale);
       ctx.translate(-centerX, -savedCheckmarkCenterY);
@@ -693,8 +693,6 @@ export const CollectionSaveRestore = ({
     let phaseTime = 0;
     let dismissIdx = windowCount - 1;
     let restoreIdx = 0;
-    let readLaterAlpha = 0;
-    let checkT = 0;
 
     let lastTime = 0;
     let lastPhase: string | null = null; // logging
@@ -750,24 +748,28 @@ export const CollectionSaveRestore = ({
 
           if (dismissIdx < 0) {
             phase = 'saved';
-            phaseTime = DISMISS_TO_SAVED_OVERLAP_SECONDS;
+            phaseTime = DISMISSING_TO_SAVED_OVERLAP_SECONDS;
           }
         }
       } else if (phase === 'saved') {
         phaseTime += dt;
 
-        readLaterAlpha = Math.min(
-          easeInOut(Math.max(0, phaseTime - 0.05) / 0.5),
+        const alpha = Math.min(
+          easeInOut(Math.max(0, phaseTime - 0.05) / 0.5, 1),
+        );
+
+        const checkmarkProgress = Math.min(
+          Math.max((phaseTime - 0.2) / 0.9, 0),
           1,
         );
-        checkT = Math.min(Math.max((phaseTime - 0.2) / 0.9, 0), 1);
 
         drawSaved({
           ctx,
-          alpha: readLaterAlpha,
-          checkmarkProgress: checkT,
+          alpha,
+          checkmarkProgress,
         });
-        if (phaseTime > SAVED_SECONDS) {
+
+        if (phaseTime > SAVED_DURATION_SECONDS) {
           phase = 'restore';
           phaseTime = 0;
         }
@@ -886,8 +888,6 @@ export const CollectionSaveRestore = ({
             phaseTime = 0;
             dismissIdx = windowCount - 1;
             restoreIdx = 0;
-            readLaterAlpha = 0;
-            checkT = 0;
           }
         }
       }
@@ -925,10 +925,21 @@ function easeOut(t: number) {
   return 1 - Math.pow(1 - t, 3);
 }
 
-function easeOutBack(t: number) {
-  const c1 = 2.70158;
+function easeOutSpring(t: number) {
+  if (t <= 0) return 0;
+  if (t >= 1) return 1;
 
-  return 1 + (c1 + 1) * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+  const dampingRatio = 0.28;
+  const angularFrequency = 14;
+  const dampedFrequency = angularFrequency * Math.sqrt(1 - dampingRatio ** 2);
+  const phaseScale = dampingRatio / Math.sqrt(1 - dampingRatio ** 2);
+
+  return (
+    1 -
+    Math.exp(-dampingRatio * angularFrequency * t) *
+      (Math.cos(dampedFrequency * t) +
+        phaseScale * Math.sin(dampedFrequency * t))
+  );
 }
 
 function easeInOut(t: number) {

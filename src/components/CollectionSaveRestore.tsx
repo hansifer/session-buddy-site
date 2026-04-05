@@ -691,11 +691,10 @@ export const CollectionSaveRestore = ({
       | 'restoring' = 'wait';
 
     let phaseTime = 0;
-    let dismissIdx = windowCount - 1;
+    let animatingWindowIdx = windowCount - 1;
     let cursorBaseX = 0;
     let cursorBaseY = 0;
     let hoverTime = 0;
-    let restoreIdx = 0;
 
     let lastTime = 0;
     let lastPhase: string | null = null; // logging
@@ -725,31 +724,25 @@ export const CollectionSaveRestore = ({
         if (phaseTime > WAIT_DURATION_SECONDS) {
           phase = 'dismissing';
           phaseTime = 0;
+          animatingWindowIdx = windowCount - 1;
         }
       } else if (phase === 'dismissing') {
         phaseTime += dt * windowSpeed;
 
-        for (let i = 0; i < dismissIdx; i++) {
+        for (let i = 0; i < animatingWindowIdx; i++) {
           windows[i].draw(ctx);
         }
 
         const easeProgress = easeOut(Math.min(phaseTime, 1));
 
-        const win = windows[dismissIdx];
-        const side = dismissIdx % 2 === 0 ? -1 : 1;
-
-        win.offsetX = easeProgress * side * -70;
-        win.offsetY = easeProgress * 30;
-        win.scale = 1 - easeProgress * 0.62;
-        win.opacity = 1 - easeProgress;
-        win.draw(ctx);
+        updateAndDrawWindow(ctx, animatingWindowIdx, easeProgress);
 
         if (phaseTime >= 1) {
           // window dismissed. dismiss next one.
-          dismissIdx--;
+          animatingWindowIdx--;
           phaseTime = 0;
 
-          if (dismissIdx < 0) {
+          if (animatingWindowIdx < 0) {
             phase = 'saved';
             phaseTime = DISMISSING_TO_SAVED_OVERLAP_SECONDS;
           }
@@ -867,51 +860,34 @@ export const CollectionSaveRestore = ({
         if (progress >= 1) {
           phase = 'restoring';
           phaseTime = 0;
-          restoreIdx = 0;
+          animatingWindowIdx = 0;
         }
       } else if (phase === 'restoring') {
         phaseTime += dt * windowSpeed;
 
-        const progress = Math.min(phaseTime, 1);
-        const ep = easeOut(progress);
+        for (let i = 0; i < animatingWindowIdx; i++) {
+          windows[i].draw(ctx);
+        }
 
-        for (let i = 0; i < restoreIdx; i++) {
-          const win = windows[i];
+        const easeProgress = 1 - easeOut(Math.min(phaseTime, 1));
+
+        updateAndDrawWindow(ctx, animatingWindowIdx, easeProgress);
+
+        if (phaseTime >= 1) {
+          // window restored. restore next one.
+
+          const win = windows[animatingWindowIdx];
           win.offsetX = 0;
           win.offsetY = 0;
           win.scale = 1;
           win.opacity = 1;
-          win.draw(ctx);
-        }
 
-        if (restoreIdx < windows.length) {
-          const win = windows[restoreIdx];
-          const side = restoreIdx % 2 === 0 ? -1 : 1;
-          const reverseEp = 1 - ep;
-          win.offsetX = reverseEp * side * -70;
-          win.offsetY = reverseEp * 30;
-          win.scale = 1 - reverseEp * 0.62;
-          win.opacity = ep;
-          win.draw(ctx);
-        }
-
-        if (progress >= 1) {
-          if (restoreIdx < windows.length) {
-            const win = windows[restoreIdx];
-            win.offsetX = 0;
-            win.offsetY = 0;
-            win.scale = 1;
-            win.opacity = 1;
-          }
-
-          restoreIdx++;
+          animatingWindowIdx++;
           phaseTime = 0;
 
-          if (restoreIdx >= windows.length) {
+          if (animatingWindowIdx >= windows.length) {
             phase = 'wait';
             phaseTime = 0;
-            dismissIdx = windowCount - 1;
-            restoreIdx = 0;
           }
         }
       }
@@ -921,6 +897,22 @@ export const CollectionSaveRestore = ({
       // console.log(
       //   'frame time: ' + (performance.now() - now).toFixed(2) + 'ms',
       // );
+    }
+
+    function updateAndDrawWindow(
+      ctx: CanvasRenderingContext2D,
+      idx: number,
+      easeProgress: number,
+    ) {
+      const win = windows[idx];
+      const side = idx % 2 === 0 ? -1 : 1;
+
+      win.offsetX = easeProgress * side * -70;
+      win.offsetY = easeProgress * 30;
+      win.scale = 1 - easeProgress * 0.62;
+      win.opacity = 1 - easeProgress;
+
+      win.draw(ctx);
     }
 
     draw(ctx);

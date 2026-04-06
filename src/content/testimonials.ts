@@ -30,6 +30,87 @@ import nicoleWest from '@/assets/profile-images/nicole-west.png';
 
 export const testimonials = [
   {
+    name: 'Anonymous backer',
+    quote: 'Your extension has saved my bacon more times than I can remember.',
+  },
+  {
+    name: 'Andreas T (backer)',
+    quote:
+      "I very much love Session Buddy and depend on it many times per day. I'm a CTO, and I appreciate what you've built, the functionality/design choices you've made, and the need you're filling! [Session Buddy] and a few others are my absolute must-install on any browser.",
+  },
+  {
+    name: 'Anonymous backer',
+    quote: 'BY FAR the best browser extension I have ever come across.',
+  },
+  {
+    name: 'Adam (backer)',
+    quote:
+      'My work is very project based and this app is a lifesaver when switching between projects without having to keep loads of browser windows open.',
+  },
+  {
+    name: 'Bernhard Kau (backer)',
+    quote:
+      "One of the extensions I couldn't work without as a power user. Keep up the great power!",
+  },
+  {
+    name: 'Daniel Vichman (backer)',
+    quote:
+      'A bunch of times I got into saying "where are all my tabs?!" and have your extension come to the rescue. Thank you!',
+  },
+  {
+    name: 'Nanosawa (backer)',
+    quote:
+      'Thanks to Session Buddy, I was able to restore my closed incognito window. Thank you!',
+  },
+  {
+    name: 'Joël Azemar (backer)',
+    quote:
+      "I always go back to Session Buddy and use it like a menu or a map for all the windows and tabs I have open, which helps reduce duplication. When I need to restart, it helps me get back to where I was. I couldn't imagine not having it.",
+  },
+  {
+    name: 'Jimmy Chu (backer)',
+    quote:
+      'Thank you for making this useful chrome extension! It make saving and loading group of tabs and their management a lot easier!',
+  },
+  {
+    name: 'Anonymous backer',
+    quote:
+      'You saved my workflow both in personal life and in more serious stuff so much times!!',
+  },
+  {
+    name: 'Hamzah (backer)',
+    quote: 'Awesome extension :) Been using it for a long time.',
+  },
+  {
+    name: 'Anonymous backer',
+    quote:
+      "Been using this product for years as an Account Manager - as someone who runs high volume meetings with about 70 clients, it's a very helpful tool.",
+  },
+  {
+    name: 'Anonymous backer',
+    quote:
+      'Thank you for this wonderfully helpful extension. It has saved me time and time again.',
+  },
+  {
+    name: 'Anonymous backer',
+    quote:
+      "Been using this amazingly useful extension for a long time and it's invaluable.",
+  },
+  {
+    name: 'Yu-Hsiang Liu (backer)',
+    quote:
+      'Its interface is clean, easy to understand, and very user-friendly. Thank you very much. You’ve saved me a great deal of precious time.',
+  },
+  {
+    name: 'Anonymous backer',
+    quote: 'Best extension of its kind. Getting better with every update.',
+  },
+  {
+    name: 'Jonty Wareing (backer)',
+    quote:
+      "This extension has been a lifesaver for my tab-habit for so long I don't know how I would live without it. Thank you!",
+  },
+  {
     name: 'Jordan Roberts',
     image: jordanRoberts.src,
     quote:

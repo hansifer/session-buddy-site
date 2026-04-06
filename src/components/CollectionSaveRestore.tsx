@@ -2,14 +2,14 @@ import { useEffect, useRef } from 'react';
 import { sampleSites } from '@/sampleSites';
 import { selectRandom } from '@/util/array';
 
-// todo: don't start animation until in view, and pause when out of view. use IntersectionObserver. see example in LoopingVideo.tsx.
 // todo: make front-most window content sessionbuddy.com
 // todo: "Save" button similar to "Restore" with cursor and press before windows are dismissed. button sits near bottom, floating over windows.
 // todo: allow height prop. requires height adjustment on each window, impacting page content draw. current canvas height is determined by number of windows.
 
-const WAIT_DURATION_SECONDS = 5.0;
+const WAIT_INITIAL_DURATION_SECONDS = 0.8;
+const WAIT_DURATION_SECONDS = 3.5;
 const DISMISSING_TO_SAVED_OVERLAP_SECONDS = 0.4;
-const SAVED_DURATION_SECONDS = 5.0;
+const SAVED_DURATION_SECONDS = 3.5;
 const RESTORE_HOVER_DURATION_SECONDS = 0.3;
 const CURSOR_SPEED = 1;
 const CLICK_SPEED = 5;
@@ -51,6 +51,7 @@ type BrowserWindow = {
   scale: number;
   opacity: number;
   draw: (ctx: CanvasRenderingContext2D) => void;
+  reset: () => BrowserWindow;
 };
 
 export const CollectionSaveRestore = ({
@@ -173,6 +174,7 @@ export const CollectionSaveRestore = ({
         scale: 1,
         opacity: 1,
         draw,
+        reset,
       };
 
       return window;
@@ -514,6 +516,15 @@ export const CollectionSaveRestore = ({
           }
         }
       }
+
+      function reset() {
+        window.offsetX = 0;
+        window.offsetY = 0;
+        window.scale = 1;
+        window.opacity = 1;
+
+        return window;
+      }
     }
 
     function drawSaved({
@@ -691,6 +702,7 @@ export const CollectionSaveRestore = ({
       | 'restoring' = 'wait';
 
     let phaseTime = 0;
+    let waitDurationSeconds = WAIT_INITIAL_DURATION_SECONDS;
     let animatingWindowIdx = windowCount - 1;
     let cursorBaseX = 0;
     let cursorBaseY = 0;
@@ -700,7 +712,7 @@ export const CollectionSaveRestore = ({
     let lastPhase: string | null = null; // logging
 
     function draw(ctx: CanvasRenderingContext2D) {
-      if (isDisposed) return;
+      if (isDisposed || !isAnimating) return;
 
       const now = performance.now();
 
@@ -721,7 +733,7 @@ export const CollectionSaveRestore = ({
         // todo: wasteful to clearRect and redraw windows during wait?
         windows.forEach((win) => win.draw(ctx));
 
-        if (phaseTime > WAIT_DURATION_SECONDS) {
+        if (phaseTime > waitDurationSeconds) {
           phase = 'dismissing';
           phaseTime = 0;
           animatingWindowIdx = windowCount - 1;
@@ -876,11 +888,7 @@ export const CollectionSaveRestore = ({
         if (phaseTime >= 1) {
           // window restored. restore next one.
 
-          const win = windows[animatingWindowIdx];
-          win.offsetX = 0;
-          win.offsetY = 0;
-          win.scale = 1;
-          win.opacity = 1;
+          windows[animatingWindowIdx].reset();
 
           animatingWindowIdx++;
           phaseTime = 0;
@@ -888,6 +896,7 @@ export const CollectionSaveRestore = ({
           if (animatingWindowIdx >= windows.length) {
             phase = 'wait';
             phaseTime = 0;
+            waitDurationSeconds = WAIT_DURATION_SECONDS;
           }
         }
       }
@@ -915,10 +924,48 @@ export const CollectionSaveRestore = ({
       win.draw(ctx);
     }
 
-    draw(ctx);
+    let isAnimating = false;
+
+    function startAnimation(ctx: CanvasRenderingContext2D) {
+      if (isDisposed || isAnimating) return;
+
+      isAnimating = true;
+
+      phase = 'wait';
+      phaseTime = 0;
+      waitDurationSeconds = WAIT_INITIAL_DURATION_SECONDS;
+
+      lastTime = performance.now();
+      lastPhase = null;
+
+      draw(ctx);
+    }
+
+    function stopAnimation(ctx: CanvasRenderingContext2D) {
+      isAnimating = false;
+      cancelAnimationFrame(animationFrameId);
+
+      ctx.clearRect(0, 0, width, height);
+      windows.forEach((win) => win.reset().draw(ctx));
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          startAnimation(ctx);
+        } else {
+          stopAnimation(ctx);
+        }
+      },
+      { threshold: 0.9 },
+    );
+
+    observer.observe(canvasRef.current);
 
     return () => {
       isDisposed = true;
+      observer.disconnect();
+      isAnimating = false;
       cancelAnimationFrame(animationFrameId);
     };
   }, [

@@ -1,0 +1,31 @@
+---
+// this catch-all dynamic page route generates interim docs pages
+// todo: remove when starlight docs are enabled
+
+import { getCollection } from 'astro:content';
+import InterimDoc from '@/components/InterimDoc.astro';
+import { trimSlashes } from '@/util/string';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('interimDocs');
+
+  return entries.flatMap((entry) => {
+    const slug = trimSlashes(entry.id);
+
+    return slug && entry.data.interimVisible
+      ? [
+          {
+            params: {
+              slug,
+            },
+            props: { entry },
+          },
+        ]
+      : [];
+  });
+}
+
+const { entry } = Astro.props;
+---
+
+<InterimDoc entry={entry} />

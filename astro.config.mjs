@@ -29,6 +29,7 @@ export default defineConfig({
   redirects: {
     '/releases': '/releases/4.1.1', // redirect to latest release
 
+    '/planned': '/roadmap',
     '/support': '/docs',
     '/v4': '/releases/4.0.0',
     '/release-4-0-0': '/releases/4.0.0',

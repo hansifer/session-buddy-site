@@ -30,14 +30,15 @@ export const Organization = ({
     >
       <Feature
         heading="Collect your thoughts"
-        description="Use collections and folders to organize bookmarks by topic, project, timeline, or whatever suits your workflow."
+        description="Use collections to organize bookmarks by topic, project, timeline, or whatever suits your workflow."
         bullets={[
-          'Assign names and colors for instant recognition.',
           'Pin essential collections for quick access.',
           'Add bookmarks from any text or copy and paste tabs directly from the current session.',
+          'Color-code collections for quick recognition.',
           // 'Sort, reorder, and move bookmarks across folders and collections.',
-          'Turn on automatic collection naming and coloring for effortless organization.',
-          'Keep things tidy with duplicate bookmark detection and folder merging.',
+          // 'Turn on automatic collection naming and coloring for effortless organization.',
+          'Keep things tidy with duplicate bookmark detection.',
+          // 'Group bookmarks into folders.',
           // 'Edit bookmark properties like title, URL, and pinned state.',
         ]}
         images={<InfiniteCollectionTiles tileBackgroundColor="bg-[#303136]" />}

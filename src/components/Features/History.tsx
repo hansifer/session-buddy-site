@@ -37,7 +37,7 @@ export const History = ({
           'Resurrect closed tabs long after they\'ve dropped off your browser\'s "Recent tabs" list.',
           <span key="history-bullet-3">
             Quickly find
-            <em> that one site you visited last Friday afternoon.</em>
+            <em> that one site you were looking at last Friday afternoon.</em>
           </span>,
           'Tailor your timeline with custom intervals and cleanup rules.',
           // 'Control snapshot frequency or disable history altogether.',

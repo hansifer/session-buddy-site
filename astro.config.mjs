@@ -1,43 +1,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
-import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import vtbot from 'astro-vtbot';
 
 import path from 'path';
 import formatClassname from './util/formatClassname';
-import { sidebar } from './src/content/sidebar';
 
-// toggle Starlight docs vs interim docs
-export const ENABLE_STARLIGHT = false;
-
-const starlightIntegration = starlight({
-  title: 'Session Buddy',
-  tableOfContents: false,
-  components: {
-    Head: './src/components/CustomStarlightHead.astro',
-    PageFrame: './src/components/CustomStarlightPageFrame.astro',
-    Search: './src/components/CustomStarlightSearch.astro',
-    MobileTableOfContents: './src/components/CustomStarlightMobileTOC.astro',
-    MobileMenuToggle: './src/components/CustomStarlightMobileMenuToggle.astro',
-    MobileMenuFooter: './src/components/CustomStarlightMobileMenuFooter.astro',
-  },
-  customCss: [
-    './src/styles/starlight.css',
-    '@fontsource/inter',
-    '@fontsource/inter/500.css',
-    '@fontsource/inter/600.css',
-    '@fontsource/inter/700.css',
-    '@fontsource/inter/800.css',
-    '@fontsource/inter/900.css',
-  ],
-  sidebar,
-});
+import { ENABLE_STARLIGHT } from './src/docsConfig';
 
 const integrations = [
-  ...(ENABLE_STARLIGHT ? [starlightIntegration] : []),
   react({
     babel: {
       plugins: [formatClassname],
@@ -45,6 +18,18 @@ const integrations = [
   }),
   vtbot(),
 ];
+
+if (ENABLE_STARLIGHT) {
+  const { createStarlightIntegration } = await import(
+    './src/starlight/integration.ts'
+  );
+
+  integrations.unshift(createStarlightIntegration());
+} else {
+  const { default: mdx } = await import('@astrojs/mdx');
+
+  integrations.unshift(mdx());
+}
 
 export default defineConfig({
   redirects: {

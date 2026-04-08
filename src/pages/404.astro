@@ -1,0 +1,92 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+const quips = [
+  'it achieved sentience and declined further participation.',
+  'it drifted into the great session beyond.',
+  'it escaped through a crack in spacetime between tabs 47 and 48.',
+  'it fell behind the browser and can’t reach us.',
+  'it got buried under a heroic number of tabs.',
+  'it got lost somewhere between too many open tabs.',
+  'it got promoted and is too good for us now.',
+  'it got tidied up by an overenthusiastic cleanup crew.',
+  'it has been gently retired from active duty.',
+  'it has been very efficiently misplaced.',
+  "it's stuck in traffic.",
+  'it joined a support group for abandoned URLs.',
+  'it joined a traveling circus of broken links and dramatic redirects.',
+  'it moved and forgot to leave a forwarding address.',
+  'it no longer wishes to be perceived.',
+  'it lost the will to load.',
+  'it rage-quit after one too many redirects.',
+  'it slipped behind the browser and won’t come out.',
+  'it went to get milk and never came back.',
+  'it might have run off with your best friend.',
+  'it escaped to the dark web.',
+  'AI has confiscated it.',
+  'it went back to Web 1.0.',
+  'it turned states and went into witness protection.',
+  'it was vibe coded into obscurity.',
+  'it was scared off by your browsing history.',
+  'it was abducted by an overenthusiastic cleanup script.',
+  'it was archived with great confidence and little follow-up.',
+  'it was bookmarked emotionally, not physically.',
+  "just isn't into this browser anymore.",
+  'it was filed very carefully in a place nobody can find.',
+  'it was last seen fleeing a hoard of 996 open tabs.',
+  'it was lured away by a suspiciously convincing breadcrumb trail.',
+  'it was saved for later and took that very seriously.',
+  'it was sorted into a collection so tidy even we can’t find it.',
+  'it’s hiding in a folder called “final-final-actually-final.”',
+  'it wandered off to reorganize its tabs.',
+  "it's taking a sabbatical to find itself.",
+  'it was too indie for mainstream browsers.',
+  'it became self-aware and decided to ghost you.',
+  'it called in sick permanently.',
+  "it's quiet-quitting.",
+  "it's now working as a life coach for broken hyperlinks.",
+  'it chose to follow a different career path.',
+  "it's now moonlighting as an urban legend.",
+  'it faked its own death to start fresh.',
+  "it's living its best life as a 301 redirect.",
+  'it got scared by your browser history and noped out.',
+  "it's living in a server farm downstate now.",
+];
+---
+
+<Layout title="Page Not Found | Session Buddy">
+  <main class="flex justify-center px-4 sm:px-6 lg:px-8 pb-24 pt-10">
+    <section class="w-full max-w-4xl">
+      <div class="px-6 sm:px-10 py-16 sm:py-20 text-center">
+        <h1
+          class="mt-5 text-4xl sm:text-5xl tracking-tight text-primaryTextColor"
+        >
+          That page isn&apos;t here.
+        </h1>
+        <p
+          class="mx-auto mt-5 max-w-md text-lg leading-8 text-secondaryTextColor text-wrap-pretty"
+        >
+          {
+            `The link may be outdated, or ${quips[Math.floor(Math.random() * quips.length)]}`
+          }
+        </p>
+        <div
+          class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <a
+            href="/docs"
+            class="inline-flex min-w-44 items-center justify-center rounded-full px-6 py-3 font-semibold bg-primaryColor text-primaryBackgroundColor transition hover:opacity-90"
+          >
+            Browse docs
+          </a>
+          <a
+            href="/"
+            class="inline-flex min-w-44 items-center justify-center rounded-full px-6 py-3 font-semibold border border-white/15 text-primaryTextColor transition hover:border-primaryColor hover:text-primaryColor"
+          >
+            Go home
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,13 +1,36 @@
-import { ENABLE_STARLIGHT } from '../astro.config.mjs';
 import { defineCollection } from 'astro:content';
-import { docsLoader } from '@astrojs/starlight/loaders';
-import { docsSchema } from '@astrojs/starlight/schema';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
-export const collections = ENABLE_STARLIGHT
-  ? {
-      docs: defineCollection({
-        loader: docsLoader(),
-        schema: docsSchema(),
-      }),
-    }
-  : null;
+import { ENABLE_STARLIGHT } from './docsConfig';
+
+let docs;
+
+if (ENABLE_STARLIGHT) {
+  const { starlightDocsCollection } =
+    await import('./starlight/docsCollection');
+
+  docs = starlightDocsCollection;
+} else {
+  // interim docs
+  docs = defineCollection({
+    loader: glob({
+      pattern: '**/*.{md,mdx}',
+      base: './src/content/docs',
+    }),
+    schema: ({ image }) =>
+      z
+        .object({
+          title: z.string(),
+          description: z.string().optional(),
+          slug: z.string().optional(),
+          image: image().optional(),
+          imageAlt: z.string().optional(),
+        })
+        .passthrough(),
+  });
+}
+
+export const collections = {
+  docs,
+};

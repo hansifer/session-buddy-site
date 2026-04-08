@@ -22,8 +22,8 @@ export const ArticlePage = ({
         <article
           className="
             p-8
-            w-full
-            2xl:w-350
+            max-w-3xl
+            xl:max-w-4xl
             mb-24
             text-center
           "
@@ -65,9 +65,6 @@ export const ArticlePage = ({
             alt={title}
             className="
               my-8
-              w-11/12
-              md:w-6/8
-              lg:w-5/8
               mx-auto
               rounded-xl
               sm:rounded-2xl
@@ -77,13 +74,11 @@ export const ArticlePage = ({
           />
           <section
             className="
-              w-full
-              md:w-10/12
-              lg:w-2/3
+              max-w-2xl
               mt-16
               mx-auto
               sm:text-xl
-              leading-6!
+              leading-7!
               sm:leading-8!
               text-left
               sm:text-justify

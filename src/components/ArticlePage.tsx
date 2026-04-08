@@ -23,7 +23,6 @@ export const ArticlePage = ({
           className="
             p-8
             w-full
-            lg:w-300
             2xl:w-350
             mb-24
             text-center
@@ -67,7 +66,8 @@ export const ArticlePage = ({
             className="
               my-8
               w-11/12
-              md:w-3/4
+              md:w-6/8
+              lg:w-5/8
               mx-auto
               rounded-xl
               sm:rounded-2xl

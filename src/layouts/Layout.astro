@@ -8,14 +8,16 @@ import '@fontsource/inter/900.css';
 
 import { ClientRouter } from 'astro:transitions';
 import { Navbar } from '@/components/Navbar';
+import type { Mode } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Spacer } from '@/components/Spacer';
 
 export interface Props {
   title: string;
+  mode?: Mode;
 }
 
-const { title } = Astro.props;
+const { title, mode = 'default' } = Astro.props;
 ---
 
 <!doctype html>
@@ -50,6 +52,7 @@ const { title } = Astro.props;
       style={{ display: 'contents' }}
     >
       <Navbar
+        mode={mode}
         client:load
         transition:persist
       />

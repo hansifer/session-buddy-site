@@ -8,7 +8,7 @@ import '@/styles/global.css';
 
 // use of ! on margins in this file is to override Starlight's css reset (only an issue in docs; impacts prod builds only)
 
-type Mode = 'default' | 'docs';
+export type Mode = 'default' | 'docs';
 
 type Link = {
   label: string;

@@ -31,6 +31,9 @@ if (ENABLE_STARLIGHT) {
 }
 
 export default defineConfig({
+  devToolbar: {
+    enabled: false, // also happens to fix error 'The request url "<redacted>" is outside of Vite serving allow list.'
+  },
   redirects: {
     '/releases': '/releases/4.1.1', // redirect to latest release
 

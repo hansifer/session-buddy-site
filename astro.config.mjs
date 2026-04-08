@@ -20,9 +20,8 @@ const integrations = [
 ];
 
 if (ENABLE_STARLIGHT) {
-  const { createStarlightIntegration } = await import(
-    './src/starlight/integration.ts'
-  );
+  const { createStarlightIntegration } =
+    await import('./src/starlight/integration.ts');
 
   integrations.unshift(createStarlightIntegration());
 } else {

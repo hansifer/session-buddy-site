@@ -13,13 +13,13 @@ import mdx from '@astrojs/mdx'; // comment out if starlight docs enabled
 
 const integrations = [
   // createStarlightIntegration(), // comment out if interim docs enabled
-  mdx(), // comment out if starlight docs enabled
   react({
     babel: {
       plugins: [formatClassname],
     },
   }),
   vtbot(),
+  mdx(), // comment out if starlight docs enabled
 ];
 
 export default defineConfig({

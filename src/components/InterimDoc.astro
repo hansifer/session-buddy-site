@@ -1,0 +1,248 @@
+---
+import { Image } from 'astro:assets';
+import { render } from 'astro:content';
+
+import Layout from '@/layouts/Layout.astro';
+import type { InterimDocsEntry } from '@/content.config';
+import { pathToTitle } from '@/util/routing';
+
+interface Props {
+  entry: InterimDocsEntry;
+}
+
+const { entry } = Astro.props as Props;
+const { Content } = await render(entry);
+
+const title =
+  typeof entry.data.title === 'string' && entry.data.title.trim()
+    ? entry.data.title.trim()
+    : pathToTitle(entry.id);
+
+const description =
+  typeof entry.data.description === 'string'
+    ? entry.data.description.trim() || undefined
+    : undefined;
+
+const imageAlt =
+  typeof entry.data.imageAlt === 'string'
+    ? entry.data.imageAlt.trim() || title
+    : title;
+---
+
+<Layout title={title ? `${title} | Session Buddy` : 'Session Buddy'}>
+  <main class="flex
+        justify-center">
+    <div class="px-2
+          sm:px-4">
+      <article
+        class="p-8
+            w-full
+            lg:w-300
+            2xl:w-350
+            mb-24
+            text-center"
+      >
+        <header class="mb-12">
+          {
+            title ? (
+              <h1
+                class="mb-4
+                text-[2rem]
+                xs:text-[2.8rem]
+                lg:text-[3.5rem]
+                font-bold
+                text-primaryTextColor"
+              >
+                {title}
+              </h1>
+            ) : null
+          }
+          {
+            description ? (
+              <p
+                class="mb-4
+                text-lg
+                text-secondaryTextColor"
+              >
+                {description}
+              </p>
+            ) : null
+          }
+        </header>
+        {
+          entry.data.image ? (
+            <Image
+              src={entry.data.image}
+              alt={imageAlt}
+              class="my-8 w-11/12 md:w-3/4 mx-auto rounded-md sm:rounded-lg lg:rounded-xl"
+              widths={[720, 1080, 1440]}
+              sizes="(min-width: 1024px) 48rem, (min-width: 768px) 75vw, 92vw"
+            />
+          ) : null
+        }
+        <section
+          class="w-full
+              md:w-10/12
+              lg:w-2/3
+              mt-16
+              mx-auto
+              sm:text-xl
+              leading-6!
+              sm:leading-8!
+              text-left
+              sm:text-justify
+              text-secondaryTextColor"
+          aria-labelledby="content-title"
+        >
+          <div class="docs-content mt-10">
+            <Content />
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+</Layout>
+
+<style is:global>
+  .docs-content > * + * {
+    margin-top: 1rem;
+  }
+
+  .docs-content :is(h1, h2, h3, h4) {
+    color: var(--color-primaryTextColor);
+    font-weight: 700;
+    line-height: 1.2;
+    scroll-margin-top: 7rem;
+  }
+
+  .docs-content h1 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .docs-content h2 {
+    font-size: 1.6rem;
+    margin-top: 2.5rem;
+  }
+
+  .docs-content h3 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .docs-content h4 {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-top: 1.5rem;
+  }
+
+  .docs-content p,
+  .docs-content li,
+  .docs-content blockquote {
+    font-size: 1rem;
+  }
+
+  .docs-content a {
+    color: var(--color-primaryColor);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .docs-content a:hover {
+    color: var(--color-primaryTextColor);
+  }
+
+  .docs-content ul,
+  .docs-content ol {
+    padding-left: 1.5rem;
+  }
+
+  .docs-content ul {
+    list-style: disc;
+  }
+
+  .docs-content ol {
+    list-style: decimal;
+  }
+
+  .docs-content li + li {
+    margin-top: 0.4rem;
+  }
+
+  .docs-content strong {
+    color: var(--color-primaryTextColor);
+  }
+
+  .docs-content .docs-badge {
+    margin: 0 0.36rem;
+    padding: 0.12rem 0.4rem;
+    border: 1px solid var(--color-primaryColor);
+    border-radius: 0.35rem;
+    color: var(--color-primaryColor);
+    background: color-mix(in srgb, var(--color-primaryColor) 18%, transparent);
+    font-size: 0.78em;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  /* todo: .docs-badge-success, .docs-badge-tip, .docs-badge-caution, .docs-badge-danger */
+
+  .docs-content code {
+    padding: 0.1rem 0.35rem;
+    border: 1px solid var(--color-blockStrongBorderColor);
+    border-radius: 0.4rem;
+    color: var(--color-ternaryColor);
+    background-color: var(--color-blockStrongBackgroundColor);
+    font-size: 0.85em;
+  }
+
+  .docs-content pre {
+    padding: 1rem;
+    border: 1px solid var(--color-blockStrongBorderColor);
+    border-radius: 1rem;
+    overflow-x: auto;
+    background-color: var(--color-blockStrongBackgroundColor);
+  }
+
+  .docs-content pre code {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .docs-content hr {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid var(--color-blockStrongBorderColor);
+  }
+
+  .docs-content blockquote {
+    padding-left: 1rem;
+    border-left: 3px solid var(--color-primaryColor);
+  }
+
+  .docs-content img {
+    max-width: 100%;
+    border-radius: 1rem;
+  }
+
+  .docs-content table {
+    width: 100%;
+    border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
+    font-size: 1rem;
+  }
+
+  .docs-content th,
+  .docs-content td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-blockStrongBorderColor);
+    text-align: left;
+  }
+
+  .docs-content th {
+    color: var(--color-primaryTextColor);
+    background: var(--color-secondaryBackgroundColor);
+  }
+</style>

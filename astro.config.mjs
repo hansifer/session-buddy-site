@@ -8,9 +8,12 @@ import vtbot from 'astro-vtbot';
 import path from 'path';
 import formatClassname from './util/formatClassname';
 
-import { ENABLE_STARLIGHT } from './src/docsConfig';
+// import { createStarlightIntegration } from './src/starlight/integration.ts'; // comment out if interim docs enabled
+import mdx from '@astrojs/mdx'; // comment out if starlight docs enabled
 
 const integrations = [
+  // createStarlightIntegration(), // comment out if interim docs enabled
+  mdx(), // comment out if starlight docs enabled
   react({
     babel: {
       plugins: [formatClassname],
@@ -18,17 +21,6 @@ const integrations = [
   }),
   vtbot(),
 ];
-
-if (ENABLE_STARLIGHT) {
-  const { createStarlightIntegration } =
-    await import('./src/starlight/integration.ts');
-
-  integrations.unshift(createStarlightIntegration());
-} else {
-  const { default: mdx } = await import('@astrojs/mdx');
-
-  integrations.unshift(mdx());
-}
 
 export default defineConfig({
   devToolbar: {

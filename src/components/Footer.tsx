@@ -19,77 +19,81 @@ const socials = [
 ] as const;
 
 const sections = [
+  // {
+  //   title: 'Products',
+  //   links: [
+  //     {
+  //       label: 'Services',
+  //       href: '#',
+  //     },
+  //     {
+  //       label: 'About us',
+  //       href: '#',
+  //     },
+  //     {
+  //       label: 'News and stories',
+  //       href: '#',
+  //     },
+  //     {
+  //       label: 'Roadmap',
+  //       href: '#',
+  //     },
+  //   ],
+  // },
   {
-    title: 'Products',
+    title: 'Product',
     links: [
+      // {
+      //   label: 'Organization team',
+      //   href: '#',
+      // },
+      // {
+      //   label: 'Our journeys',
+      //   href: '#',
+      // },
+      // {
+      //   label: 'Pricing plans',
+      //   href: '#',
+      // },
       {
-        label: 'Services',
-        href: '#',
-      },
-      {
-        label: 'About us',
-        href: '#',
-      },
-      {
-        label: 'News and stories',
-        href: '#',
+        label: 'Releases',
+        href: '/releases',
       },
       {
         label: 'Roadmap',
-        href: '#',
-      },
-    ],
-  },
-  {
-    title: 'Important links',
-    links: [
-      {
-        label: 'Organization team',
-        href: '#',
-      },
-      {
-        label: 'Our journeys',
-        href: '#',
-      },
-      {
-        label: 'Pricing plans',
-        href: '#',
-      },
-      {
-        label: 'Roadmap',
-        href: '#',
-      },
-      {
-        label: 'Terms & conditions',
-        href: '#',
+        href: '/roadmap',
       },
       {
         label: 'Privacy policy',
-        href: '#',
+        href: '/privacy-policy',
+      },
+      {
+        label: 'Terms & conditions',
+        href: '/terms',
       },
     ],
   },
-  {
-    title: 'Company',
-    links: [
-      {
-        label: 'About us',
-        href: '#',
-      },
-      {
-        label: 'Jobs',
-        href: '#',
-      },
-      {
-        label: 'Press',
-        href: '#',
-      },
-      {
-        label: 'Contact us',
-        href: '#',
-      },
-    ],
-  },
+  // {
+  //   title: 'Company',
+  //   links: [
+  //     {
+  //       label: 'About us',
+  //       href: '#',
+  //     },
+  //     {
+  //       label: 'Jobs',
+  //       href: '#',
+  //     },
+  //     {
+  //       label: 'Press',
+  //       href: '#',
+  //     },
+  //     {
+  //       label: 'Contact us',
+  //       href: '#',
+  //     },
+  //   ],
+  // },
 ] as const;
 
 export const Footer = () => {
@@ -155,7 +159,20 @@ export const Footer = () => {
                 text-secondaryTextColor
               "
             >
-              Session Buddy is built by passionate developers who care about
+              Session Buddy is crafted with an unrelenting focus on user
+              experience, software quality, and ethical data practices. If
+              something isn't right, or you just want to say hi, we'd love to{' '}
+              {
+                <a
+                  href="mailto:support@sessionbuddy.com"
+                  aria-label="Session Buddy contact email"
+                  className="text-primaryTextColor"
+                >
+                  hear from you
+                </a>
+              }
+              .
+              {/* Session Buddy is built by passionate developers who care about
               software sustainability and ethical data practices.{' '}
               <a
                 href="#"
@@ -164,7 +181,7 @@ export const Footer = () => {
               >
                 Read about our software philosophy
               </a>
-              .
+              . */}
             </p>
             {socials?.length ? (
               <div

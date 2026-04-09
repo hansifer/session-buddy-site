@@ -1,6 +1,6 @@
 ---
 title: Introduction
-slug: 'docs'
+# slug: 'docs'
 sidebar:
   order: 10
 ---

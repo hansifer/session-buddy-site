@@ -77,7 +77,7 @@ const sidebar: Sidebar = [
   },
   {
     label: 'Privacy',
-    slug: 'privacy',
+    slug: 'privacy-policy',
   },
   {
     slug: 'terms',

@@ -24,6 +24,7 @@ const interimDocs = defineCollection({
     z
       .object({
         title: z.string(),
+        tabTitle: z.string().optional(),
         description: z.string().optional(),
         image: image().optional(),
         imageAlt: z.string().optional(),

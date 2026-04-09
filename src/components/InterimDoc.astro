@@ -18,6 +18,11 @@ const title =
     ? entry.data.title.trim()
     : pathToTitle(entry.id);
 
+const tabTitle =
+  typeof entry.data.tabTitle === 'string'
+    ? entry.data.tabTitle.trim() || title
+    : title;
+
 const description =
   typeof entry.data.description === 'string'
     ? entry.data.description.trim() || undefined
@@ -30,7 +35,7 @@ const imageAlt =
 ---
 
 <Layout
-  title={title ? `${title} | Session Buddy` : 'Session Buddy'}
+  title={tabTitle ? `${tabTitle} | Session Buddy` : 'Session Buddy'}
   mode="docs"
 >
   <main class="flex

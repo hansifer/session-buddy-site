@@ -162,15 +162,15 @@ export const Footer = () => {
               Session Buddy is crafted with an unrelenting focus on user
               experience, software quality, and ethical data practices. If
               something isn't right, or you just want to say hi, we'd love to{' '}
-              {
-                <a
-                  href="mailto:support@sessionbuddy.com"
-                  aria-label="Session Buddy contact email"
-                  className="text-primaryTextColor"
-                >
-                  hear from you
-                </a>
-              }
+              <a
+                href="mailto:support@sessionbuddy.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Session Buddy contact email"
+                className="text-primaryTextColor"
+              >
+                hear from you
+              </a>
               .
               {/* Session Buddy is built by passionate developers who care about
               software sustainability and ethical data practices.{' '}

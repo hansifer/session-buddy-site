@@ -1,4 +1,10 @@
-export const TerminalIcon = ({ color = '#67e8f9', size = 20 }: { color?: string; size?: number }) => (
+export const TerminalIcon = ({
+  color = 'currentColor',
+  size = 20,
+}: {
+  color?: string;
+  size?: number;
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
@@ -10,7 +16,13 @@ export const TerminalIcon = ({ color = '#67e8f9', size = 20 }: { color?: string;
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <rect x="2.5" y="4" width="15" height="12" rx="2.5" />
+    <rect
+      x="2.5"
+      y="4"
+      width="15"
+      height="12"
+      rx="2.5"
+    />
     <path d="m6.2 8.1 2.1 1.9-2.1 1.9" />
     <path d="M10.7 12h3.2" />
   </svg>

@@ -1,5 +1,5 @@
 export const TextIcon = ({
-  color = '#a5b4fc',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

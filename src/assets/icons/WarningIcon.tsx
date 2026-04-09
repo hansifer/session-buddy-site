@@ -1,5 +1,5 @@
 export const WarningIcon = ({
-  color = '#fdba74',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

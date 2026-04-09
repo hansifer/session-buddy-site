@@ -1,5 +1,5 @@
 export const FolderIcon = ({
-  color = '#fde047',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

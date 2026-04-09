@@ -1,5 +1,5 @@
 export const SupportIcon = ({
-  color = '#bef264',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

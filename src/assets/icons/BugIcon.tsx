@@ -1,5 +1,5 @@
 export const BugIcon = ({
-  color = '#fda4af',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

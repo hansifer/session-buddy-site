@@ -1,5 +1,5 @@
 export const ExportIcon = ({
-  color = '#7dd3fc',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

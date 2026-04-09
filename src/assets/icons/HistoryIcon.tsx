@@ -1,5 +1,5 @@
 export const HistoryIcon = ({
-  color = '#93c5fd',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

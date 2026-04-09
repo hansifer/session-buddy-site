@@ -1,5 +1,5 @@
 export const ShieldIcon = ({
-  color = '#5eead4',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

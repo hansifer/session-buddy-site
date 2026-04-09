@@ -1,5 +1,5 @@
 export const DocumentIcon = ({
-  color = '#e4e4e7',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

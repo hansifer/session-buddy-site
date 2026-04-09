@@ -1,5 +1,5 @@
 export const PulseIcon = ({
-  color = '#f9a8d4',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

@@ -1,5 +1,5 @@
 export const FlaskIcon = ({
-  color = '#c4b5fd',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

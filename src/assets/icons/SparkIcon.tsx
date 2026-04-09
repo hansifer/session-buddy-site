@@ -1,5 +1,5 @@
 export const SparkIcon = ({
-  color = '#fcd34d',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

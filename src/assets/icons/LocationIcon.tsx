@@ -1,5 +1,5 @@
 export const LocationIcon = ({
-  color = '#6ee7b7',
+  color = 'currentColor',
   size = 20,
 }: {
   color?: string;

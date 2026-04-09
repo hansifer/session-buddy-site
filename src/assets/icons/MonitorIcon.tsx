@@ -1,7 +1,15 @@
-export const MonitorIcon = ({ className }: { className?: string }) => (
+export const MonitorIcon = ({
+  className,
+  size = 18,
+}: {
+  className?: string;
+  size?: number;
+}) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
+    width={size}
+    height={size}
     fill="none"
     stroke="currentColor"
     strokeWidth="2"

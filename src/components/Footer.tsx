@@ -160,8 +160,17 @@ export const Footer = () => {
               "
             >
               Session Buddy is crafted with an unrelenting focus on user
-              experience, software quality, and ethical data practices. If
-              something isn't right, or you just want to say hi, we'd love to{' '}
+              experience, software quality, and ethical data practices.
+            </p>
+            <p
+              className="
+                mt-4
+                leading-relaxed
+                text-secondaryTextColor
+              "
+            >
+              If something isn't quite right, or you just want to say hi, we'd
+              love to{' '}
               <a
                 href="mailto:support@sessionbuddy.com"
                 target="_blank"
@@ -172,7 +181,8 @@ export const Footer = () => {
                 hear from you
               </a>
               .
-              {/* Session Buddy is built by passionate developers who care about
+            </p>
+            {/* Session Buddy is built by passionate developers who care about
               software sustainability and ethical data practices.{' '}
               <a
                 href="#"
@@ -182,7 +192,6 @@ export const Footer = () => {
                 Read about our software philosophy
               </a>
               . */}
-            </p>
             {socials?.length ? (
               <div
                 className="

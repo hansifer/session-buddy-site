@@ -29,6 +29,7 @@ const interimDocs = defineCollection({
         image: image().optional(),
         imageAlt: z.string().optional(),
         interimVisible: z.boolean().optional(),
+        noBounding: z.boolean().optional(),
       })
       .passthrough(),
 });

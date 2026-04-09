@@ -1,0 +1,132 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+import { ArrowIcon } from '@/assets/icons/ArrowIcon';
+import { BugIcon } from '@/assets/icons/BugIcon';
+import { CheckIcon } from '@/assets/icons/CheckIcon';
+import { CloseIcon } from '@/assets/icons/CloseIcon';
+import { DocumentIcon } from '@/assets/icons/DocumentIcon';
+import { ExpandCollapseIcon } from '@/assets/icons/ExpandCollapseIcon';
+import { ExportIcon } from '@/assets/icons/ExportIcon';
+import { FlaskIcon } from '@/assets/icons/FlaskIcon';
+import { FolderIcon } from '@/assets/icons/FolderIcon';
+import { HistoryIcon } from '@/assets/icons/HistoryIcon';
+import { LocalFirstIcon } from '@/assets/icons/LocalFirstIcon';
+import { LocationIcon } from '@/assets/icons/LocationIcon';
+import { LockIcon } from '@/assets/icons/LockIcon';
+import { NoAdsIcon } from '@/assets/icons/NoAdsIcon';
+import { NoDataSharingIcon } from '@/assets/icons/NoDataSharingIcon';
+import { NoLoginIcon } from '@/assets/icons/NoLoginIcon';
+import { NoTrackingIcon } from '@/assets/icons/NoTrackingIcon';
+import { PulseIcon } from '@/assets/icons/PulseIcon';
+import { QuoteIcon } from '@/assets/icons/QuoteIcon';
+import { ShieldIcon } from '@/assets/icons/ShieldIcon';
+import { SparkIcon } from '@/assets/icons/SparkIcon';
+import { SupportIcon } from '@/assets/icons/SupportIcon';
+import { TerminalIcon } from '@/assets/icons/TerminalIcon';
+import { TextIcon } from '@/assets/icons/TextIcon';
+import { VerifiedIcon } from '@/assets/icons/VerifiedIcon';
+import { WarningIcon } from '@/assets/icons/WarningIcon';
+
+// development-only page to view all app icons in one place
+
+const S = 30;
+
+if (!import.meta.env.DEV) {
+  return Astro.redirect('/');
+}
+---
+
+<Layout title="Icon Showcase | Session Buddy">
+  <main class="max-w-5xl mx-auto px-6 py-20">
+    <h1 class="text-4xl font-bold text-primaryTextColor mb-2">Icon Showcase</h1>
+    <p class="text-secondaryTextColor mb-16">
+      All icons in <code class="text-primaryColor">/src/assets/icons</code>
+    </p>
+
+    <section class="mb-20">
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+      >
+        {
+          [
+            ['SparkIcon', <SparkIcon size={S} />],
+            ['BugIcon', <BugIcon size={S} />],
+            ['WarningIcon', <WarningIcon size={S} />],
+            ['TerminalIcon', <TerminalIcon size={S} />],
+            ['PulseIcon', <PulseIcon size={S} />],
+            ['FolderIcon', <FolderIcon size={S} />],
+            ['LocationIcon', <LocationIcon size={S} />],
+            ['ExportIcon', <ExportIcon size={S} />],
+            ['TextIcon', <TextIcon size={S} />],
+            ['FlaskIcon', <FlaskIcon size={S} />],
+            ['ShieldIcon', <ShieldIcon size={S} />],
+            ['HistoryIcon', <HistoryIcon size={S} />],
+            ['LockIcon', <LockIcon size={S} />],
+            ['SupportIcon', <SupportIcon size={S} />],
+            ['DocumentIcon', <DocumentIcon size={S} />],
+
+            [
+              'ArrowIcon (up)',
+              <ArrowIcon
+                direction="up"
+                className="text-secondaryTextColor"
+              />,
+            ],
+            ['CheckIcon', <CheckIcon className="text-secondaryTextColor" />],
+            [
+              'CloseIcon',
+              <span class="w-6 h-6 text-secondaryTextColor inline-flex items-center">
+                <CloseIcon />
+              </span>,
+            ],
+            [
+              'ExpandCollapseIcon (collapsed)',
+              <ExpandCollapseIcon
+                expanded={false}
+                className="text-secondaryTextColor"
+              />,
+            ],
+            [
+              'LocalFirstIcon',
+              <LocalFirstIcon className="w-7 h-7 text-secondaryTextColor" />,
+            ],
+            [
+              'NoAdsIcon',
+              <NoAdsIcon className="w-7 h-7 text-secondaryTextColor" />,
+            ],
+            [
+              'NoDataSharingIcon',
+              <NoDataSharingIcon className="w-7 h-7 text-secondaryTextColor" />,
+            ],
+            [
+              'NoLoginIcon',
+              <NoLoginIcon className="w-7 h-7 text-secondaryTextColor" />,
+            ],
+            [
+              'NoTrackingIcon',
+              <NoTrackingIcon className="w-7 h-7 text-secondaryTextColor" />,
+            ],
+            [
+              'QuoteIcon',
+              <QuoteIcon className="w-7 h-7 text-secondaryTextColor" />,
+            ],
+            [
+              'VerifiedIcon',
+              <VerifiedIcon className="w-7 h-7 text-secondaryTextColor" />,
+            ],
+          ]
+            .sort(([nameA], [nameB]) => nameA.localeCompare(nameB))
+            .map(([name, icon], i) => (
+              <div class="flex flex-col items-center gap-3 p-5 rounded-2xl bg-blockBackgroundColor block-border">
+                <div class="flex items-center justify-center h-10">{icon}</div>
+                <span class="text-xs text-center text-secondaryTextColor font-mono leading-tight">
+                  {`${i + 1}. ${name}`}
+                </span>
+              </div>
+            ))
+        }
+      </div>
+    </section>
+  </main>
+</Layout>

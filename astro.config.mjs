@@ -27,8 +27,10 @@ export default defineConfig({
     enabled: false, // also happens to fix error 'The request url "<redacted>" is outside of Vite serving allow list.'
   },
   redirects: {
-    '/releases': '/releases/4.1.1', // redirect to latest release
+    // '/releases': '/releases/4.1.1', // redirect to latest release
 
+    '/terms-and-conditions': '/terms',
+    '/privacy': '/privacy-policy',
     '/planned': '/roadmap',
     '/support': '/docs',
     '/v4': '/releases/4.0.0',

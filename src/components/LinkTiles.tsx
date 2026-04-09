@@ -1,8 +1,8 @@
 import { tw } from '@/util/tailwind';
 
 type LinkSection = {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   items: LinkItem[];
 };
 
@@ -32,9 +32,9 @@ type Tone =
   | 'zinc';
 
 export const LinkTiles = ({ sections }: { sections: LinkSection[] }) =>
-  sections.map(({ title, description, items }) => (
+  sections.map(({ title, description, items }, i) => (
     <section
-      key={title}
+      key={title || i}
       className="scroll-mt-28 mb-24"
     >
       <div
@@ -45,34 +45,38 @@ export const LinkTiles = ({ sections }: { sections: LinkSection[] }) =>
           mt-14
         "
       >
-        <div className="mb-10">
-          <h2
-            className="
-              mb-8
-              block-title
-              text-center
-            "
-          >
-            {title}
-          </h2>
-          <p
-            className="
-              max-w-xl
-              leading-relaxed
-              text-secondaryTextColor
-              text-center
-              mx-auto
-            "
-          >
-            {description}
-          </p>
-        </div>
+        {title ? (
+          <div className="mb-10">
+            <h2
+              className="
+                mb-8
+                block-title
+                text-center
+              "
+            >
+              {title}
+            </h2>
+            {description ? (
+              <p
+                className="
+                  max-w-xl
+                  leading-relaxed
+                  text-secondaryTextColor
+                  text-center
+                  mx-auto
+                "
+              >
+                {description}
+              </p>
+            ) : null}
+          </div>
+        ) : null}
         <div
-          className="
+          className={tw`
             grid
             gap-5
-            md:grid-cols-2
-          "
+            ${items.length > 1 ? 'md:grid-cols-2' : ''}
+          `}
         >
           {items.map(({ title, description, icon, tone, href }) => (
             <LinkItemBlock

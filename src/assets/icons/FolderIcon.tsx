@@ -16,6 +16,6 @@ export const FolderIcon = ({
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M2.8 6.8h4.8l1.6 1.8h8v6.1a2 2 0 0 1-2 2H4.8a2 2 0 0 1-2-2Z" />
+    <path d="M3.1 3.9h4.4l1.5 1.7h7.9v7.3a2 2 0 0 1-2 2H5.1a2 2 0 0 1-2-2Z" />
   </svg>
 );

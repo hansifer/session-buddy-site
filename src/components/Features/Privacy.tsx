@@ -7,7 +7,7 @@ import type { FeatureTile } from '@/components/Feature/FeatureTiles';
 import { NoAdsIcon } from '@/assets/icons/NoAdsIcon';
 import { NoTrackingIcon } from '@/assets/icons/NoTrackingIcon';
 import { NoDataSharingIcon } from '@/assets/icons/NoDataSharingIcon';
-import { LocalFirstIcon } from '@/assets/icons/LocalFirstIcon';
+import { MonitorIcon } from '@/assets/icons/MonitorIcon';
 import { NoLoginIcon } from '@/assets/icons/NoLoginIcon';
 import { VerifiedIcon } from '@/assets/icons/VerifiedIcon';
 
@@ -85,7 +85,7 @@ const tiles: FeatureTile[] = [
     color: 'text-cyan-500',
   },
   {
-    icon: LocalFirstIcon,
+    icon: MonitorIcon,
     label: 'Local\nfirst',
     color: 'text-emerald-500',
   },

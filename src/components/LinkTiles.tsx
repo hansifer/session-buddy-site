@@ -10,9 +10,26 @@ type LinkItem = {
   title: string;
   description: string;
   icon: React.ComponentType;
-  tone?: string;
+  tone?: Tone;
   href: string;
 };
+
+type Tone =
+  | 'amber'
+  | 'rose'
+  | 'orange'
+  | 'cyan'
+  | 'pink'
+  | 'yellow'
+  | 'emerald'
+  | 'sky'
+  | 'indigo'
+  | 'violet'
+  | 'teal'
+  | 'blue'
+  | 'slate'
+  | 'lime'
+  | 'zinc';
 
 export const LinkTiles = ({ sections }: { sections: LinkSection[] }) =>
   sections.map(({ title, description, items }) => (
@@ -125,7 +142,7 @@ const Icon = ({
   tone,
 }: {
   icon: React.ComponentType;
-  tone?: string;
+  tone?: Tone;
 }) => (
   <span
     aria-hidden="true"
@@ -145,7 +162,7 @@ const Icon = ({
   </span>
 );
 
-function getToneClasses(tone?: string): string {
+function getToneClasses(tone?: Tone): string {
   switch (tone) {
     case 'amber':
       return 'border-amber-300/30 bg-amber-500/14 text-amber-300';

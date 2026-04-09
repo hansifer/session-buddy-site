@@ -2,16 +2,17 @@
 import Layout from '@/layouts/Layout.astro';
 
 import { ArrowIcon } from '@/assets/icons/ArrowIcon';
+import { BackupIcon } from '@/assets/icons/BackupIcon';
 import { BugIcon } from '@/assets/icons/BugIcon';
 import { CheckIcon } from '@/assets/icons/CheckIcon';
 import { CloseIcon } from '@/assets/icons/CloseIcon';
-import { BackupIcon } from '@/assets/icons/BackupIcon';
 import { DocumentIcon } from '@/assets/icons/DocumentIcon';
 import { ExpandCollapseIcon } from '@/assets/icons/ExpandCollapseIcon';
 import { ExportIcon } from '@/assets/icons/ExportIcon';
 import { FlaskIcon } from '@/assets/icons/FlaskIcon';
 import { FolderIcon } from '@/assets/icons/FolderIcon';
 import { HistoryIcon } from '@/assets/icons/HistoryIcon';
+import { InfoIcon } from '@/assets/icons/InfoIcon';
 import { LocationIcon } from '@/assets/icons/LocationIcon';
 import { LockIcon } from '@/assets/icons/LockIcon';
 import { MonitorIcon } from '@/assets/icons/MonitorIcon';
@@ -55,6 +56,7 @@ if (!import.meta.env.DEV) {
         {
           [
             ['SparkIcon', <SparkIcon size={S} />],
+            ['InfoIcon', <InfoIcon size={S} />],
             ['BackupIcon', <BackupIcon size={S} />],
             ['BugIcon', <BugIcon size={S} />],
             ['WarningIcon', <WarningIcon size={S} />],

@@ -1,7 +1,6 @@
 ---
 title: What is Session Buddy?
 description: What is Session Buddy?
-slug: 'what-is-it'
 sidebar:
   order: 20
 ---

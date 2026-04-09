@@ -1,6 +1,5 @@
 ---
 title: Installing
-slug: 'installing'
 sidebar:
   order: 30
 ---

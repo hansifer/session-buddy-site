@@ -16,8 +16,8 @@ export const SparkIcon = ({
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <path d="M10 2.5 11.7 6.3 15.5 8 11.7 9.7 10 13.5 8.3 9.7 4.5 8 8.3 6.3Z" />
-    <path d="M15.5 3.5v2" />
-    <path d="M16.5 4.5h-2" />
+    <path d="M10 3.2 11.9 8.1 16.8 10 11.9 11.9 10 16.8 8.1 11.9 3.2 10 8.1 8.1Z" />
+    <path d="M14.8 4.2v1.8" />
+    <path d="M15.7 5.1h-1.8" />
   </svg>
 );

@@ -2,6 +2,7 @@
 title: Session Buddy Terms and Conditions
 sidebar:
   label: Terms & conditions
+interimVisible: true
 ---
 
 Permission is hereby granted to any person or organization obtaining a copy of the Session Buddy software (the “Software”) to run the Software on their computer[s] and to publish without restriction any output produced by the Software, including screenshots. This license prohibits you from copying, publishing, and/or distributing source code in either original or modified form. This license prohibits you from making the Software available for public use, commercial or non-commercial, in either original or modified form. This license prohibits you from claiming ownership or authorship of the Software.

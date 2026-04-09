@@ -49,7 +49,7 @@ if (!import.meta.env.DEV) {
 
     <section class="mb-20">
       <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6"
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-orange-500"
       >
         {
           [
@@ -69,55 +69,25 @@ if (!import.meta.env.DEV) {
             ['SupportIcon', <SupportIcon size={S} />],
             ['DocumentIcon', <DocumentIcon size={S} />],
 
-            [
-              'ArrowIcon (up)',
-              <ArrowIcon
-                direction="up"
-                className="text-secondaryTextColor"
-              />,
-            ],
-            ['CheckIcon', <CheckIcon className="text-secondaryTextColor" />],
+            ['ArrowIcon (up)', <ArrowIcon direction="up" />],
+            ['CheckIcon', <CheckIcon />],
             [
               'CloseIcon',
-              <span class="w-6 h-6 text-secondaryTextColor inline-flex items-center">
+              <span class="w-6 h-6 inline-flex items-center">
                 <CloseIcon />
               </span>,
             ],
             [
               'ExpandCollapseIcon (collapsed)',
-              <ExpandCollapseIcon
-                expanded={false}
-                className="text-secondaryTextColor"
-              />,
+              <ExpandCollapseIcon expanded={false} />,
             ],
-            [
-              'LocalFirstIcon',
-              <LocalFirstIcon className="w-7 h-7 text-secondaryTextColor" />,
-            ],
-            [
-              'NoAdsIcon',
-              <NoAdsIcon className="w-7 h-7 text-secondaryTextColor" />,
-            ],
-            [
-              'NoDataSharingIcon',
-              <NoDataSharingIcon className="w-7 h-7 text-secondaryTextColor" />,
-            ],
-            [
-              'NoLoginIcon',
-              <NoLoginIcon className="w-7 h-7 text-secondaryTextColor" />,
-            ],
-            [
-              'NoTrackingIcon',
-              <NoTrackingIcon className="w-7 h-7 text-secondaryTextColor" />,
-            ],
-            [
-              'QuoteIcon',
-              <QuoteIcon className="w-7 h-7 text-secondaryTextColor" />,
-            ],
-            [
-              'VerifiedIcon',
-              <VerifiedIcon className="w-7 h-7 text-secondaryTextColor" />,
-            ],
+            ['LocalFirstIcon', <LocalFirstIcon className="w-7 h-7" />],
+            ['NoAdsIcon', <NoAdsIcon className="w-7 h-7" />],
+            ['NoDataSharingIcon', <NoDataSharingIcon className="w-7 h-7" />],
+            ['NoLoginIcon', <NoLoginIcon className="w-7 h-7" />],
+            ['NoTrackingIcon', <NoTrackingIcon className="w-7 h-7" />],
+            ['QuoteIcon', <QuoteIcon className="w-7 h-7" />],
+            ['VerifiedIcon', <VerifiedIcon className="w-7 h-7" />],
           ]
             .sort(([nameA], [nameB]) => nameA.localeCompare(nameB))
             .map(([name, icon], i) => (

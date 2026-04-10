@@ -1,0 +1,91 @@
+---
+title: Releases and Planned Work
+tabTitle: Releases
+interimVisible: true
+noBounding: true
+---
+
+import { LinkTiles } from '@/components/LinkTiles';
+import { ScrollUpButton } from '@/components/ScrollUpButton';
+
+import { DocumentIcon } from '@/assets/icons/DocumentIcon';
+import { HistoryIcon } from '@/assets/icons/HistoryIcon';
+import { SparkIcon } from '@/assets/icons/SparkIcon';
+
+export const releases = [
+  {
+    title: 'v4.1.1',
+    description: 'February 12, 2026',
+    href: '/releases/4.1.1',
+  },
+  {
+    title: 'v4.1',
+    description: 'October 26, 2025',
+    href: '/releases/4.1.0',
+  },
+  {
+    title: 'v4.0.5',
+    description: 'March 12, 2025',
+    href: '/releases/4.0.5',
+  },
+  {
+    title: 'v4.0.4',
+    description: 'June 14, 2024',
+    href: '/releases/4.0.4',
+  },
+  {
+    title: 'v4.0.3',
+    description: 'April 4, 2024',
+    href: '/releases/4.0.3',
+  },
+  {
+    title: 'v4.0.2',
+    description: 'March 23, 2024',
+    href: '/releases/4.0.2',
+  },
+  {
+    title: 'v4.0.1',
+    description: 'March 14, 2024',
+    href: '/releases/4.0.1',
+  },
+  {
+    title: 'v4',
+    description: 'March 13, 2024',
+    href: '/releases/4.0.0',
+  },
+].map((item, i) => ({ 
+  ...(!i
+    ? {
+      icon: SparkIcon,
+      tone: 'yellow',
+    } : {
+      icon: HistoryIcon,
+      tone: 'blue',
+    }
+  ),
+  ...item,
+}));
+
+export const roadmap = [
+  {
+    title: 'Top Priorities',
+    description: 'More good stuff on the horizon.',
+    href: '/roadmap',
+    icon: DocumentIcon,
+    tone: 'violet',
+  },
+];
+
+<main class="max-w-4xl">
+  <LinkTiles sections={[
+    {
+      title: 'Releases',
+      items: releases,
+    },
+    {
+      title: 'Planned',
+      items: roadmap,
+    },
+  ]} />
+</main>
+<ScrollUpButton client:load />

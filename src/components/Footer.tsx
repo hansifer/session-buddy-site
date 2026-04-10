@@ -112,6 +112,7 @@ export const Footer = () => {
           className="
             flex
             gap-20
+            xl:gap-30
             container
             w-4/5
             lg:w-10/12
@@ -123,6 +124,8 @@ export const Footer = () => {
         >
           <div
             className="
+              hidden
+              md:block
               max-w-sm
               mx-auto
             "
@@ -216,11 +219,9 @@ export const Footer = () => {
           </div>
           <div
             className="
-              hidden
-              lg:flex
+              flex
               justify-between
               flex-auto
-              xl:pl-30
               whitespace-nowrap
             "
           >

@@ -8,6 +8,7 @@ sidebar:
 
 import { FeatureImage } from '@/components/Feature/FeatureImage'
 import importImg from '@/assets/images/import.png';
+import exportImg from '@/assets/images/export.png';
 
 Import and export are a pair of complimentary features that make it easy to share collections between Session Buddy and other applications, including Session Buddy on other devices.
 
@@ -27,7 +28,7 @@ To import collections:
     src={importImg.src}
     alt="Session Buddy Import Dialog"
     shadow
-    className="w-120"
+    className="w-100"
   />
 </div>
 
@@ -62,6 +63,15 @@ To export collections:
 2. **Choose Collections:** Decide whether to export all collections or only the selected ones.
 3. **Choose Format:** Select the desired export format from the available options.
 4. **Save the Exported File:** Click "Select destination" to choose the location and filename for the export. If your browser [doesn't support location selection](/troubleshooting-export/), the button will read "Download" and the file will be saved to your default downloads folder.
+
+<div className="flex justify-center my-14!">
+  <FeatureImage
+    src={exportImg.src}
+    alt="Session Buddy Export Dialog"
+    shadow
+    className="w-100"
+  />
+</div>
 
 For detailed information on the available export formats, visit the [Formats](/formats#export) page.
 

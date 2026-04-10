@@ -33,10 +33,10 @@ export const Flow = ({
       <div
         id="features"
         className="
-        absolute
-        -mt-20
-        lg:-mt-32
-      "
+          absolute
+          -mt-20
+          lg:-mt-32
+        "
       />
       <motion.div
         initial={{ opacity: 0 }}

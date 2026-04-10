@@ -1,5 +1,4 @@
 import type { JSX } from 'react';
-import { motion } from 'framer-motion';
 
 import { Stars } from '@/components/Stars';
 
@@ -12,17 +11,8 @@ export function Stats({
 }): JSX.Element {
   return (
     <section className="mb-8">
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 0.5,
-          delay: 0.2,
-        }}
-      >
-        <div
-          className="
+      <div
+        className="
             relative
             flex
             flex-col
@@ -32,9 +22,9 @@ export function Stats({
             font-bold
             text-primaryTextColor
           "
-        >
-          <div
-            className="
+      >
+        <div
+          className="
               absolute
               left-1/2
               top-1/2
@@ -46,18 +36,17 @@ export function Stats({
               bg-blue-500/20 blur-3xl
               pointer-events-none
             "
-          />
-          <Stars rating={rating} />
-          <div
-            className="
+        />
+        <Stars rating={rating} />
+        <div
+          className="
               text-center
               whitespace-pre
             "
-          >
-            {text}
-          </div>
+        >
+          {text}
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

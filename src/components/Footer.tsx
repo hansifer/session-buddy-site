@@ -111,7 +111,7 @@ export const Footer = () => {
         <div
           className="
             flex
-            gap-10
+            gap-20
             container
             w-4/5
             lg:w-10/12

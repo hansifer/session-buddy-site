@@ -48,6 +48,10 @@ export const LinkTiles = ({ sections }: { sections: LinkSection[] }) =>
       >
         {title ? (
           <div className="mb-10">
+            <div
+              id={title.trim().replace(/\s+/g, '-').toLowerCase()}
+              className="absolute -translate-y-28"
+            />
             <h2
               className="
                 mb-8

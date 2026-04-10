@@ -123,8 +123,6 @@ export const Footer = () => {
         >
           <div
             className="
-              flex
-              flex-col
               max-w-sm
               mx-auto
             "

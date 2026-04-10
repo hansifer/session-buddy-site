@@ -23,6 +23,7 @@ export function Stats({
       >
         <div
           className="
+            relative
             flex
             flex-col
             items-center
@@ -32,6 +33,20 @@ export function Stats({
             text-primaryTextColor
           "
         >
+          <div
+            className="
+              absolute
+              left-1/2
+              top-1/2
+              -translate-x-1/2
+              -translate-y-1/2
+              h-30
+              w-100
+              rounded-[50%]
+              bg-blue-500/20 blur-3xl
+              pointer-events-none
+            "
+          />
           <Stars rating={rating} />
           <div
             className="

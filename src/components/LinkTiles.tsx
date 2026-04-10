@@ -79,16 +79,19 @@ export const LinkTiles = ({ sections }: { sections: LinkSection[] }) =>
             ${items.length > 1 ? 'md:grid-cols-2' : ''}
           `}
         >
-          {items.map(({ title, description, icon, tone, href }) => (
-            <LinkItemBlock
-              key={`${title}-${href}`}
-              title={title}
-              description={description}
-              icon={icon}
-              tone={tone}
-              href={href}
-            />
-          ))}
+          {items.map(
+            ({ title, description, icon, tone, href, openInNewTab }) => (
+              <LinkItemBlock
+                key={`${title}-${href}`}
+                title={title}
+                description={description}
+                icon={icon}
+                tone={tone}
+                href={href}
+                openInNewTab={openInNewTab}
+              />
+            ),
+          )}
         </div>
       </div>
     </section>

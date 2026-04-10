@@ -244,7 +244,14 @@ export const Hero = () => {
                 mb-4
                 contained-button
               "
-              onClick={() => setIsModalOpen(true)}
+              onClick={() => {
+                // setIsModalOpen(true);
+                window.open(
+                  'https://chromewebstore.google.com/detail/session-buddy-tab-bookmar/edacconmaakjimmfgnblocblbcdcpbko',
+                  '_blank',
+                  'noopener,noreferrer',
+                );
+              }}
             >
               Get started
             </button>

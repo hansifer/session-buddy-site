@@ -53,7 +53,8 @@ const rightLinks: Link[] = [
   },
   {
     label: 'Install',
-    href: '/installing',
+    href: 'https://chromewebstore.google.com/detail/session-buddy-tab-bookmar/edacconmaakjimmfgnblocblbcdcpbko',
+    // href: '/installing',
     ariaLabel: 'Install',
     variant: 'contained',
   },

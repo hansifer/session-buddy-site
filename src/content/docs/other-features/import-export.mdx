@@ -6,6 +6,9 @@ sidebar:
   order: 2
 ---
 
+import { FeatureImage } from '@/components/Feature/FeatureImage'
+import importImg from '@/assets/images/import.png';
+
 Import and export are a pair of complimentary features that make it easy to share collections between Session Buddy and other applications, including Session Buddy on other devices.
 
 ## Importing collections
@@ -18,6 +21,15 @@ To import collections:
 
 1. **Open the Import Dialog:** Click the gear icon in Session Buddy and select "Import…" from the dropdown menu.
 2. **Provide the Data:** Paste the text or drag and drop a file containing collections into the designated area.
+
+<div className="flex justify-center my-14!">
+  <FeatureImage
+    src={importImg.src}
+    alt="Session Buddy Import Dialog"
+    shadow
+    className="w-120"
+  />
+</div>
 
 Session Buddy will automatically detect the format of the provided data and update the format selector accordingly. If the format isn't recognized, it defaults to "Free-form".
 

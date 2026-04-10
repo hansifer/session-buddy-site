@@ -6,8 +6,8 @@ const Star = ({ filled }: { filled?: boolean }) => {
   return (
     <svg
       focusable="false"
-      width="26"
-      height="26"
+      width="30"
+      height="30"
       viewBox="0 0 24 24"
       className="
         shrink-0

@@ -125,12 +125,7 @@ export const Footer = () => {
             className="
               flex
               flex-col
-              items-center
-              lg:items-start
-              text-center
-              lg:text-left
-              max-w-120
-              lg:max-w-sm
+              max-w-sm
               mx-auto
             "
           >

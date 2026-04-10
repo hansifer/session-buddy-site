@@ -1,0 +1,79 @@
+---
+title: Import and Export
+slug: import-export
+interimVisible: true
+sidebar:
+  order: 2
+---
+
+Import and export are a pair of complimentary features that make it easy to share collections between Session Buddy and other applications, including Session Buddy on other devices.
+
+## Importing collections
+
+The Import feature enables you to create collections using files from other applications or text copied from emails, chats, documents, or web pages.
+
+Session Buddy supports a wide array of [input formats](/formats/), ranging from simple lists of URLs to structured JSON representations.
+
+To import collections:
+
+1. **Open the Import Dialog:** Click the gear icon in Session Buddy and select "Import…" from the dropdown menu.
+2. **Provide the Data:** Paste the text or drag and drop a file containing collections into the designated area.
+
+Session Buddy will automatically detect the format of the provided data and update the format selector accordingly. If the format isn't recognized, it defaults to "Free-form".
+
+You can edit the text before finalizing the import and the detected format will adjust as you make changes. To disable automatic format detection, select a specific format or click the lightning icon next to the format selector.
+
+Before proceeding with the import, ensure that the detected format and reported collection count match your expectations. If Session Buddy guessed the format incorrectly, select the desired format from the Format dropdown.
+
+For a comprehensive list of supported import formats, refer to the [Formats](/formats/) page.
+
+### Adding links and opening tabs
+
+Beyond importing entire collections, Session Buddy allows you to add individual links to existing collections or open multiple tabs simultaneously.
+
+**Adding Tabs or Links from text:**
+
+- Click the "Add tabs…" or "Add links…" button in the content header.
+- This opens a dialog similar to the Import feature, enabling you to add tabs or links using various supported formats.
+
+**Using Copy/Paste:**
+
+- Copy selected tabs or links and paste them across collections or into the current session as needed.
+
+## Exporting collections
+
+The Export feature allows you to share your Session Buddy collections with other people or applications like note-taking apps, AI agents, spreadsheets, or other Session Buddy instances. Multiple [export formats](/formats#export) are available to suit various use cases.
+
+To export collections:
+
+1. **Open the Export Dialog:** Click the gear icon in Session Buddy, then select "Export…" from the dropdown menu.
+2. **Choose Collections:** Decide whether to export all collections or only the selected ones.
+3. **Choose Format:** Select the desired export format from the available options.
+4. **Save the Exported File:** Click "Select destination" to choose the location and filename for the export. If your browser [doesn't support location selection](/troubleshooting-export/), the button will read "Download" and the file will be saved to your default downloads folder.
+
+For detailed information on the available export formats, visit the [Formats](/formats#export) page.
+
+### Exporting links and tabs
+
+Export is focused on collections. If you want to extract individual tabs or links, you can select and copy/paste them into other applications like text editors, chats, or emails.
+
+To enable various copy formats, go to Settings, select the "Other" tab, and edit the list of "Extra copy formats".
+
+## Differences between Import/Export and Backup/Restore
+
+While both Import/Export and [Backup/Restore](/backup-restore/) facilitate data management in Session Buddy, they serve distinct purposes:
+
+### Import/Export
+
+- Designed for sharing collections between Session Buddy and other applications or people.
+- Handles only collections, not history.
+- Importing always creates new collections, which may lead to duplication if the same file is imported multiple times.
+- Importing removes pins from collections.
+
+### Backup/Restore
+
+- Aimed at safeguarding your data from potential browser issues that could result in data loss.
+- Facilitates re-installing Session Buddy.
+- Includes both collections and history.
+- Restoring only creates collections that haven't been previously restored, preventing duplication.
+- Restoring preserves pinned collections.

@@ -1,5 +1,6 @@
 import type { Testimonial } from '@/types';
 
+import deitrichArmanteLowrance from '@/assets/profile-images/deitrich-armante-lowrance.png';
 import drieschDeNoronha from '@/assets/profile-images/driesch-de-noronha.jpg';
 import kenWu from '@/assets/profile-images/ken-wu.png';
 import jonE from '@/assets/profile-images/jon-e.jpg';
@@ -29,6 +30,12 @@ import anon from '@/assets/profile-images/anon.jpg';
 import nicoleWest from '@/assets/profile-images/nicole-west.png';
 
 export const testimonials = [
+  {
+    name: 'Deitrich Armante Lowrance',
+    image: deitrichArmanteLowrance.src,
+    quote:
+      'Really saves my bacon whenever Brave decides to crash and take my 30+ active tabs with it, unable to be recovered by Brave itself. Cannot recommend this extension enough!',
+  },
   {
     name: 'Anonymous backer',
     quote: 'Your extension has saved my bacon more times than I can remember.',

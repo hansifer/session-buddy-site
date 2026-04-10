@@ -106,7 +106,7 @@ We have to include this category because we provide a way for users to [send us 
 
 ### Authentication information
 
-This category provides coverage for future premium features, such as cloud storage, that will require users to create logins.
+This category provides coverage for future premium features, such as cloud storage, that require users to create logins.
 
 ### Web history
 

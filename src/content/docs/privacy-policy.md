@@ -52,9 +52,9 @@ Session Buddy does not transmit or store your collections, history, or settings 
 
 Session Buddy stores your collections, history, and settings in files that exist only on your device. To locate these files, see: [Locate Session Buddy Data on Your Device](https://sessionbuddy.com/data-location-v4/).
 
-You can export collections in a variety of formats or back up your collections and history for safe-keeping. See: [Import and Export](/import-export/), [Backup and Restore](https://sessionbuddy.com/backup-restore/), or [Back Up and Restore Local Data](https://sessionbuddy.com/backup-restore-advanced/).
+You can export collections in a variety of formats or back up your collections and history for safe-keeping. See: [Import and Export](/import-export/), [Backup and Restore](/backup-restore/), or [Back Up and Restore Local Data](https://sessionbuddy.com/backup-restore-advanced/).
 
-Because your Session Buddy data is stored only on your device, it is strongly recommended that you [back up](https://sessionbuddy.com/backup-restore/) often to protect it from loss (e.g., due to hardware or software failure). Additionally, it's a good idea in general to use a scheduled system backup solution to protect the data you care about on your local drive.
+Because your Session Buddy data is stored only on your device, it is strongly recommended that you [back up](/backup-restore/) often to protect it from loss (e.g., due to hardware or software failure). Additionally, it's a good idea in general to use a scheduled system backup solution to protect the data you care about on your local drive.
 
 ## Extension Permissions
 

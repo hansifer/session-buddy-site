@@ -12,6 +12,7 @@ type LinkItem = {
   icon: React.ComponentType;
   tone?: Tone;
   href: string;
+  openInNewTab?: boolean;
 };
 
 type Tone =
@@ -93,11 +94,18 @@ export const LinkTiles = ({ sections }: { sections: LinkSection[] }) =>
     </section>
   ));
 
-const LinkItemBlock = ({ title, description, icon, tone, href }: LinkItem) => {
+const LinkItemBlock = ({
+  title,
+  description,
+  icon,
+  tone,
+  href,
+  openInNewTab,
+}: LinkItem) => {
   return (
     <a
       href={href}
-      target="_blank"
+      target={openInNewTab ? '_blank' : '_self'}
       rel="noreferrer"
       className="
         h-full

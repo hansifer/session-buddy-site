@@ -1,0 +1,62 @@
+---
+title: Tab Open Permissions
+slug: tab-open-permissions
+interimVisible: true
+sidebar:
+  order: 5
+---
+
+import { FeatureImage } from '@/components/Feature/FeatureImage'
+
+import notificationImg from '@/assets/images/notification-some-tabs-could-not-be-opened.png';
+import allowAccessImg from '@/assets/images/extension-settings-allow-access-to-file-urls.png';
+import allowInIncognitoImg from '@/assets/images/extension-settings-allow-in-incognito.png';
+
+If you see an error notification in Session Buddy when trying to open links in a collection, it's probably because some of the links you're trying to open require special permission.
+
+<div className="flex justify-center my-14!">
+  <FeatureImage
+    src={notificationImg.src}
+    alt="Some tabs could not be opened notification"
+    shadow
+    className="w-110"
+  />
+</div>
+
+This notification is most commonly encountered when trying to open either _local_ or _incognito_ links.
+
+## Local links
+
+A local link is a link to a file on your device. It has a URL that starts with _file:///_. Opening local links requires the **Allow access to file URLs** permission to be turned on in Session Buddy's extension settings.
+
+If this permission is not turned on, trying to open these kinds of links will display a failure notification.
+
+To grant the permission, right-click the Session Buddy extension icon in the toolbar and then click "Manage extension". On the Session Buddy details page, turn on the **Allow access to file URLs** toggle.
+
+<div className="flex justify-center my-14!">
+  <FeatureImage
+    src={allowAccessImg.src}
+    alt="Allow access to file URLs setting in Session Buddy's extension settings"
+  />
+</div>
+
+## Incognito links
+
+Opening links that are in an incognito folder requires the **Allow in Incognito** permission to be turned on in Session Buddy's extension settings.
+
+If this permission is not turned on, trying to open these kinds of links will display a failure notification.
+
+To grant the permission, right-click the Session Buddy extension icon in the toolbar and then click "Manage extension". On the Session Buddy details page, turn on the **Allow in Incognito** toggle.
+
+<div className="flex justify-center my-14!">
+  <FeatureImage
+    src={allowInIncognitoImg.src}
+    alt="Allow in Incognito setting in Session Buddy's extension settings"
+  />
+</div>
+
+Alternatively, if you want to open links in an Incognito folder as _non-incognito_ tabs, you can change the folder to be a non-incognito folder. To do so, right-click the folder, click "Edit", clear the "Incognito" checkbox, and click OK.
+
+### Browser feature links
+
+Links to browser features like bookmarks, history, settings, or extensions are never allowed to open in an incognito window, even when the **Allow in Incognito** permission is enabled.

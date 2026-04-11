@@ -1,0 +1,517 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="260"
+    viewBox="0 40 800 370"
+    fill="none"
+    >
+  <defs>
+    <linearGradient
+        id="card"
+        x1="240"
+        y1="80"
+        x2="560"
+        y2="370"
+        gradientUnits="userSpaceOnUse"
+        >
+      <stop
+          offset="0%"
+          stop-color="#0a2a4a"
+          />
+      <stop
+          offset="100%"
+          stop-color="#07213f"
+          />
+    </linearGradient>
+    <linearGradient
+        id="pulse"
+        x1="280"
+        y1="200"
+        x2="520"
+        y2="200"
+        gradientUnits="userSpaceOnUse"
+        >
+      <stop
+          offset="0%"
+          stop-color="#0083DD"
+          stop-opacity="0.2"
+          />
+      <stop
+          offset="30%"
+          stop-color="#0083DD"
+          />
+      <stop
+          offset="70%"
+          stop-color="#0083DD"
+          />
+      <stop
+          offset="100%"
+          stop-color="#0083DD"
+          stop-opacity="0.2"
+          />
+    </linearGradient>
+    <linearGradient
+        id="accent"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="1"
+        >
+      <stop
+          offset="0%"
+          stop-color="#0083DD"
+          />
+      <stop
+          offset="100%"
+          stop-color="#00b4ff"
+          />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur
+          stdDeviation="6"
+          result="blur"
+          />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur
+          stdDeviation="12"
+          result="blur"
+          />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <clipPath id="cardClip">
+      <rect
+          x="250"
+          y="75"
+          width="300"
+          height="300"
+          rx="16"
+          />
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect
+      width="800"
+      height="450"
+      fill="url(#bg)"
+      />
+
+  <!-- Subtle grid dots -->
+  <g opacity="0.06">
+    <pattern
+        id="dots"
+        x="0"
+        y="0"
+        width="30"
+        height="30"
+        patternUnits="userSpaceOnUse"
+        >
+      <circle
+          cx="15"
+          cy="15"
+          r="1"
+          fill="#8ea7c7"
+          />
+    </pattern>
+    <rect
+        width="800"
+        height="450"
+        fill="url(#dots)"
+        />
+  </g>
+
+  <!-- Decorative circles -->
+  <circle
+      cx="400"
+      cy="225"
+      r="180"
+      stroke="#0083DD"
+      stroke-opacity="0.06"
+      stroke-width="1"
+      fill="none"
+      />
+  <circle
+      cx="400"
+      cy="225"
+      r="140"
+      stroke="#0083DD"
+      stroke-opacity="0.04"
+      stroke-width="1"
+      fill="none"
+      />
+
+  <!-- Main card / clipboard -->
+  <rect
+      x="250"
+      y="75"
+      width="300"
+      height="300"
+      rx="16"
+      fill="url(#card)"
+      stroke="#0083DD"
+      stroke-opacity="0.15"
+      stroke-width="1"
+      />
+
+  <!-- Clipboard top clip -->
+  <rect
+      x="355"
+      y="62"
+      width="90"
+      height="26"
+      rx="6"
+      fill="#0a2a4a"
+      stroke="#0083DD"
+      stroke-opacity="0.3"
+      stroke-width="1"
+      />
+  <rect
+      x="380"
+      y="70"
+      width="40"
+      height="10"
+      rx="3"
+      fill="#0083DD"
+      opacity="0.3"
+      />
+
+  <!-- Header area -->
+  <rect
+      x="280"
+      y="108"
+      width="100"
+      height="8"
+      rx="4"
+      fill="#8ea7c7"
+      opacity="0.3"
+      />
+  <rect
+      x="280"
+      y="124"
+      width="65"
+      height="6"
+      rx="3"
+      fill="#8ea7c7"
+      opacity="0.15"
+      />
+
+  <!-- Pulse/heartbeat line -->
+  <g filter="url(#glow)">
+    <polyline
+        points="270,200 310,200 330,200 345,200 355,178 365,222 375,185 385,215 395,195 405,200 520,200"
+        stroke="url(#pulse)"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+        />
+  </g>
+
+  <!-- Pulse dot -->
+  <g filter="url(#softGlow)">
+    <circle
+        cx="405"
+        cy="200"
+        r="4"
+        fill="#0083DD"
+        />
+  </g>
+
+  <!-- Checklist items -->
+  <!-- Item 1 - checked -->
+  <rect
+      x="280"
+      y="240"
+      width="16"
+      height="16"
+      rx="4"
+      stroke="#0083DD"
+      stroke-width="1.5"
+      fill="none"
+      opacity="0.6"
+      />
+  <polyline
+      points="284,248 288,253 293,244"
+      stroke="#0083DD"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+      />
+  <rect
+      x="308"
+      y="244"
+      width="120"
+      height="6"
+      rx="3"
+      fill="#8ea7c7"
+      opacity="0.25"
+      />
+
+  <!-- Item 2 - checked -->
+  <rect
+      x="280"
+      y="270"
+      width="16"
+      height="16"
+      rx="4"
+      stroke="#0083DD"
+      stroke-width="1.5"
+      fill="none"
+      opacity="0.6"
+      />
+  <polyline
+      points="284,278 288,283 293,274"
+      stroke="#0083DD"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+      />
+  <rect
+      x="308"
+      y="274"
+      width="95"
+      height="6"
+      rx="3"
+      fill="#8ea7c7"
+      opacity="0.25"
+      />
+
+  <!-- Item 3 - checked -->
+  <rect
+      x="280"
+      y="300"
+      width="16"
+      height="16"
+      rx="4"
+      stroke="#0083DD"
+      stroke-width="1.5"
+      fill="none"
+      opacity="0.6"
+      />
+  <polyline
+      points="284,308 288,313 293,304"
+      stroke="#0083DD"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+      />
+  <rect
+      x="308"
+      y="304"
+      width="140"
+      height="6"
+      rx="3"
+      fill="#8ea7c7"
+      opacity="0.25"
+      />
+
+  <!-- Item 4 - in progress -->
+  <rect
+      x="280"
+      y="330"
+      width="16"
+      height="16"
+      rx="4"
+      stroke="#8ea7c7"
+      stroke-width="1.5"
+      fill="none"
+      opacity="0.3"
+      />
+  <rect
+      x="308"
+      y="334"
+      width="80"
+      height="6"
+      rx="3"
+      fill="#8ea7c7"
+      opacity="0.12"
+      />
+
+  <!-- Side decorative elements -->
+
+  <!-- Left floating bar chart -->
+  <g
+      opacity="0.5"
+      transform="translate(120, 160)"
+      >
+    <rect
+        x="0"
+        y="40"
+        width="12"
+        height="30"
+        rx="3"
+        fill="#0083DD"
+        opacity="0.3"
+        />
+    <rect
+        x="18"
+        y="25"
+        width="12"
+        height="45"
+        rx="3"
+        fill="#0083DD"
+        opacity="0.4"
+        />
+    <rect
+        x="36"
+        y="10"
+        width="12"
+        height="60"
+        rx="3"
+        fill="#0083DD"
+        opacity="0.5"
+        />
+    <rect
+        x="54"
+        y="30"
+        width="12"
+        height="40"
+        rx="3"
+        fill="#0083DD"
+        opacity="0.35"
+        />
+  </g>
+
+  <!-- Right floating gauge -->
+  <g
+      opacity="0.4"
+      transform="translate(610, 150)"
+      >
+    <circle
+        cx="40"
+        cy="40"
+        r="35"
+        stroke="#0083DD"
+        stroke-width="1.5"
+        fill="none"
+        opacity="0.3"
+        />
+    <path
+        d="M40 15 A25 25 0 1 1 20 58"
+        stroke="#0083DD"
+        stroke-width="3"
+        stroke-linecap="round"
+        fill="none"
+        opacity="0.6"
+        />
+    <circle
+        cx="40"
+        cy="40"
+        r="3"
+        fill="#0083DD"
+        opacity="0.5"
+        />
+    <line
+        x1="40"
+        y1="40"
+        x2="55"
+        y2="25"
+        stroke="#0083DD"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        opacity="0.5"
+        />
+  </g>
+
+  <!-- Right floating status indicators -->
+  <g
+      opacity="0.4"
+      transform="translate(620, 270)"
+      >
+    <circle
+        cx="8"
+        cy="8"
+        r="4"
+        fill="#22c55e"
+        opacity="0.7"
+        />
+    <rect
+        x="20"
+        y="5"
+        width="50"
+        height="6"
+        rx="3"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+    <circle
+        cx="8"
+        cy="28"
+        r="4"
+        fill="#22c55e"
+        opacity="0.7"
+        />
+    <rect
+        x="20"
+        y="25"
+        width="40"
+        height="6"
+        rx="3"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+    <circle
+        cx="8"
+        cy="48"
+        r="4"
+        fill="#eab308"
+        opacity="0.6"
+        />
+    <rect
+        x="20"
+        y="45"
+        width="55"
+        height="6"
+        rx="3"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+  </g>
+
+  <!-- Floating particles -->
+  <circle
+      cx="180"
+      cy="120"
+      r="2"
+      fill="#0083DD"
+      opacity="0.2"
+      />
+  <circle
+      cx="650"
+      cy="100"
+      r="1.5"
+      fill="#0083DD"
+      opacity="0.15"
+      />
+  <circle
+      cx="700"
+      cy="350"
+      r="2"
+      fill="#0083DD"
+      opacity="0.1"
+      />
+  <circle
+      cx="130"
+      cy="330"
+      r="1.5"
+      fill="#0083DD"
+      opacity="0.15"
+      />
+  <circle
+      cx="220"
+      cy="380"
+      r="1"
+      fill="#0083DD"
+      opacity="0.1"
+      />
+</svg>

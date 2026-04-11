@@ -10,8 +10,7 @@ export const MailTo = ({
   <a
     href="#"
     onClick={(e) => {
-      e.preventDefault();
-      window.location.href = [
+      const mailto = [
         'ma',
         'il',
         'to:',
@@ -24,7 +23,19 @@ export const MailTo = ({
         '.c',
         'om',
       ].join('');
+
+      // option 1:
+      e.currentTarget.href = mailto;
+
+      // option 2:
+      // e.preventDefault();
+      // window.location.href = mailto;
+
+      // option 3:
+      // e.preventDefault();
+      // window.open(mailto, '_blank', 'noopener,noreferrer');
     }}
+    target="_blank"
     rel="noreferrer"
     aria-label="Session Buddy contact email"
     className={className}

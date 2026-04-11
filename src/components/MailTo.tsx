@@ -27,7 +27,7 @@ export const MailTo = ({
       // option 1:
       e.currentTarget.href = mailto;
 
-      // option 2:
+      // option 2 (opens in same tab):
       // e.preventDefault();
       // window.location.href = mailto;
 

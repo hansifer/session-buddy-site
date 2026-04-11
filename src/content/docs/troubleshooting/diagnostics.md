@@ -1,7 +1,15 @@
 ---
 title: Diagnostics
+slug: diagnostics
+interimVisible: true
 sidebar:
   order: 2
 ---
 
-TODO: add content
+Diagnostics can help the Session Buddy support team get a better idea of what's going on when troubleshooting an issue.
+
+To provide support with a diagnostics file, go to Session Buddy's gear menu and select "Settings". In the Settings dialog, select the "Other" tab, then click the "Save diagnostics" button. This will download a diagnostics file to your downloads folder.
+
+Attach the diagnostics file to an [email to support](mailto:support@sessionbuddy.com) along with a detailed explanation of the trouble you're experiencing.
+
+If Session Buddy won't open, use the `saveDiagnostics()` [console command](/console/#console-commands) to download the file.

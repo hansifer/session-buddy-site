@@ -1,3 +1,5 @@
+// prevents simple email harvesting by bots
+
 export const MailTo = ({
   text,
   className,

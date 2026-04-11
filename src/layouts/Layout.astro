@@ -61,7 +61,7 @@ const { title, mode = 'default' } = Astro.props;
         <slot />
       </div>
       <Spacer />
-      <Footer />
+      <Footer client:load />
     </div>
   </body>
 </html>

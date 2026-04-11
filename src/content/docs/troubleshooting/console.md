@@ -2,6 +2,7 @@
 title: Session Buddy Console
 tabTitle: Console
 slug: console
+image: ../../../assets/images/console.svg
 interimVisible: true
 sidebar:
   order: 1

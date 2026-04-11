@@ -1,0 +1,533 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="260"
+    viewBox="0 40 800 370"
+    fill="none"
+    >
+  <defs>
+    <linearGradient
+        id="card"
+        x1="220"
+        y1="80"
+        x2="580"
+        y2="370"
+        gradientUnits="userSpaceOnUse"
+        >
+      <stop
+          offset="0%"
+          stop-color="#0a2a4a"
+          />
+      <stop
+          offset="100%"
+          stop-color="#07213f"
+          />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur
+          stdDeviation="6"
+          result="blur"
+          />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur
+          stdDeviation="12"
+          result="blur"
+          />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect
+      width="800"
+      height="450"
+      fill="url(#bg)"
+      />
+
+  <!-- Subtle grid dots -->
+  <g opacity="0.06">
+    <pattern
+        id="dots"
+        x="0"
+        y="0"
+        width="30"
+        height="30"
+        patternUnits="userSpaceOnUse"
+        >
+      <circle
+          cx="15"
+          cy="15"
+          r="1"
+          fill="#8ea7c7"
+          />
+    </pattern>
+    <rect
+        width="800"
+        height="450"
+        fill="url(#dots)"
+        />
+  </g>
+
+  <!-- Decorative circles -->
+  <circle
+      cx="400"
+      cy="225"
+      r="180"
+      stroke="#0083DD"
+      stroke-opacity="0.06"
+      stroke-width="1"
+      fill="none"
+      />
+  <circle
+      cx="400"
+      cy="225"
+      r="140"
+      stroke="#0083DD"
+      stroke-opacity="0.04"
+      stroke-width="1"
+      fill="none"
+      />
+
+  <!-- Main terminal window -->
+  <rect
+      x="220"
+      y="75"
+      width="360"
+      height="300"
+      rx="12"
+      fill="url(#card)"
+      stroke="#0083DD"
+      stroke-opacity="0.15"
+      stroke-width="1"
+      />
+
+  <!-- Title bar -->
+  <rect
+      x="220"
+      y="75"
+      width="360"
+      height="32"
+      rx="12"
+      fill="#0a2a4a"
+      />
+  <rect
+      x="220"
+      y="95"
+      width="360"
+      height="12"
+      fill="#0a2a4a"
+      />
+
+  <!-- Window dots -->
+  <circle
+      cx="242"
+      cy="91"
+      r="5"
+      fill="#ff5f57"
+      opacity="0.7"
+      />
+  <circle
+      cx="260"
+      cy="91"
+      r="5"
+      fill="#febc2e"
+      opacity="0.7"
+      />
+  <circle
+      cx="278"
+      cy="91"
+      r="5"
+      fill="#28c840"
+      opacity="0.7"
+      />
+
+  <!-- Title text -->
+  <rect
+      x="370"
+      y="87"
+      width="60"
+      height="7"
+      rx="3"
+      fill="#8ea7c7"
+      opacity="0.25"
+      />
+
+  <!-- Console content area -->
+
+  <!-- Prompt line 1 - command -->
+  <g filter="url(#glow)">
+    <text
+        x="244"
+        y="132"
+        font-family="monospace"
+        font-size="11"
+        fill="#0083DD"
+        opacity="0.8"
+        >&gt;</text>
+  </g>
+  <rect
+      x="258"
+      y="125"
+      width="85"
+      height="8"
+      rx="2"
+      fill="#0083DD"
+      opacity="0.35"
+      />
+
+  <!-- Output line 1 -->
+  <rect
+      x="258"
+      y="145"
+      width="200"
+      height="6"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.18"
+      />
+
+  <!-- Output line 2 -->
+  <rect
+      x="258"
+      y="160"
+      width="160"
+      height="6"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.14"
+      />
+
+  <!-- Output line 3 - success -->
+  <circle
+      cx="264"
+      cy="180"
+      r="3.5"
+      fill="#22c55e"
+      opacity="0.6"
+      />
+  <rect
+      x="276"
+      y="177"
+      width="130"
+      height="6"
+      rx="2"
+      fill="#22c55e"
+      opacity="0.2"
+      />
+
+  <!-- Blank line separator -->
+
+  <!-- Prompt line 2 - command -->
+  <g filter="url(#glow)">
+    <text
+        x="244"
+        y="210"
+        font-family="monospace"
+        font-size="11"
+        fill="#0083DD"
+        opacity="0.8"
+        >&gt;</text>
+  </g>
+  <rect
+      x="258"
+      y="203"
+      width="110"
+      height="8"
+      rx="2"
+      fill="#0083DD"
+      opacity="0.35"
+      />
+
+  <!-- Output lines -->
+  <rect
+      x="258"
+      y="223"
+      width="240"
+      height="6"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.18"
+      />
+  <rect
+      x="258"
+      y="238"
+      width="180"
+      height="6"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.14"
+      />
+  <rect
+      x="258"
+      y="253"
+      width="210"
+      height="6"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.16"
+      />
+
+  <!-- Output - success -->
+  <circle
+      cx="264"
+      cy="273"
+      r="3.5"
+      fill="#22c55e"
+      opacity="0.6"
+      />
+  <rect
+      x="276"
+      y="270"
+      width="150"
+      height="6"
+      rx="2"
+      fill="#22c55e"
+      opacity="0.2"
+      />
+
+  <!-- Blank line -->
+
+  <!-- Prompt line 3 - active/blinking cursor -->
+  <g filter="url(#glow)">
+    <text
+        x="244"
+        y="303"
+        font-family="monospace"
+        font-size="11"
+        fill="#0083DD"
+        opacity="0.9"
+        >&gt;</text>
+  </g>
+  <rect
+      x="258"
+      y="296"
+      width="70"
+      height="8"
+      rx="2"
+      fill="#0083DD"
+      opacity="0.4"
+      />
+
+  <!-- Cursor -->
+  <g filter="url(#softGlow)">
+    <rect
+        x="334"
+        y="295"
+        width="2"
+        height="11"
+        rx="1"
+        fill="#0083DD"
+        opacity="0.8"
+        />
+  </g>
+
+  <!-- Scrollbar -->
+  <rect
+      x="566"
+      y="115"
+      width="4"
+      height="245"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.06"
+      />
+  <rect
+      x="566"
+      y="115"
+      width="4"
+      height="80"
+      rx="2"
+      fill="#0083DD"
+      opacity="0.15"
+      />
+
+  <!-- Left side decorative - code brackets -->
+  <g
+      opacity="0.35"
+      transform="translate(100, 160)"
+      >
+    <text
+        font-family="monospace"
+        font-size="40"
+        fill="#0083DD"
+        opacity="0.3"
+        >{</text>
+    <text
+        y="55"
+        font-family="monospace"
+        font-size="40"
+        fill="#0083DD"
+        opacity="0.2"
+        >}</text>
+  </g>
+
+  <!-- Right side decorative - log entries -->
+  <g
+      opacity="0.35"
+      transform="translate(630, 140)"
+      >
+    <rect
+        x="0"
+        y="0"
+        width="8"
+        height="8"
+        rx="2"
+        fill="#0083DD"
+        opacity="0.3"
+        />
+    <rect
+        x="14"
+        y="1"
+        width="55"
+        height="6"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+
+    <rect
+        x="0"
+        y="20"
+        width="8"
+        height="8"
+        rx="2"
+        fill="#0083DD"
+        opacity="0.25"
+        />
+    <rect
+        x="14"
+        y="21"
+        width="45"
+        height="6"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+
+    <rect
+        x="0"
+        y="40"
+        width="8"
+        height="8"
+        rx="2"
+        fill="#eab308"
+        opacity="0.3"
+        />
+    <rect
+        x="14"
+        y="41"
+        width="65"
+        height="6"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+
+    <rect
+        x="0"
+        y="60"
+        width="8"
+        height="8"
+        rx="2"
+        fill="#0083DD"
+        opacity="0.25"
+        />
+    <rect
+        x="14"
+        y="61"
+        width="50"
+        height="6"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+
+    <rect
+        x="0"
+        y="80"
+        width="8"
+        height="8"
+        rx="2"
+        fill="#22c55e"
+        opacity="0.3"
+        />
+    <rect
+        x="14"
+        y="81"
+        width="40"
+        height="6"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+  </g>
+
+  <!-- Right side decorative - data flow lines -->
+  <g
+      opacity="0.15"
+      transform="translate(625, 280)"
+      >
+    <path
+        d="M0 0 Q20 15 0 30"
+        stroke="#0083DD"
+        stroke-width="1"
+        fill="none"
+        />
+    <path
+        d="M10 5 Q30 20 10 35"
+        stroke="#0083DD"
+        stroke-width="1"
+        fill="none"
+        />
+    <path
+        d="M20 10 Q40 25 20 40"
+        stroke="#0083DD"
+        stroke-width="1"
+        fill="none"
+        />
+  </g>
+
+  <!-- Floating particles -->
+  <circle
+      cx="160"
+      cy="110"
+      r="2"
+      fill="#0083DD"
+      opacity="0.2"
+      />
+  <circle
+      cx="680"
+      cy="95"
+      r="1.5"
+      fill="#0083DD"
+      opacity="0.15"
+      />
+  <circle
+      cx="720"
+      cy="360"
+      r="2"
+      fill="#0083DD"
+      opacity="0.1"
+      />
+  <circle
+      cx="110"
+      cy="340"
+      r="1.5"
+      fill="#0083DD"
+      opacity="0.15"
+      />
+  <circle
+      cx="200"
+      cy="390"
+      r="1"
+      fill="#0083DD"
+      opacity="0.1"
+      />
+</svg>

@@ -94,9 +94,9 @@ export const Testimonials = () => {
                 {testimonials
                   ? testimonials
                       .slice(i * GROUP_SIZE, (i + 1) * GROUP_SIZE)
-                      .map((testimonial) => (
+                      .map((testimonial, j) => (
                         <TestimonialBlock
-                          key={testimonial.name}
+                          key={`testimonial-${i}-${j}`}
                           testimonial={testimonial}
                         />
                       ))

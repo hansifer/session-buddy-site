@@ -43,7 +43,8 @@ const imageAlt =
   <main class="flex
         justify-center">
     <div class="px-2
-          sm:px-4">
+          sm:px-4
+          min-w-0">
       <article
         class={tw`
           p-8
@@ -203,6 +204,7 @@ const imageAlt =
     color: var(--color-secondaryTextColor);
     background-color: var(--color-blockStrongBackgroundColor);
     font-size: 0.85rem;
+    overflow-wrap: anywhere;
   }
 
   .docs-content pre {

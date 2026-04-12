@@ -18,7 +18,8 @@ export function Stats({
           flex-col
           items-center
           gap-3
-          text-xl
+          text-lg
+          md:text-xl
           font-bold
           text-primaryTextColor
         "

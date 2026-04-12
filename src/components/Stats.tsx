@@ -1,4 +1,5 @@
 import type { JSX } from 'react';
+import { motion } from 'framer-motion';
 
 import { Stars } from '@/components/Stars';
 
@@ -14,10 +15,6 @@ export function Stats({
       <div
         className="
           relative
-          flex
-          flex-col
-          items-center
-          gap-3
           text-lg
           md:text-xl
           font-bold
@@ -38,15 +35,34 @@ export function Stats({
             pointer-events-none
           "
         />
-        <Stars rating={rating} />
-        <div
-          className="
-            text-center
-            whitespace-pre
-          "
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.5,
+            delay: 0.2,
+          }}
         >
-          {text}
-        </div>
+          <div
+            className="
+              flex
+              flex-col
+              items-center
+              gap-3
+            "
+          >
+            <Stars rating={rating} />
+            <div
+              className="
+                text-center
+                whitespace-pre
+              "
+            >
+              {text}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

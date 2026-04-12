@@ -1,34 +1,28 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 
-import { ArrowIcon } from '@/assets/icons/ArrowIcon';
-import { BackupIcon } from '@/assets/icons/BackupIcon';
-import { BugIcon } from '@/assets/icons/BugIcon';
-import { CheckIcon } from '@/assets/icons/CheckIcon';
-import { CloseIcon } from '@/assets/icons/CloseIcon';
-import { DocumentIcon } from '@/assets/icons/DocumentIcon';
-import { ExpandCollapseIcon } from '@/assets/icons/ExpandCollapseIcon';
-import { ExportIcon } from '@/assets/icons/ExportIcon';
-import { FlaskIcon } from '@/assets/icons/FlaskIcon';
-import { FolderIcon } from '@/assets/icons/FolderIcon';
-import { HistoryIcon } from '@/assets/icons/HistoryIcon';
-import { InfoIcon } from '@/assets/icons/InfoIcon';
-import { LocationIcon } from '@/assets/icons/LocationIcon';
-import { LockIcon } from '@/assets/icons/LockIcon';
-import { MonitorIcon } from '@/assets/icons/MonitorIcon';
-import { NoAdsIcon } from '@/assets/icons/NoAdsIcon';
-import { NoDataSharingIcon } from '@/assets/icons/NoDataSharingIcon';
-import { NoLoginIcon } from '@/assets/icons/NoLoginIcon';
-import { NoTrackingIcon } from '@/assets/icons/NoTrackingIcon';
-import { PulseIcon } from '@/assets/icons/PulseIcon';
-import { QuoteIcon } from '@/assets/icons/QuoteIcon';
-import { ShieldIcon } from '@/assets/icons/ShieldIcon';
-import { SparkIcon } from '@/assets/icons/SparkIcon';
-import { SupportIcon } from '@/assets/icons/SupportIcon';
-import { TerminalIcon } from '@/assets/icons/TerminalIcon';
-import { TextIcon } from '@/assets/icons/TextIcon';
-import { VerifiedIcon } from '@/assets/icons/VerifiedIcon';
-import { WarningIcon } from '@/assets/icons/WarningIcon';
+const iconModules = import.meta.glob('@/assets/icons/*.tsx', { eager: true });
+
+const icons = Object.entries(iconModules)
+  .map(([path, module]) => {
+    const name = path.split('/').pop()?.replace('.tsx', '');
+
+    if (!name) {
+      return null;
+    }
+
+    const Component = (module as any)[name];
+
+    if (!Component) {
+      return null;
+    }
+
+    return { name, Component };
+  })
+  .filter(Boolean) as {
+  name: string;
+  Component: any;
+}[];
 
 // development-only page to view all app icons in one place
 
@@ -54,45 +48,16 @@ if (!import.meta.env.DEV) {
         class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 text-orange-500"
       >
         {
-          [
-            ['SparkIcon', <SparkIcon size={S} />],
-            ['InfoIcon', <InfoIcon size={S} />],
-            ['BackupIcon', <BackupIcon size={S} />],
-            ['BugIcon', <BugIcon size={S} />],
-            ['WarningIcon', <WarningIcon size={S} />],
-            ['TerminalIcon', <TerminalIcon size={S} />],
-            ['PulseIcon', <PulseIcon size={S} />],
-            ['FolderIcon', <FolderIcon size={S} />],
-            ['LocationIcon', <LocationIcon size={S} />],
-            ['ExportIcon', <ExportIcon size={S} />],
-            ['TextIcon', <TextIcon size={S} />],
-            ['FlaskIcon', <FlaskIcon size={S} />],
-            ['ShieldIcon', <ShieldIcon size={S} />],
-            ['HistoryIcon', <HistoryIcon size={S} />],
-            ['LockIcon', <LockIcon size={S} />],
-            ['SupportIcon', <SupportIcon size={S} />],
-            ['DocumentIcon', <DocumentIcon size={S} />],
-
-            ['ArrowIcon (up)', <ArrowIcon direction="up" />],
-            ['CheckIcon', <CheckIcon />],
-            [
-              'CloseIcon',
+          icons
+            .map(({ name, Component }) => [
+              name,
               <span class="w-6 h-6 inline-flex items-center">
-                <CloseIcon />
+                <Component
+                  size={S}
+                  className="w-7 h-7"
+                />
               </span>,
-            ],
-            [
-              'ExpandCollapseIcon (collapsed)',
-              <ExpandCollapseIcon expanded={false} />,
-            ],
-            ['MonitorIcon', <MonitorIcon className="w-7 h-7" />],
-            ['NoAdsIcon', <NoAdsIcon className="w-7 h-7" />],
-            ['NoDataSharingIcon', <NoDataSharingIcon className="w-7 h-7" />],
-            ['NoLoginIcon', <NoLoginIcon className="w-7 h-7" />],
-            ['NoTrackingIcon', <NoTrackingIcon className="w-7 h-7" />],
-            ['QuoteIcon', <QuoteIcon className="w-7 h-7" />],
-            ['VerifiedIcon', <VerifiedIcon className="w-7 h-7" />],
-          ]
+            ])
             .sort(([nameA], [nameB]) => nameA.localeCompare(nameB))
             .map(([name, icon], i) => (
               <div class="flex flex-col items-center gap-3 p-5 rounded-2xl bg-blockBackgroundColor block-border">

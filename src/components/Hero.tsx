@@ -207,11 +207,11 @@ export const Hero = () => {
               xl:px-46
               mt-10
               text-base
-              lg:text-lg
+              lg:text-xl
               text-secondaryTextColor
             "
           >
-            Session Buddy is the complete solution for managing your browser
+            Session Buddy is the ultimate solution for managing your browser
             tabs and bookmarks like a pro.
           </h2>
         </motion.div>

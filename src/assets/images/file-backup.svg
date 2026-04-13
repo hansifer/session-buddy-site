@@ -1,0 +1,541 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="260"
+    viewBox="0 40 800 370"
+    fill="none"
+    >
+  <defs>
+    <linearGradient
+        id="card"
+        x1="240"
+        y1="80"
+        x2="560"
+        y2="370"
+        gradientUnits="userSpaceOnUse"
+        >
+      <stop
+          offset="0%"
+          stop-color="#0a2a4a"
+          />
+      <stop
+          offset="100%"
+          stop-color="#07213f"
+          />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur
+          stdDeviation="6"
+          result="blur"
+          />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur
+          stdDeviation="12"
+          result="blur"
+          />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect
+      width="800"
+      height="450"
+      fill="url(#bg)"
+      />
+
+  <!-- Subtle grid dots -->
+  <g opacity="0.06">
+    <pattern
+        id="dots"
+        x="0"
+        y="0"
+        width="30"
+        height="30"
+        patternUnits="userSpaceOnUse"
+        >
+      <circle
+          cx="15"
+          cy="15"
+          r="1"
+          fill="#8ea7c7"
+          />
+    </pattern>
+    <rect
+        width="800"
+        height="450"
+        fill="url(#dots)"
+        />
+  </g>
+
+  <!-- Decorative circles -->
+  <circle
+      cx="400"
+      cy="225"
+      r="180"
+      stroke="#0083DD"
+      stroke-opacity="0.06"
+      stroke-width="1"
+      fill="none"
+      />
+  <circle
+      cx="400"
+      cy="225"
+      r="140"
+      stroke="#0083DD"
+      stroke-opacity="0.04"
+      stroke-width="1"
+      fill="none"
+      />
+
+  <!-- Source file card -->
+  <rect
+      x="265"
+      y="100"
+      width="120"
+      height="150"
+      rx="10"
+      fill="url(#card)"
+      stroke="#0083DD"
+      stroke-opacity="0.2"
+      stroke-width="1"
+      />
+
+  <!-- Source file - folded corner -->
+  <path
+      d="M355 100 L385 130 L355 130 Z"
+      fill="#0a2a4a"
+      stroke="#0083DD"
+      stroke-opacity="0.15"
+      stroke-width="0.5"
+      />
+
+  <!-- Source file icon -->
+  <g opacity="0.5">
+    <rect
+        x="290"
+        y="130"
+        width="64"
+        height="6"
+        rx="3"
+        fill="#8ea7c7"
+        opacity="0.3"
+        />
+    <rect
+        x="290"
+        y="144"
+        width="50"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+    <rect
+        x="290"
+        y="157"
+        width="58"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+    <rect
+        x="290"
+        y="170"
+        width="40"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+    <rect
+        x="290"
+        y="183"
+        width="55"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.18"
+        />
+    <rect
+        x="290"
+        y="196"
+        width="45"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+    <rect
+        x="290"
+        y="209"
+        width="60"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+  </g>
+
+  <!-- Arrow -->
+  <g filter="url(#glow)">
+    <path
+        d="M400 195 L450 195"
+        stroke="#0083DD"
+        stroke-width="2"
+        stroke-linecap="round"
+        opacity="0.7"
+        />
+    <polyline
+        points="442,188 452,195 442,202"
+        stroke="#0083DD"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+        opacity="0.7"
+        />
+  </g>
+
+  <!-- Backup file card (copy) -->
+  <rect
+      x="465"
+      y="100"
+      width="120"
+      height="150"
+      rx="10"
+      fill="url(#card)"
+      stroke="#0083DD"
+      stroke-opacity="0.2"
+      stroke-width="1"
+      />
+
+  <!-- Backup file - folded corner -->
+  <path
+      d="M555 100 L585 130 L555 130 Z"
+      fill="#0a2a4a"
+      stroke="#0083DD"
+      stroke-opacity="0.15"
+      stroke-width="0.5"
+      />
+
+  <!-- Backup file content lines -->
+  <g opacity="0.5">
+    <rect
+        x="490"
+        y="130"
+        width="64"
+        height="6"
+        rx="3"
+        fill="#8ea7c7"
+        opacity="0.3"
+        />
+    <rect
+        x="490"
+        y="144"
+        width="50"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+    <rect
+        x="490"
+        y="157"
+        width="58"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+    <rect
+        x="490"
+        y="170"
+        width="40"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+    <rect
+        x="490"
+        y="183"
+        width="55"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.18"
+        />
+    <rect
+        x="490"
+        y="196"
+        width="45"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+    <rect
+        x="490"
+        y="209"
+        width="60"
+        height="5"
+        rx="2.5"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+  </g>
+
+  <!-- Shield/check on backup -->
+  <g filter="url(#softGlow)">
+    <path
+        d="M525 255 L525 275 Q525 295 505 305 Q485 295 485 275 L485 255 L505 248 L525 255 Z"
+        fill="#0a2a4a"
+        stroke="#22c55e"
+        stroke-width="1.5"
+        opacity="0.6"
+        />
+    <polyline
+        points="495,275 503,283 518,268"
+        stroke="#22c55e"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+        opacity="0.7"
+        />
+  </g>
+
+  <!-- Clock icon on source -->
+  <g
+      opacity="0.5"
+      transform="translate(305, 260)"
+      >
+    <circle
+        cx="15"
+        cy="15"
+        r="14"
+        stroke="#0083DD"
+        stroke-width="1.5"
+        fill="#0a2a4a"
+        />
+    <line
+        x1="15"
+        y1="15"
+        x2="15"
+        y2="7"
+        stroke="#0083DD"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        />
+    <line
+        x1="15"
+        y1="15"
+        x2="22"
+        y2="18"
+        stroke="#0083DD"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        />
+  </g>
+
+  <!-- Timestamp labels -->
+  <rect
+      x="285"
+      y="298"
+      width="60"
+      height="5"
+      rx="2.5"
+      fill="#8ea7c7"
+      opacity="0.15"
+      />
+  <rect
+      x="485"
+      y="318"
+      width="55"
+      height="5"
+      rx="2.5"
+      fill="#22c55e"
+      opacity="0.15"
+      />
+
+  <!-- Left decorative - stacked files -->
+  <g
+      opacity="0.35"
+      transform="translate(100, 155)"
+      >
+    <rect
+        x="8"
+        y="8"
+        width="50"
+        height="60"
+        rx="5"
+        fill="#0a2a4a"
+        stroke="#8ea7c7"
+        stroke-opacity="0.12"
+        stroke-width="1"
+        />
+    <rect
+        x="4"
+        y="4"
+        width="50"
+        height="60"
+        rx="5"
+        fill="#0a2a4a"
+        stroke="#8ea7c7"
+        stroke-opacity="0.15"
+        stroke-width="1"
+        />
+    <rect
+        x="0"
+        y="0"
+        width="50"
+        height="60"
+        rx="5"
+        fill="#0a2a4a"
+        stroke="#0083DD"
+        stroke-opacity="0.2"
+        stroke-width="1"
+        />
+    <rect
+        x="10"
+        y="14"
+        width="30"
+        height="4"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+    <rect
+        x="10"
+        y="24"
+        width="22"
+        height="3"
+        rx="1.5"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+    <rect
+        x="10"
+        y="33"
+        width="26"
+        height="3"
+        rx="1.5"
+        fill="#8ea7c7"
+        opacity="0.12"
+        />
+  </g>
+
+  <!-- Right decorative - storage indicator -->
+  <g
+      opacity="0.4"
+      transform="translate(640, 170)"
+      >
+    <rect
+        x="0"
+        y="0"
+        width="65"
+        height="8"
+        rx="4"
+        fill="#0a2a4a"
+        stroke="#8ea7c7"
+        stroke-opacity="0.15"
+        stroke-width="1"
+        />
+    <rect
+        x="1"
+        y="1"
+        width="40"
+        height="6"
+        rx="3"
+        fill="#0083DD"
+        opacity="0.4"
+        />
+
+    <rect
+        x="0"
+        y="20"
+        width="65"
+        height="8"
+        rx="4"
+        fill="#0a2a4a"
+        stroke="#8ea7c7"
+        stroke-opacity="0.15"
+        stroke-width="1"
+        />
+    <rect
+        x="1"
+        y="21"
+        width="55"
+        height="6"
+        rx="3"
+        fill="#22c55e"
+        opacity="0.35"
+        />
+
+    <rect
+        x="0"
+        y="40"
+        width="65"
+        height="8"
+        rx="4"
+        fill="#0a2a4a"
+        stroke="#8ea7c7"
+        stroke-opacity="0.15"
+        stroke-width="1"
+        />
+    <rect
+        x="1"
+        y="41"
+        width="25"
+        height="6"
+        rx="3"
+        fill="#0083DD"
+        opacity="0.3"
+        />
+  </g>
+
+  <!-- Floating particles -->
+  <circle
+      cx="180"
+      cy="120"
+      r="2"
+      fill="#0083DD"
+      opacity="0.2"
+      />
+  <circle
+      cx="650"
+      cy="100"
+      r="1.5"
+      fill="#0083DD"
+      opacity="0.15"
+      />
+  <circle
+      cx="700"
+      cy="350"
+      r="2"
+      fill="#0083DD"
+      opacity="0.1"
+      />
+  <circle
+      cx="130"
+      cy="330"
+      r="1.5"
+      fill="#0083DD"
+      opacity="0.15"
+      />
+  <circle
+      cx="220"
+      cy="380"
+      r="1"
+      fill="#0083DD"
+      opacity="0.1"
+      />
+</svg>

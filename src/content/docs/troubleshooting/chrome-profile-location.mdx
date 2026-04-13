@@ -4,6 +4,8 @@ slug: chrome-profile-location
 interimVisible: true
 ---
 
+import { CopyButton } from '@/components/CopyButton';
+
 import windowsImg from '@/assets/images/windows.png';
 import appleImg from '@/assets/images/apple.png';
 
@@ -13,7 +15,9 @@ To locate the folder of the current Chrome profile, do the following:
 
 1. Copy and paste the following URL into a new tab:
 
-   `chrome://version/`
+<p></p>
+
+   `chrome://version/` <CopyButton content="chrome://version/" className="ml-2" client:load />
 
    This page displays information about your Chrome installation.
 

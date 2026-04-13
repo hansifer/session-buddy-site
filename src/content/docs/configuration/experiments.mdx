@@ -6,6 +6,8 @@ sidebar:
   order: 4
 ---
 
+import { CopyButton } from '@/components/CopyButton';
+
 Session Buddy includes experimental settings that let you fine-tune or troubleshoot its behavior.
 
 For example, you can opt to omit suffixes from titles of popular websites, raise import and backup limits, or adjust how many tabs trigger a warning when opening large collections.
@@ -13,6 +15,8 @@ For example, you can opt to omit suffixes from titles of popular websites, raise
 To access experiments, copy and paste this URL into your address bar:
 
 `chrome-extension://edacconmaakjimmfgnblocblbcdcpbko/experiments.html`
+
+<CopyButton content="chrome-extension://edacconmaakjimmfgnblocblbcdcpbko/experiments.html" client:load />
 
 This page lists all available experiments, describes what each one controls, and lets you update their values.
 

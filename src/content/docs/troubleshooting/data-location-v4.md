@@ -1,6 +1,7 @@
 ---
 title: Locate Session Buddy Data on Your Device
 slug: data-location-v4
+image: ../../../assets/images/local-data-folders.svg
 interimVisible: true
 ---
 

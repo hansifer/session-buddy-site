@@ -31,23 +31,23 @@ To manually back up local data, use Windows's File Explorer or Mac's Finder to c
 
 To restore Session Buddy data using data folders recovered from a backup, follow the steps below.
 
-Please note that for successful restoration, the entire contents of the data folders must be restored.
+Note that these steps will replace all Session Buddy data. If you currently have collections and history that you want to keep, use Session Buddy's [Backup](/backup-restore/) to first back them up and then [Restore](/restore/) them after completing these steps.
 
-Also note that these steps will replace all Session Buddy data. If you currently have collections and history that you want to keep, use Session Buddy's [Backup](/backup-restore/) to first back them up and then [Restore](/restore/) them after completing these steps.
+> For successful restoration, the *entire* contents of the data folders must be restored.
 
 1. **Backup Current Data:** [Create a backup](/backup-restore/) to ensure you have a copy of any collections or history created since the incident. Go to Session Buddy's gear menu, then select "Backup".
 
 2. **Close the Browser Completely:** Ensure all browser processes are terminated
 
-<img src={windowsImg.src} alt="Windows" style="display:inline;vertical-align:baseline;margin-right:8px;transform:translateY(3px);width:18px;" /> **On Windows**: Close all browser windows. Then check the tool tray for the browser icon. If it is present, right-click it and click "Exit".
+> <img src={windowsImg.src} alt="Windows" style="display:inline;vertical-align:baseline;margin-right:8px;transform:translateY(3px);width:18px;" /> **On Windows**: Close all browser windows. Then check the tool tray for the browser icon. If it is present, right-click it and click "Exit".
 
-<img src={appleImg.src} alt="macOS" style="display:inline;vertical-align:baseline;margin-right:10px;transform:translateY(3px);width:16px;" /> **On macOS**: Press `Cmd+Q` to quit the browser. Then check the Dock for the browser icon. If it's still there, right-click and choose "Quit" if available.
+> <img src={appleImg.src} alt="macOS" style="display:inline;vertical-align:baseline;margin-right:10px;transform:translateY(3px);width:16px;" /> **On macOS**: Press `Cmd+Q` to quit the browser. Then check the Dock for the browser icon. If it's still there, right-click and choose "Quit" if available.
 
 3. **Access Session Buddy Data Folders:** Navigate to the location [where Session Buddy's data is stored](/data-location-v4/) using Windows's File Explorer or Mac's Finder
 
 4. **Replace Data Folders:** Delete the existing data folders, then copy in the recovered folders in their entirety
 
-   As a safer alternative to deletion, you can move the existing folders to another location like Documents or rename them by appending something like "-backup".
+> As a safer alternative to deletion, you can move the existing folders to another location like Documents or rename them by appending something like "-backup".
 
 5. **Restart the Browser:** Launch your browser and confirm that your Session Buddy collections and history have been successfully restored
 

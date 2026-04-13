@@ -148,13 +148,69 @@
       />
 
   <!-- External file rows -->
-  <rect x="292" y="132" width="66" height="5" rx="2.5" fill="#8ea7c7" opacity="0.25" />
-  <rect x="292" y="144" width="52" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
-  <rect x="292" y="155" width="60" height="4" rx="2" fill="#8ea7c7" opacity="0.2" />
-  <rect x="292" y="166" width="42" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
-  <rect x="292" y="177" width="56" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
-  <rect x="292" y="188" width="48" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
-  <rect x="292" y="199" width="60" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
+  <rect
+      x="292"
+      y="132"
+      width="66"
+      height="5"
+      rx="2.5"
+      fill="#8ea7c7"
+      opacity="0.25"
+      />
+  <rect
+      x="292"
+      y="144"
+      width="52"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.18"
+      />
+  <rect
+      x="292"
+      y="155"
+      width="60"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.2"
+      />
+  <rect
+      x="292"
+      y="166"
+      width="42"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.15"
+      />
+  <rect
+      x="292"
+      y="177"
+      width="56"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.18"
+      />
+  <rect
+      x="292"
+      y="188"
+      width="48"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.15"
+      />
+  <rect
+      x="292"
+      y="199"
+      width="60"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.18"
+      />
 
   <!-- Right panel: Session Buddy collections -->
   <rect
@@ -196,13 +252,69 @@
       />
 
   <!-- Collections panel rows -->
-  <rect x="442" y="132" width="66" height="5" rx="2.5" fill="#8ea7c7" opacity="0.25" />
-  <rect x="442" y="144" width="52" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
-  <rect x="442" y="155" width="60" height="4" rx="2" fill="#8ea7c7" opacity="0.2" />
-  <rect x="442" y="166" width="42" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
-  <rect x="442" y="177" width="56" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
-  <rect x="442" y="188" width="48" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
-  <rect x="442" y="199" width="60" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
+  <rect
+      x="442"
+      y="132"
+      width="66"
+      height="5"
+      rx="2.5"
+      fill="#8ea7c7"
+      opacity="0.25"
+      />
+  <rect
+      x="442"
+      y="144"
+      width="52"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.18"
+      />
+  <rect
+      x="442"
+      y="155"
+      width="60"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.2"
+      />
+  <rect
+      x="442"
+      y="166"
+      width="42"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.15"
+      />
+  <rect
+      x="442"
+      y="177"
+      width="56"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.18"
+      />
+  <rect
+      x="442"
+      y="188"
+      width="48"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.15"
+      />
+  <rect
+      x="442"
+      y="199"
+      width="60"
+      height="4"
+      rx="2"
+      fill="#8ea7c7"
+      opacity="0.18"
+      />
 
   <!-- Import arrow (left to right, file -> collections) -->
   <g filter="url(#glow)">
@@ -480,9 +592,39 @@
       opacity="0.4"
       transform="translate(120, 145)"
       >
-    <rect x="12" y="8" width="40" height="52" rx="4" stroke="#8ea7c7" stroke-opacity="0.08" stroke-width="1" fill="#0a2a4a" />
-    <rect x="6" y="4" width="40" height="52" rx="4" stroke="#8ea7c7" stroke-opacity="0.12" stroke-width="1" fill="#0a2a4a" />
-    <rect x="0" y="0" width="40" height="52" rx="4" stroke="#0083DD" stroke-opacity="0.2" stroke-width="1" fill="#0a2a4a" />
+    <rect
+        x="12"
+        y="8"
+        width="40"
+        height="52"
+        rx="4"
+        stroke="#8ea7c7"
+        stroke-opacity="0.08"
+        stroke-width="1"
+        fill="#0a2a4a"
+        />
+    <rect
+        x="6"
+        y="4"
+        width="40"
+        height="52"
+        rx="4"
+        stroke="#8ea7c7"
+        stroke-opacity="0.12"
+        stroke-width="1"
+        fill="#0a2a4a"
+        />
+    <rect
+        x="0"
+        y="0"
+        width="40"
+        height="52"
+        rx="4"
+        stroke="#0083DD"
+        stroke-opacity="0.2"
+        stroke-width="1"
+        fill="#0a2a4a"
+        />
     <!-- Folded corner -->
     <path
         d="M28 0 L40 12 L28 12 Z"
@@ -491,9 +633,33 @@
         stroke-opacity="0.15"
         stroke-width="0.5"
         />
-    <rect x="8" y="18" width="22" height="3" rx="1.5" fill="#8ea7c7" opacity="0.2" />
-    <rect x="8" y="25" width="16" height="3" rx="1.5" fill="#8ea7c7" opacity="0.15" />
-    <rect x="8" y="32" width="20" height="3" rx="1.5" fill="#8ea7c7" opacity="0.12" />
+    <rect
+        x="8"
+        y="18"
+        width="22"
+        height="3"
+        rx="1.5"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+    <rect
+        x="8"
+        y="25"
+        width="16"
+        height="3"
+        rx="1.5"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+    <rect
+        x="8"
+        y="32"
+        width="20"
+        height="3"
+        rx="1.5"
+        fill="#8ea7c7"
+        opacity="0.12"
+        />
   </g>
 
   <!-- Left decorative - import arrow -->
@@ -501,8 +667,23 @@
       opacity="0.25"
       transform="translate(130, 270)"
       >
-    <line x1="0" y1="12" x2="30" y2="12" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" />
-    <path d="M24 7 L32 12 L24 17" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <line
+        x1="0"
+        y1="12"
+        x2="30"
+        y2="12"
+        stroke="#22c55e"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        />
+    <path
+        d="M24 7 L32 12 L24 17"
+        stroke="#22c55e"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+        />
   </g>
 
   <!-- Right decorative - clipboard -->
@@ -510,13 +691,65 @@
       opacity="0.35"
       transform="translate(635, 140)"
       >
-    <rect x="5" y="8" width="44" height="56" rx="4" stroke="#0083DD" stroke-opacity="0.2" stroke-width="1" fill="#0a2a4a" />
+    <rect
+        x="5"
+        y="8"
+        width="44"
+        height="56"
+        rx="4"
+        stroke="#0083DD"
+        stroke-opacity="0.2"
+        stroke-width="1"
+        fill="#0a2a4a"
+        />
     <!-- Clipboard clip -->
-    <rect x="17" y="2" width="20" height="10" rx="3" stroke="#0083DD" stroke-opacity="0.25" stroke-width="1" fill="#0a2a4a" />
-    <rect x="13" y="24" width="28" height="4" rx="2" fill="#8ea7c7" opacity="0.2" />
-    <rect x="13" y="32" width="20" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
-    <rect x="13" y="40" width="24" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
-    <rect x="13" y="48" width="16" height="4" rx="2" fill="#8ea7c7" opacity="0.12" />
+    <rect
+        x="17"
+        y="2"
+        width="20"
+        height="10"
+        rx="3"
+        stroke="#0083DD"
+        stroke-opacity="0.25"
+        stroke-width="1"
+        fill="#0a2a4a"
+        />
+    <rect
+        x="13"
+        y="24"
+        width="28"
+        height="4"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.2"
+        />
+    <rect
+        x="13"
+        y="32"
+        width="20"
+        height="4"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
+    <rect
+        x="13"
+        y="40"
+        width="24"
+        height="4"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.18"
+        />
+    <rect
+        x="13"
+        y="48"
+        width="16"
+        height="4"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.12"
+        />
   </g>
 
   <!-- Right decorative - export arrow -->
@@ -524,8 +757,23 @@
       opacity="0.25"
       transform="translate(640, 260)"
       >
-    <line x1="32" y1="12" x2="2" y2="12" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" />
-    <path d="M8 7 L0 12 L8 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <line
+        x1="32"
+        y1="12"
+        x2="2"
+        y2="12"
+        stroke="#f59e0b"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        />
+    <path
+        d="M8 7 L0 12 L8 17"
+        stroke="#f59e0b"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+        />
   </g>
 
   <!-- Right decorative - format indicators -->
@@ -541,7 +789,15 @@
         fill="#0083DD"
         opacity="0.5"
         >{}</text>
-    <rect x="16" y="5" width="30" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
+    <rect
+        x="16"
+        y="5"
+        width="30"
+        height="4"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.15"
+        />
     <text
         x="0"
         y="26"
@@ -550,7 +806,15 @@
         fill="#0083DD"
         opacity="0.4"
         >&lt;/&gt;</text>
-    <rect x="20" y="21" width="24" height="4" rx="2" fill="#8ea7c7" opacity="0.12" />
+    <rect
+        x="20"
+        y="21"
+        width="24"
+        height="4"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.12"
+        />
     <text
         x="0"
         y="42"
@@ -559,7 +823,15 @@
         fill="#8ea7c7"
         opacity="0.3"
         >txt</text>
-    <rect x="18" y="37" width="28" height="4" rx="2" fill="#8ea7c7" opacity="0.1" />
+    <rect
+        x="18"
+        y="37"
+        width="28"
+        height="4"
+        rx="2"
+        fill="#8ea7c7"
+        opacity="0.1"
+        />
   </g>
 
   <!-- Floating particles -->

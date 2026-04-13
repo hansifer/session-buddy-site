@@ -1,0 +1,29 @@
+---
+title: Locate the Current Chrome Profile Folder
+slug: chrome-profile-location
+interimVisible: true
+---
+
+import windowsImg from '@/assets/images/windows.png';
+import appleImg from '@/assets/images/apple.png';
+
+Chrome allows for the use of multiple [user profiles](https://support.google.com/chrome/answer/2364824?hl=en). If you don't have multiple user profiles set up in Chrome, then your settings and installed extensions are associated with the **Default** profile.
+
+To locate the folder of the current Chrome profile, do the following:
+
+1. Copy and paste the following URL into a new tab:
+
+   `chrome://version/`
+
+   This page displays information about your Chrome installation.
+
+2. Copy the full value of the **Profile Path** displayed on that page.
+
+>   On Windows, it looks something like this:
+>   `C:\Users\username\AppData\Local\Google\Chrome\User Data\profileName`
+
+3. Navigate to the profile path copied in the previous step.
+
+> <img src={windowsImg.src} alt="Windows" style="display:inline;vertical-align:baseline;margin-right:8px;transform:translateY(3px);width:18px;" />  **On Windows**: paste the path directly into the address bar of File Explorer and hit Enter.
+
+> <img src={appleImg.src} alt="macOS" style="display:inline;vertical-align:baseline;margin-right:10px;transform:translateY(3px);width:16px;" /> **On a Mac**: select Go in the Finder menu, then click Go to Folder. Paste the path into the textbox and click Go.

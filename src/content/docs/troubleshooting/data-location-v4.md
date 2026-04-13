@@ -14,7 +14,7 @@ To find the local data folders, follow these steps:
 
 A Session Buddy installation is specific to a Chrome profile.
 
-To find the folder path for the current Chrome profile, see: [How to Locate the Current Chrome Profile Folder](https://sessionbuddy.com/chrome-profile-location/).
+To find the folder path for the current Chrome profile, see: [How to Locate the Current Chrome Profile Folder](/chrome-profile-location/).
 
 ### 2. Find the Session Buddy data folders
 

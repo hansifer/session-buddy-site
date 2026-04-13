@@ -1,0 +1,601 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    height="260"
+    viewBox="0 40 800 370"
+    fill="none"
+    >
+  <defs>
+    <linearGradient
+        id="card"
+        x1="250"
+        y1="75"
+        x2="550"
+        y2="375"
+        gradientUnits="userSpaceOnUse"
+        >
+      <stop
+          offset="0%"
+          stop-color="#0a2a4a"
+          />
+      <stop
+          offset="100%"
+          stop-color="#07213f"
+          />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur
+          stdDeviation="6"
+          result="blur"
+          />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur
+          stdDeviation="12"
+          result="blur"
+          />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect
+      width="800"
+      height="450"
+      fill="url(#bg)"
+      />
+
+  <!-- Subtle grid dots -->
+  <g opacity="0.06">
+    <pattern
+        id="dots"
+        x="0"
+        y="0"
+        width="30"
+        height="30"
+        patternUnits="userSpaceOnUse"
+        >
+      <circle
+          cx="15"
+          cy="15"
+          r="1"
+          fill="#8ea7c7"
+          />
+    </pattern>
+    <rect
+        width="800"
+        height="450"
+        fill="url(#dots)"
+        />
+  </g>
+
+  <!-- Decorative circles -->
+  <circle
+      cx="400"
+      cy="225"
+      r="180"
+      stroke="#0083DD"
+      stroke-opacity="0.06"
+      stroke-width="1"
+      fill="none"
+      />
+  <circle
+      cx="400"
+      cy="225"
+      r="140"
+      stroke="#0083DD"
+      stroke-opacity="0.04"
+      stroke-width="1"
+      fill="none"
+      />
+
+  <!-- Main card -->
+  <rect
+      x="250"
+      y="75"
+      width="300"
+      height="300"
+      rx="16"
+      fill="url(#card)"
+      stroke="#0083DD"
+      stroke-opacity="0.15"
+      stroke-width="1"
+      />
+
+  <!-- Left panel: external file -->
+  <rect
+      x="280"
+      y="100"
+      width="90"
+      height="115"
+      rx="8"
+      fill="#0a2a4a"
+      stroke="#f59e0b"
+      stroke-opacity="0.2"
+      stroke-width="1"
+      />
+
+  <!-- External file panel header -->
+  <rect
+      x="280"
+      y="100"
+      width="90"
+      height="22"
+      rx="8"
+      fill="#0a2a4a"
+      />
+  <rect
+      x="280"
+      y="114"
+      width="90"
+      height="8"
+      fill="#0a2a4a"
+      />
+  <rect
+      x="302"
+      y="107"
+      width="45"
+      height="6"
+      rx="3"
+      fill="#f59e0b"
+      opacity="0.2"
+      />
+
+  <!-- External file rows -->
+  <rect x="292" y="132" width="66" height="5" rx="2.5" fill="#8ea7c7" opacity="0.25" />
+  <rect x="292" y="144" width="52" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
+  <rect x="292" y="155" width="60" height="4" rx="2" fill="#8ea7c7" opacity="0.2" />
+  <rect x="292" y="166" width="42" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
+  <rect x="292" y="177" width="56" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
+  <rect x="292" y="188" width="48" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
+  <rect x="292" y="199" width="60" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
+
+  <!-- Right panel: Session Buddy collections -->
+  <rect
+      x="430"
+      y="100"
+      width="90"
+      height="115"
+      rx="8"
+      fill="#0a2a4a"
+      stroke="#0083DD"
+      stroke-opacity="0.25"
+      stroke-width="1"
+      />
+
+  <!-- Collections panel header -->
+  <rect
+      x="430"
+      y="100"
+      width="90"
+      height="22"
+      rx="8"
+      fill="#0a2a4a"
+      />
+  <rect
+      x="430"
+      y="114"
+      width="90"
+      height="8"
+      fill="#0a2a4a"
+      />
+  <rect
+      x="452"
+      y="107"
+      width="45"
+      height="6"
+      rx="3"
+      fill="#0083DD"
+      opacity="0.25"
+      />
+
+  <!-- Collections panel rows -->
+  <rect x="442" y="132" width="66" height="5" rx="2.5" fill="#8ea7c7" opacity="0.25" />
+  <rect x="442" y="144" width="52" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
+  <rect x="442" y="155" width="60" height="4" rx="2" fill="#8ea7c7" opacity="0.2" />
+  <rect x="442" y="166" width="42" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
+  <rect x="442" y="177" width="56" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
+  <rect x="442" y="188" width="48" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
+  <rect x="442" y="199" width="60" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
+
+  <!-- Import arrow (left to right, file -> collections) -->
+  <g filter="url(#glow)">
+    <line
+        x1="380"
+        y1="140"
+        x2="418"
+        y2="140"
+        stroke="#22c55e"
+        stroke-width="2"
+        stroke-linecap="round"
+        opacity="0.6"
+        />
+    <path
+        d="M413 134 L421 140 L413 146"
+        stroke="#22c55e"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+        opacity="0.6"
+        />
+  </g>
+
+  <!-- Export arrow (right to left, collections -> file) -->
+  <g filter="url(#glow)">
+    <line
+        x1="420"
+        y1="175"
+        x2="382"
+        y2="175"
+        stroke="#f59e0b"
+        stroke-width="2"
+        stroke-linecap="round"
+        opacity="0.45"
+        />
+    <path
+        d="M387 169 L379 175 L387 181"
+        stroke="#f59e0b"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+        opacity="0.45"
+        />
+  </g>
+
+  <!-- Divider line -->
+  <line
+      x1="280"
+      y1="235"
+      x2="520"
+      y2="235"
+      stroke="#0083DD"
+      stroke-opacity="0.08"
+      stroke-width="1"
+      />
+
+  <!-- Format type badges -->
+  <g opacity="0.5">
+    <!-- JSON badge -->
+    <rect
+        x="290"
+        y="250"
+        width="48"
+        height="20"
+        rx="4"
+        fill="#0a2a4a"
+        stroke="#0083DD"
+        stroke-opacity="0.25"
+        stroke-width="1"
+        />
+    <text
+        x="314"
+        y="264"
+        font-family="monospace"
+        font-size="9"
+        fill="#0083DD"
+        opacity="0.6"
+        text-anchor="middle"
+        >JSON</text>
+
+    <!-- CSV badge -->
+    <rect
+        x="346"
+        y="250"
+        width="42"
+        height="20"
+        rx="4"
+        fill="#0a2a4a"
+        stroke="#0083DD"
+        stroke-opacity="0.2"
+        stroke-width="1"
+        />
+    <text
+        x="367"
+        y="264"
+        font-family="monospace"
+        font-size="9"
+        fill="#0083DD"
+        opacity="0.5"
+        text-anchor="middle"
+        >CSV</text>
+
+    <!-- HTML badge -->
+    <rect
+        x="396"
+        y="250"
+        width="48"
+        height="20"
+        rx="4"
+        fill="#0a2a4a"
+        stroke="#0083DD"
+        stroke-opacity="0.2"
+        stroke-width="1"
+        />
+    <text
+        x="420"
+        y="264"
+        font-family="monospace"
+        font-size="9"
+        fill="#0083DD"
+        opacity="0.5"
+        text-anchor="middle"
+        >HTML</text>
+
+    <!-- URL badge -->
+    <rect
+        x="452"
+        y="250"
+        width="42"
+        height="20"
+        rx="4"
+        fill="#0a2a4a"
+        stroke="#0083DD"
+        stroke-opacity="0.15"
+        stroke-width="1"
+        />
+    <text
+        x="473"
+        y="264"
+        font-family="monospace"
+        font-size="9"
+        fill="#8ea7c7"
+        opacity="0.4"
+        text-anchor="middle"
+        >URL</text>
+  </g>
+
+  <!-- Connected apps / sharing illustration -->
+  <g opacity="0.5">
+    <!-- Central share node -->
+    <circle
+        cx="400"
+        cy="310"
+        r="8"
+        fill="#0a2a4a"
+        stroke="#0083DD"
+        stroke-width="1.5"
+        stroke-opacity="0.3"
+        />
+    <g filter="url(#softGlow)">
+      <circle
+          cx="400"
+          cy="310"
+          r="3"
+          fill="#0083DD"
+          opacity="0.5"
+          />
+    </g>
+
+    <!-- Left node -->
+    <line
+        x1="392"
+        y1="310"
+        x2="350"
+        y2="310"
+        stroke="#0083DD"
+        stroke-width="1"
+        stroke-opacity="0.15"
+        />
+    <circle
+        cx="342"
+        cy="310"
+        r="5"
+        fill="#0a2a4a"
+        stroke="#8ea7c7"
+        stroke-width="1"
+        stroke-opacity="0.2"
+        />
+
+    <!-- Right node -->
+    <line
+        x1="408"
+        y1="310"
+        x2="450"
+        y2="310"
+        stroke="#0083DD"
+        stroke-width="1"
+        stroke-opacity="0.15"
+        />
+    <circle
+        cx="458"
+        cy="310"
+        r="5"
+        fill="#0a2a4a"
+        stroke="#8ea7c7"
+        stroke-width="1"
+        stroke-opacity="0.2"
+        />
+
+    <!-- Top node -->
+    <line
+        x1="400"
+        y1="302"
+        x2="400"
+        y2="290"
+        stroke="#0083DD"
+        stroke-width="1"
+        stroke-opacity="0.15"
+        />
+    <circle
+        cx="400"
+        cy="284"
+        r="5"
+        fill="#0a2a4a"
+        stroke="#8ea7c7"
+        stroke-width="1"
+        stroke-opacity="0.2"
+        />
+
+    <!-- Bottom-left node -->
+    <line
+        x1="394"
+        y1="316"
+        x2="365"
+        y2="340"
+        stroke="#0083DD"
+        stroke-width="1"
+        stroke-opacity="0.12"
+        />
+    <circle
+        cx="360"
+        cy="345"
+        r="4"
+        fill="#0a2a4a"
+        stroke="#8ea7c7"
+        stroke-width="1"
+        stroke-opacity="0.15"
+        />
+
+    <!-- Bottom-right node -->
+    <line
+        x1="406"
+        y1="316"
+        x2="435"
+        y2="340"
+        stroke="#0083DD"
+        stroke-width="1"
+        stroke-opacity="0.12"
+        />
+    <circle
+        cx="440"
+        cy="345"
+        r="4"
+        fill="#0a2a4a"
+        stroke="#8ea7c7"
+        stroke-width="1"
+        stroke-opacity="0.15"
+        />
+  </g>
+
+  <!-- Left decorative - file stack -->
+  <g
+      opacity="0.4"
+      transform="translate(120, 145)"
+      >
+    <rect x="12" y="8" width="40" height="52" rx="4" stroke="#8ea7c7" stroke-opacity="0.08" stroke-width="1" fill="#0a2a4a" />
+    <rect x="6" y="4" width="40" height="52" rx="4" stroke="#8ea7c7" stroke-opacity="0.12" stroke-width="1" fill="#0a2a4a" />
+    <rect x="0" y="0" width="40" height="52" rx="4" stroke="#0083DD" stroke-opacity="0.2" stroke-width="1" fill="#0a2a4a" />
+    <!-- Folded corner -->
+    <path
+        d="M28 0 L40 12 L28 12 Z"
+        fill="#0a2a4a"
+        stroke="#0083DD"
+        stroke-opacity="0.15"
+        stroke-width="0.5"
+        />
+    <rect x="8" y="18" width="22" height="3" rx="1.5" fill="#8ea7c7" opacity="0.2" />
+    <rect x="8" y="25" width="16" height="3" rx="1.5" fill="#8ea7c7" opacity="0.15" />
+    <rect x="8" y="32" width="20" height="3" rx="1.5" fill="#8ea7c7" opacity="0.12" />
+  </g>
+
+  <!-- Left decorative - import arrow -->
+  <g
+      opacity="0.25"
+      transform="translate(130, 270)"
+      >
+    <line x1="0" y1="12" x2="30" y2="12" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M24 7 L32 12 L24 17" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+
+  <!-- Right decorative - clipboard -->
+  <g
+      opacity="0.35"
+      transform="translate(635, 140)"
+      >
+    <rect x="5" y="8" width="44" height="56" rx="4" stroke="#0083DD" stroke-opacity="0.2" stroke-width="1" fill="#0a2a4a" />
+    <!-- Clipboard clip -->
+    <rect x="17" y="2" width="20" height="10" rx="3" stroke="#0083DD" stroke-opacity="0.25" stroke-width="1" fill="#0a2a4a" />
+    <rect x="13" y="24" width="28" height="4" rx="2" fill="#8ea7c7" opacity="0.2" />
+    <rect x="13" y="32" width="20" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
+    <rect x="13" y="40" width="24" height="4" rx="2" fill="#8ea7c7" opacity="0.18" />
+    <rect x="13" y="48" width="16" height="4" rx="2" fill="#8ea7c7" opacity="0.12" />
+  </g>
+
+  <!-- Right decorative - export arrow -->
+  <g
+      opacity="0.25"
+      transform="translate(640, 260)"
+      >
+    <line x1="32" y1="12" x2="2" y2="12" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M8 7 L0 12 L8 17" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+
+  <!-- Right decorative - format indicators -->
+  <g
+      opacity="0.3"
+      transform="translate(645, 300)"
+      >
+    <text
+        x="0"
+        y="10"
+        font-family="monospace"
+        font-size="8"
+        fill="#0083DD"
+        opacity="0.5"
+        >{}</text>
+    <rect x="16" y="5" width="30" height="4" rx="2" fill="#8ea7c7" opacity="0.15" />
+    <text
+        x="0"
+        y="26"
+        font-family="monospace"
+        font-size="8"
+        fill="#0083DD"
+        opacity="0.4"
+        >&lt;/&gt;</text>
+    <rect x="20" y="21" width="24" height="4" rx="2" fill="#8ea7c7" opacity="0.12" />
+    <text
+        x="0"
+        y="42"
+        font-family="monospace"
+        font-size="8"
+        fill="#8ea7c7"
+        opacity="0.3"
+        >txt</text>
+    <rect x="18" y="37" width="28" height="4" rx="2" fill="#8ea7c7" opacity="0.1" />
+  </g>
+
+  <!-- Floating particles -->
+  <circle
+      cx="180"
+      cy="120"
+      r="2"
+      fill="#0083DD"
+      opacity="0.2"
+      />
+  <circle
+      cx="650"
+      cy="100"
+      r="1.5"
+      fill="#0083DD"
+      opacity="0.15"
+      />
+  <circle
+      cx="700"
+      cy="350"
+      r="2"
+      fill="#0083DD"
+      opacity="0.1"
+      />
+  <circle
+      cx="130"
+      cy="330"
+      r="1.5"
+      fill="#0083DD"
+      opacity="0.15"
+      />
+  <circle
+      cx="220"
+      cy="380"
+      r="1"
+      fill="#0083DD"
+      opacity="0.1"
+      />
+</svg>

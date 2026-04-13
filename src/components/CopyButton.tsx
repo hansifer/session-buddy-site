@@ -19,11 +19,15 @@ export const CopyButton = ({
         navigator.clipboard.writeText(content);
         setLabel('Copied');
 
-        timeoutRef.current = setTimeout(() => setLabel('Copy'), 2_000);
+        timeoutRef.current = setTimeout(() => setLabel('Copy'), 1_000);
       }}
       className={tw`
         border
-        border-blockStrongBorderColor
+        border-primaryColor
+        hover:border-primaryTextColor
+        text-primaryColor
+        hover:text-primaryTextColor
+        bg-blockBackgroundColor
         rounded-lg
         text-xs
         px-2

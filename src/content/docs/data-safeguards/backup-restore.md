@@ -1,6 +1,7 @@
 ---
 title: Backup and Restore
 slug: backup-restore
+image: ../../../assets/images/backup-restore.svg
 interimVisible: true
 sidebar:
   order: 2

@@ -5,6 +5,8 @@ slug: data-reliability
 interimVisible: true
 ---
 
+import { MailTo } from '@/components/MailTo';
+
 We have received some reports about spontaneous loss of collection and history data in Session Buddy. This post outlines what we know about this issue, what you can do to protect yourself, and our plans to address the problem.
 
 ## Overview
@@ -68,21 +70,27 @@ Open this file in a text editor and check that collection and history data is pr
 
 This creates a download file with information that can be used for troubleshooting.
 
-[Send this file to support](mailto:support@sessionbuddy.com) along with a description of what happened and any errors presented in the [console](/console/).
+<MailTo text="Send this file to support" client:load /> along with a description of what happened and any errors presented in the [console](/console/).
 
 3. **Restart the Browser**: In some cases the browser may recover from data access issues. Restart your browser to see if that resolves the problem. If not, try restarting your device.
 
 ## Solutions
 
+### Automated Backups
+
+Since v4.1, Session Buddy includes an [automated backup feature](/release-4-1-0/) that protects against corruption that targets Session Buddy's primary database.
+
+This has significantly improved recovery after browsers unexpectedly wipe data but remains a partial solution since backups may lag behind recent changes by up to 24 hours and this data would still be subject to browser control (and therefore effects like quota restrictions, users and tools clearing site data, and browser bugs).
+
 ### User Backups
 
-Users can protect themselves by regularly [backing up collections and history through Session Buddy](https://sessionbuddy.com/backup-restore/).
+Users can protect themselves by regularly [backing up collections and history](/backup-restore/) through Session Buddy.
 
-As an automated option, Session Buddy data folders can be included in scheduled system backups (Windows Backup, Time Machine, or a 3rd party solution) as recommended [here](https://sessionbuddy.com/backup-restore-advanced/).
+As an automated option, Session Buddy data folders can be included in scheduled system backups (Windows Backup, Time Machine, or a 3rd party solution) as recommended [here](/backup-restore-advanced/).
 
 ### Education
 
-We've posted about [data risks and safeguards](https://sessionbuddy.com/data-safeguards/) in the Session Buddy user forum, but we may need to take more proactive measures to educate users about this topic, possibly via app notifications.
+We've posted about [data risks and safeguards](/data-safeguards/) in the Session Buddy user forum, but we may need to take more proactive measures to educate users about this topic, possibly via app notifications.
 
 We have plans to add a notification for when data usage is approaching quota to alert users of increased risk of data eviction so they can take appropriate steps like exporting a backup or deleting old collections and history.
 
@@ -99,12 +107,6 @@ We will continue to:
 - Research and monitor development resources and Chromium issues and investigate measures as new information comes to light.
 - Expand our test suite in pursuit of conditions that reliably produce data failures.
 - Evaluate diagnostics as they're shared, as this kind of data can be extremely helpful for identifying failure patterns.
-
-### Automated Backups via Extension Storage
-
-We are working on an [experimental automated backup solution](https://sessionbuddy.com/release-4-1-0/) that will protect against any corruption that targets IndexedDB (Session Buddy's primary database).
-
-This is expected to significantly improve recovery in the event that the browser unexpectedly wipes data, but remains a partial solution since backups may lag behind recent changes by up to 24 hours and this data would still be subject to browser control (and therefore effects like quota restrictions, users and tools clearing site data, and browser bugs).
 
 ### Automated Backups via Downloads
 

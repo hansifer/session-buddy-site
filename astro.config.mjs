@@ -29,6 +29,7 @@ export default defineConfig({
   redirects: {
     // '/releases': '/releases/4.1.1', // redirect to latest release
 
+    '/missing-data': '/data-consistency',
     '/terms-and-conditions': '/terms',
     '/privacy': '/privacy-policy',
     '/planned': '/roadmap',

@@ -1,6 +1,6 @@
 ---
 title: Data Consistency
-slug: missing-data
+slug: data-consistency
 interimVisible: true
 ---
 

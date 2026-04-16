@@ -29,6 +29,8 @@ Ensure that "Developer mode" is toggled on in the upper-right corner of the page
 
 This will open the Developer Tools in a new window. Select the Console tab in this window to view recent Session Buddy activity or error messages.
 
+<div id="sharing" style="margin-top:-80px;position:absolute;"></div>
+
 ## Sharing console information
 
 When sharing console information with Session Buddy support, provide either:

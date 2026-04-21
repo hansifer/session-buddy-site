@@ -1,0 +1,47 @@
+---
+title: Love Session Buddy?
+tabTitle: Donate
+interimVisible: true
+---
+
+import paypalImg from '@/assets/images/paypal.png';
+import coffeeImg from '@/assets/images/coffee-cup.png';
+import bitcoinImg from '@/assets/images/bitcoin.png';
+
+<div className="text-center max-w-lg mx-auto">
+  If Session Buddy has saved you time or sanity, please consider making a donation to keep development going strong.
+</div>
+
+<div className="flex flex-col items-center py-10">
+  <div className="flex flex-col gap-8">
+    <a
+      href="https://www.paypal.com/donate/?hosted_button_id=FGX8R8NGPX4WN"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex justify-center items-center gap-3 px-8 py-3 bg-[#14a5ff] text-white! rounded-lg hover:bg-[#0f8cd4] no-underline! font-bold whitespace-nowrap"
+    >
+      <img src={paypalImg.src} alt="PayPal logo" style="width:24px;height:24px;" />
+      <span className="text-lg">Donate with PayPal</span>
+    </a>
+    <a
+      href="https://www.buymeacoffee.com/hansifer"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex justify-center items-center gap-3 px-8 py-3 bg-[#c18d67] text-white! rounded-lg hover:bg-[#b07a5d] no-underline! font-bold whitespace-nowrap"
+    >
+      <img src={coffeeImg.src} alt="Coffee logo" style="width:24px;height:24px;" />
+      <span className="text-lg">Buy Me A Coffee</span>
+    </a>
+  </div>
+  <div className="flex flex-col gap-7 items-center bg-white/10 p-7 rounded-xl mt-10">
+    <div className="font-bold text-white text-lg">Donate with Bitcoin</div>
+    <div className="p-3 bg-white rounded-md">
+      <img src={bitcoinImg.src} alt="Bitcoin QR code" style="width:108px;" />
+    </div>
+    <div className="text-sm">bc1qfqje8mekvnyemna5a8mm60qzfw36ja7kenypaj</div>
+  </div>
+</div>
+
+<div className="text-center mx-auto text-2xl font-semibold text-white italic">
+  <span>Thank you for your support!</span>
+</div>

@@ -74,27 +74,31 @@ const sections = [
       },
     ],
   },
-  // {
-  //   title: 'Company',
-  //   links: [
-  //     {
-  //       label: 'About us',
-  //       href: '#',
-  //     },
-  //     {
-  //       label: 'Jobs',
-  //       href: '#',
-  //     },
-  //     {
-  //       label: 'Press',
-  //       href: '#',
-  //     },
-  //     {
-  //       label: 'Contact us',
-  //       href: '#',
-  //     },
-  //   ],
-  // },
+  {
+    title: 'Company',
+    links: [
+      // {
+      //   label: 'About us',
+      //   href: '#',
+      // },
+      // {
+      //   label: 'Jobs',
+      //   href: '#',
+      // },
+      // {
+      //   label: 'Press',
+      //   href: '#',
+      // },
+      {
+        label: 'Contact',
+        href: 'mailto',
+      },
+      {
+        label: 'Donate',
+        href: '/donate',
+      },
+    ],
+  },
 ] as const;
 
 export const Footer = () => {
@@ -126,7 +130,7 @@ export const Footer = () => {
           <div
             className="
               hidden
-              md:block
+              lg:block
               max-w-sm
               mx-auto
             "
@@ -242,17 +246,24 @@ export const Footer = () => {
                       key={href}
                       className="mb-4"
                     >
-                      <a
-                        href={href}
-                        aria-label={label}
-                        className="
-                          text-secondaryTextColor
-                          hover:text-primaryTextColor
-                          transition-colors
-                        "
-                      >
-                        {label}
-                      </a>
+                      {href === 'mailto' ? (
+                        <MailTo
+                          text={label}
+                          className="text-secondaryTextColor hover:text-primaryTextColor transition-colors"
+                        />
+                      ) : (
+                        <a
+                          href={href}
+                          aria-label={label}
+                          className="
+                            text-secondaryTextColor
+                            hover:text-primaryTextColor
+                            transition-colors
+                          "
+                        >
+                          {label}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>

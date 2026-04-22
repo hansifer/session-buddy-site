@@ -26,25 +26,9 @@ export default defineConfig({
   devToolbar: {
     enabled: false, // also happens to fix error 'The request url "<redacted>" is outside of Vite serving allow list.'
   },
-  redirects: {
-    // '/releases': '/releases/4.1.1', // redirect to latest release
-
-    '/datafileLocation.htm': '/data-location',
-    '/missing-data': '/data-consistency',
-    '/terms-and-conditions': '/terms',
-    '/privacy': '/privacy-policy',
-    '/planned': '/roadmap',
-    '/support': '/docs',
-    '/v4': '/releases/4.0.0',
-    '/release-4-0-0': '/releases/4.0.0',
-    '/release-4-0-1': '/releases/4.0.1',
-    '/release-4-0-2': '/releases/4.0.2',
-    '/release-4-0-3': '/releases/4.0.3',
-    '/release-4-0-4': '/releases/4.0.4',
-    '/release-4-0-5': '/releases/4.0.5',
-    '/release-4-1-0': '/releases/4.1.0',
-    '/release-4-1-1': '/releases/4.1.1',
-  },
+  // redirects: {
+  //   '/releases': '/releases/4.1.1', // redirect to latest release; when ready to switch to starlight docs, add this redirect to _redirects file and remove `redirects` prop here
+  // },
   integrations,
   vite: {
     // @tailwindcss/vite plugin: issue with Vite and plugin typing · Issue #18802 · tailwindlabs/tailwindcss: https://github.com/tailwindlabs/tailwindcss/issues/18802

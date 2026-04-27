@@ -1,5 +1,8 @@
 import type { Testimonial } from '@/types';
 
+import harryNewton from '@/assets/profile-images/harry-newton.jpg';
+import hubertusKeil from '@/assets/profile-images/hubertus-keil.jpg';
+import robertGasparotto from '@/assets/profile-images/robert-gasparotto.jpg';
 import deitrichArmanteLowrance from '@/assets/profile-images/deitrich-armante-lowrance.png';
 import drieschDeNoronha from '@/assets/profile-images/driesch-de-noronha.jpg';
 import kenWu from '@/assets/profile-images/ken-wu.png';
@@ -30,6 +33,23 @@ import anon from '@/assets/profile-images/anon.jpg';
 import nicoleWest from '@/assets/profile-images/nicole-west.png';
 
 export const testimonials = [
+  {
+    name: 'Harry Newton',
+    image: harryNewton.src,
+    quote:
+      "This is the greatest extension to Google Chrome. I use it several times a day. Every day. I can give you a thousand reasons to love it. Better, download it and use it. You'll see why I love it.",
+  },
+  {
+    name: 'Hubertus Keil',
+    image: hubertusKeil.src,
+    quote:
+      'Session Buddy is fantastic, super-simple to use and a big time saver for me.',
+  },
+  {
+    name: 'Robert Gasparotto',
+    image: robertGasparotto.src,
+    quote: 'Awesome - I use it every day.',
+  },
   {
     name: 'Deitrich Armante Lowrance',
     image: deitrichArmanteLowrance.src,

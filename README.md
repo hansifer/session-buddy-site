@@ -2,6 +2,10 @@
 
 Product website for Session Buddy Tab & Bookmark Manager.
 
+<br />
+
+![Session Buddy site screenshot](./src/assets/images/repo-screenshot.png)
+
 ## Tech stack:
 
 - [Astro](https://astro.build/)

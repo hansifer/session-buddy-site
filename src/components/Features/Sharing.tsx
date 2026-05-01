@@ -45,7 +45,7 @@ export const Sharing = ({
             src: addLinksImg.src,
             alt: 'Add links from text',
             shadow: true,
-            className: 'lg:w-100 xl:w-110 2xl:w-120',
+            className: 'lg:w-100 xl:w-110',
           },
           // {
           //   src: exportImg.src,

@@ -2,6 +2,8 @@
   "v4": {
     "disableAutoBackup": false,
     "maxBackupSize": 5000000,
-    "maxRDCohort": 0
+    "maxRDCohort": 0,
+    "maxFECohort": 0,
+    "maxPRCohort": 0
   }
 }

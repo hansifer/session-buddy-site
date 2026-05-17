@@ -18,9 +18,6 @@ export const LoopingVideo = ({ src, alt }: { src: string; alt: string }) => {
     const playVideo = () => {
       if (sourceUnsupported) return;
 
-      // play() returns a promise and can reject while the source is still loading
-      // or if the browser cannot use the source. Avoid surfacing that as an
-      // unhandled rejection; the interval below will retry when appropriate.
       void video.play().catch((error: unknown) => {
         if (
           error instanceof DOMException &&
@@ -61,7 +58,12 @@ export const LoopingVideo = ({ src, alt }: { src: string; alt: string }) => {
     let stallCount = 0;
 
     const interval = setInterval(() => {
-      if (document.hidden || outOfView || sourceUnsupported) return;
+      if (sourceUnsupported) {
+        clearInterval(interval);
+        return;
+      }
+
+      if (document.hidden || outOfView) return;
 
       if (video.ended || video.paused) {
         // console.log('video ended or paused. restarting...');

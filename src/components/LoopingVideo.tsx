@@ -10,13 +10,41 @@ export const LoopingVideo = ({ src, alt }: { src: string; alt: string }) => {
     if (!video) return;
 
     let outOfView = false;
+    let sourceUnsupported = false;
+
+    // Astro's ClientRouter swaps in a newly parsed body during client-side navigation. Reset media selection after mount so videos that arrived via a route transition begin loading in the active document.
+    video.load();
+
+    const playVideo = () => {
+      if (sourceUnsupported) return;
+
+      // play() returns a promise and can reject while the source is still loading
+      // or if the browser cannot use the source. Avoid surfacing that as an
+      // unhandled rejection; the interval below will retry when appropriate.
+      void video.play().catch((error: unknown) => {
+        if (
+          error instanceof DOMException &&
+          error.name === 'NotSupportedError'
+        ) {
+          sourceUnsupported = true;
+        }
+      });
+    };
+
+    const handleError = () => {
+      if (video.error?.code === MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED) {
+        sourceUnsupported = true;
+      }
+    };
+
+    video.addEventListener('error', handleError);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           // console.log('playing video');
           outOfView = false;
-          video.play();
+          playVideo();
         } else {
           // console.log('pausing video');
           outOfView = true;
@@ -33,11 +61,11 @@ export const LoopingVideo = ({ src, alt }: { src: string; alt: string }) => {
     let stallCount = 0;
 
     const interval = setInterval(() => {
-      if (document.hidden || outOfView) return;
+      if (document.hidden || outOfView || sourceUnsupported) return;
 
       if (video.ended || video.paused) {
         // console.log('video ended or paused. restarting...');
-        video.play();
+        playVideo();
         stallCount = 0;
       } else if (video.currentTime === lastTime) {
         stallCount++;
@@ -46,7 +74,7 @@ export const LoopingVideo = ({ src, alt }: { src: string; alt: string }) => {
           // currentTime hasn't moved for 2 consecutive checks
           // console.log('video stalled. restarting...');
           video.currentTime = 0;
-          video.play();
+          playVideo();
           stallCount = 0;
         }
       } else {
@@ -59,6 +87,7 @@ export const LoopingVideo = ({ src, alt }: { src: string; alt: string }) => {
     return () => {
       observer.disconnect();
       clearInterval(interval);
+      video.removeEventListener('error', handleError);
     };
   }, []);
 

@@ -4,6 +4,7 @@
     "maxBackupSize": 5000000,
     "maxRDCohort": 0,
     "maxFECohort": 0,
-    "maxPRCohort": 0
+    "maxPRCohort": 100,
+    "prCountryLimit": true
   }
 }

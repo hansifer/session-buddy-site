@@ -87,26 +87,45 @@ export async function onRequestPost(
     return json({ errors }, 422);
   }
 
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${env.RESEND_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: env.CONTACT_FROM ?? FROM_DEFAULT,
-      to: env.CONTACT_TO ?? TO_DEFAULT,
-      reply_to: email,
-      subject: subject
-        ? `[Contact] ${subject}`
-        : `[Contact] Message from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    }),
-  });
+  let res: Response;
+
+  try {
+    res = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.RESEND_API_KEY.trim()}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: env.CONTACT_FROM ?? FROM_DEFAULT,
+        to: env.CONTACT_TO ?? TO_DEFAULT,
+        reply_to: email,
+        subject: subject
+          ? `[Contact] ${subject}`
+          : `[Contact] Message from ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+      }),
+    });
+  } catch (err) {
+    // network/subrequest failure reaching Resend — surface it rather than
+    // letting it bubble up as Cloudflare's generic "error code: 502"
+    console.error('contact: fetch to Resend threw', err);
+    return json(
+      { error: 'Could not reach the mail service.', detail: String(err) },
+      502,
+    );
+  }
 
   if (!res.ok) {
+    // TODO: drop `status`/`detail` from the response once delivery is verified
+    const detail = await res.text().catch(() => '');
+    console.error('contact: Resend returned', res.status, detail);
     return json(
-      { error: 'Could not send your message. Please try again later.' },
+      {
+        error: 'Could not send your message. Please try again later.',
+        status: res.status,
+        detail,
+      },
       502,
     );
   }

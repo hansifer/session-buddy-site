@@ -100,9 +100,7 @@ export async function onRequestPost(
         from: env.CONTACT_FROM ?? FROM_DEFAULT,
         to: env.CONTACT_TO ?? TO_DEFAULT,
         reply_to: email,
-        subject: subject
-          ? `[Contact] ${subject}`
-          : `[Contact] Message from ${name}`,
+        subject: subject.trim() || 'Session Buddy Support inquiry',
         text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
       }),
     });

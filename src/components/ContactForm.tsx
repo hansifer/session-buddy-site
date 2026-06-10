@@ -142,18 +142,21 @@ export const ContactForm = () => {
         >
           Name
         </label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          maxLength={100}
-          value={form.name}
-          onChange={update('name')}
-          disabled={submitting}
-          className={inputClassName}
-          placeholder="Your name"
-        />
+        <span>
+          {/* wrapped because lastpass may append sibling div after <input/> and container is a flex container with gap */}
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            maxLength={100}
+            value={form.name}
+            onChange={update('name')}
+            disabled={submitting}
+            className={inputClassName}
+            placeholder="Your name"
+          />
+        </span>
       </div>
 
       <div className="flex flex-col gap-2">

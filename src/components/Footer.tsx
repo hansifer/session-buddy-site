@@ -1,5 +1,4 @@
 import { Logo } from '@/components/Logo';
-import { MailTo } from '@/components/MailTo';
 
 const socials = [
   // {
@@ -172,10 +171,13 @@ export const Footer = () => {
             >
               If something isn't quite right, or you just want to say hi, we'd
               love to{' '}
-              <MailTo
-                text="hear from you"
+              <a
+                href="/contact"
+                aria-label="Contact Session Buddy"
                 className="text-primaryTextColor"
-              />
+              >
+                hear from you
+              </a>
               .
             </p>
             {/* Session Buddy is built by passionate developers who care about
@@ -247,10 +249,13 @@ export const Footer = () => {
                       className="mb-4"
                     >
                       {href === 'mailto' ? (
-                        <MailTo
-                          text={label}
+                        <a
+                          href="/contact"
+                          aria-label="Contact Session Buddy"
                           className="text-secondaryTextColor hover:text-primaryTextColor transition-colors"
-                        />
+                        >
+                          {label}
+                        </a>
                       ) : (
                         <a
                           href={href}

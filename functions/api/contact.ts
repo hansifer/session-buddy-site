@@ -102,6 +102,7 @@ export async function onRequestPost(
         reply_to: email,
         subject: subject.trim() || 'Session Buddy Support inquiry',
         text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+        html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p>${message}</p>`,
       }),
     });
   } catch (err) {

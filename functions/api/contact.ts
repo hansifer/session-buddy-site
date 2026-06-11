@@ -4,16 +4,21 @@
 // honeypot field, and relays the message to support via Resend.
 //
 // Required Cloudflare Pages env var (Settings -> Environment variables):
-//   RESEND_API_KEY   - Resend API key (store as a secret/encrypted)
+//   RESEND_API_KEY        - Resend API key (store as a secret/encrypted)
 // Optional overrides:
-//   CONTACT_TO       - recipient address (default: support@sessionbuddy.com)
-//   CONTACT_FROM     - sender, must be on a Resend-verified domain
-//                      (default: "Session Buddy Contact <contact@sessionbuddy.com>")
+//   CONTACT_TO            - recipient address (default: support@sessionbuddy.com)
+//   CONTACT_FROM          - sender, must be on a Resend-verified domain
+//                           (default: "Session Buddy Contact <contact@sessionbuddy.com>")
+//   TURNSTILE_SECRET_KEY  - Cloudflare Turnstile secret (store as a secret).
+//                           When set, submissions must carry a valid token
+//                           (the frontend's PUBLIC_TURNSTILE_SITE_KEY pairs with
+//                           it). When unset, the captcha check is skipped.
 
 interface Env {
   RESEND_API_KEY: string;
   CONTACT_TO?: string;
   CONTACT_FROM?: string;
+  TURNSTILE_SECRET_KEY?: string;
 }
 
 interface RequestContext {
@@ -87,6 +92,28 @@ export async function onRequestPost(
     return json({ errors }, 422);
   }
 
+  // captcha: verify the Turnstile token with Cloudflare before sending anything
+  if (env.TURNSTILE_SECRET_KEY) {
+    const token = str(data.turnstileToken);
+
+    if (!token) {
+      return json({ error: 'Please complete the captcha.' }, 422);
+    }
+
+    const passed = await verifyTurnstile(
+      token,
+      env.TURNSTILE_SECRET_KEY,
+      request.headers.get('CF-Connecting-IP'),
+    );
+
+    if (!passed) {
+      return json(
+        { error: 'Captcha verification failed. Please try again.' },
+        422,
+      );
+    }
+  }
+
   let res: Response;
 
   try {
@@ -102,7 +129,7 @@ export async function onRequestPost(
         reply_to: email,
         subject: subject.trim() || 'Session Buddy Support inquiry',
         text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
-        html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p>${message}</p>`,
+        html: `<p><strong>Name:</strong> ${escapeHtml(name)}</p><p><strong>Email:</strong> ${escapeHtml(email)}</p><p>${escapeHtml(message)}</p>`,
       }),
     });
   } catch (err) {
@@ -132,12 +159,48 @@ export async function onRequestPost(
   return json({ ok: true });
 }
 
+const TURNSTILE_VERIFY_URL =
+  'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+
+// Validate a Turnstile token against Cloudflare's siteverify endpoint. Returns
+// false on any failure (bad token, network error, malformed response) so the
+// caller can reject the submission.
+async function verifyTurnstile(
+  token: string,
+  secret: string,
+  ip: string | null,
+): Promise<boolean> {
+  const body = new FormData();
+  body.append('secret', secret);
+  body.append('response', token);
+  if (ip) body.append('remoteip', ip);
+
+  try {
+    const res = await fetch(TURNSTILE_VERIFY_URL, { method: 'POST', body });
+    if (!res.ok) return false;
+    const outcome = (await res.json()) as { success?: boolean };
+    return outcome.success === true;
+  } catch (err) {
+    console.error('contact: Turnstile verify threw', err);
+    return false;
+  }
+}
+
 function str(value: unknown): string {
   return typeof value === 'string' ? value.trim() : '';
 }
 
 function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 function json(body: unknown, status = 200): Response {

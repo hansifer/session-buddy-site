@@ -1,9 +1,65 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 
 import { tw } from '@/util/tailwind';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error';
+
+// Cloudflare Turnstile. The site key is public and injected at build time via an
+// Astro `PUBLIC_`-prefixed env var; the matching secret lives only on the server
+// (see functions/api/contact.ts). When unset (e.g. local dev without keys) the
+// widget is skipped and the form still works.
+const TURNSTILE_SITE_KEY = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as
+  | string
+  | undefined;
+
+const TURNSTILE_SCRIPT_SRC =
+  'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+
+interface TurnstileApi {
+  render: (
+    container: HTMLElement,
+    options: {
+      sitekey: string;
+      callback?: (token: string) => void;
+      'error-callback'?: () => void;
+      'expired-callback'?: () => void;
+      theme?: 'auto' | 'light' | 'dark';
+    },
+  ) => string;
+  reset: (widgetId?: string) => void;
+  remove: (widgetId?: string) => void;
+}
+
+declare global {
+  interface Window {
+    turnstile?: TurnstileApi;
+  }
+}
+
+let turnstileScriptPromise: Promise<void> | undefined;
+
+// Load the Turnstile script once, shared across any mounts of this component.
+function loadTurnstile(): Promise<void> {
+  if (turnstileScriptPromise) return turnstileScriptPromise;
+
+  turnstileScriptPromise = new Promise<void>((resolve, reject) => {
+    if (window.turnstile) {
+      resolve();
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = TURNSTILE_SCRIPT_SRC;
+    script.async = true;
+    script.defer = true;
+    script.onload = () => resolve();
+    script.onerror = () => reject(new Error('Failed to load Turnstile.'));
+    document.head.appendChild(script);
+  });
+
+  return turnstileScriptPromise;
+}
 
 const initialForm = {
   name: '',
@@ -34,6 +90,59 @@ export const ContactForm = () => {
   const [form, setForm] = useState<FormState>(initialForm);
   const [status, setStatus] = useState<Status>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [token, setToken] = useState('');
+
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
+
+  // Render the Turnstile widget once the script is ready, and tear it down on
+  // unmount. The token arrives via the `callback` and is cleared if it errors
+  // or expires.
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY) return;
+
+    let cancelled = false;
+
+    loadTurnstile()
+      .then(() => {
+        if (
+          cancelled ||
+          !widgetRef.current ||
+          !window.turnstile ||
+          widgetIdRef.current !== null
+        ) {
+          return;
+        }
+
+        widgetIdRef.current = window.turnstile.render(widgetRef.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          theme: 'auto',
+          callback: (t) => setToken(t),
+          'error-callback': () => setToken(''),
+          'expired-callback': () => setToken(''),
+        });
+      })
+      .catch(() => {
+        // leave the token empty; submit stays blocked until the user retries
+      });
+
+    return () => {
+      cancelled = true;
+      if (widgetIdRef.current !== null && window.turnstile) {
+        window.turnstile.remove(widgetIdRef.current);
+        widgetIdRef.current = null;
+      }
+    };
+  }, []);
+
+  // Turnstile tokens are single-use, so clear and re-challenge after each
+  // submission attempt.
+  const resetTurnstile = () => {
+    setToken('');
+    if (widgetIdRef.current !== null && window.turnstile) {
+      window.turnstile.reset(widgetIdRef.current);
+    }
+  };
 
   const update =
     (field: keyof FormState) =>
@@ -42,6 +151,13 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    if (TURNSTILE_SITE_KEY && !token) {
+      setStatus('error');
+      setErrorMessage('Please complete the captcha.');
+      return;
+    }
+
     setStatus('submitting');
     setErrorMessage('');
 
@@ -49,7 +165,7 @@ export const ContactForm = () => {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, turnstileToken: token }),
       });
 
       if (!res.ok) {
@@ -73,6 +189,8 @@ export const ContactForm = () => {
       setErrorMessage(
         err instanceof Error ? err.message : 'Something went wrong.',
       );
+    } finally {
+      resetTurnstile();
     }
   };
 
@@ -244,6 +362,8 @@ export const ContactForm = () => {
         />
       </div>
 
+      {TURNSTILE_SITE_KEY ? <div ref={widgetRef} /> : null}
+
       {status === 'error' && errorMessage ? (
         <p
           role="alert"
@@ -255,7 +375,7 @@ export const ContactForm = () => {
 
       <button
         type="submit"
-        disabled={submitting}
+        disabled={submitting || (!!TURNSTILE_SITE_KEY && !token)}
         className="
           mt-2
           inline-flex

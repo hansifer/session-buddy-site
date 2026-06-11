@@ -362,8 +362,6 @@ export const ContactForm = () => {
         />
       </div>
 
-      {TURNSTILE_SITE_KEY ? <div ref={widgetRef} /> : null}
-
       {status === 'error' && errorMessage ? (
         <p
           role="alert"
@@ -395,6 +393,13 @@ export const ContactForm = () => {
       >
         {submitting ? 'Sending…' : 'Send message'}
       </button>
+
+      {TURNSTILE_SITE_KEY ? (
+        <div
+          ref={widgetRef}
+          className="mt-4 text-center"
+        />
+      ) : null}
     </form>
   );
 };

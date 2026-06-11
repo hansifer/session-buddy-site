@@ -95,11 +95,17 @@ export const ContactForm = () => {
   const widgetRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
 
-  // Render the Turnstile widget once the script is ready, and tear it down on
-  // unmount. The token arrives via the `callback` and is cleared if it errors
-  // or expires.
+  // The success screen replaces the form (and its widget container) entirely, so
+  // the widget's lifetime is tied to the form being visible.
+  const formVisible = status !== 'success';
+
+  // Render the Turnstile widget while the form is shown, and tear it down when
+  // it's hidden (e.g. on the success screen) or on unmount. Re-running on
+  // `formVisible` is what lets a fresh widget appear after "Send another
+  // message". The token arrives via `callback` and is cleared if it errors or
+  // expires.
   useEffect(() => {
-    if (!TURNSTILE_SITE_KEY) return;
+    if (!TURNSTILE_SITE_KEY || !formVisible) return;
 
     let cancelled = false;
 
@@ -128,15 +134,17 @@ export const ContactForm = () => {
 
     return () => {
       cancelled = true;
+      setToken('');
       if (widgetIdRef.current !== null && window.turnstile) {
         window.turnstile.remove(widgetIdRef.current);
         widgetIdRef.current = null;
       }
     };
-  }, []);
+  }, [formVisible]);
 
-  // Turnstile tokens are single-use, so clear and re-challenge after each
-  // submission attempt.
+  // Turnstile tokens are single-use, so clear and re-challenge after a failed
+  // attempt (the form stays visible). On success the form unmounts and the
+  // effect above handles teardown instead.
   const resetTurnstile = () => {
     setToken('');
     if (widgetIdRef.current !== null && window.turnstile) {
@@ -189,7 +197,6 @@ export const ContactForm = () => {
       setErrorMessage(
         err instanceof Error ? err.message : 'Something went wrong.',
       );
-    } finally {
       resetTurnstile();
     }
   };

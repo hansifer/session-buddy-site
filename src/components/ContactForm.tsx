@@ -142,6 +142,63 @@ export const ContactForm = () => {
     };
   }, [formVisible]);
 
+  // Turnstile's iframe grabs focus when it loads and when it silently refreshes
+  // its token, pulling the caret out of the field the user is typing in. When
+  // focus jumps into the widget *without* the user pointing at it, hand focus
+  // back to the field they were last in.
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY || !formVisible) return;
+
+    const container = widgetRef.current;
+    if (!container) return;
+
+    let lastField: HTMLElement | null = null;
+    let pointerOnWidget = false;
+
+    const onFocusIn = (e: FocusEvent) => {
+      const target = e.target;
+      if (target instanceof HTMLElement && !container.contains(target)) {
+        lastField = target;
+        // the user moved on from the widget; allow future steals to be corrected
+        pointerOnWidget = false;
+      }
+    };
+
+    const onPointerDown = (e: PointerEvent) => {
+      const r = container.getBoundingClientRect();
+      pointerOnWidget =
+        e.clientX >= r.left &&
+        e.clientX <= r.right &&
+        e.clientY >= r.top &&
+        e.clientY <= r.bottom;
+    };
+
+    const onWindowBlur = () => {
+      // defer until activeElement settles on the newly focused iframe
+      requestAnimationFrame(() => {
+        const active = document.activeElement;
+        if (
+          !pointerOnWidget &&
+          lastField &&
+          active instanceof HTMLIFrameElement &&
+          container.contains(active)
+        ) {
+          lastField.focus();
+        }
+      });
+    };
+
+    document.addEventListener('focusin', onFocusIn);
+    document.addEventListener('pointerdown', onPointerDown, true);
+    window.addEventListener('blur', onWindowBlur);
+
+    return () => {
+      document.removeEventListener('focusin', onFocusIn);
+      document.removeEventListener('pointerdown', onPointerDown, true);
+      window.removeEventListener('blur', onWindowBlur);
+    };
+  }, [formVisible]);
+
   // Turnstile tokens are single-use, so clear and re-challenge after a failed
   // attempt (the form stays visible). On success the form unmounts and the
   // effect above handles teardown instead.

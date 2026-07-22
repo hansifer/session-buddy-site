@@ -112,6 +112,7 @@ export const Navbar = ({ mode = 'default' }: { mode?: Mode }) => {
         w-full
         min-h-20
         z-40
+        transform-[translateZ(999px)]
         ${
           mode === 'docs'
             ? 'fixed backdrop-blur-xl'

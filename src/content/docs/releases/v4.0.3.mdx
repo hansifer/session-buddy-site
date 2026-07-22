@@ -7,6 +7,8 @@ sidebar:
 interimVisible: true
 ---
 
+import { OSString } from '@/components/OSString';
+
 ## 🕰️ &nbsp; History
 
 - History is now searchable
@@ -25,5 +27,5 @@ interimVisible: true
 - Fixed a bug causing unmatched items to be selected when range-selecting search-filtered items
 - Added ability to assign a keyboard shortcut to “Save open tabs”. _To edit extension keyboard shortcuts, go to chrome://extensions/shortcuts_.
 - Added support for old-style (main.html) Session Buddy URLs
-- Modified clicks (with `ctrl/cmd` and/or `shift`) on tab and link URLs now conform to standard Chrome behavior. For reference: in Chrome, `ctrl` (or `cmd`) + click on a link opens it in a new tab. Doing this while also holding down `shift` does the same but activates the new tab. `Shift+click` opens the link in a new window.
+- Modified clicks (with <code><OSString apple="cmd" windows="ctrl" client:load /></code> and/or `shift`) on tab and link URLs now conform to standard Chrome behavior. For reference: in Chrome, <code><OSString apple="cmd" windows="ctrl" client:load /></code> + click on a link opens it in a new tab. Doing this while also holding down `shift` does the same but activates the new tab. `Shift+click` opens the link in a new window.
 - Updated required Chrome version from 110 to 109

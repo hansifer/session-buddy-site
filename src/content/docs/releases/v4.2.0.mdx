@@ -11,26 +11,38 @@ import { OSString } from '@/components/OSString';
 
 ## ☁️ &nbsp; Cloud collections
 
-Store your collections in the cloud.
+Access your collections from different browsers.
 
 <ul>
-  <li style="margin-top:32px;">Access your collections across browsers and profiles. No more exporting, emailing, and re-importing to move data between installs.</li>
-  <li style="margin-top:32px;">Protect your collections from data loss risks like browsers clearing local data, profile corruption, file cleanup tools, re-installs, low disk space, disk failure, and lost or stolen devices.</li>
+  <li style="margin-top:32px;">Access all of your collections across browsers and browser profiles. No more exporting, emailing, and re-importing to move data between installs.</li>
+  <li style="margin-top:32px;">Protect collections from data loss risks like browsers clearing local data, profile corruption, file cleanup tools, re-installs, low disk space, disk failure, and lost or stolen devices.</li>
   <li style="margin-top:32px;">Control access to Session Buddy with a login.</li>
 </ul>
 
+## 🔎 &nbsp; Search improvements
+
+Search has been improved to be faster, easier to use, and provide more meaningful results.
+
+- Search now matches items that include ALL terms instead of ANY term, significantly reducing noise in results. This better aligns with user expectations, allowing results to be incrementally refined by adding terms.
+- Matching has been fixed for non-Latin languages, including Chinese, Japanese, and Korean.
+- Collections and history are now automatically filtered as you type.
+- You can now start typing anytime to search without needing to click in the search box first.
+- URL matching has been updated to ignore query parameters and fragments.
+- Search performance has been significantly improved.
+- Fixed a bug causing infix matches to be highlighted in some cases.
+
 ## ✨ &nbsp; Enhancements
 
-- A "Cut" action has been added to make it easier to move links and tabs. Use the selection menu or keyboard shortcut <code><OSString apple="Cmd+X" windows="Ctrl+X" client:load /></code>.
-- The nav sidebar now includes a `+` button. Use it to create an empty collection that you can add links to.
-- Typing a letter now automatically focuses the search box so it's no longer necessary to click it first
+- A "Cut" action has been added alongside "Copy" to make it easier to move links and tabs. Use the selection menu or keyboard shortcut <code><OSString apple="Cmd+X" windows="Ctrl+X" client:load /></code>.
+- You can now quickly track down tabs that are playing sound with a new "Show audible tabs only" action in the tabs menu.
+- You can now add empty collections to add links to using the new `+` button in the nav sidebar.
 - It's now possible to choose what to back up when creating a backup file: collections, history, or both.
+- The Settings UI has been refreshed.
+- A display of collection and history counts has been added under _Settings > Stats_.
 
 ## 🛠️ &nbsp; Fixes and Tweaks
 
-- Fixed a bug caused by a change in Chrome resulting in extension tabs failing to restore in some cases
-- Fixed a bug preventing the clearing of collection titles or colors from properly synching to other Session Buddy tabs
-- Fixed a search bug causing infix matches to be highlighted in some cases
-- Search terms are now required to be a minimum of 3 characters instead of 2
-- "Load all collections" and "Load all history" [experiments](/experiments) have been removed
-- "Initial collection count" and "Subsequent collection count" [experiments](/experiments) now cap out at 100
+- Fixed a bug caused by a change in Chrome resulting in extension tabs failing to restore in some cases.
+- Fixed a bug preventing the clearing of collection titles or colors from properly synching to other Session Buddy tabs.
+- "Load all collections" and "Load all history" [experiments](/experiments) have been removed.
+- "Initial collection count" and "Subsequent collection count" [experiments](/experiments) now cap out at 100.

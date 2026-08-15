@@ -19,32 +19,33 @@ Access all your collections across devices.
   <li style="margin-top:32px;">Control access to Session Buddy with a login.</li>
 </ul>
 
-> Note: Cloud collections will be enabled for all users gradually. If you don't see the feature available in Session Buddy yet, you can [request access](/contact?subject=Cloud%20collections%20access&message=I%27d%20like%20to%20request%20access%20to%20Cloud%20collections.).
+> Note: Cloud collections will be enabled for all users gradually. If you don't see the feature available in Session Buddy yet, you can [request access](/contact?subject=Cloud%20collections%20access&message=I%27d%20like%20to%20request%20access%20to%20cloud%20collections.).
 
 ## 🔎 &nbsp; Search improvements
 
 Search has been improved to be faster, easier to use, and provide more meaningful results.
 
-- Search now matches items that include ALL terms instead of ANY term, significantly reducing noise in results. This better aligns with expectations, allowing results to be incrementally refined by adding terms.
+- Search now matches items that include ALL terms instead of ANY term, significantly reducing noise in results. This better aligns with expectations and allows results to be incrementally refined by adding terms.
 - Matching has been fixed for non-Latin languages, including Chinese, Japanese, and Korean.
 - Collections and history are now automatically filtered as you type.
 - You can now start typing anytime to search without needing to click in the search box first.
-- URL matching has been updated to ignore query parameters and fragments.
+- URL matching has been refined to better ignore negligible parts like query parameters and fragments.
 - Search performance has been *significantly* improved.
 - Fixed a bug causing infix matches to be highlighted in some cases.
+- Overlapping terms are now handled correctly, word boundary detection has been made unicode-aware, and [composed/decomposed character forms](https://w3c.github.io/i18n-drafts/questions/qa-html-css-normalization.en.html) are now treated consistently.
 
 ## ✨ &nbsp; Enhancements
 
-- A "Cut" action has been added alongside "Copy" to make it easier to move links and tabs. Use the selection menu or keyboard shortcut <code><OSString apple="Cmd+X" windows="Ctrl+X" client:load /></code>.
 - You can now quickly track down tabs that are playing sound with a new "Show audible tabs only" action in the tabs menu.
-- You can now add empty collections to add links to using the new `+` button in the nav sidebar.
+- A "Cut" action has been added alongside "Copy" to make it easier to move links and tabs. Use the selection menu or keyboard shortcut <code><OSString apple="Cmd+X" windows="Ctrl+X" client:load /></code>.
+- You can now create empty collections to add links to using the new `+` button in the nav sidebar.
 - It's now possible to choose what to back up when creating a backup file: collections, history, or both.
-- The Settings UI has been refreshed.
+- The settings UI has been refreshed.
 - A display of collection and history counts has been added under _Settings > Stats_.
 
 ## 🛠️ &nbsp; Fixes and Tweaks
 
-- Fixed a bug caused by a change in Chrome resulting in extension tabs failing to restore in some cases.
+- Fixed a bug caused by a change in Chrome that resulted in extension tabs failing to restore in some cases.
 - Fixed a bug preventing the clearing of collection titles or colors from properly synching to other Session Buddy tabs.
 - "Load all collections" and "Load all history" [experiments](/experiments) have been removed.
 - "Initial collection count" and "Subsequent collection count" [experiments](/experiments) now cap out at 100.

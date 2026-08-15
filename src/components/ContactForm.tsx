@@ -99,6 +99,23 @@ export const ContactForm = () => {
   // the widget's lifetime is tied to the form being visible.
   const formVisible = status !== 'success';
 
+  // Allow links to pre-populate the contact request while keeping the page
+  // statically generated. Query parameters are read after hydration so the
+  // server and client render the same initial form.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const subject = params.get('subject');
+    const message = params.get('message');
+
+    if (subject === null && message === null) return;
+
+    setForm((prev) => ({
+      ...prev,
+      ...(subject !== null && { subject }),
+      ...(message !== null && { message }),
+    }));
+  }, []);
+
   // Render the Turnstile widget while the form is shown, and tear it down when
   // it's hidden (e.g. on the success screen) or on unmount. Re-running on
   // `formVisible` is what lets a fresh widget appear after "Send another

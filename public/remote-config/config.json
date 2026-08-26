@@ -5,6 +5,8 @@
     "maxRDCohort": 0,
     "maxFECohort": 0,
     "maxPRCohort": 0,
-    "prCountryLimit": true
+    "prCountryLimit": true,
+    "cloudMinChromeVersion": 118,
+    "cloudMinSbVersion": "4.2.0"
   }
 }

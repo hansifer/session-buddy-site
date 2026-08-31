@@ -8,7 +8,12 @@ interimVisible: true
 ---
 
 import { OSString } from '@/components/OSString';
+import ReviewBanner from '@/components/ReviewBanner.astro';
 
+<ReviewBanner />
+
+<div class="py-1"></div>
+  
 ## ☁️ &nbsp; Cloud collections
 
 Access your collections across devices.
@@ -20,7 +25,7 @@ Access your collections across devices.
   <li style="margin-top:32px;">Control access to Session Buddy with a login.</li>
 </ul>
 
-> Note: Cloud collections will be enabled for everyone gradually. If you don't see the feature in Session Buddy yet, you can [request access](/contact?subject=Cloud%20collections%20access&message=I%27d%20like%20to%20request%20access%20to%20cloud%20collections.).
+> Note: Cloud collections will be enabled for everyone gradually as an opt-in premium feature. If you don't see it available in Session Buddy yet, you can [request access](/contact?subject=Cloud%20collections%20access&message=I%27d%20like%20to%20request%20access%20to%20cloud%20collections.).
 
 ## 🔎 &nbsp; Search improvements
 
@@ -51,3 +56,7 @@ Search has been improved to be much faster, easier to use, and provide more mean
 - Fixed a bug preventing the clearing of collection titles or colors from properly synching to other Session Buddy tabs.
 - "Load all collections" and "Load all history" [experiments](/experiments) have been removed.
 - "Initial collection count" and "Subsequent collection count" [experiments](/experiments) now cap out at 100.
+
+<div class="py-6"></div>
+
+<ReviewBanner title="Thoughts?" message="If you like what you see, please take a moment to let us know."/>

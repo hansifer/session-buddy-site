@@ -14,11 +14,43 @@ const {
 } = Astro.props;
 ---
 
-<!-- Hidden by default and revealed below for non-mobile devices only, since Chrome Web Store reviews require the extension to be installed and Chrome extensions aren't supported on mobile. Padding lives on this wrapper so it's hidden along with the banner. -->
+<!-- Hidden on mobile devices, since Chrome Web Store reviews require the extension to be installed and Chrome extensions aren't supported on mobile. Padding lives on the wrapper so it's hidden along with the banner. -->
 
 <div
-  style={`display: none; padding-top: ${paddingTop}; padding-bottom: ${paddingBottom}`}
+  data-review-banner
+  style={`padding-top: ${paddingTop}; padding-bottom: ${paddingBottom}`}
 >
+  <!-- inline (ie non-bundled) so it runs synchronously, before the banner below is parsed. it flags the device on <html> instead of hiding the banner directly because view transitions re-render the banner but don't re-run this script until after the incoming page is painted. -->
+
+  <script is:inline>
+    (() => {
+      const flagMobileDevice = () => {
+        const userAgent = navigator.userAgent;
+
+        const userAgentData = navigator.userAgentData;
+
+        const isMobile =
+          userAgentData?.mobile === true ||
+          /android|iphone|ipod|ipad|windows phone|iemobile|blackberry|opera mini|mobile/i.test(
+            userAgent,
+          ) ||
+          // iPadOS 13+ identifies itself as macOS while using touch input
+          (/macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1);
+
+        document.documentElement.toggleAttribute('data-mobile-device', isMobile);
+      };
+
+      flagMobileDevice();
+
+      // view transitions replace every <html> attribute with those of the incoming page, so reflag on each swap. astro:after-swap runs before that page is painted.
+      if (!window.reviewBannerDeviceFlagged) {
+        window.reviewBannerDeviceFlagged = true;
+
+        document.addEventListener('astro:after-swap', flagMobileDevice);
+      }
+    })();
+  </script>
+
   <aside
     aria-label="Review Session Buddy"
     class="review-banner flex flex-col gap-10 sm:flex-row sm:items-center sm:justify-between p-6 sm:p-7 rounded-2xl block-strong-border"
@@ -38,29 +70,19 @@ const {
   </aside>
 </div>
 
-<!-- inline (ie non-bundled) so it runs synchronously as the banner is parsed, avoiding a flash of the banner on mobile -->
-
-<script is:inline>
-  (() => {
-    const banner = document.currentScript.previousElementSibling;
-
-    const userAgent = navigator.userAgent;
-
-    const userAgentData = navigator.userAgentData;
-
-    const isMobile =
-      userAgentData?.mobile === true ||
-      /android|iphone|ipod|ipad|windows phone|iemobile|blackberry|opera mini|mobile/i.test(
-        userAgent,
-      ) ||
-      // iPadOS 13+ identifies itself as macOS while using touch input
-      (/macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1);
-
-    if (!isMobile) {
-      banner.style.display = '';
+<style is:global>
+  /* covers most mobile devices without js, so it holds even mid view transition swap */
+  @media (hover: none) and (pointer: coarse) {
+    [data-review-banner] {
+      display: none;
     }
-  })();
-</script>
+  }
+
+  /* catches the rest, eg a tablet paired with a trackpad */
+  html[data-mobile-device] [data-review-banner] {
+    display: none;
+  }
+</style>
 
 <style>
   .review-banner {

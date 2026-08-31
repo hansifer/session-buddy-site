@@ -10,9 +10,12 @@ const {
 } = Astro.props;
 ---
 
+<!-- Hidden by default and revealed below for non-mobile devices only, since Chrome Web Store reviews require the extension to be installed and Chrome extensions aren't supported on mobile. -->
+
 <aside
   aria-label="Review Session Buddy"
   class="review-banner flex flex-col gap-10 sm:flex-row sm:items-center sm:justify-between p-6 sm:p-7 rounded-2xl block-strong-border"
+  style="display: none"
 >
   <div class="sm:max-w-84">
     <strong class="block text-lg text-primaryTextColor">{title}</strong>
@@ -27,6 +30,30 @@ const {
     <span class="text-base">Review Session Buddy</span>
   </a>
 </aside>
+
+<!-- inline (ie non-bundled) so it runs synchronously as the banner is parsed, avoiding a flash of the banner on mobile -->
+
+<script is:inline>
+  (() => {
+    const banner = document.currentScript.previousElementSibling;
+
+    const userAgent = navigator.userAgent;
+
+    const userAgentData = navigator.userAgentData;
+
+    const isMobile =
+      userAgentData?.mobile === true ||
+      /android|iphone|ipod|ipad|windows phone|iemobile|blackberry|opera mini|mobile/i.test(
+        userAgent,
+      ) ||
+      // iPadOS 13+ identifies itself as macOS while using touch input
+      (/macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1);
+
+    if (!isMobile) {
+      banner.style.display = '';
+    }
+  })();
+</script>
 
 <style>
   .review-banner {

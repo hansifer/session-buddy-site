@@ -10,10 +10,8 @@ interimVisible: true
 import { OSString } from '@/components/OSString';
 import ReviewBanner from '@/components/ReviewBanner.astro';
 
-<ReviewBanner />
+<ReviewBanner paddingBottom="1.5rem" />
 
-<div class="py-1"></div>
-  
 ## ☁️ &nbsp; Cloud collections
 
 Access your collections across devices.
@@ -57,6 +55,8 @@ Search has been improved to be much faster, easier to use, and provide more mean
 - "Load all collections" and "Load all history" [experiments](/experiments) have been removed.
 - "Initial collection count" and "Subsequent collection count" [experiments](/experiments) now cap out at 100.
 
-<div class="py-6"></div>
-
-<ReviewBanner title="Thoughts?" message="If you like what you see, please take a moment to let us know."/>
+<ReviewBanner
+  paddingTop="4rem"
+  title="Thoughts?"
+  message="If you like what you see, please take a moment to let us know."
+/>

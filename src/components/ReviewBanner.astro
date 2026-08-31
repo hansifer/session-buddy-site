@@ -2,34 +2,41 @@
 interface Props {
   title?: string;
   message?: string;
+  paddingTop?: string; // any css length, eg '4rem'
+  paddingBottom?: string;
 }
 
 const {
   title = 'How are we doing?',
   message = "We're constantly improving Session Buddy. If you appreciate our work, please take a moment to let us know.",
+  paddingTop = '0',
+  paddingBottom = '0',
 } = Astro.props;
 ---
 
-<!-- Hidden by default and revealed below for non-mobile devices only, since Chrome Web Store reviews require the extension to be installed and Chrome extensions aren't supported on mobile. -->
+<!-- Hidden by default and revealed below for non-mobile devices only, since Chrome Web Store reviews require the extension to be installed and Chrome extensions aren't supported on mobile. Padding lives on this wrapper so it's hidden along with the banner. -->
 
-<aside
-  aria-label="Review Session Buddy"
-  class="review-banner flex flex-col gap-10 sm:flex-row sm:items-center sm:justify-between p-6 sm:p-7 rounded-2xl block-strong-border"
-  style="display: none"
+<div
+  style={`display: none; padding-top: ${paddingTop}; padding-bottom: ${paddingBottom}`}
 >
-  <div class="sm:max-w-84">
-    <strong class="block text-lg text-primaryTextColor">{title}</strong>
-    <p class="mt-2! mb-0! leading-6! text-secondaryTextColor">{message}</p>
-  </div>
-  <a
-    href="https://chromewebstore.google.com/detail/session-buddy-tab-bookmar/edacconmaakjimmfgnblocblbcdcpbko/reviews"
-    target="_blank"
-    rel="noopener"
-    class="contained-button w-full sm:w-auto shrink-0 px-6 py-2 text-white! no-underline! whitespace-nowrap"
+  <aside
+    aria-label="Review Session Buddy"
+    class="review-banner flex flex-col gap-10 sm:flex-row sm:items-center sm:justify-between p-6 sm:p-7 rounded-2xl block-strong-border"
   >
-    <span class="text-base">Review Session Buddy</span>
-  </a>
-</aside>
+    <div class="sm:max-w-84">
+      <strong class="block text-lg text-primaryTextColor">{title}</strong>
+      <p class="mt-2! mb-0! leading-6! text-secondaryTextColor">{message}</p>
+    </div>
+    <a
+      href="https://chromewebstore.google.com/detail/session-buddy-tab-bookmar/edacconmaakjimmfgnblocblbcdcpbko/reviews"
+      target="_blank"
+      rel="noopener"
+      class="contained-button w-full sm:w-auto shrink-0 px-6 py-2 text-white! no-underline! whitespace-nowrap"
+    >
+      <span class="text-base">Review Session Buddy</span>
+    </a>
+  </aside>
+</div>
 
 <!-- inline (ie non-bundled) so it runs synchronously as the banner is parsed, avoiding a flash of the banner on mobile -->
 

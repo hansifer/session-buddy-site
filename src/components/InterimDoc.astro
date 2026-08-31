@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import { render } from 'astro:content';
 
 import Layout from '@/layouts/Layout.astro';
+import ReviewBanner from '@/components/ReviewBanner.astro';
 import type { InterimDocsEntry } from '@/content.config';
 import { ScrollUpButton } from '@/components/ScrollUpButton';
 import { pathToTitle } from '@/util/routing';
@@ -34,6 +35,16 @@ const imageAlt =
   typeof entry.data.imageAlt === 'string'
     ? entry.data.imageAlt.trim() || title
     : title;
+
+const reviewBannerTitle =
+  typeof entry.data.reviewBannerTitle === 'string'
+    ? entry.data.reviewBannerTitle.trim() || undefined
+    : undefined;
+
+const reviewBannerMessage =
+  typeof entry.data.reviewBannerMessage === 'string'
+    ? entry.data.reviewBannerMessage.trim() || undefined
+    : undefined;
 ---
 
 <Layout
@@ -45,6 +56,17 @@ const imageAlt =
     <div class="px-2
           sm:px-4
           min-w-0">
+      {
+        entry.data.reviewBanner ? (
+          <div class="px-8">
+            <ReviewBanner
+              title={reviewBannerTitle}
+              message={reviewBannerMessage}
+              paddingBottom="1rem"
+            />
+          </div>
+        ) : null
+      }
       <article
         class={tw`
           p-8

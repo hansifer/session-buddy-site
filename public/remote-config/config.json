@@ -6,6 +6,7 @@
     "maxFECohort": 0,
     "maxPRCohort": 0,
     "prCountries": ["US"],
+    "cloudMaxCollections": 1000,
     "cloudMinChromeVersion": 118,
     "cloudMinSbVersion": "4.2.0"
   }

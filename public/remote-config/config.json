@@ -8,6 +8,7 @@
     "prCountries": ["US"],
     "cloudMaxCollections": 1000,
     "cloudMinChromeVersion": 118,
-    "cloudMinSbVersion": "4.2.0"
+    "cloudMinSbVersion": "4.2.0",
+    "maintenance": true
   }
 }

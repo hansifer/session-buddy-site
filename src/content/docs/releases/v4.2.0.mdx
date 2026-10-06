@@ -22,7 +22,7 @@ Access your collections across devices.
   <li style="margin-top:32px;">Control access to Session Buddy with a login.</li>
 </ul>
 
-> Note: Cloud collections will be enabled for everyone gradually as an opt-in premium feature. If you don't see it available in Session Buddy yet, you can [request access](/contact?subject=Cloud%20collections%20access&message=I%27d%20like%20to%20request%20access%20to%20cloud%20collections.).
+> Note: Cloud collections will be enabled for everyone gradually as an opt-in paid feature. If you don't see it available in Session Buddy yet, you can [request access](/contact?subject=Cloud%20collections%20access&message=I%27d%20like%20to%20request%20access%20to%20cloud%20collections.).
 
 ## 🔎 &nbsp; Search improvements
 
@@ -42,14 +42,17 @@ Search has been improved to be much faster, easier to use, and provide more mean
 - You can now quickly track down tabs that are playing sound with a new "Show audible tabs only" action in the tabs menu.
 - A "Cut" action has been added alongside "Copy" to make it easier to move links and tabs. Use the selection menu or keyboard shortcut <code><OSString apple="Cmd+X" windows="Ctrl+X" client:load /></code>.
 - You can now create empty collections to add links to using the new `+` button in the nav sidebar.
-- It's now possible to choose what to back up when creating a backup file: collections, history, or both.
-- The settings UI has been refreshed.
+- The source of a duplicate is now highlighted when selecting duplicates.
+- The settings UI has been refreshed and organized to make it easier to find and change settings.
 - A display of collection and history counts has been added under _Settings > Stats_.
+- It's now possible to choose what to back up when creating a backup file: collections, history, or both.
+- Clicking the browser tile now refreshes the history sidebar, no longer requiring a page reload to see the latest snapshots.
 - Rendering is now 5x faster for collections with 1,000+ links.
 
 ## 🛠️ &nbsp; Fixes and Tweaks
 
 - Fixed a bug caused by a change in Chrome that resulted in extension tabs failing to restore in some cases.
+- History reliability has been tightened to prevent occasional missed or redundant snapshots.
 - Fixed a bug preventing the clearing of collection titles or colors from properly synching to other Session Buddy tabs.
 - "Load all collections" and "Load all history" [experiments](/experiments) have been removed.
 - "Initial collection count" and "Subsequent collection count" [experiments](/experiments) now cap out at 100.

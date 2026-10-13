@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title = 'How are we doing?',
-  message = "We're constantly improving Session Buddy. If you appreciate our work, please take a moment to let us know.",
+  message = "We're always improving Session Buddy. If you appreciate our work, please take a moment to let us know.",
   paddingTop = '0',
   paddingBottom = '0',
 } = Astro.props;
@@ -37,7 +37,10 @@ const {
           // iPadOS 13+ identifies itself as macOS while using touch input
           (/macintosh/i.test(userAgent) && navigator.maxTouchPoints > 1);
 
-        document.documentElement.toggleAttribute('data-mobile-device', isMobile);
+        document.documentElement.toggleAttribute(
+          'data-mobile-device',
+          isMobile,
+        );
       };
 
       flagMobileDevice();

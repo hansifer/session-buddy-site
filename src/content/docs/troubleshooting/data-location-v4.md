@@ -31,7 +31,7 @@ There may also be a folder with the following name:
 
 `chrome-extension_edacconmaakjimmfgnblocblbcdcpbko_0.indexeddb.blob`
 
-This folder is optional but in most cases it is present.
+If present, this folder must be included when backing up or restoring local data.
 
 ## Backing up local data
 

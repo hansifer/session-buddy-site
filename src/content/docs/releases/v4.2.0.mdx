@@ -52,18 +52,22 @@ You can now create empty collections to add links to using the new `+` button in
 
 - The source of a duplicate is now highlighted when selecting duplicates.
 - The settings UI has been refreshed and organized to make it easier to find and change settings.
+- A "Tweaks" section has been added to settings for advanced fine-tuning and troubleshooting.
 - A display of collection and history counts has been added under _Settings > Stats_.
 - It's now possible to choose what to back up when creating a backup file: collections, history, or both.
 - Clicking the browser tile now refreshes the history sidebar, no longer requiring a page reload to see the latest snapshots.
 - Rendering is now 5x faster for collections with 1,000+ links.
 
-## 🛠️ &nbsp; Fixes and Tweaks
+## 🛠️ &nbsp; Fixes, Tweaks, and Deprecations
 
 - Fixed a bug caused by a change in Chrome that resulted in extension tabs failing to restore in some cases.
-- History reliability has been tightened to prevent occasional missed or redundant snapshots.
 - Fixed a bug preventing the clearing of collection titles or colors from properly synching to other Session Buddy tabs.
-- "Load all collections" and "Load all history" [experiments](/experiments) have been removed.
-- "Initial collection count" and "Subsequent collection count" [experiments](/experiments) now cap out at 100.
+- History reliability has been tightened to prevent occasional missed or redundant snapshots.
+- Scheduled "snapshots" have been renamed "autosnapshots" and items in the history timeline are now generally referred to as "snapshots" rather than "events".
+- The option to remove only autosnapshots has been eliminated from history settings. To restore it, enable the "Show remove autosnapshots" [experiment](/experiments).
+- Tab and link counts are now always displayed next to windows and folders. The "Always show tab and link counts" setting has been removed.
+- The "Subsequent collection count" [experiment](/experiments) now caps out at 100.
+- "Load all collections", "Load all history", and "Initial collection count" [experiments](/experiments) have been removed.
 
 <ReviewBanner
   paddingTop="4.8rem"

@@ -2,6 +2,7 @@ import type { JSX } from 'react';
 import { motion } from 'framer-motion';
 
 import { Stars } from '@/components/Stars';
+import { Users } from '@/components/Users';
 
 export function Stats({
   rating,
@@ -53,6 +54,7 @@ export function Stats({
             "
           >
             {/* <Stars rating={rating} /> */}
+            <Users />
             <div
               className="
                 text-center
@@ -61,10 +63,8 @@ export function Stats({
               // style is temporary until we bring back stars
               style={{
                 lineHeight: 1.8,
-                fontSize: '24px',
-                color: '#e9b80d',
                 padding: '0 20px',
-                maxWidth: '640px',
+                maxWidth: '480px',
                 whiteSpace: 'pre-wrap',
               }}
             >

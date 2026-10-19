@@ -52,7 +52,7 @@ export function Stats({
               gap-3
             "
           >
-            <Stars rating={rating} />
+            {/* <Stars rating={rating} /> */}
             <div
               className="
                 text-center

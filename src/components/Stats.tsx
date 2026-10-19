@@ -58,6 +58,14 @@ export function Stats({
                 text-center
                 whitespace-pre
               "
+              // style is temporary until we bring back stars
+              style={{
+                lineHeight: 1.8,
+                fontSize: '24px',
+                color: '#e9b80d',
+                padding: '0 20px',
+                maxWidth: '640px',
+              }}
             >
               {text}
             </div>

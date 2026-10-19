@@ -65,6 +65,7 @@ export function Stats({
                 color: '#e9b80d',
                 padding: '0 20px',
                 maxWidth: '640px',
+                whiteSpace: 'pre-wrap',
               }}
             >
               {text}

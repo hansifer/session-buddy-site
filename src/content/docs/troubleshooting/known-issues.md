@@ -6,7 +6,7 @@ sidebar:
   order: 4
 ---
 
-If you're encountering issues with Session Buddy, please review the following known problems and their potential solutions.
+If you're encountering issues with Session Buddy, please review the following known problems and potential solutions.
 
 ## Session Buddy won't open
 

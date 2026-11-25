@@ -30,18 +30,18 @@ export function Users(): JSX.Element {
           r="16"
           className="fill-blue-500/25 stroke-blue-300/35"
         />
-        <circle
-          cx="39"
-          cy="24"
-          r="20"
-          className="fill-primaryColor stroke-blue-200/40"
-        />
         <g className="fill-blue-100/80">
           <circle cx="17" cy="20" r="4.5" />
           <path d="M8.5 34c.7-6 4-9 8.5-9s7.8 3 8.5 9z" />
           <circle cx="61" cy="20" r="4.5" />
           <path d="M52.5 34c.7-6 4-9 8.5-9s7.8 3 8.5 9z" />
         </g>
+        <circle
+          cx="39"
+          cy="24"
+          r="20"
+          className="fill-primaryColor stroke-blue-200/40 opacity-90"
+        />
         <g className="fill-white">
           <circle cx="39" cy="18.5" r="5.5" />
           <path d="M28.5 35.5c.9-7.2 5-10.8 10.5-10.8s9.6 3.6 10.5 10.8z" />
